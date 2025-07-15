@@ -292,7 +292,7 @@ const template6 = {
                     rowEnd: 2,
                     colStart: 2,
                     colEnd: 3,
-                    sections: ["personalInfo", "education", "workExperience"]
+                    sections: ["personalInfo", "education", "workExperience","awards"]
                 }
             ]
         },

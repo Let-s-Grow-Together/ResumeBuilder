@@ -375,6 +375,15 @@ html {
     align-items: center;
 }
 
+.line-toolbar button {
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
 
 @keyframes slideUp {
     from {

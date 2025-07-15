@@ -28,6 +28,17 @@ export default function ResumePage() {
       setUser(user);
     });
   }, []);
+  
+  useEffect(() => {
+  const handleMouseUp = () => {
+    const sel = window.getSelection();
+    if (sel && sel.rangeCount && !sel.isCollapsed) {
+    }
+  };
+  document.addEventListener("mouseup", handleMouseUp);
+  return () => document.removeEventListener("mouseup", handleMouseUp);
+}, []);
+
 
   useEffect(() => {
     fetch("/api/templates")
@@ -104,7 +115,7 @@ export default function ResumePage() {
             }}
             className="hide-scroll"
           >
-            <h3 style={{ width: "100%", marginBottom: "1rem", fontSize: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Templates</h3>
+            <h3 style={{ width: "100%", marginBottom: "1rem", fontSize: '25px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Templates</h3>
 
             {templates.map((tpl) => (
               <div
@@ -125,20 +136,19 @@ export default function ResumePage() {
                 <div
                   style={{
                     width: "100%",
-                    height: "300px",
+                    height: "294px",
                     overflow: "hidden",
                     position: "relative",
                     borderRadius: "6px",
                     // background: "#f9f9f9",
                     top: '0.8rem',
-                    left: '1rem'
                   }}
                 >
                   <div
                     style={{
                       transform: "scale(0.26)",
                       transformOrigin: "top left",
-                      width: "210mm",
+                      width: "180mm",
                       height: "297mm",
                       pointerEvents: "none",
                     }}
@@ -166,7 +176,7 @@ export default function ResumePage() {
               padding: "2rem",
               height: "100%",
               textAlign: "center",
-              width: "70%",
+              width: "110%",
               overflowY: "auto",
             }}
             className="hide-scroll"
@@ -200,3 +210,12 @@ export default function ResumePage() {
   );
 }
 
+
+
+// git checkout -b "jkhgfcvbhjuitfd"
+// git pull
+// ----
+// git commit
+// git push origin inlin
+// git pull
+// git push

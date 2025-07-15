@@ -84,7 +84,8 @@ export default function Header({ onLoginClick }) {
                         </div>
                     ) : (
                         <>
-                            <Link to="/auth" onClick={handleNavClick}>Log in</Link>
+                                                 <div onClick={onLoginClick} style={{cursor: 'pointer' }}>Log In</div>
+
                             <Link to="/auth" className="signup" onClick={handleNavClick}>Sign Up</Link>
                             {/* Optional fallback for old login handler */}
                             {/* <div onClick={onLoginClick} style={{cursor: 'pointer' }}>Log In</div> */}

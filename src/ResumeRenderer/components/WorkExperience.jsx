@@ -2,7 +2,7 @@
 import { useResume } from "../../context/ResumeContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWindowMinimize } from '@fortawesome/free-regular-svg-icons';
-import FloatingToolbarPro from "../../Pages/FloatingToolbarPro";
+import FloatingToolbarSimple from "../../Pages/FloatingToolbarSimple";
 
 const iconMap = {
     faWindowMinimize: faWindowMinimize,
@@ -27,7 +27,7 @@ export default function WorkExperience() {
                 <h2 contentEditable={editMode} style={style?.workExpe?.heading}>
                     Work Experience
                     {selectedSection === "experience" && (
-                        <FloatingToolbarPro sectionKey="experience" />
+                        <FloatingToolbarSimple sectionKey="experience" />
                     )} {/* ye */}
                 </h2>
 
@@ -96,7 +96,7 @@ export default function WorkExperience() {
                 <h2 contentEditable={editMode} style={style?.workExpe?.heading}>
                     Work Experience
                     {selectedSection === "experience" && (
-                        <FloatingToolbarPro sectionKey="experience" />
+                        <FloatingToolbarSimple sectionKey="experience" />
                     )}
                 </h2>
 

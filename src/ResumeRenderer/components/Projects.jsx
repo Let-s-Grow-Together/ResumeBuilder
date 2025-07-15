@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { useResume } from '../../context/ResumeContext';
-import FloatingToolbarPro from '../../Pages/FloatingToolbarPro';
+import FloatingToolbarSimple from '../../Pages/FloatingToolbarSimple';
 
 export default function Projects() {
     const {
@@ -40,7 +40,7 @@ export default function Projects() {
             </h2>
 
             {selectedSection === "projects" && (
-                <FloatingToolbarPro
+                <FloatingToolbarSimple
                     sectionKey="projects"
                     position={{ top: "-45px", right: "20px" }}
                 />

@@ -10,7 +10,6 @@ export default function Contact() {
     const { data, style, editMode, updateField } = useResume();
     const contact = data.contact;
 
-    // ✅ Save innerHTML instead of innerText
     const handleBlur = (key, e) => {
         updateField("contact", key, e.target.innerHTML.trim());
     };

@@ -18,6 +18,7 @@
     "@supabase/supabase-js": "^2.50.1",
     "framer-motion": "^12.19.1",
     "html2canvas": "^1.4.1",
+    "jodit-react": "^5.2.19",
     "jspdf": "^3.0.1",
     "miragejs": "^0.1.48",
     "quill": "^2.0.3",
