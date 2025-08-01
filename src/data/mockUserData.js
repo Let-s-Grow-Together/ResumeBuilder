@@ -32,7 +32,8 @@ const mockUserData = {
     ],
 
     skills: ["JavaScript", "React", "HTML5", "CSS3", "Git & GitHub"],
-
+    skillsDisplayType: "block",
+    
     projects: [
         {
             Title: "Weather App",

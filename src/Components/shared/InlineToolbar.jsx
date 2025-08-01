@@ -1,6 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function InlineToolbar({ editMode, containerRef }) {
+export default function InlineToolbar({
+    editMode,
+    containerRef,
+    onAddSkill,
+    onDeleteSkill,
+    onToggleDisplay,
+    focusedSkillIndex
+}) {
+
     const [visible, setVisible] = useState(false);
     const [position, setPosition] = useState({ top: 0, left: 0 });
     const toolbarRef = useRef(null);

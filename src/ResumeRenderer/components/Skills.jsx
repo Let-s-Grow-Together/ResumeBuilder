@@ -1,9 +1,8 @@
-
 import { useResume } from "../../context/ResumeContext";
 import FloatingToolbarSimple from "../../Pages/FloatingToolbarSimple";
 
 export default function Skills() {
-    const { data, style, editMode, updateField, selectedSection, setSelectedSection } = useResume();//ye
+    const { data, style, editMode, updateField, selectedSection, setSelectedSection } = useResume();
 
     const handleBlur = (index, e) => {
         const newValue = e.target.innerHTML.trim();
@@ -12,21 +11,52 @@ export default function Skills() {
         updateField("skills", null, updatedSkills);
     };
 
-    const showToolbar = selectedSection === "skills";//ye
+    const handleToggleDisplayType = (type) => {
+        updateField(null, "skillsDisplayType", type);
+    };
 
-    if (style.skills?.list) {
-        return (
-            <div
-                className="skills resumeSection"
-                style={{ ...style?.skills?.box, position: "relative" }}
-                onClick={() => setSelectedSection("skills")} //ye
-            >
-                <h2 style={style?.skills?.heading}>Skills</h2>
+    const showToolbar = selectedSection === "skills";
+    const isList = data.skillsDisplayType === "list";
 
-                {showToolbar && (
-                    <FloatingToolbarSimple sectionKey="skills" />
-                )} {/* ye */}
+    return (
+        <div
+            className="skills resumeSection"
+            style={{ ...style?.skills?.box, position: "relative" }}
+            onClick={() => setSelectedSection("skills")}
+        >
+            <h2 style={style?.skills?.heading}>Skills</h2>
 
+            {editMode && (
+                <div style={{ marginBottom: 8 }}>
+                    <button
+                        onClick={() => handleToggleDisplayType("block")}
+                        style={{
+                            backgroundColor: !isList ? "#ccc" : "#eee",
+                            marginRight: 6,
+                            borderRadius: 4,
+                            padding: "4px 10px"
+                        }}
+                    >
+                        Block
+                    </button>
+                    <button
+                        onClick={() => handleToggleDisplayType("list")}
+                        style={{
+                            backgroundColor: isList ? "#ccc" : "#eee",
+                            borderRadius: 4,
+                            padding: "4px 10px"
+                        }}
+                    >
+                        List
+                    </button>
+                </div>
+            )}
+
+            {showToolbar && (
+                <FloatingToolbarSimple sectionKey="skills" />
+            )}
+
+            {isList ? (
                 <ul style={style?.skills?.wholeList}>
                     {data.skills.map((skill, index) => (
                         <li
@@ -35,27 +65,11 @@ export default function Skills() {
                             suppressContentEditableWarning={true}
                             onBlur={(e) => handleBlur(index, e)}
                             style={style?.skills?.listItem}
-                            dangerouslySetInnerHTML={{ __html: skill }} 
-                        >
-                            {skill}
-                        </li>
+                            dangerouslySetInnerHTML={{ __html: skill }}
+                        />
                     ))}
                 </ul>
-            </div>
-        );
-    } else {
-        return (
-            <div
-                className="skills resumeSection"
-                style={{ ...style?.skills?.box, position: "relative" }}
-                onClick={() => setSelectedSection("skills")}
-            >
-                <h2 style={style?.skills?.heading}>Skills
-                    {showToolbar && (
-                        <FloatingToolbarSimple sectionKey="skills" />
-                    )}
-                </h2>
-
+            ) : (
                 <div className="individualSkill" style={style?.skills?.everySkillBox}>
                     {data.skills.map((skill, index) => (
                         <div
@@ -64,13 +78,11 @@ export default function Skills() {
                             suppressContentEditableWarning={true}
                             onBlur={(e) => handleBlur(index, e)}
                             style={style?.skills?.eachSkillBox}
-                            dangerouslySetInnerHTML={{ __html: skill }} 
-                        >
-                        </div>
+                            dangerouslySetInnerHTML={{ __html: skill }}
+                        />
                     ))}
                 </div>
-            </div>
-        );
-    }
+            )}
+        </div>
+    );
 }
-
