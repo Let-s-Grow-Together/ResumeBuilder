@@ -1,0 +1,58 @@
+.review-container {
+    width: 100%;
+    background: 1px rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0px;
+}
+
+.review-container h2 {
+    text-align: center;
+    margin: 5px;
+}
+
+.reviews {
+    width: 90%;
+    height: 50vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    margin: 10px auto;
+}
+
+.review-listItem {
+    padding: 15px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    margin: 5px auto;
+}
+
+input {
+    width: 90%;
+    margin: 25px auto;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: none;
+    display: block;
+}
+
+textarea {
+    width: 90%;
+    margin: 10px auto;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    height: 15vh;
+    background: none;
+    padding: 7px;
+    display: block;
+}
+
+.submitBtn {
+    width: 90%;
+    padding: 13px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #cba7e2, #a0c4ff);
+    margin-left: 45px;
+    font-size: 16px;
+}

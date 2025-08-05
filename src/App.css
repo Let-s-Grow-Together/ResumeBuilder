@@ -256,7 +256,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #fff;
+    /* background: #fff; */
 }
 
 .templatePreview iframe {
@@ -279,6 +279,14 @@ html {
     border: none;
     overflow: hidden;
     scrollbar-width: none;
+}
+
+.templatePreview > div {
+    margin-left: 3px;
+}
+
+.templatePreview #resume-view {
+    width: 100%;
 }
 
 .templateName {
@@ -767,11 +775,6 @@ html {
 
 .carouselBtn:last-of-type {
     right: -120px;
-}
-
-.templateCard {
-    width: 280px;
-    /* consistent with your grid */
 }
 
 @media (max-width: 1450px) {}

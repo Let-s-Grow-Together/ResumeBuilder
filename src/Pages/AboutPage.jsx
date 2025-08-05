@@ -4,6 +4,7 @@ import Header from "../Components/Header/Header";
 import Footer from "../Components/Footer/Footer";
 import AuthModal from "./AuthModal";
 import "./AboutPage.css";
+import ReviewSection from "../Components/Review/ReviewSection";
 
 export default function AboutPage() {
   const [reviews, setReviews] = useState([]);
@@ -65,6 +66,7 @@ export default function AboutPage() {
           </div>
         </section> */}
 
+          <ReviewSection />
         <section className="glass-card reviews-section">
           <h2>User Love</h2>
           {reviews.length === 0 ? (

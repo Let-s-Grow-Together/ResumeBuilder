@@ -17,16 +17,13 @@ export default function TemplateSection({ templates }) {
         let isPaused = false;
         let animationId;
 
-        // Duplicate content to create a seamless scroll illusion
-        const originalContent = container.innerHTML;
-        container.innerHTML += originalContent;
-
         const autoScroll = () => {
             if (!isPaused) {
                 container.scrollLeft += scrollSpeed;
 
                 // Reset to start when we've scrolled past the first full copy
-                if (container.scrollLeft >= container.scrollWidth / 2) {
+                const singleScrollWidth = container.scrollWidth / 2;
+                if (container.scrollLeft >= singleScrollWidth) {
                     container.scrollLeft = 0;
                 }
             }
@@ -64,7 +61,6 @@ export default function TemplateSection({ templates }) {
             container.removeEventListener('touchend', handleTouchEnd);
         };
     }, []);
-
 
     const handleSelectTemplate = (templateId) => {
         navigate(`/resume/${templateId}`);
@@ -141,7 +137,7 @@ export default function TemplateSection({ templates }) {
                         <button
                             className="customizeBtn"
                             onClick={(e) => {
-                                e.stopPropagation();
+                                e.stopPropagation(); // prevent parent onClick
                                 navigate(`/resume/${template.id}?edit=true`);
                             }}
                             style={{
