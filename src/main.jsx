@@ -17,6 +17,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </DndProvider>
   </React.StrictMode>
 );
-
-
-

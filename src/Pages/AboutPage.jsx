@@ -4,7 +4,7 @@ import Header from "../Components/Header/Header";
 import Footer from "../Components/Footer/Footer";
 import AuthModal from "./AuthModal";
 import "./AboutPage.css";
-import ReviewSection from "../Components/Review/ReviewSection";
+import ReviewSection from "../Components/ReviewSection";
 
 export default function AboutPage() {
   const [reviews, setReviews] = useState([]);
@@ -67,7 +67,7 @@ export default function AboutPage() {
         </section> */}
 
           <ReviewSection />
-        <section className="glass-card reviews-section">
+        {/* <section className="glass-card reviews-section">
           <h2>User Love</h2>
           {reviews.length === 0 ? (
             <p>No reviews yet. Be the first to share!</p>
@@ -97,7 +97,7 @@ export default function AboutPage() {
             ></textarea>
             <button type="submit">Submit Review</button>
           </form>
-        </section>
+        </section> */}
 
        
       </main>

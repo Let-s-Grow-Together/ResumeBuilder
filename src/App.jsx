@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 import AllTemplatesPage from './Pages/TemplatePage'
 import AuthModal from './Pages/AuthModal'
 import AboutPage from './Pages/AboutPage'
+import { supabase } from './supabaseClient'
 
 function ScrollToTop() {
     const { pathname } = useLocation();
@@ -21,6 +22,29 @@ function ScrollToTop() {
 
 export default function App() {
     const [authModalOpen, setAuthModalOpen] = useState(false);
+     const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // Check if user is already logged in
+    const getUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        setUser(user);
+      }
+    };
+    getUser();
+
+    // Listen for login/logout changes
+    const { data: authListener } = supabase.auth.onAuthStateChange(
+      (_event, session) => {
+        setUser(session?.user || null);
+      }
+    );
+
+    return () => {
+      authListener.subscription.unsubscribe();
+    };
+  }, []);
     return (
         <>
             <Router>

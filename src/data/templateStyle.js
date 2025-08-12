@@ -48,25 +48,25 @@ const sharedStyles = {
 const templateStyles = {
     "1": {
         strength: {
-            heading:{
+            heading: {
                 marginTop: "1.5rem",
                 marginBottom: '0.2rem',
                 textDecoration: "underline"
             },
-            innerbox:{
+            innerbox: {
                 marginBottom: '0.5rem'
             }
         },
-        certificate:{
+        certificate: {
             heading: {
                 marginTop: "1.5rem",
                 marginBottom: "0.2rem",
                 textDecoration: "underline"
             },
-            organiz:{
+            organiz: {
                 marginLeft: "0.7rem"
             },
-            date:{
+            date: {
                 marginLeft: "0.7rem",
                 fontStyle: "italic"
             }
@@ -322,38 +322,38 @@ const templateStyles = {
                 color: "var(--content-color)"
             }
         },
-        projects:{
-            box:{
-                padding : "0px",
+        projects: {
+            box: {
+                padding: "0px",
                 borderLeft: "0px solid white"
             },
-            heading:{
+            heading: {
                 textDecoration: "none",
                 ...sharedStyles["3"].heading
             },
-            title:{
+            title: {
                 fontSize: "18px"
             }
         },
         certificate: {
-            box:{
+            box: {
                 marginTop: "15px"
             },
-            heading:{
+            heading: {
                 ...sharedStyles["3"].heading
             },
-            eachcertificate:{
+            eachcertificate: {
                 marginBottom: "5px"
             },
-            title:{
+            title: {
                 fontSize: "18px",
                 fontWeight: "700"
             },
-            organiz:{
+            organiz: {
                 fontSize: "16px",
                 color: "var(--secondary-heading-color)",
             },
-            date:{
+            date: {
                 padding: "2px",
                 color: "var(--content-color)",
                 fontStyle: "italic"
@@ -453,7 +453,7 @@ const templateStyles = {
                 color: "var(--content-color)"
             }
         },
-        projects:{
+        projects: {
             box: {
                 ...sharedStyles["4"].box,
                 border: "none",
@@ -462,11 +462,11 @@ const templateStyles = {
             heading: {
                 ...sharedStyles["4"].heading,
             },
-            title:{
+            title: {
                 color: "var(--content-color)",
                 paddingLeft: "10px"
             },
-            list:{
+            list: {
                 paddingLeft: "20px"
             }
         },
@@ -485,7 +485,7 @@ const templateStyles = {
             organiz: {
                 color: "var(--secondary-heading-color)"
             },
-            date:{
+            date: {
                 fontStyle: "italic"
             }
         }
@@ -723,7 +723,7 @@ const templateStyles = {
                 marginBottom: "5px"
             }
         },
-        projects:{
+        projects: {
             box: {
                 color: "var(--primary-color)",
                 border: "none",
@@ -737,7 +737,7 @@ const templateStyles = {
                 marginBottom: "5px"
             }
         },
-        certificate:{
+        certificate: {
             box: {
                 color: "var(--primary-color)",
                 border: "none",
@@ -808,7 +808,7 @@ const templateStyles = {
             }
         },
         summary: {
-            box:{
+            box: {
                 paddingLeft: "15px",
                 marginBottom: "15px"
             },
@@ -817,8 +817,8 @@ const templateStyles = {
                 marginBottom: "15px",
                 fontSize: "23px"
             },
-            content:{
-                
+            content: {
+
             }
         },
         workExpe: {
@@ -840,7 +840,7 @@ const templateStyles = {
                 backgroundSize: '100% 1px',
                 backgroundPosition: 'top, bottom',
                 backgroundRepeat: 'no-repeat',
-               
+
             },
             bulletIcon: {
                 type: "fontawesome",
@@ -979,11 +979,11 @@ const templateStyles = {
                 textAlign: 'left',
                 paddingLeft: '10px'
             },
-            title:{
+            title: {
                 fontSize: "16px",
                 fontWeight: "700"
             },
-            organiz:{
+            organiz: {
                 fontSize: "15px",
                 marginLeft: "2px",
                 color: 'var(--primary-color)'
@@ -997,245 +997,257 @@ const templateStyles = {
             }
         },
     },
-     "8": {
-     header: {
-    box: {
-      textAlign: "center",
-      marginBottom: "1.5rem"
-    },
-    name: {
-      fontSize: "24px",
-      fontWeight: "bold",
-      color: "var(--heading-color)"
-    },
-    position: {
-      fontSize: "16px",
-      margin: "5px 0",
-      color: "var(--text-color)"
-    },
-    subHeading: {
-      fontSize: "14px",
-      fontStyle: "italic",
-      color: "var(--text-color)"
-    }
-  },
-  contact: {
-    box: {
-      display: "flex",
-      justifyContent: "center",
-      flexWrap: "wrap",
-      marginBottom: "1rem"
-    },
-    icon: {
-      margin: "0 10px",
-      color: "var(--primary-color)"
-    }
-  },
-  summary: {
-    heading: {
-      fontSize: "18px",
-      fontWeight: "bold",
-      color: "var(--heading-color)",
-      marginBottom: "0.5rem",
-       textAlign: "center"
-    },
-    content: {
-      color: "var(--text-color)",
-      marginBottom: "1rem"
-    }
-  },
-  experience: {
-    heading: {
-      fontSize: "18px",
-      fontWeight: "bold",
-      color: "var(--heading-color)",
-      marginBottom: "0.5rem",
-      borderTop: "var(--heading-color)",
-       textAlign: "center"
-    },
-    eachWorkPlace: {
-      marginBottom: "1rem"
-    },
-    role: {
-      fontWeight: "bold",
-      fontSize: "16px"
-    },
-    dateLocation: {
-      fontStyle: "italic",
-      fontSize: "14px",
-      color: "var(--text-color)",
-      marginBottom: "0.3rem"
-    },
-    bulletPoints: {
-      paddingLeft: "20px",
-      listStyleType: "disc"
-    }
-  },
-  education: {
-    heading: {
-      fontSize: "18px",
-      fontWeight: "bold",
-      color: "var(--heading-color)",
-      marginBottom: "0.5rem",
-      borderTop: "var(--heading-color)",
-       textAlign: "center"
-    },
-    eachSchool: {
-      marginBottom: "1rem"
-    },
-    degree: {
-      fontWeight: "bold",
-      fontSize: "16px"
-    },
-    dateLocation: {
-      fontStyle: "italic",
-      fontSize: "14px",
-      color: "var(--text-color)"
-    },
-    bulletPoints: {
-      paddingLeft: "20px",
-      listStyleType: "disc"
-    }
-  },
-  achievements: {
-    heading: {
-      fontSize: "18px",
-      fontWeight: "bold",
-      color: "var(--heading-color)",
-      marginBottom: "0.5rem",
-      borderTop: "var(--heading-color)",
-       textAlign: "center"
-    },
-    eachAchievement: {
-      marginBottom: "0.5rem"
-    },
-    title: {
-      fontWeight: "bold",
-      fontSize: "16px"
-    },
-    description: {
-      fontSize: "14px",
-      color: "var(--text-color)"
-    }
-  },
-  skills: {
-    heading: {
-      fontSize: "18px",
-    //   fontWeight: "bold",
-      color: "var(--heading-color)",
-       textAlign: "center",
-       borderTop: "var(--heading-color)",
+    "8": {
+        header: {
+            box: {
+                textAlign: "center",
+                marginBottom: "1.5rem"
+            },
+            name: {
+                fontSize: "24px",
+                fontWeight: "bold",
+                color: "var(--heading-color)"
+            },
+            position: {
+                fontSize: "16px",
+                margin: "5px 0",
+                color: "var(--text-color)"
+            },
+            subHeading: {
+                fontSize: "14px",
+                fontStyle: "italic",
+                color: "var(--text-color)"
+            }
+        },
+        contact: {
+            box: {
+                display: "flex",
+                justifyContent: "center",
+                flexWrap: "wrap",
+                marginBottom: "1rem"
+            },
+            icon: {
+                margin: "0 10px",
+                color: "var(--primary-color)"
+            }
+        },
+        summary: {
+            heading: {
+                fontSize: "18px",
+                fontWeight: "bold",
+                color: "var(--heading-color)",
+                marginBottom: "0.5rem",
+                textAlign: "center"
+            },
+            content: {
+                color: "var(--text-color)",
+                marginBottom: "1rem"
+            }
+        },
+        experience: {
+            heading: {
+                fontSize: "18px",
+                fontWeight: "bold",
+                color: "var(--heading-color)",
+                marginBottom: "0.5rem",
+                borderTop: "var(--heading-color)",
+                textAlign: "center"
+            },
+            eachWorkPlace: {
+                marginBottom: "1rem"
+            },
+            role: {
+                fontWeight: "bold",
+                fontSize: "16px"
+            },
+            dateLocation: {
+                fontStyle: "italic",
+                fontSize: "14px",
+                color: "var(--text-color)",
+                marginBottom: "0.3rem"
+            },
+            bulletPoints: {
+                paddingLeft: "20px",
+                listStyleType: "disc"
+            }
+        },
+        education: {
+            heading: {
+                fontSize: "18px",
+                fontWeight: "bold",
+                color: "var(--heading-color)",
+                marginBottom: "0.5rem",
+                borderTop: "var(--heading-color)",
+                textAlign: "center"
+            },
+            eachSchool: {
+                marginBottom: "1rem"
+            },
+            degree: {
+                fontWeight: "bold",
+                fontSize: "16px"
+            },
+            dateLocation: {
+                fontStyle: "italic",
+                fontSize: "14px",
+                color: "var(--text-color)"
+            },
+            bulletPoints: {
+                paddingLeft: "20px",
+                listStyleType: "disc"
+            }
+        },
+        achievements: {
+            heading: {
+                fontSize: "18px",
+                fontWeight: "bold",
+                color: "var(--heading-color)",
+                marginBottom: "0.5rem",
+                borderTop: "var(--heading-color)",
+                textAlign: "center"
+            },
+            eachAchievement: {
+                marginBottom: "0.5rem"
+            },
+            title: {
+                fontWeight: "bold",
+                fontSize: "16px"
+            },
+            description: {
+                fontSize: "14px",
+                color: "var(--text-color)"
+            }
+        },
+        skills: {
+            heading: {
+                fontSize: "18px",
+                //   fontWeight: "bold",
+                color: "var(--heading-color)",
+                textAlign: "center",
+                borderTop: "var(--heading-color)",
 
+            },
+            eachSkill: {
+                display: "inline-block",
+                backgroundColor: "var(--primary-color)",
+                color: "white",
+                padding: "6px 10px",
+                borderRadius: "5px",
+                margin: "5px"
+            }
+        },
+        certifications: {
+            heading: {
+                fontSize: "18px",
+                fontWeight: "bold",
+                color: "var(--heading-color)",
+                marginBottom: "0.5rem",
+                borderTop: "var(--heading-color)",
+                textAlign: "center"
+            },
+            eachCertificate: {
+                marginBottom: "0.5rem"
+            },
+            title: {
+                fontWeight: "bold",
+                fontSize: "16px"
+            },
+            organization: {
+                fontStyle: "italic",
+                fontSize: "14px",
+                borderTop: "var(--heading-color)",
+            },
+            date: {
+                fontSize: "14px"
+            }
+        }
     },
-    eachSkill: {
-      display: "inline-block",
-      backgroundColor: "var(--primary-color)",
-      color: "white",
-      padding: "6px 10px",
-      borderRadius: "5px",
-      margin: "5px"
+    9: {
+        container: {
+            backgroundColor: "#ffffff",
+            padding: "25px",
+            borderRadius: "10px",
+            boxShadow: "0 0 12px rgba(0, 0, 0, 0.1)",
+            color: "#1c1c1c",
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: "14px"
+        },
+        avatar: {
+            width: "100px",
+            height: "100px",
+            borderRadius: "50%",
+            objectFit: "cover",
+            border: "3px solid #00a66f",
+            marginBottom: "1rem"
+        },
+        sectionHeader: {
+            color: "#00a66f",
+            fontWeight: "600",
+            fontSize: "16px",
+            marginBottom: "0.5rem",
+            textTransform: "uppercase",
+            borderBottom: "2px solid #00a66f",
+            paddingBottom: "4px"
+        },
+        contactItem: {
+            display: "flex",
+            alignItems: "center",
+            gap: "8px",
+            marginBottom: "6px",
+            color: "#1c1c1c"
+        },
+        icon: {
+            color: "#00a66f",
+            fontSize: "14px"
+        },
+        skillItem: {
+            backgroundColor: "#f2f2f2",
+            borderRadius: "4px",
+            padding: "4px 8px",
+            marginBottom: "4px",
+            fontSize: "13px"
+        },
+        summary: {
+            fontSize: "14px",
+            lineHeight: "1.5",
+            color: "#333"
+        },
+        workExperience: {
+            marginBottom: "1.5rem"
+        },
+        workTitle: {
+            fontWeight: "600",
+            color: "#00a66f"
+        },
+        workPeriod: {
+            fontStyle: "italic",
+            fontSize: "12px",
+            color: "#777"
+        },
+        education: {
+            marginBottom: "1rem"
+        },
+        certification: {
+            fontSize: "13px",
+            color: "#1c1c1c"
+        },
+        achievements: {
+            listStyleType: "disc",
+            paddingLeft: "1rem"
+        }
+    },
+    "10":{
+        skills:{
+            eachSkillBox:{
+                // border:'none',
+                borderBottom:'1px solid red',
+                borderTop:'1px solid red',
+            }
+        },
+        achievements:{
+            
+        }
     }
-  },
-  certifications: {
-    heading: {
-      fontSize: "18px",
-      fontWeight: "bold",
-      color: "var(--heading-color)",
-      marginBottom: "0.5rem",
-      borderTop: "var(--heading-color)",
-       textAlign: "center"
-    },
-    eachCertificate: {
-      marginBottom: "0.5rem"
-    },
-    title: {
-      fontWeight: "bold",
-      fontSize: "16px"
-    },
-    organization: {
-      fontStyle: "italic",
-      fontSize: "14px",
-      borderTop: "var(--heading-color)",
-    },
-    date: {
-      fontSize: "14px"
-    }
-  }
-},
- 9: {
-    container: {
-      backgroundColor: "#ffffff",
-      padding: "25px",
-      borderRadius: "10px",
-      boxShadow: "0 0 12px rgba(0, 0, 0, 0.1)",
-      color: "#1c1c1c",
-      fontFamily: "'Poppins', sans-serif",
-      fontSize: "14px"
-    },
-    avatar: {
-      width: "100px",
-      height: "100px",
-      borderRadius: "50%",
-      objectFit: "cover",
-      border: "3px solid #00a66f",
-      marginBottom: "1rem"
-    },
-    sectionHeader: {
-      color: "#00a66f",
-      fontWeight: "600",
-      fontSize: "16px",
-      marginBottom: "0.5rem",
-      textTransform: "uppercase",
-      borderBottom: "2px solid #00a66f",
-      paddingBottom: "4px"
-    },
-    contactItem: {
-      display: "flex",
-      alignItems: "center",
-      gap: "8px",
-      marginBottom: "6px",
-      color: "#1c1c1c"
-    },
-    icon: {
-      color: "#00a66f",
-      fontSize: "14px"
-    },
-    skillItem: {
-      backgroundColor: "#f2f2f2",
-      borderRadius: "4px",
-      padding: "4px 8px",
-      marginBottom: "4px",
-      fontSize: "13px"
-    },
-    summary: {
-      fontSize: "14px",
-      lineHeight: "1.5",
-      color: "#333"
-    },
-    workExperience: {
-      marginBottom: "1.5rem"
-    },
-    workTitle: {
-      fontWeight: "600",
-      color: "#00a66f"
-    },
-    workPeriod: {
-      fontStyle: "italic",
-      fontSize: "12px",
-      color: "#777"
-    },
-    education: {
-      marginBottom: "1rem"
-    },
-    certification: {
-      fontSize: "13px",
-      color: "#1c1c1c"
-    },
-    achievements: {
-      listStyleType: "disc",
-      paddingLeft: "1rem"
-    }
-  }
 };
 
 export default templateStyles;

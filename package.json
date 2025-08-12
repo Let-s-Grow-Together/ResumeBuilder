@@ -18,8 +18,11 @@
     "@fortawesome/free-regular-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@supabase/supabase-js": "^2.50.1",
+    "@supabase/supabase-js": "^2.53.0",
     "core-js": "^3.33.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
     "framer-motion": "^12.19.1",
     "html2canvas": "^1.4.1",
     "inflected": "^1.0.0",
@@ -47,5 +50,18 @@
     "globals": "^16.0.0",
     "rollup": "^4.45.1",
     "vite": "^6.3.5"
-  }
+  },
+  "description": "",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bkritika1/ResumeBuilder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bkritika1/ResumeBuilder/issues"
+  },
+  "homepage": "https://github.com/Bkritika1/ResumeBuilder#readme"
 }
