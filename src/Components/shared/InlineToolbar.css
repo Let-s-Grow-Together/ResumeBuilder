@@ -1,0 +1,7 @@
+.inlineToolbar button {
+    outline: none;
+    background-color: white;
+    border: none;
+    font-size: medium;
+    padding: 0px 2px;
+}
