@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { useResume } from "../../context/ResumeContext";
 import EntryControls from "./EntryControls";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBold, faItalic, faUnderline, faBars, faList, faRepeat ,faLink } from "@fortawesome/free-solid-svg-icons";
+import "./InlineToolbar.css"
 
 const SECTION_TO_VIEW_KEY_MAP = {
     summary: "personalInfo",
@@ -106,6 +109,7 @@ export default function InlineToolbar({ editMode, containerRef, sectionName }) {
 
     return (
         <div
+            className="inlineToolbar"
             ref={toolbarRef}
             style={{
                 position: "absolute",
@@ -125,16 +129,16 @@ export default function InlineToolbar({ editMode, containerRef, sectionName }) {
             {["p", "span", "li"].includes(activeTagName) && (
                 <>
                     <button onMouseDown={(e) => e.preventDefault()} onClick={() => exec("bold")}>
-                        <b>B</b>
+                        <FontAwesomeIcon icon={faBold} />
                     </button>
                     <button onMouseDown={(e) => e.preventDefault()} onClick={() => exec("italic")}>
-                        <i>I</i>
+                        <FontAwesomeIcon icon={faItalic} />
                     </button>
                     <button onMouseDown={(e) => e.preventDefault()} onClick={() => exec("underline")}>
-                        <u>U</u>
+                        <FontAwesomeIcon icon={faUnderline} />
                     </button>
                     <button onMouseDown={(e) => e.preventDefault()} onClick={toggleViewType}>
-                        🔁
+                        <FontAwesomeIcon icon={faRepeat} />
                     </button>
                 </>
             )}
@@ -147,7 +151,7 @@ export default function InlineToolbar({ editMode, containerRef, sectionName }) {
                         if (url) exec("createLink", url);
                     }}
                 >
-                    🔗
+                    <FontAwesomeIcon icon={faLink} />
                 </button>
             )}
             <EntryControls tagName={activeTagName} savedSelection={savedSelection} sectionName={sectionName} />

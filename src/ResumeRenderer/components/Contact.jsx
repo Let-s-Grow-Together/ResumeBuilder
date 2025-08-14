@@ -3,6 +3,8 @@ import EditableText from "../../Components/shared/EditableText";
 import EditableIcon from './EditableIcon';
 import { useResume } from "../../context/ResumeContext";
 import AddLinkButton from "../../Components/shared/AddLinkButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export default function Contact() {
     const { editMode, data, style } = useResume();
@@ -90,7 +92,7 @@ export default function Contact() {
 
                         {editMode && (
                             <button className="delete-btn" style={style?.contact?.deleteIcon} onClick={() => handleDelete(index)}>
-                                🗑️
+                                <FontAwesomeIcon icon={faTrash} style={style?.contact?.trashIcon} />
                             </button>
                         )}
                     </li>
@@ -98,7 +100,9 @@ export default function Contact() {
             </ul>
 
             {editMode && (
-                <button className="add-btn" style={style?.contact?.addIcon} onClick={handleAdd}>➕ Add Contact</button>
+                <button className="add-btn" style={style?.contact?.addIcon} onClick={handleAdd}>
+                    <FontAwesomeIcon icon={faPlus} style={style?.contact?.plusIcon} />  Add Contact
+                </button>
             )}
         </div>
     );

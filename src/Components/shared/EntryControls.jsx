@@ -1,4 +1,6 @@
 import { useResume } from "../../context/ResumeContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export default function EntryControls({ tagName, savedSelection, sectionName }) {
     const {
@@ -38,8 +40,12 @@ export default function EntryControls({ tagName, savedSelection, sectionName }) 
 
     return (
         <>
-            <button onMouseDown={(e) => e.preventDefault()} onClick={() => handleAction("add")}>➕</button>
-            <button onMouseDown={(e) => e.preventDefault()} onClick={() => handleAction("remove")}>➖</button>
+            <button onMouseDown={(e) => e.preventDefault()} onClick={() => handleAction("add")}>
+                <FontAwesomeIcon icon={faPlus} />
+            </button>
+            <button onMouseDown={(e) => e.preventDefault()} onClick={() => handleAction("remove")}>
+                <FontAwesomeIcon icon={faTrash} />
+            </button>
         </>
     );
 }
