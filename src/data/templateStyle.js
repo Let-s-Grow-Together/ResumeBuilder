@@ -42,6 +42,11 @@ const sharedStyles = {
             borderBottom: '2px solid var(--primary-color)',
             paddingLeft: '10px'
         }
+    },
+    "8": {
+        heading:{
+            borderBottom: '2px solid #red'
+        }
     }
 };
 
@@ -340,19 +345,34 @@ const templateStyles = {
     "4": {
         vars: {
             "--heading-color": "#333",
+            "--primary-color": "#ffffff",
+
+             "--left-bg-color": "#f6f6f6",
+               "--right-bg-color": "#ffffff",
+    "--right-text-color": "#0A3965",
             "--secondary-heading-color": "#608abf",
             "--content-color": "#636466",
         },
         avatar: {
             card: {
-                background: "linear-gradient(135deg, var(--secondary-heading-color) 50%, white 50%)"
+                background: "linear-gradient(138.5deg, var(--secondary-heading-color) 50%, white 50%)",
+                position:'relative',
+                top: '-58px',
+                left:'-58px',
+                overflow: "hidden",
+                backgroundColor: "#f6f6f6"
             },
             heading: {
                 color: "#333"
+            },
+            imageDiv:{
+                position: 'relative',
+                top: '2px',
+
+
             }
         },
         contact: {
-            visibleFields: ["phoneNo", "email", "address"],
             box: {
                 ...sharedStyles["4"].box
             },
@@ -999,7 +1019,301 @@ const templateStyles = {
             },
         }
     },
+ "8": {
+        vars: {
+            "--primary-color": "#ffffff",
+    "--left-bg-color": "#0A3965",
+    "--left-text-color": "#ffffff",
+     "--right-bg-color": "#ffffff",
+    "--right-text-color": "#0A3965"
+        },
+     
+        avatar: {
+            card: {
+                background: "none",
+                width: "300px",
+                height: '150px',
+            },
+            imageDiv: {
+                marginLeft: '4rem'
+            },
+            nextLine: {
+                display: 'none'
+            },
+            sideBox: 'true',
+            innerBox: {
+                position: 'relative',
+                left: '125px',
+                top: '-130px',
+                textAlign: 'left'
+            },
+            heading: {
+                display: 'none'
+            },
+            position: {
+               display: 'none'
+            }
+        },
+        contact: {
+            visibleFields: ["email", "phoneNo", "address", "linkedin"],
+            box: {
+                marginTop: '2rem',
+            },
+            heading: {
+                 ...sharedStyles["7"].heading
+            },
+            innerBox: {
+                display: "flex",
+                justifyContent: "flex-start",
+                flexDirection: "row-reverse"
+            },
+            icon: {
+                color: "var(--primary-color)",
+                marginLeft: "10px",
+                marginRight: '20px'
+            },
+            list :{
+                marginTop: '.5rem'
+            }
+        },
+        summary: {
+            box:{
+                // paddingLeft: "15px",
+                marginTop: "6rem",
+                marginBottom: "15px",
+            },
+            eachSummary:{
+                marginTop: '.5rem'
+            },
+            list:{
+                marginTop: '.5rem !important'
+            },
+            heading: {
+                 borderBottom: '2px solid #0A3965'
+                // display: 'none'
+                //  ...sharedStyles["7"].heading
+            },
+            content:{
+                
+            }
+        },
+        workExpe: {
+            
+            viewType: "list",
+            box: {
+                border: 'none',
+            },
+            heading: {
+               borderBottom: '2px solid #0A3965'
+            },
+            dates: {
+                color: '#0A3965'
+            },
+            // wholeList: {
+            //     marginTop: '5px',
+            //     padding: '4px',
+            //     borderLeft: '1px solid var(--primary-color)',
+            //     borderRight: '1px solid var(--primary-color)',
+            //     backgroundImage: 'linear-gradient(to right, var(--primary-color) 2%, white 2%, white 98%, var(--primary-color) 98%), linear-gradient(to right, var(--primary-color) 2%, white 2%, white 98%, var(--primary-color) 98%)',
+            //     backgroundSize: '100% 1px',
+            //     backgroundPosition: 'top, bottom',
+            //     backgroundRepeat: 'no-repeat',
+               
+            // },'
+           
+            bulletIcon: {
+                type: "fontawesome",
+                icon: "faWindowMinimize",
+                color: "var(--primary-color)",
+                size: "0.5rem",
+                marginRight: "0.5rem",
+            },
+            eachWorkPlace: {
+                paddingLeft: '10px',
+                marginTop: '.5rem'
+            }
+        },
+        education: {
+            marginTop: ".5rem",
+            viewType: "list",
+            box: {
+                border: 'none',
+                marginTop: ".5rem"
+            },
+            eachEducation:{
+                marginTop: '.5rem'
+            },
+            heading: {
+                ...sharedStyles["7"].heading,
+                marginTop: "1rem"
+            },
+            eachSchool: {
+                paddingLeft: '10px'
+            },
+            sideline: 'true',
+            timeline: {
+                border: 'none',
+                paddingLeft: '10px'
+            },
+            dot: {
+                backgroundColor: 'var(--primary-color)',
+                top: '7px',
+                left: '-20px'
+            }
+        },
+        projects: {
+            viewType: "list",
+            box: {
+                border: 'none'
+            },
+            heading: {
+                ...sharedStyles["7"].heading
+            },
+            eachProject: {
+                paddingLeft: '10px'
+            },
+        },
+        skills: {
+            viewType: "list",
+            box: {
+                marginBottom: '2rem',
+                 marginTop: '2rem'
+
+            },
+            heading: {
+                ...sharedStyles["7"].heading
+            },
+            // everySkillBox: {
+            //     paddingLeft: '10px',
+            //     rowGap: '10px'
+            // },
+           wholeList:{
+            marginLeft: '1rem',
+            marginTop: '.5rem'
+           },
+           list:{
+            rowGap: '10px'
+           }
+        },
+        personalInfo:{
+            borderBottom: "none",
+            summaryBox: {
+                display: 'none'
+            },
+            position:{
+                 textDecoration: "underline",
+          textDecorationThickness: "2px",
+            }
+           
+        },
+        organiz: {
+            viewType: "list",
+            box: {
+                border: 'none',
+                marginBottom: '1rem'
+            },
+            heading: {
+                // ...sharedStyles["7"].heading,
+                borderBottom: '2px solid #0A3965',
+                textAlign: 'left',
+                marginBottom: '10px',
+            },
+            innerBox: {
+                textAlign: 'left',
+                paddingLeft: '10px'
+            },
+            eachOrganiz: {
+                marginBottom: '10px'
+            }
+        },
+        award: {
+            viewType: "list",
+            box: {
+                border: 'none',
+                marginBottom: '1rem'
+            },
+            heading: {
+               borderBottom: '2px solid #0A3965',
+                textAlign: 'left',
+                marginBottom: '10px',
+            },
+            innerBox: {
+                textAlign: 'left',
+                paddingLeft: '10px'
+            },
+            date: {
+                fontStyle: 'italic'
+            },
+            eachAward: {
+                marginBottom: '5px'
+            }
+        },
+        language: {
+            viewType: "list",
+            heading: {
+                ...sharedStyles["7"].heading,
+            },
+            list: 'true',
+            wholeList: {
+                paddingLeft: '35px',
+                 marginLeft: '-10px'
+            }
+        },
+        certificate: {
+            viewType: "list",
+            box: {
+                border: 'none',
+                marginBottom: '1rem'
+            },
+            heading: {
+                ...sharedStyles["7"].heading,
+                textAlign: 'left',
+                marginBottom: '10px',
+                color: '#333',
+            },
+            innerBox: {
+                textAlign: 'left',
+                paddingLeft: '10px'
+            },
+            title:{
+                fontSize: "16px",
+                fontWeight: "700"
+            },
+            organiz:{
+                fontSize: "15px",
+                marginLeft: "2px",
+                color: 'var(--primary-color)'
+            },
+            date: {
+                marginLeft: "2px",
+                fontStyle: 'italic',
+            },
+            eachcertificate: {
+                marginBottom: '5px'
+            }
+        },
+        achieve:{
+            box:{
+                textAlign: "left",
+                paddingLeft: "15px",
+                marginBottom: "15px"
+            },
+            heading:{
+                ...sharedStyles["7"].heading,
+                marginBottom: "5px"
+            },
+            innerbox:{
+                paddingLeft: "10px"
+            },
+            list:{
+                paddingLeft: "15px"
+            },
+        }
+    },
+    
 }
+
+
 
 export default templateStyles;
 

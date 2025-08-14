@@ -9,7 +9,7 @@
 
 #resume-view {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 210mm;
+    width: 200mm;
     height: 297mm;
     /* margin: auto; */
     padding: 10mm;
@@ -451,4 +451,27 @@
     border-radius: 50%;
     position: absolute;
     left: -37px;
+}
+.area-leftColumn {
+  background-color: var(--left-bg-color);
+  color: var(--left-text-color);
+  padding: 20px;
+}
+
+/* Optional: ensure child elements inherit color */
+.area-leftColumn * {
+  color: inherit;
+}
+.area-rightColumn {
+  background-color: var(--right-bg-color);
+  color: var(--right-text-color);
+  padding: 20px;
+}
+.area-rightColumn .personalInfo{
+    border-bottom: none;
+}
+
+/* Optional: ensure child elements inherit color */
+.area-rightColumn * {
+  color: inherit;
 }
