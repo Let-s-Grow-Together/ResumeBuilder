@@ -1,5 +1,5 @@
-export const template1 = {
-    id: 1,
+export const template111 = {
+    id: 111,
     name: "Modern Grid",
     filteredColumn: "2",
     isAvatar: "false",
@@ -42,8 +42,8 @@ export const template1 = {
     },
 };
 
-const template2 = {
-    id: 2,
+const template112 = {
+    id: 112,
     name: "Clean Classic",
     filteredColumn: "1",
     isAvatar: "false",
@@ -111,8 +111,8 @@ const template2 = {
     },
 };
 
-const template3 = {
-    id: 3,
+const template113 = {
+    id: 113,
     name: "Simple Tactical",
     filteredColumn: "2",
     isAvatar: "false",
@@ -166,8 +166,8 @@ const template3 = {
     }
 }
 
-const template4 = {
-    id: 4,
+const template114 = {
+    id: 114,
     name: "Avatar template",
     pdf: "/templates/template4.pdf",
     filteredColumn: "2",
@@ -207,8 +207,8 @@ const template4 = {
     }
 }
 
-const template5 = {
-    id: 5,
+const template115 = {
+    id: 115,
     name: "Spacious Two Column",
     pdf: "/templates/template5.pdf",
     filteredColumn: "2",
@@ -265,8 +265,8 @@ const template5 = {
     }
 }
 
-const template6 = {
-    id: 6,
+const template116 = {
+    id: 116,
     name: "Simple Tactical",
     pdf: "/templates/template6.pdf",
     filteredColumn: "2",
@@ -306,8 +306,8 @@ const template6 = {
     }
 }
 
-const template7 = {
-    id: 7,
+const template117 = {
+    id: 117,
     name: 'Premium Template',
     pdf: "/templates/template7.pdf",
     filteredColumn: "2",
@@ -362,8 +362,8 @@ const template7 = {
         }
     }
 };
-const template8 = {
-    id: 8,
+const template118 = {
+    id: 118,
     name: "Professional One Column",
     pdf: "/templates/template8.pdf",
     filteredColumn: "1",
@@ -403,8 +403,8 @@ const template8 = {
     }
 };
 
-const template9 = {
-    id: 9,
+const template119 = {
+    id: 119,
     name: "Modern Sidebar Resume",
     pdf: "/templates/template9.pdf",
     filteredColumn: "1",
@@ -445,7 +445,7 @@ const template9 = {
     }
 };
 
-const template10 = {
+const template1110 = {
     id: 10,
     name: "Premium Two Columns",
     pdf: "/templates/template10.pdf",
@@ -486,7 +486,7 @@ const template10 = {
         }
     }
 };
-const template11 = {
+const template1111 = {
     id: 11,
     name: 'Executive Professional',
     pdf: "/templates/template11.pdf",
@@ -496,8 +496,8 @@ const template11 = {
         grid: {
             templateRows: "auto 12fr",
             templateColumns: "115mm 65mm",
-            columnGap:"2rem",
-            
+            columnGap: "2rem",
+
             areas: [
                 {
                     name: "header",
@@ -530,7 +530,7 @@ const template11 = {
                     rowEnd: 3,
                     colStart: 2,
                     colEnd: 3,
-                    style: { backgroundColor: "#142c45ff", borderRadius:"10px", color:"white", padding:"10px" },
+                    style: { backgroundColor: "#142c45ff", borderRadius: "10px", color: "white", padding: "10px" },
                     sections: ["skills", "organizations", "awards"]
                 }
             ]
@@ -545,5 +545,108 @@ const template11 = {
         }
     }
 };
+const template1112 = {
+    id: 12,
+    name: 'Moderan',
+    layout: {
+        grid: {
+            templateRows: "1fr 12fr",
+            templateColumns: "1fr 1fr",
+            areas: [
+               
+                // },
 
-export const templates = [template1, template3, template7, template9, template10, template11];
+                {
+                    name: 'leftColumn',
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 1,
+                    colEnd: 2,
+                    headingColor: "#fff",
+                    style: { backgroundColor: "#142c45ff", borderRadius: "10px", color: "white", padding: "10px" },
+                    sections: ["avatar", "contact", "education", "skills", "language"]
+                },
+                {
+                    name: 'rightColumn',
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 2,
+                    colEnd: 3,
+                    style: { borderBottom: "2px solid  #0A3965" },
+                    sections: ["personalInfo", "summary", "workExperience", "organizations", "awards"]
+                }
+            ]
+        },
+        padding: "0mm",
+        fontFamily: "'Montserrat', sans-serif",
+        fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
+        fontSize: "14px",
+        colorScheme: {
+            background: "#ffffff",
+            text: "#333333"
+        }
+    }
+}
+const template1113 = {
+    id: 13,
+    name: 'Moderan',
+    layout: {
+        grid: {
+            templateRows: "1fr 12fr",
+            templateColumns: "40% 5% 60%",
+            areas: [
+                {
+                    name: "header",
+                    rowStart: 1,
+                    rowEnd: 2,
+                    colStart: 1,
+                    colEnd: 2,
+                    sections: ["avatar"]
+                },
+                {
+                    name: "contact",
+                    rowStart: 1,
+                    rowEnd: 2,
+                    colStart: 3,
+                    colEnd: 4,
+                    sections: ["contact"]
+                },
+
+                {
+                    name: "leftColumn",
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 1,
+                    colEnd: 2,
+                    sections: ["summary", "skills", "education", "language"]
+                },
+                {
+                    name: "rightColumn",
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 2,
+                    colEnd: 4,
+                    sections: ["workExperience", "projects", "organizations", "awards"]
+                },
+
+            ]
+        },
+        padding: "0mm",
+        fontFamily: "'Montserrat', sans-serif",
+        fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
+        fontSize: "14px",
+        colorScheme: {
+            background: "#ffffff",
+            text: "#333333"
+        }
+    }
+}
+
+
+
+
+
+
+
+
+export const templates = [template111, template113, template117, template119, template1110, template1111, template1112, template1113];
