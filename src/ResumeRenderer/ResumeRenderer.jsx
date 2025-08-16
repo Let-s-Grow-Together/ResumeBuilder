@@ -36,7 +36,7 @@ const sectionComponents = {
 };
 
 export default function ResumeRenderer({ template }) {
-    const { data, style, setSelectedSection, customLayoutAreas } = useResume();
+    const { data, style, editMode, selectedSection, setSelectedSection, customLayoutAreas } = useResume();
 
     useEffect(() => {
         const handleClickOutside = (e) => {
@@ -97,6 +97,7 @@ export default function ResumeRenderer({ template }) {
     return (
         <div
             id="resume-view"
+            className={editMode && selectedSection ? "editing" : ""}
             style={{
                 fontFamily,
                 fontSize,
@@ -116,9 +117,9 @@ export default function ResumeRenderer({ template }) {
                     key={area.name}
                     className={`resumeSection area-${area.name}`}
                     style={{
-            gridArea: area.name,
-            ...(area.style || {}) 
-        }}
+                        gridArea: area.name,
+                        ...(area.style || {})
+                    }}
                 >
                     {area.sections.map((sectionName) => renderSection(sectionName))}
                 </div>

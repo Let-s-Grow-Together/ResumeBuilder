@@ -3,7 +3,7 @@ import { useResume } from "../../context/ResumeContext";
 import InlineToolbar from "../../Components/shared/InlineToolbar";
 
 export default function Summary() {
-    const { data, style, updateField, editMode, viewTypes } = useResume();
+    const { data, style, updateField, editMode, viewTypes, setSelectedSection, selectedSection } = useResume();
     const summaryRef = useRef();
     const viewType = viewTypes?.summary || "block";
 
@@ -13,12 +13,13 @@ export default function Summary() {
         updated[index] = { ...updated[index], text: newText };
         updateField("summary", null, updated);
     };
-
+    const isSelected = selectedSection === "summary";
     return (
         <div
-            className="summary resumeSection"
+            className={`summary resumeSection ${isSelected ? "selected" : ""}`}
             ref={summaryRef}
             style={{ ...style?.summary?.box, position: "relative" }}
+            onClick={() => setSelectedSection("summary")}
         >
             <h2 style={style?.summary?.heading}>Summary</h2>
 

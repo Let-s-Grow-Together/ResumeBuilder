@@ -540,7 +540,7 @@ import { useRef } from "react";
 import { FaPen } from "react-icons/fa";
 
 export default function Avatar() {
-    const { data, updateField, editMode, style } = useResume();
+    const { data, updateField, editMode, style, selectedSection,setSelectedSection } = useResume();
     const fileInputRef = useRef(null);
 
     if (style?.avatar?.showAvatar === false) {
@@ -567,9 +567,12 @@ export default function Avatar() {
     };
 
     const initials = `${data.firstName?.[0] || ""}${data.lastName?.[0] || ""}`.toUpperCase();
-
+    const isSelected = selectedSection === "avatar";
     return (
-        <div className="avatar" style={style?.avatar?.box}>
+        <div style={style?.avatar?.box}
+            onClick={() => setSelectedSection("avatar")}
+            className={`avatar resumeSection ${isSelected ? "selected" : ""}`}
+        >
             <div className="profile-card" style={style?.avatar?.card}>
 
                 {/* 🖼️ Image OR 🔤 Initials */}

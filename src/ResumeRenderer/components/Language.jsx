@@ -14,10 +14,10 @@ export default function Languages() {
     };
 
     const viewType = viewTypes?.language || "list";
-
+    const isSelected = selectedSection === "language";
     return (
         <div
-            className="languages resumeSection"
+            className={`languages resumeSection ${isSelected ? "selected" : ""}`}
             style={{ ...style?.language?.box, position: "relative" }}
             onClick={() => setSelectedSection("language")}
             ref={languagesRef}

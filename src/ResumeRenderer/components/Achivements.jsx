@@ -37,10 +37,10 @@ export default function Achievements() {
     };
 
     const viewType = viewTypes?.achievements || "list";
-
+    const isSelected = selectedSection === "achievements";
     return (
         <div
-            className="achievements resumeSection"
+            className={`achievements resumeSection ${isSelected ? "selected" : ""}`}
             style={{ ...style?.achieve?.box,position:"relative"}}
             onClick={() => setSelectedSection("achievements")}
             ref={achievementRef}
