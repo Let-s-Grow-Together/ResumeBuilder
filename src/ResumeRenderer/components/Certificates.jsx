@@ -30,7 +30,7 @@ export default function Certificates() {
     const isSelected = selectedSection === "certifications";
     return (
         <div
-            className={`certificates resumeSection ${isSelected ? "selected" : ""}`}
+            className={`certificates resumeSection ${editMode && isSelected ? "selected" : ""}`}
             style={{ ...style?.certificate?.box, position: "relative" }}
             onClick={() => setSelectedSection("certifications")}
             ref={certificateRef}

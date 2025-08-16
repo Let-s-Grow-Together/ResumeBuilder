@@ -40,7 +40,7 @@ export default function Achievements() {
     const isSelected = selectedSection === "achievements";
     return (
         <div
-            className={`achievements resumeSection ${isSelected ? "selected" : ""}`}
+            className={`achievements resumeSection ${editMode && isSelected ? "selected" : ""}`}
             style={{ ...style?.achieve?.box,position:"relative"}}
             onClick={() => setSelectedSection("achievements")}
             ref={achievementRef}
