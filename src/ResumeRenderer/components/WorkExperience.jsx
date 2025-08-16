@@ -35,10 +35,10 @@ export default function WorkExperience() {
         };
         updateField("experience", null, updated);
     };
-
+    const isSelected = selectedSection === "experience";
     return (
         <div
-            className="workExperience resumeSection"
+            className={`workExperience resumeSection ${isSelected ? "selected" : ""}`}
             onClick={() => setSelectedSection("experience")}
             style={{ ...style?.workExpe?.box, position: "relative" }}
             ref={workExpRef}

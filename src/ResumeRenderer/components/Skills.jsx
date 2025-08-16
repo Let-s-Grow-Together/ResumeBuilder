@@ -14,10 +14,10 @@ export default function Skills() {
     };
 
     const viewType = viewTypes?.skills || "block";
-
+    const isSelected = selectedSection === "skills";
     return (
         <div
-            className="skills resumeSection"
+            className={`skills resumeSection ${isSelected ? "selected" : ""}`}
             style={{ ...style?.skills?.box, position: "relative" }}
             onClick={() => setSelectedSection("skills")}
             ref={skillsRef}

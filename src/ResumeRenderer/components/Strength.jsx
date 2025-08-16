@@ -37,10 +37,10 @@ export default function Strengths() {
     };
 
     const viewType = viewTypes?.strengths || "list";
-
+    const isSelected = selectedSection === "strengths";
     return (
         <div
-            className="strengths resumeSection"
+            className={`strengths resumeSection ${isSelected ? "selected" : ""}`}
             style={{ ...style?.strength?.box, position: "relative" }}
             onClick={() => setSelectedSection("strengths")}
             ref={strengthRef}

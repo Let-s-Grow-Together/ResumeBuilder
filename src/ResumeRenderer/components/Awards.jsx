@@ -37,10 +37,10 @@ export default function Awards() {
     };
 
     const viewType = viewTypes?.awards || "list";
-
+    const isSelected = selectedSection === "awards";
     return (
         <div
-            className="awards resumeSection"
+            className={`awards resumeSection ${isSelected ? "selected" : ""}`}
             style={{ ...style?.award?.box, position: "relative" }}
             onClick={() => setSelectedSection("awards")}
             ref={awardsRef}
