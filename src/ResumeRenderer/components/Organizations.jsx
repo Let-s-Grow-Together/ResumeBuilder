@@ -41,7 +41,7 @@ export default function Organizations() {
     const isSelected = selectedSection === "organizations";
     return (
         <div
-            className={`organizations resumeSection ${isSelected ? "selected" : ""}`}
+            className={`organizations resumeSection ${editMode && isSelected ? "selected" : ""}`}
             style={{ ...style?.organiz?.box, position: "relative" }}
             onClick={() => setSelectedSection("organizations")}
             ref={orgRef}

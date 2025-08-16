@@ -40,7 +40,7 @@ export default function Awards() {
     const isSelected = selectedSection === "awards";
     return (
         <div
-            className={`awards resumeSection ${isSelected ? "selected" : ""}`}
+            className={`awards resumeSection ${editMode && isSelected ? "selected" : ""}`}
             style={{ ...style?.award?.box, position: "relative" }}
             onClick={() => setSelectedSection("awards")}
             ref={awardsRef}

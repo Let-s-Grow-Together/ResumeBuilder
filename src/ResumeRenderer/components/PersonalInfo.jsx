@@ -37,7 +37,7 @@ export default function PersonalInfo() {
     const isSelected = selectedSection === "personalInfo";
     return (
         <div
-            className={`personalInfo resumeSection ${isSelected ? "selected" : ""}`}
+            className={`personalInfo resumeSection ${editMode && isSelected ? "selected" : ""}`}
             ref={personalRef}
             style={style?.personalInfo?.box}
             onClick={() => setSelectedSection("personalInfo")}

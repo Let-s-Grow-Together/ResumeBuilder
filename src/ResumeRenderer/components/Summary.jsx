@@ -16,7 +16,7 @@ export default function Summary() {
     const isSelected = selectedSection === "summary";
     return (
         <div
-            className={`summary resumeSection ${isSelected ? "selected" : ""}`}
+            className={`summary resumeSection ${editMode && isSelected ? "selected" : ""}`}
             ref={summaryRef}
             style={{ ...style?.summary?.box, position: "relative" }}
             onClick={() => setSelectedSection("summary")}

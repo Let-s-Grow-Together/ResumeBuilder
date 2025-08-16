@@ -17,7 +17,7 @@ export default function Skills() {
     const isSelected = selectedSection === "skills";
     return (
         <div
-            className={`skills resumeSection ${isSelected ? "selected" : ""}`}
+            className={`skills resumeSection ${editMode && isSelected ? "selected" : ""}`}
             style={{ ...style?.skills?.box, position: "relative" }}
             onClick={() => setSelectedSection("skills")}
             ref={skillsRef}

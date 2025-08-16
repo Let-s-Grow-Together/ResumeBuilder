@@ -17,7 +17,7 @@ export default function Languages() {
     const isSelected = selectedSection === "language";
     return (
         <div
-            className={`languages resumeSection ${isSelected ? "selected" : ""}`}
+            className={`languages resumeSection ${editMode && isSelected ? "selected" : ""}`}
             style={{ ...style?.language?.box, position: "relative" }}
             onClick={() => setSelectedSection("language")}
             ref={languagesRef}

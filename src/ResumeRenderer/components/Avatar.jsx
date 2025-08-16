@@ -571,7 +571,7 @@ export default function Avatar() {
     return (
         <div style={style?.avatar?.box}
             onClick={() => setSelectedSection("avatar")}
-            className={`avatar resumeSection ${isSelected ? "selected" : ""}`}
+            className={`avatar resumeSection ${editMode && isSelected ? "selected" : ""}`}
         >
             <div className="profile-card" style={style?.avatar?.card}>
 
