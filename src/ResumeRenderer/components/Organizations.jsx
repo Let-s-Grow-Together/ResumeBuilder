@@ -38,10 +38,10 @@ export default function Organizations() {
     };
 
     const viewType = viewTypes?.organizations || "list";
-
+    const isSelected = selectedSection === "organizations";
     return (
         <div
-            className="organizations resumeSection"
+            className={`organizations resumeSection ${editMode && isSelected ? "selected" : ""}`}
             style={{ ...style?.organiz?.box, position: "relative" }}
             onClick={() => setSelectedSection("organizations")}
             ref={orgRef}

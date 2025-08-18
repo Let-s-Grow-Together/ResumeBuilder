@@ -27,10 +27,10 @@ export default function Certificates() {
     };
 
     const viewType = viewTypes?.certifications || "list";
-
+    const isSelected = selectedSection === "certifications";
     return (
         <div
-            className="certificates resumeSection"
+            className={`certificates resumeSection ${editMode && isSelected ? "selected" : ""}`}
             style={{ ...style?.certificate?.box, position: "relative" }}
             onClick={() => setSelectedSection("certifications")}
             ref={certificateRef}
