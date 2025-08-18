@@ -27,10 +27,10 @@ export default function Projects() {
     };
 
     const viewType = viewTypes?.projects || "list";
-
+    const isSelected = selectedSection === "projects";
     return (
         <div
-            className="projects resumeSection"
+            className={`projects resumeSection ${editMode && isSelected ? "selected" : ""}`}
             style={{ ...style?.projects?.box, position: "relative" }}
             onClick={() => setSelectedSection("projects")}
             ref={projectRef}

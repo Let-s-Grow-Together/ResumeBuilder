@@ -48,10 +48,10 @@ export default function Education() {
         };
         updateField("education", null, updated);
     };
-
+    const isSelected = selectedSection === "education";
     return (
         <div
-            className="education resumeSection"
+            className={`education resumeSection ${editMode && isSelected ? "selected" : ""}`}
             onClick={() => setSelectedSection("education")}
             style={{ ...style?.education?.box, position: "relative" }}
             ref={educationRef}

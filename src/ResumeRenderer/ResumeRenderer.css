@@ -292,68 +292,68 @@
     text-align: var(--left-align);
 }
 
-.eachAward>h3{
+.eachAward>h3 {
     outline: var(--none);
 }
 
-.eachAward>ul{
+.eachAward>ul {
     padding-left: var(--basic-font-size);
 }
 
-.eachAward>ul>li{
+.eachAward>ul>li {
     outline: var(--none);
 }
 
-.eachAward>div>p{
+.eachAward>div>p {
     outline: var(--none);
     padding-left: var(--basic-pixel-margin);
 }
 
-.certificates{
+.certificates {
     text-align: var(--left-align);
     margin-bottom: var(--basic-font-size);
 }
 
-.eachCertificate>h3{
+.eachCertificate>h3 {
     outline: var(--none);
 }
 
-.eachCertificate>h4{
+.eachCertificate>h4 {
     outline: var(--none);
 }
 
-.eachCertificate>h5{
+.eachCertificate>h5 {
     outline: var(--none);
     font-size: 15px;
 }
 
-.eachCertificate>ul{
+.eachCertificate>ul {
     padding-left: var(--basic-font-size);
 }
 
-.eachCertificate>ul>li{
+.eachCertificate>ul>li {
     outline: var(--none);
 }
 
-.eachCertificate>div>p{
+.eachCertificate>div>p {
     padding-left: var(--basic-pixel-margin);
     outline: var(--none);
 }
 
-.languages{
+.languages {
     text-align: var(--left-align);
     margin-bottom: var(--basic-font-size);
 }
 
-.languages>h2{
+.languages>h2 {
     margin-bottom: var(--basic-pixel-margin);
 }
 
-.languages>ul{
+.languages>ul {
     padding-left: var(--basic-font-size);
 }
 
-.languages>ul>li{
+.languages>ul>li {
     outline: var(--none);
 }
 
@@ -370,24 +370,24 @@
     margin-right: 20px;
 }
 
-.achievements{
+.achievements {
     text-align: var(--left-align);
     margin-bottom: var(--basic-font-size);
 }
 
-.eachAchievement>h3{
+.eachAchievement>h3 {
     outline: var(--none);
 }
 
-.eachAchievement>ul{
+.eachAchievement>ul {
     padding-left: var(--basic-font-size);
 }
 
-.eachAchievement>ul>li{
+.eachAchievement>ul>li {
     outline: var(--none);
 }
 
-.eachAchievement>div>p{
+.eachAchievement>div>p {
     outline: var(--none);
     padding-left: var(--basic-pixel-margin);
 }
@@ -451,4 +451,37 @@
     border-radius: 50%;
     position: absolute;
     left: -37px;
+}
+
+#resume-view {
+    position: relative;
+}
+
+#resume-view.editing::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #ffffffb3;
+    backdrop-filter: blur(0.01px);
+    -webkit-backdrop-filter: blur(0.01px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+#resume-view.editing .resumeSection {
+    position: relative;
+}
+
+.resumeSection.selected {
+    z-index: 2;
+    background: inherit;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 12px;
+    outline: 2px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    padding: 1rem;
+    top: -1rem;
 }

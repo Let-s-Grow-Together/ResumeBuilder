@@ -18,7 +18,21 @@ export default function WorkExperience() {
 
     const handleFieldBlur = (index, key, e) => {
         const updated = [...data.experience];
-        updated[index] = { ...updated[index], [key]: e.target.innerText.trim() };
+
+        if (key === "location") {
+            const text = e.target.innerText.trim();
+
+            // Split the location into city and date range parts (assuming the format is similar to Education)
+            const [cityPart = "", dateRange = ""] = text.split("|").map(str => str.trim());
+            const [startDate = "", endDate = ""] = dateRange.split("-").map(str => str.trim());
+
+            updated[index].location = cityPart;
+            updated[index].startDate = startDate;
+            updated[index].endDate = endDate;
+        } else {
+            updated[index][key] = e.target.innerText.trim();
+        }
+
         updateField("experience", null, updated);
     };
 
@@ -35,10 +49,10 @@ export default function WorkExperience() {
         };
         updateField("experience", null, updated);
     };
-
+    const isSelected = selectedSection === "experience";
     return (
         <div
-            className="workExperience resumeSection"
+            className={`workExperience resumeSection ${editMode && isSelected ? "selected" : ""}`}
             onClick={() => setSelectedSection("experience")}
             style={{ ...style?.workExpe?.box, position: "relative" }}
             ref={workExpRef}

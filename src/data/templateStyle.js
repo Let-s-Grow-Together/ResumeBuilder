@@ -2682,6 +2682,167 @@ const templateStyles = {
             }
         },
 
+    },
+
+    "25": {
+        personalInfo: {
+            box: {
+                border: "15px solid #2e3c47ff",
+                // borderBottom:"none",
+                borderRadius:"10px",
+                color: "#2e3c47ff",
+                padding: "10px",
+                marginBottom: "15px"
+            },
+            avatar: {
+                card: {
+                    background: "none"
+                },
+                imageDiv: {
+                    marginLeft: "-15px",
+                    marginTop: "-35px"
+                }
+            },
+            summaryBox: {
+                marginTop: "-35px",
+                borderTop:"2px solid #2e3c47ff",
+                borderBottom:"2px solid #2e3c47ff",
+                padding:"5px",
+                paddingBottom:"5px"
+            },
+            position: {
+                fontWeight: "100"
+            },
+            anotherBox: {
+                marginLeft: "-140px",
+                marginTop: "10px"
+            }
+        },
+        summary: {
+            box: {
+                borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "35px"
+            },
+            heading: {
+                // marginLeft:"45%",
+                color: "#2e3c47ff",
+                // borderBottom:"2px solid #2e3c47ff",
+                width:"fit-content",
+                marginBottom:"10px"
+            },
+        },
+        workExpe: {
+            box: {
+                borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "35px"
+            },
+            heading: {
+                // marginLeft:"40%",
+                color: "#2e3c47ff",
+                // borderBottom:"2px solid #2e3c47ff",
+                width:"fit-content",
+                // marginBottom:"15px"
+            },
+            eachWorkPlace: {
+                padding: "10px"
+            }
+        },
+        contact:{
+            box:{
+                marginLeft:"20px",
+                borderBottom: "2px solid #2e3c47ff",
+            },
+            heading:{
+                // borderBottom:"2px solid #2e3c47ff",
+                width:"fit-content",
+                marginBottom:"10px"
+            }
+        },
+        education: {
+            box: {
+                borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "35px",
+                padding: "15px",
+                width:"fit-content",
+                paddingLeft:"20px"
+            },
+            heading: {
+                // paddingLeft:"45%",
+                // color: "#2e3c47ff",
+                // borderBottom:"2px solid #2e3c47ff",
+                width:"fit-content",
+                // marginBottom:"15px"
+            },
+            eachEducation: {
+                padding: "10px",
+            }
+        },
+        skills: {
+            box: {
+                borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "35px",
+                marginLeft:"20px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                // borderBottom:"2px solid #2e3c47ff",
+                width: "fit-content",
+                marginBottom:"15px"
+            },
+            listItem: {
+                marginLeft: "90px"
+            }
+        },
+        organiz: {
+            box: {
+                borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "35px"
+            },
+            heading: {
+                // marginLeft:"40%",
+                color: "#2e3c47ff",
+                // borderBottom:"2px solid #2e3c47ff",
+                width: "fit-content",
+                // marginBottom:"15px"
+            },
+            innerbox: {
+                padding: "10px"
+            }
+        },
+        award: {
+            box: {
+                borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "35px"
+            },
+            heading: {
+                // marginLeft:"35%",
+                color: "#2e3c47ff",
+                // borderBottom:"2px solid #2e3c47ff",
+                width: "fit-content",
+                // marginBottom:"15px"
+            },
+            innerbox: {
+                padding: "10px"
+            }
+        },
+        language: {
+            box: {
+                borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "35px"
+            },
+            heading: {
+                // marginLeft:"43%",
+                color: "#2e3c47ff",
+                // borderBottom:"2px solid #2e3c47ff",
+                width: "fit-content",
+                // marginBottom:"15px"
+            },
+            listItem: {
+                margin: "5px"
+            }
+        },
+
     }
 
 }

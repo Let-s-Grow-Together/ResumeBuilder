@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export default function Contact() {
-    const { editMode, data, style } = useResume();
+    const { editMode, data, style, selectedSection, setSelectedSection } = useResume();
 
     const [contacts, setContacts] = useState(() => {
         const local = localStorage.getItem("customContactData");
@@ -60,9 +60,12 @@ export default function Contact() {
         setContacts(updated);
         setIconMap({ ...iconMap, [newIndex]: "email" });
     };
-
+    const isSelected = selectedSection === "contact";
     return (
-        <div className="contact" style={style?.contact?.box}>
+        <div style={style?.contact?.box}
+            onClick={() => setSelectedSection("contact")}
+            className={`contact resumeSection ${editMode && isSelected ? "selected" : ""}`}
+        >
             <h2 style={style?.contact?.heading}>Contact</h2>
             <ul className="contactList" style={style?.contact?.list}>
                 {contacts.map((contact, index) => (

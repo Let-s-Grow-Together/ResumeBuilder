@@ -1573,7 +1573,58 @@ const template24 = {
   }
 };
 
+const template25 = {
+  id: 25,
+  name: "Simple Single Column5",
+  pdf: "/templates/template24.pdf",
+  filteredColumn: "1",
+  isAvatar: "true",
+  layout: {
+    grid: {
+      templateRows: "40mm 1fr",
+      templateColumns: "1.2fr 0.8fr",
+      areas: [
+        {
+          name: "header",
+          rowStart:1,
+          rowEnd: 2,
+          colStart: 1,
+          colEnd: 3,
+          sections: ["personalInfo"]
+        },
+        {
+          name: "leftColumn",
+          rowStart: 2,
+          rowEnd: 3,
+          colStart: 1,
+          colEnd: 2,
+          style:{marginTop:"60px", paddingLeft:"10px"},
+          sections: ["summary","workExperience", "organizations", "awards", "language"]
+        },
+        {
+          name: "rightColumn",
+          rowStart: 2,
+          rowEnd: 3,
+          colStart: 2,
+          colEnd: 3,
+          style:{marginTop:"60px", borderLeft:"2px solid #2e3c47ff", backgroundColor:"#2e3c47ff", color:"white", paddingTop:"10px", borderRadius:"10px"},
+          sections: ["contact", "education","skills",]
+        },
+      ]
+    },
+    padding: "10mm",
+    fontFamily: "'Montserrat', sans-serif",
+    fontLink:
+      "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
+    fontSize: "14px",
+    colorScheme: {
+      background: "#ffffff",
+      text: "#333333"
+    }
+  }
+};
+
 
 export const templates = [template1, template7, template9, template10, template11, template12, template13, 
     template15, template16,  
-    template117, template1110, template1111, template1112, template1113, template21, template22, template23, template24];
+    template117, template1110, template1111, template1112, template1113, template21, template22, template23, template24, template25];
