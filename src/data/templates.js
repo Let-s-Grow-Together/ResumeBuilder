@@ -1,3 +1,7 @@
+import bgImage from "../../public/assets/bg.jpg";
+
+
+
 const template1 = {
     id: 1,
     name: "Modern Grid",
@@ -309,7 +313,6 @@ const template6 = {
 const template7 = {
     id: 7,
     name: 'Premium Template',
-    pdf: "/templates/template7.pdf",
     filteredColumn: "2",
     isAvatar: "true",
     layout: {
@@ -407,7 +410,6 @@ const template8 = {
 const template9 = {
     id: 9,
     name: "Modern Sidebar Resume",
-    pdf: "/templates/template9.pdf",
     filteredColumn: "1",
     isAvatar: "true",
     layout: {
@@ -422,7 +424,8 @@ const template9 = {
                     rowEnd: 2,
                     colStart: 1,
                     colEnd: 2,
-                    sections: ["contact", "achievements", "skills", "certifications", "education"]
+                                       sections: ["avatar", "contact", "skills", "certifications", "education"]
+
                 },
                 {
                     name: 'rightColumn',
@@ -430,7 +433,7 @@ const template9 = {
                     rowEnd: 2,
                     colStart: 2,
                     colEnd: 3,
-                    sections: ["personalInfo", "summary", "workExperience"]
+                    sections: ["summary", "workExperience"]
                 }
             ]
         },
@@ -441,7 +444,6 @@ const template9 = {
         colorScheme: {
             background: "#ffffff",
             text: "#1c1c1c",
-            primary: "#00a66f",
         }
     }
 };
@@ -449,14 +451,13 @@ const template9 = {
 const template10 = {
     id: 10,
     name: "Premium Two Columns",
-    pdf: "/templates/template10.pdf",
     filteredColumn: "2",
     isAvatar: "true",
     layout: {
         grid: {
             templateRows: "auto",
-            templateColumns: "55mm 130mm",
-            columnGap: "1.5rem",
+            templateColumns: "65mm 80mm",
+            columnGap: "4rem",
             areas: [
                 {
                     name: 'leftColumn',
@@ -464,7 +465,8 @@ const template10 = {
                     rowEnd: 2,
                     colStart: 1,
                     colEnd: 2,
-                    sections: ["avatar", "contact", "skills", "language"]
+                    style: { backgroundColor: 'rgb(206 210 213 / 38%)', color: '#004b8d', padding: '1rem' },
+                    sections: ["avatar", "contact", "skills", "language", "certificates"]
                 },
                 {
                     name: 'rightColumn',
@@ -472,7 +474,8 @@ const template10 = {
                     rowEnd: 2,
                     colStart: 2,
                     colEnd: 3,
-                    sections: ["personalInfo", "education", "workExperience", "certificates",]
+                    style: { backgroundColor: '#ffff', color: '#004b8d' },
+                    sections: ["education", "workExperience", "projects"]
                 }
             ]
         },
@@ -498,8 +501,8 @@ const template11 = {
         grid: {
             templateRows: "auto 12fr",
             templateColumns: "115mm 65mm",
-            columnGap:"2rem",
-            
+            columnGap: "2rem",
+
             areas: [
                 {
                     name: "header",
@@ -532,7 +535,7 @@ const template11 = {
                     rowEnd: 3,
                     colStart: 2,
                     colEnd: 3,
-                    style: { backgroundColor: "#142c45ff", borderRadius:"10px", color:"white", padding:"10px" },
+                    style: { backgroundColor: "#142c45ff", borderRadius: "10px", color: "white", padding: "10px" },
                     sections: ["skills", "organizations", "awards"]
                 }
             ]
@@ -551,7 +554,6 @@ const template11 = {
 const template12 = {
     id: 12,
     name: 'Example12',
-    pdf: "/templates/template12.pdf",
     filteredColumn: "1",
     isAvatar: "true",
     layout: {
@@ -575,7 +577,7 @@ const template12 = {
                     colStart: 1,
                     colEnd: 2,
                     style: { backgroundColor: "#e6f4f1", padding: "5px", borderRadius: "8px" },
-                    sections: ["avatar", "contact", "skills", "language"]
+                    sections: ["contact", "skills", "language"]
                 },
                 {
                     name: "rightColumn",
@@ -583,7 +585,7 @@ const template12 = {
                     rowEnd: 3,
                     colStart: 2,
                     colEnd: 3,
-                    sections: ["summary", "workExperience", "education", "projects", "awards", "organizations"]
+                    sections: ["summary", "workExperience", "education", "projects"]
                 }
             ]
         },
@@ -601,7 +603,6 @@ const template12 = {
 const template13 = {
     id: 13,
     name: 'Example13',
-    pdf: "/templates/template13.pdf",
     filteredColumn: "1",
     isAvatar: "true",
     layout: {
@@ -617,7 +618,7 @@ const template13 = {
                     colStart: 1,
                     colEnd: 2,
                     style: { backgroundColor: "#1b263b", color: "white", padding: "20px", borderRadius: "8px" },
-                    sections: ["personalInfo", "contact", "skills", "language"]
+                    sections: ["avatar", "contact", "skills", "language"]
                 },
                 {
                     name: "rightColumn",
@@ -625,7 +626,7 @@ const template13 = {
                     rowEnd: 2,
                     colStart: 2,
                     colEnd: 3,
-                    sections: ["summary", "workExperience", "education", "projects", "awards", "organizations"]
+                    sections: ["summary", "workExperience", "education", "projects", "organizations"]
                 }
             ]
         },
@@ -693,7 +694,6 @@ const template14 = {
 const template15 = {
     id: 15,
     name: 'Example15',
-    pdf: "/templates/template15.pdf",
     filteredColumn: "2",
     isAvatar: "true",
     layout: {
@@ -709,7 +709,7 @@ const template15 = {
                     colStart: 1,
                     colEnd: 3,
                     style: { backgroundColor: "#00796b", color: "white", padding: "12px", borderRadius: "6px" },
-                    sections: ["avatar", "personalInfo", "contact"]
+                    sections: ["avatar", "contact"]
                 },
                 {
                     name: "leftColumn",
@@ -741,38 +741,38 @@ const template15 = {
 };
 
 const template16 = {
-  id: 16,
-  name: 'SidebarLeft',
-  pdf: "/templates/template16.pdf",
-  filteredColumn: "2",
-  isAvatar: "true",
-  layout: {
-    grid: {
-      templateRows: "auto",
-      templateColumns: "125mm 60mm",
-      columnGap: "1.5rem",
-      areas: [
-        {
-          name: "sidebar",
-          rowStart: 1, rowEnd: 2,
-          colStart: 2, colEnd: 3,
-          style: { backgroundColor: "#2e7d32", color: "white", padding: "10px" },
-          sections: ["personalInfo", "contact", "skills", "language"]
+    id: 16,
+    name: 'SidebarLeft',
+    pdf: "/templates/template16.pdf",
+    filteredColumn: "2",
+    isAvatar: "true",
+    layout: {
+        grid: {
+            templateRows: "auto",
+            templateColumns: "125mm 60mm",
+            columnGap: "1.5rem",
+            areas: [
+                {
+                    name: "sidebar",
+                    rowStart: 1, rowEnd: 2,
+                    colStart: 2, colEnd: 3,
+                    style: { backgroundColor: "#2e7d32", color: "white", padding: "10px" },
+                    sections: ["personalInfo", "contact", "skills", "language"]
+                },
+                {
+                    name: "main",
+                    rowStart: 1, rowEnd: 2,
+                    colStart: 1, colEnd: 2,
+                    sections: ["summary", "workExperience", "projects", "education", "awards", "organizations"]
+                }
+            ]
         },
-        {
-          name: "main",
-          rowStart: 1, rowEnd: 2,
-          colStart: 1, colEnd: 2,
-          sections: [ "summary", "workExperience", "projects", "education", "awards", "organizations"]
-        }
-      ]
-    },
-    padding: "8mm",
-    fontFamily: "'Roboto', sans-serif",
-    fontLink: "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap",
-    fontSize: "13px",
-    colorScheme: { background: "#ffffff", text: "#333333" }
-  }
+        padding: "8mm",
+        fontFamily: "'Roboto', sans-serif",
+        fontLink: "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap",
+        fontSize: "13px",
+        colorScheme: { background: "#ffffff", text: "#333333" }
+    }
 };
 
 const template111 = {
@@ -1226,7 +1226,6 @@ const template119 = {
 const template1110 = {
     id: 1110,
     name: "Premium Two Columns",
-    pdf: "/templates/template10.pdf",
     filteredColumn: "2",
     isAvatar: "true",
     layout: {
@@ -1241,7 +1240,7 @@ const template1110 = {
                     rowEnd: 2,
                     colStart: 1,
                     colEnd: 2,
-                    sections: ["avatar", "contact", "skills", "language"]
+                    sections: ["contact", "skills", "language"]
                 },
                 {
                     name: 'rightColumn',
@@ -1268,7 +1267,6 @@ const template1110 = {
 const template1111 = {
     id: 1111,
     name: 'Executive Professional',
-    pdf: "/templates/template11.pdf",
     filteredColumn: "2",
     isAvatar: "true",
     layout: {
@@ -1284,7 +1282,7 @@ const template1111 = {
                     rowEnd: 2,
                     colStart: 1,
                     colEnd: 2,
-                    sections: ["avatar", "personalInfo"]
+                    sections: ["avatar"]
                 },
                 {
                     name: "contact",
@@ -1333,7 +1331,7 @@ const template1112 = {
             templateRows: "1fr 12fr",
             templateColumns: "1fr 1fr",
             areas: [
-               
+
                 // },
 
                 {
@@ -1342,9 +1340,8 @@ const template1112 = {
                     rowEnd: 3,
                     colStart: 1,
                     colEnd: 2,
-                    headingColor: "#fff",
-                    style: { backgroundColor: "#142c45ff", borderRadius: "10px", color: "white", padding: "10px" },
-                    sections: [ "contact", "education", "skills", "language"]
+                  style: { backgroundColor: "#142c45ff", borderRadius: "10px", color: "white", padding: "10px", marginTop: "-100px" },
+                    sections: ["avatar", "contact", "education", "skills", "language"]
                 },
                 {
                     name: 'rightColumn',
@@ -1352,8 +1349,7 @@ const template1112 = {
                     rowEnd: 3,
                     colStart: 2,
                     colEnd: 3,
-                    style: { borderBottom: "2px solid  #0A3965" },
-                    sections: ["personalInfo", "summary", "workExperience", "organizations", "awards"]
+                    sections: ["summary", "workExperience", "organizations", "awards"]
                 }
             ]
         },
@@ -1374,7 +1370,7 @@ const template1113 = {
     layout: {
         grid: {
             templateRows: "1fr 12fr",
-            templateColumns: "40% 5% 60%",
+            templateColumns: "40% 5% 50%",
             areas: [
                 {
                     name: "header",
@@ -1421,8 +1417,7 @@ const template1113 = {
             text: "#333333"
         }
     }
-};
-
+}
 const template21 = {
   id: 21,
   name: "Simple Single Column1",
@@ -1521,6 +1516,114 @@ const template23 = {
     }
   }
 };
+
+
+const template1114 = {
+    id: 1114,
+    name: "new1114",
+    layout: {
+        grid: {
+            templateRows: "1fr 12fr",
+            templateColumns: "50% 5% 40%",
+            areas: [
+                {
+                    name: "header",
+                    rowStart: 1,
+                    rowEnd: 2,
+                    colStart: 1,
+                    colEnd: 2,
+                    sections: ["contact"]
+                },
+
+                {
+                    name: "leftColumn",
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 1,
+                    colEnd: 2,
+                    // style:{ backgroundPosition: "center", backgroundRepeat: "no-repeat",   backgroundSize: "cover",    backgroundImage:  "url('/assets/bg.jpg')"},
+                    sections: ["summary", "workExperience", "projects", "awards"]
+                },
+                {
+                    name: "rightColumn",
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 2,
+                    colEnd: 4,
+                    style: { backgroundColor: '#492359', marginTop: '-8rem', padding: '2rem', color: '#fff', },
+                    sections: ["personalInfo", "skills", "education", "language", "organizations",]
+                },
+
+            ]
+        },
+        padding: "0mm",
+        fontFamily: "'Montserrat', sans-serif",
+        fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
+        fontSize: "14px",
+        colorScheme: {
+            background: "#ffffff",
+            text: "#333333"
+        }
+    }
+
+}
+
+const template1115 = {
+    id: 1115,
+    name: "Two Columns",
+    filteredColumn: "2",
+    isAvatar: "true",
+    layout: {
+        grid: {
+            templateRows: "auto",
+            templateColumns: "70mm 80mm",
+            columnGap: "4rem",
+            areas: [
+                {
+                    name: 'leftColumn',
+                    rowStart: 1,
+                    rowEnd: 2,
+                    colStart: 1,
+                    colEnd: 2,
+                    // style:{ backgroundPosition: "center", backgroundRepeat: "no-repeat",   backgroundSize: "cover",    backgroundImage:  "url('/assets/bg.jpg')"},
+                    style: {
+                        background: "linear-gradient(rgba(0,128,0,0.55), rgba(0,128,0,0.55)), url('/assets/bg.jpg')",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
+                        backgroundSize: "cover",
+                        color: "#f5f5f5",
+                        padding: '1rem',
+                    },
+
+                    sections: ["avatar", "contact", "skills", "language", "certificates"]
+                },
+                {
+                    name: 'rightColumn',
+                    rowStart: 1,
+                    rowEnd: 2,
+                    colStart: 2,
+                    colEnd: 3,
+                    style: { backgroundColor: '#ffff', color: ' rgb(92 126 92)' },
+                    sections: ["education", "workExperience", "projects"]
+                }
+            ]
+        },
+        padding: "25px",
+        fontFamily: "'Poppins', sans-serif",
+        fontLink: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap",
+        fontSize: "14px",
+        colorScheme: {
+            background: "#ffffff",
+            text: "#003366",
+            primary: "#00a66f",
+        }
+    }
+};
+
+
+
+
+
 
 const template24 = {
   id: 24,
@@ -1624,7 +1727,4 @@ const template25 = {
   }
 };
 
-
-export const templates = [template1, template7, template9, template10, template11, template12, template13, 
-    template15, template16,  
-    template117, template1110, template1111, template1112, template1113, template21, template22, template23, template24, template25];
+export const templates = [template1, template3, template7, template9, template10, template11, template12, template13, template14, template15, template16, template111, template113, template114, template115, template116, template117, template119, template1110, template1111, template1112, template1113,template1114,template1115,template21, template22, template23, template24, template25 ];
