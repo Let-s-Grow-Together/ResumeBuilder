@@ -1401,12 +1401,25 @@ const templateStyles = {
             "--left-heading-color": "#142c45",
             "--right-heading-color": "#ffff"
         },
+        designIcon:{
+            box:{
+                background:"#142c45",
+                height:"30px",
+                width:"30px",
+                borderRadius:"50%",
+                border:"3.5px solid white",
+                position:"absolute",
+                top:"16.2%",
+                left:"60.5%"
+            }
+        },
         avatar: {
             showAvatar: true,
             showImage: true,
             card: {
-              top: '31px',
-                left: '22px'
+              top: '20px',
+                left: '22px',
+                
 
                 // background: "none",
                 // display:"none"
@@ -1416,7 +1429,7 @@ const templateStyles = {
                 marginTop: '-6rem'
             },
             heading: {
-                color: "#142c45ff",
+                color: "white",
                 // marginLeft: "173px",
                 marginTop: "-71px",
                 fontSize: "26px",
@@ -1425,7 +1438,7 @@ const templateStyles = {
 
             },
             position: {
-                color: "#142c45ff",
+                color: "white",
                 marginTop: "0px",
                 fontSize: "large"
             },
@@ -1485,7 +1498,7 @@ const templateStyles = {
                 padding: "10px",
                 background: "#142c45ff",
                 color: "white",
-                borderRadius: "8px",
+                borderRadius: "0px",
             },
              heading: {
                 // borderBottom: "1px solid #142c45ff",
@@ -2622,7 +2635,7 @@ const templateStyles = {
     organiz: {
         heading: { borderBottom: "2px solid #00796b", marginBottom: "8px" }
     }
-,
+},
 "16": {
   avatar: {
     card: { display: "none" },
@@ -2647,7 +2660,6 @@ const templateStyles = {
   education: { heading: { borderBottom: "2px solid #2e7d32", marginBottom: "8px" } },
   award: { heading: { borderBottom: "2px solid #2e7d32", marginBottom: "8px" } },
   organiz: { heading: { borderBottom: "2px solid #2e7d32", marginBottom: "8px" } },
-}
 },
  "21": {
         personalInfo: {
@@ -3379,7 +3391,7 @@ const templateStyles = {
             }
         },
 
-    }
+    },
 
 }
 

@@ -13,6 +13,7 @@ import Language from "./components/Language";
 import Awards from "./components/Awards";
 import Organizations from "./components/Organizations";
 import Certificates from "./components/Certificates";
+import designIcons from "./components/DesignComponent";
 import "./ResumeRenderer.css";
 import { useResume } from "../context/ResumeContext";
 import templateStyles from "../data/templateStyle";
@@ -31,7 +32,8 @@ const sectionComponents = {
     avatar: Avatar,
     language: Language,
     awards: Awards,
-    certificates: Certificates
+    certificates: Certificates,
+    designIcons:designIcons
 };
 
 export default function ResumeRenderer({ template }) {
