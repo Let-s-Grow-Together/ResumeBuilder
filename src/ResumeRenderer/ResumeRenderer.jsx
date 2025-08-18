@@ -13,7 +13,6 @@ import Language from "./components/Language";
 import Awards from "./components/Awards";
 import Organizations from "./components/Organizations";
 import Certificates from "./components/Certificates";
-
 import "./ResumeRenderer.css";
 import { useResume } from "../context/ResumeContext";
 import templateStyles from "../data/templateStyle";
