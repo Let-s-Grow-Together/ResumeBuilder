@@ -16,7 +16,7 @@ import Certificates from "./components/Certificates";
 import "./ResumeRenderer.css";
 import { useResume } from "../context/ResumeContext";
 import templateStyles from "../data/templateStyle";
-
+import themes from "../data/theme";
 const sectionComponents = {
     personalInfo: PersonalInfo,
     education: Education,
@@ -35,7 +35,7 @@ const sectionComponents = {
 };
 
 export default function ResumeRenderer({ template }) {
-    const { data, style, editMode, selectedSection, setSelectedSection, customLayoutAreas } = useResume();
+    const { data, style, editMode, selectedSection, setSelectedSection, customLayoutAreas, theme } = useResume();
 
     useEffect(() => {
         const handleClickOutside = (e) => {
@@ -54,7 +54,7 @@ export default function ResumeRenderer({ template }) {
 
     const templateId = String(template.id);
     const templateStyle = templateStyles[templateId] || {};
-    const cssVariables = templateStyle.vars || {};
+    const cssVariablesBase = templateStyle.vars || {};
 
     const renderSection = (sectionName) => {
         const SectionComponent = sectionComponents[sectionName];
@@ -88,6 +88,23 @@ export default function ResumeRenderer({ template }) {
             }
         }
     });
+   
+    const cssVariables = {
+  ...cssVariablesBase,
+  ...(themes[theme] || {}),
+  ...(templateStyles[template.id]?.vars || {})
+};
+useEffect(() => {
+  const themeVars = themes[theme] || {};
+  const templateVars = templateStyles[template.id]?.vars || {};
+  const combinedVars = { ...themeVars, ...templateVars };
+
+  Object.entries(combinedVars).forEach(([key, value]) => {
+    document.documentElement.style.setProperty(key, value);
+  });
+}, [theme, template.id]);
+
+
 
     const gridTemplateAreas = gridMatrix
         .map((row) => `"${row.join(" ")}"`)

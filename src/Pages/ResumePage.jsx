@@ -17,6 +17,7 @@ import TemplateSidebar from "./TemplateSidebar";
 import SidebarNav from "./SidebarNav";
 import './Resumepage.css';
 import { toPng } from "html-to-image";
+import ThemeSwitcher from "../Components/ThemeSwitcher";
 
 export default function ResumePage({ onLoginClick }) {
     const [user, setUser] = useState(null);
@@ -181,6 +182,7 @@ export default function ResumePage({ onLoginClick }) {
                                     onTemplateSelect={handleTemplateSwitch}
                                     resumeData={resumeData}
                                 />
+                                <ThemeSwitcher/>
                             </div>
                         )}
 

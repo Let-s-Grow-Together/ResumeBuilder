@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
-
+import themes from "../data/theme";
 export const ResumeContext = createContext();
 export const useResume = () => useContext(ResumeContext);
 
@@ -8,6 +8,28 @@ export function ResumeProvider({ children, initialData, style, editModeFromURL, 
         const saved = localStorage.getItem("resumeData");
         return saved ? JSON.parse(saved) : initialData;
     });
+   const [theme, setThemeState] = useState(() => {
+    return localStorage.getItem("resume-theme") || "light";
+  });
+
+  // Apply theme variables whenever theme changes
+  useEffect(() => {
+    const themeVars = themes[theme];
+    if (themeVars) {
+      Object.entries(themeVars).forEach(([key, value]) => {
+        document.documentElement.style.setProperty(key, value);
+      });
+    }
+
+    // Save theme to localStorage
+    localStorage.setItem("resume-theme", theme);
+  }, [theme]);
+
+  // Wrapper for updating theme
+  const setTheme = (newTheme) => {
+    setThemeState(newTheme);
+  };
+
 
     const [editMode, setEditMode] = useState(editModeFromURL || false);
     const [selectedSection, setSelectedSection] = useState(null);
@@ -356,7 +378,8 @@ export function ResumeProvider({ children, initialData, style, editModeFromURL, 
                 addEntryAfter,
                 removeEntry,
                 addFullEntryAfter,
-                removeFullEntry
+                removeFullEntry,
+                theme, setTheme
             }}
         >
             {children}

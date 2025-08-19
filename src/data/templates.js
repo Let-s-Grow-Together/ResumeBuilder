@@ -1307,7 +1307,7 @@ const template1111 = {
                     rowEnd: 3,
                     colStart: 2,
                     colEnd: 3,
-                    style: { backgroundColor: "#142c45ff", borderRadius: "10px", color: "white", padding: "10px" },
+                    style: { backgroundColor: "#142c4528", borderRadius: "10px", color: "white", padding: "10px" },
                     sections: ["skills", "organizations", "awards"]
                 }
             ]
@@ -1541,7 +1541,6 @@ const template1114 = {
                     rowEnd: 3,
                     colStart: 1,
                     colEnd: 2,
-                    // style:{ backgroundPosition: "center", backgroundRepeat: "no-repeat",   backgroundSize: "cover",    backgroundImage:  "url('/assets/bg.jpg')"},
                     sections: ["summary", "workExperience", "projects", "awards"]
                 },
                 {
@@ -1550,7 +1549,13 @@ const template1114 = {
                     rowEnd: 3,
                     colStart: 2,
                     colEnd: 4,
-                    style: { backgroundColor: '#492359', marginTop: '-8rem', padding: '2rem', color: '#fff', },
+                    // style: { backgroundColor: '#492359', marginTop: '-8rem', padding: '2rem', color: '#fff', },
+                      style: { 
+            backgroundColor: "var(--right-bg-color)", 
+            color: "var(--right-text-color)", 
+            marginTop: "-8rem", 
+            padding: "2rem" 
+          },
                     sections: ["personalInfo", "skills", "education", "language", "organizations",]
                 },
 
@@ -1561,12 +1566,14 @@ const template1114 = {
         fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
         fontSize: "14px",
         colorScheme: {
-            background: "#ffffff",
-            text: "#333333"
+            background: "var(--resume-bg-color)",
+      text: "var(--resume-text-color)"
         }
     }
 
-}
+};
+
+
 
 const template1115 = {
     id: 1115,
@@ -1619,11 +1626,6 @@ const template1115 = {
         }
     }
 };
-
-
-
-
-
 
 const template24 = {
   id: 24,

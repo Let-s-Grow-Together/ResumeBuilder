@@ -448,7 +448,7 @@
 
 
 
-.area-leftColumn h2 {
+/* .area-leftColumn h2 {
     border-bottom: 2px solid var(--left-heading-color);
     color: var(--left-heading-color);
     margin-bottom: var(--left-heading-spacing); 
@@ -459,7 +459,7 @@
     margin-bottom: var(--right-heading-spacing ); 
 
 
-}
+} */
 .timeline-item .dot {
     width: 12px;
     height: 12px;
@@ -500,3 +500,15 @@
     padding: 1rem;
     top: -1rem;
 }
+
+
+.area-leftColumn {
+  background: var(--left-bg-color);
+  color: var(--left-text-color);
+}
+.area-rightColumn {
+  background: var(--right-bg-color);
+  color: var(--right-text-color);
+}
+
+

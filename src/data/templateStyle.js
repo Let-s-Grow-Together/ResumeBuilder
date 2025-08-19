@@ -2175,119 +2175,149 @@ const templateStyles = {
 
     },
 
-    "1114": {
-         vars: {
-            "--left-heading-color": "#492359",
-            "--right-heading-color": "#ffff",
-             "--right-heading-spacing": "1rem",
-            "--left-heading-spacing": "1rem"
-        },
+//     "1114": {
+//          vars: {
+//             "--left-heading-color": "#492359",
+//             "--right-heading-color": "#ffff",
+//              "--right-heading-spacing": "1rem",
+//             "--left-heading-spacing": "1rem"
+//         },
         
-        contact:{
-             box: {
-        display: "flex",
-        flexWrap: "wrap",
-        gap: "10px",       // space between items
-        alignItems: "center",
-        marginTop:'5rem',
-        position:'relative'
-    },
-    list: {
-        display: "flex",
-        flexWrap: "wrap",
-        gap: "2px",
-        padding: "0",
-        margin: "0",
-        listStyle: "none",
-        position:'absolute',
-        marginTop:'2rem'
-    },
-    listItem: {
-        display: "flex",
-        alignItems: "center",
-        gap: "6px"
-    },
-            heading:{
-                display:'none'
-            }
-        },
-        summary:{
-            box:{
-                marginTop:'5rem'
-            }
-        },
-      personalInfo: {
-    // box: {
-    //     display: "flex",
-    //     flexDirection:'row-reverse',
-    //     justifyContent: "space-between",
-    //     alignItems: "center",
-    //     gap: "20px"
-    // },
-    // avatar:{
-    //     card:{
-    //         marginTop:'2rem',
-    //         marginLeft:'1rem'
-    //     }
-    // },
-    card:{
-        marginTop:"-2rem",
-        marginLeft:'-1rem'
-    },
-    summaryBox: {
-        display: "none",
-        borderBottom:'none'
-    },
-    list: {
-        display: "none"
-    },
-      mixBox: {
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        width: "100%"
-    },
-    anotherBox: {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-start",
-        flex: 1,
-        marginLeft:'-44rem',
-        marginTop:'-11rem',
+//         contact:{
+//              box: {
+//         display: "flex",
+//         flexWrap: "wrap",
+//         gap: "10px",       // space between items
+//         alignItems: "center",
+//         marginTop:'5rem',
+//         position:'relative'
+//     },
+//     list: {
+//         display: "flex",
+//         flexWrap: "wrap",
+//         gap: "2px",
+//         padding: "0",
+//         margin: "0",
+//         listStyle: "none",
+//         position:'absolute',
+//         marginTop:'2rem'
+//     },
+//     listItem: {
+//         display: "flex",
+//         alignItems: "center",
+//         gap: "6px"
+//     },
+//             heading:{
+//                 display:'none'
+//             }
+//         },
+//         summary:{
+//             box:{
+//                 marginTop:'5rem'
+//             }
+//         },
+//       personalInfo: {
+//     // box: {
+//     //     display: "flex",
+//     //     flexDirection:'row-reverse',
+//     //     justifyContent: "space-between",
+//     //     alignItems: "center",
+//     //     gap: "20px"
+//     // },
+//     // avatar:{
+//     //     card:{
+//     //         marginTop:'2rem',
+//     //         marginLeft:'1rem'
+//     //     }
+//     // },
+//     card:{
+//         marginTop:"-2rem",
+//         marginLeft:'-1rem'
+//     },
+//     summaryBox: {
+//         display: "none",
+//         borderBottom:'none'
+//     },
+//     list: {
+//         display: "none"
+//     },
+//       mixBox: {
+//         display: "flex",
+//         justifyContent: "space-between",
+//         alignItems: "center",
+//         width: "100%"
+//     },
+//     anotherBox: {
+//         display: "flex",
+//         flexDirection: "column",
+//         alignItems: "flex-start",
+//         flex: 1,
+//         marginLeft:'-44rem',
+//         marginTop:'-11rem',
 
 
-    },
-    name: {
-        display: "flex",
-        flexDirection: "row",
-        gap: "10px",
-        alignItems: "center"
-    },
-    firstName: {
-        fontSize: "24px",
-        fontWeight: "bold",
-        color:'#492359'
-    },
-    lastName: {
-        fontSize: "24px",
-        fontWeight: "bold",
-        color:'#492359'
-    },
-    position: {
-        fontSize: "16px",
-        color: "#555"
-    },
+//     },
+//     name: {
+//         display: "flex",
+//         flexDirection: "row",
+//         gap: "10px",
+//         alignItems: "center"
+//     },
+//     firstName: {
+//         fontSize: "24px",
+//         fontWeight: "bold",
+//         color:'#492359'
+//     },
+//     lastName: {
+//         fontSize: "24px",
+//         fontWeight: "bold",
+//         color:'#492359'
+//     },
+//     position: {
+//         fontSize: "16px",
+//         color: "#555"
+//     },
     
-    },
-    skills:{
-        box:{
-            marginTop:'-1.3rem'
-        },
-          eachSkillBox:{
-            border:'1px solid #ffff'
-          }
-    }
+//     },
+//     skills:{
+//         box:{
+//             marginTop:'-1.3rem'
+//         },
+//           eachSkillBox:{
+//             border:'1px solid #ffff'
+//           }
+//     }
 
+// },
+
+"1114": {
+  vars: {
+    "--resume-bg-color": "#ffffff",        // full resume background
+    "--resume-text-color": "#333333",      // global text color
+
+    "--left-bg-color": "#ffffff",          // left column bg
+    "--left-text-color": "#333333",        // left column text
+    "--left-heading-color": "#492359",     // left column headings
+    "--left-heading-spacing": "1rem",
+
+    "--right-bg-color": "#492359",         // right column bg
+    "--right-text-color": "#ffffff",       // right column text
+    "--right-heading-color": "#ffffff",    // right column headings
+    "--right-heading-spacing": "1rem",
+  },
+
+  // Example overrides for sections
+  personalInfo: {
+    firstName: { color: "var(--left-heading-color)" },
+    lastName: { color: "var(--left-heading-color)" }
+  },
+
+  skills: {
+    eachSkillBox: {
+      border: "1px solid var(--right-text-color)",
+      color: "var(--right-text-color)"     // ✅ ensures skills text matches right column
+    }
+  }
 },
 
  "1115":{
