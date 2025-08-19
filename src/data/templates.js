@@ -1,4 +1,5 @@
 import bgImage from "../../public/assets/bg.jpg";
+import designIcons from "../ResumeRenderer/components/DesignComponent";
 
 const template1 = {
     id: 1,
@@ -904,7 +905,8 @@ const template113 = {
                     rowEnd: 2,
                     colStart: 1,
                     colEnd: 3,
-                    sections: ["personalInfo"]
+                    // style:{position:"relative"},
+                    sections: ["personalInfo", "designIcons1"]
                 },
                 {
                     name: "contacts",
@@ -1281,7 +1283,7 @@ const template1111 = {
                     colStart: 1,
                     colEnd: 2,
                     style:{backgroundColor:"#142c45", color:"white", width:"104%"},
-                    sections: ["avatar", "designIcons"]
+                    sections: ["avatar", "designIcons1"]
                 },
                 {
                     name: "contact",
@@ -1299,7 +1301,7 @@ const template1111 = {
                     rowEnd: 3,
                     colStart: 1,
                     colEnd: 2,
-                    sections: ["summary", "workExperience", "education",]
+                    sections: ["summary", "workExperience", "education", "designIcons2"]
                 },
                 {
                     name: 'rightColumn',

@@ -33,7 +33,9 @@ const sectionComponents = {
     language: Language,
     awards: Awards,
     certificates: Certificates,
-    designIcons:designIcons
+    designIcons1:designIcons,
+    designIcons2:designIcons,
+    designIcons3:designIcons
 };
 
 export default function ResumeRenderer({ template }) {
