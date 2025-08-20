@@ -7,11 +7,10 @@
     --none: none;
 }
 
-#resume-view {
+/* #resume-view {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 210mm;
     height: 297mm;
-    /* margin: auto; */
     padding: 10mm;
     box-sizing: border-box;
     display: grid;
@@ -19,7 +18,30 @@
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background: white;
+} */
+.resume-pages {
+  display: flex;
+  flex-direction: column;   /* reverse hata do */
+  align-items: center;
 }
+
+/* A4 page */
+.page {
+  width: 210mm;
+  min-height: 297mm;   /* min-height hi rakho */
+  padding: 10mm;
+  margin-bottom: 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+  page-break-after: always;
+  overflow: visible;  /* 👈 hidden mat karo */
+}
+
+.resumeSection {
+  break-inside: avoid;  /* ek section 2 page me na katega */
+}
+
 
 .personalInfo {
     border-bottom: var(--basic-black-border);
@@ -448,7 +470,7 @@
 
 
 
-/* .area-leftColumn h2 {
+.area-leftColumn h2 {
     border-bottom: 2px solid var(--left-heading-color);
     color: var(--left-heading-color);
     margin-bottom: var(--left-heading-spacing); 
@@ -459,7 +481,7 @@
     margin-bottom: var(--right-heading-spacing ); 
 
 
-} */
+}
 .timeline-item .dot {
     width: 12px;
     height: 12px;
@@ -502,13 +524,13 @@
 }
 
 
-.area-leftColumn {
+/* .area-leftColumn {
   background: var(--left-bg-color);
   color: var(--left-text-color);
 }
 .area-rightColumn {
   background: var(--right-bg-color);
   color: var(--right-text-color);
-}
+} */
 
 
