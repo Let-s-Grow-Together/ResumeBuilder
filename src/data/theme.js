@@ -27,6 +27,7 @@
 
 
 const themes = {
+    default: {}, 
   light: {
     "--resume-bg-color": "#ffffff",       // full page bg
     "--resume-text-color": "#333333",     // base text
@@ -52,7 +53,7 @@ const themes = {
     "--resume-text-color": "#333333",
     "--left-bg-color": "#ffffff",
     "--left-text-color": "#333333",
-    "--right-bg-color": "#492359",   // ✅ purple right column
+    "--right-bg-color": "#690096ff",   // ✅ purple right column
     "--right-text-color": "#ffffff",
     "--left-heading-color": "#492359",
     "--right-heading-color": "#ffffff",

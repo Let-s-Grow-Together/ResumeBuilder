@@ -7,6 +7,7 @@ export default function ThemeSwitcher() {
     <div style={{ margin: "10px 0" }}>
       <label>Theme: </label>
       <select value={theme} onChange={(e) => setTheme(e.target.value)}>
+        <option value="default">default</option>
         <option value="light">Light</option>
         <option value="dark">Dark</option>
         <option value="purple">Purple</option>

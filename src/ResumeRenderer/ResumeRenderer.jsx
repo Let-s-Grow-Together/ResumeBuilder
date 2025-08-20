@@ -94,15 +94,34 @@ export default function ResumeRenderer({ template }) {
   ...(themes[theme] || {}),
   ...(templateStyles[template.id]?.vars || {})
 };
-useEffect(() => {
-  const themeVars = themes[theme] || {};
-  const templateVars = templateStyles[template.id]?.vars || {};
-  const combinedVars = { ...themeVars, ...templateVars };
+// useEffect(() => {
+//   const themeVars = themes[theme] || {};
+//   const templateVars = templateStyles[template.id]?.vars || {};
+//   const combinedVars = { ...themeVars, ...templateVars };
 
-  Object.entries(combinedVars).forEach(([key, value]) => {
-    document.documentElement.style.setProperty(key, value);
-  });
-}, [theme, template.id]);
+//   Object.entries(combinedVars).forEach(([key, value]) => {
+//     document.documentElement.style.setProperty(key, value);
+//   });
+// }, [theme, template.id]);
+useEffect(() => {
+  if (theme === "default") {
+    // remove all custom theme variables so template's original styles apply
+    Object.keys(themes.light).forEach((key) => {
+      document.documentElement.style.removeProperty(key);
+    });
+  } else {
+    const themeVars = themes[theme];
+    if (themeVars) {
+      Object.entries(themeVars).forEach(([key, value]) => {
+        document.documentElement.style.setProperty(key, value);
+      });
+    }
+  }
+
+  // save theme in localStorage
+  localStorage.setItem("resume-theme", theme);
+}, [theme]);
+
 
 
 

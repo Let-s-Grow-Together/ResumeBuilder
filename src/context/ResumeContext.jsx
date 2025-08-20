@@ -9,7 +9,7 @@ export function ResumeProvider({ children, initialData, style, editModeFromURL, 
         return saved ? JSON.parse(saved) : initialData;
     });
    const [theme, setThemeState] = useState(() => {
-    return localStorage.getItem("resume-theme") || "light";
+    return localStorage.getItem("resume-theme") || "default";
   });
 
   // Apply theme variables whenever theme changes
