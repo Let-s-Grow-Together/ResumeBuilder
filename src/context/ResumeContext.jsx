@@ -24,7 +24,7 @@ export function ResumeProvider({ children, initialData, style, editModeFromURL, 
         const defaultViewTypes = {};
 
         const sectionMap = {
-            workExpe: "workExperience",
+            workExpe: "experience",
             education: "education",
             projects: "projects",
             skills: "skills",

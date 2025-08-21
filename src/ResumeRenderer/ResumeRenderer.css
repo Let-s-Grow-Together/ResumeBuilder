@@ -60,8 +60,8 @@
 .contact {
     text-align: var(--left-align);
     margin-bottom: var(--basic-font-size);
+    position: relative;
 }
-
 
 .contactList {
     list-style: var(--none);
@@ -394,7 +394,7 @@
 }
 
 .profile-card {
-    width: 300px;
+    /* width: 300px; */
     text-align: center;
     /* background: linear-gradient(135deg, #5b7bb0 50%, white 50%); */
     padding: 2rem 1rem 1.5rem;
@@ -405,7 +405,7 @@
 
 .profile-image {
     width: 120px;
-    height: 120px;
+    aspect-ratio: 1;
     border: 6px solid white;
     border-radius: 50%;
     overflow: hidden;
@@ -445,21 +445,20 @@
     margin-bottom: 30px;
 }
 
-
-
-
 .area-leftColumn h2 {
     border-bottom: 2px solid var(--left-heading-color);
     color: var(--left-heading-color);
-    margin-bottom: var(--left-heading-spacing); 
+    margin-bottom: var(--left-heading-spacing);
 }
+
 .area-rightColumn h2 {
     border-bottom: 2px solid var(--right-heading-color);
     color: var(--right-heading-color);
-    margin-bottom: var(--right-heading-spacing ); 
+    margin-bottom: var(--right-heading-spacing);
 
 
 }
+
 .timeline-item .dot {
     width: 12px;
     height: 12px;
@@ -468,6 +467,7 @@
     position: absolute;
     left: -37px;
 }
+
 #resume-view {
     position: relative;
 }
@@ -499,4 +499,47 @@
     position: relative;
     padding: 1rem;
     top: -1rem;
+}
+
+.polygon::before,
+.polygon::after {
+    content: "";
+    position: absolute;
+    width: 10%;
+    height: 25%;
+    background: #32A548;
+    clip-path: polygon(53% 0, 54% 44%, 100% 67%, 100% 100%, 0 100%, 0 39%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.polygon::before {
+    top: -40px;
+    left: 293px;
+}
+
+.polygon::after {
+    top: 200px;
+    left: 293px;
+    transform: rotateX(180deg);
+    transform-origin: center;
+}
+
+.dotted-heading {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dotted-heading h2 {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.dotted-heading::after {
+    content: "";
+    flex-grow: 1;
+    border-bottom: 3px dotted black;
+    height: 0.3em;
+    transform: translateY(0.2em);
 }
