@@ -54,7 +54,7 @@ export default function ResumeRenderer({ template }) {
         };
     }, []);
 
-    const { grid, fontFamily, fontSize, colorScheme } = template.layout;
+    const { grid, fontFamily, fontSize, colorScheme, border, padding } = template.layout;
 
     const templateId = String(template.id);
     const templateStyle = templateStyles[templateId] || {};
@@ -111,6 +111,8 @@ export default function ResumeRenderer({ template }) {
                 rowGap: grid.rowGap,
                 columnGap: grid.columnGap,
                 display: "grid",
+                border:border,
+                padding:padding,
                 gridTemplateAreas,
                 ...cssVariables
             }}

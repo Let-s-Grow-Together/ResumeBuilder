@@ -340,44 +340,47 @@ const templateStyles = {
                 background: "rgba(112, 24, 166, 0.3)",
                 height: "90px",
                 width: "90px",
-                // borderRadius: "50%",
+                borderRadius: "15%",
                 // border: "3.5px solid white",
                 position: "absolute",
-                top: "6%",
-                left: "21.5%"
+                top: "9%",
+                left: "22%",
+                transform: "rotate(45deg)"
             }
         },
-        // designIcons2: {
-        //     box: {
-        //         background: "red",
-        //         height: "30px",
-        //         width: "30px",
-        //         // borderRadius: "50%",
-        //         // border: "3.5px solid white",
-        //         position: "absolute",
-        //         top: "1%",
-        //         left: "15%",
-        //         zIndex:"1"
-        //     }
-        // },
+        designIcons2: {
+            box: {
+                // background: "linear-gradient(150deg, pink 50%, transparent 50%)",
+                background: "pink",
+                height: "100px",
+                width: "100px",
+                borderRadius: "20%",
+                // border: "3.5px solid white",
+                position: "absolute",
+                top: "5%",
+                left: "17%",
+                zIndex: "1",
+                transform: "rotate(45deg)"
+            }
+        },
         designIcons3: {
             box: {
                 background: "rgba(16, 164, 172, 0.2)",
                 height: "90px",
                 width: "90px",
-                // borderRadius: "50%",
+                borderRadius: "15%",
                 // border: "3.5px solid white",
                 position: "absolute",
                 top: "10%",
                 left: "16%",
-                zIndex:"1",
-                rotate:""
+                zIndex: "1",
+                transform: "rotate(45deg)"
             }
         },
         personalInfo: {
             box: {
                 border: "1px solid white",
-                position:"relative"
+                position: "relative"
             },
             name: {
                 color: "var(--heading-color)",
@@ -389,10 +392,10 @@ const templateStyles = {
             summary: {
                 display: "none",
             },
-            avatar:{
-                imageDiv:{
-                zIndex:"10",
-            }
+            avatar: {
+                imageDiv: {
+                    zIndex: "10",
+                }
             }
         },
         contact: {
@@ -400,7 +403,7 @@ const templateStyles = {
             box: {
                 display: "flex",
                 flexWrap: "wrap",
-                position:"relative"
+                position: "relative"
             },
             heading: {
                 display: "none"
@@ -2696,29 +2699,271 @@ const templateStyles = {
         }
     },
     "16": {
+        designIcon1: {
+            box: {
+                backgroundColor: "#626262ff",
+                height: "5vh",
+                width: "2vh",
+                zIndex: "100",
+                position:"absolute",
+                left:"-50%"
+            }
+        },
         avatar: {
             card: { display: "none" },
-            imageDiv: { border: "2px solid white", borderRadius: "50%", width: "100px", height: "100px", margin: "0 auto 10px" }
+            imageDiv: {
+                border: "2px solid white",
+                borderRadius: "0%",
+                width: "100px",
+                height: "100px",
+                marginLeft: "-10px"
+            }
         },
+
         personalInfo: {
-            name: { fontSize: "26px", fontWeight: "700", color: "#2e7d32" },
-            position: { fontSize: "14px", fontStyle: "italic" }
+            box: {
+                background: "#626262ff",
+                border: "none",
+
+            },
+            avatar: {
+                imageDiv: {
+                    margin: "-57px 10px 0px 11px",
+                    borderRadius: "0px",
+                    height: "25vh",
+                    width: "11vw"
+                }
+            },
+            name: {
+                fontSize: "50px",
+                fontWeight: "500",
+                color: "#626262ff",
+                position: "absolute",
+                left: "-180%",
+                top: "5%",
+                width: "7.2vw",
+                display: "flex",
+                flexWrap: "wrap"
+            },
+            position: {
+                fontSize: "14px",
+                fontStyle: "italic",
+                display: "none"
+            },
+            summaryContent: { display: "none" }
         },
+
         contact: {
-            listItem: { color: "white", marginBottom: "4px" }
+            heading: { display: "none" },
+            box: {
+                background: "#626262ff",
+                padding: "0px 10px",
+                textAlign: "center",
+                borderLeft: "2px solid #626262ff"
+            },
+            listItem: {
+                color: "white",
+                marginBottom: "4px"
+            }
         },
+
         skills: {
-            eachSkillBox: { background: "#2e7d32", color: "white", borderRadius: "4px", padding: "3px 6px", margin: "2px", display: "inline-block" }
+            box: {
+                background: "white",
+                borderLeft: "2px solid #626262ff",
+                paddingLeft: "10px"
+            },
+            heading: {
+                color: "#626262ff",
+                fontWeight: "500",
+                fontSize: "23px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            eachSkillBox: {
+                background: "1px solid #626262ff",
+                color: "#626262ff",
+                borderRadius: "4px",
+                padding: "3px 6px",
+                margin: "2px",
+                display: "inline-block"
+            }
         },
+
         language: {
-            listItem: { color: "white" }
+            box: {
+                borderLeft: "2px solid #626262ff",
+                paddingLeft: "10px"
+            },
+            heading: {
+                color: "#626262ff",
+                fontWeight: "500",
+                fontSize: "23px",
+                paddingBottom: "10px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            listItem: {
+                color: "#304160ff",
+                padding: "2px"
+            }
         },
-        summary: { heading: { borderBottom: "2px solid #2e7d32", marginBottom: "8px" } },
-        workExpe: { heading: { borderBottom: "2px solid #2e7d32", marginBottom: "8px" } },
-        projects: { heading: { borderBottom: "2px solid #2e7d32", marginBottom: "8px" } },
-        education: { heading: { borderBottom: "2px solid #2e7d32", marginBottom: "8px" } },
-        award: { heading: { borderBottom: "2px solid #2e7d32", marginBottom: "8px" } },
-        organiz: { heading: { borderBottom: "2px solid #2e7d32", marginBottom: "8px" } },
+
+        summary: {
+            box: {
+                borderLeft: "2px solid #626262ff",
+                paddingLeft: "10px"
+            },
+            heading: {
+                marginBottom: "8px",
+                color: "#626262ff",
+                fontWeight: "500",
+                fontSize: "23px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            }
+        },
+
+        workExpe: {
+            box: {
+                borderLeft: "2px solid #626262ff",
+                paddingLeft: "10px"
+            },
+            heading: {
+                marginBottom: "8px",
+                color: "#626262ff",
+                fontWeight: "500",
+                fontSize: "23px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            eachWorkPlace: {
+                marginBottom: "15px"
+            },
+            role: {
+                color: "#112850ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            },
+            organization: {
+                color: "#304160ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            },
+            dates: {
+                color: "#626262ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            },
+            listItem: {
+                padding: "2px"
+            }
+        },
+
+        projects: {
+            box: {
+                borderLeft: "2px solid #626262ff",
+                paddingLeft: "10px"
+            },
+            heading: {
+                marginBottom: "8px",
+                color: "#626262ff",
+                fontWeight: "500",
+                fontSize: "23px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            eachProject: {
+                marginBottom: "15px"
+            },
+            title: {
+                color: "#112850ff",
+                fontWeight: "500",
+                paddingBottom: "5px"
+            },
+            listItem: {
+                padding: "2px"
+            }
+        },
+
+        education: {
+            box: {
+                borderLeft: "2px solid #626262ff",
+                paddingLeft: "10px"
+            },
+            heading: {
+                marginBottom: "8px",
+                color: "#626262ff",
+                fontWeight: "500",
+                fontSize: "23px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            eachEducation: {
+                marginBottom: "15px"
+            },
+            degree: {
+                color: "#112850ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            },
+            school: {
+                color: "#304160ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            },
+            dates: {
+                color: "#626262ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            },
+            listItem: {
+                padding: "2px"
+            }
+        },
+
+        award: {
+            box: {
+                borderLeft: "2px solid #626262ff",
+                paddingLeft: "10px"
+            },
+            heading: {
+                marginBottom: "8px",
+                color: "#626262ff",
+                fontWeight: "500",
+                fontSize: "23px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            innerbox: {
+                marginBottom: "15px"
+            },
+            title: {
+                color: "#112850ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            }
+        },
+
+        organiz: {
+            box: {
+                borderLeft: "2px solid #626262ff",
+                paddingLeft: "10px"
+            },
+            heading: {
+                marginBottom: "8px",
+                color: "#626262ff",
+                fontWeight: "500",
+                fontSize: "23px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            title: {
+                color: "#112850ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            }
+        },
     },
     "21": {
         personalInfo: {
@@ -3449,6 +3694,62 @@ const templateStyles = {
                 margin: "5px"
             }
         },
+
+    },
+
+    "26": {
+       contact:{
+        box:{
+            textAlign:"right"
+        }
+       },
+       summary:{
+        box:{
+            textAlign:"right"
+        }
+       },
+       skills:{
+        box:{
+            textAlign:"right"
+        }
+       },
+       language:{
+        box:{
+            textAlign:"right"
+        }
+       },
+       personalInfo:{
+        box:{
+            textAlign:"left"
+        },
+        avatar:{
+            imageDiv:{
+                display:"none"
+            }
+        },
+        name:{
+            display:"flex",
+            fontSize:"40px"
+        },
+        position:{
+            display:"flex"
+        }
+       },
+       education:{
+        box:{
+            textAlign:"left"
+        }
+       },
+       workExpe:{
+        box:{
+            textAlign:"left"
+        }
+       },
+       projects:{
+        box:{
+            textAlign:"left"
+        }
+       },
 
     },
 
