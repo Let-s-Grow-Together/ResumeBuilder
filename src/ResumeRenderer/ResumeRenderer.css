@@ -7,10 +7,10 @@
     --none: none;
 }
 
-/* #resume-view {
+ #resume-view {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 210mm;
-    height: 297mm;
+     width: 794px; 
+    /* min-height: 297mm; */
     padding: 10mm;
     box-sizing: border-box;
     display: grid;
@@ -18,29 +18,8 @@
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background: white;
-} */
-.resume-pages {
-  display: flex;
-  flex-direction: column;   /* reverse hata do */
-  align-items: center;
-}
+} 
 
-/* A4 page */
-.page {
-  width: 210mm;
-  min-height: 297mm;   /* min-height hi rakho */
-  padding: 10mm;
-  margin-bottom: 20px;
-  background: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-
-  page-break-after: always;
-  overflow: visible;  /* 👈 hidden mat karo */
-}
-
-.resumeSection {
-  break-inside: avoid;  /* ek section 2 page me na katega */
-}
 
 
 .personalInfo {
