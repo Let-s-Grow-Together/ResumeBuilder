@@ -197,7 +197,7 @@ export default function Education() {
             style={{ ...style?.education?.box, position: "relative" }}
             ref={educationRef}
         >
-            <h2 className="dotted-heading" style={style?.education?.heading}>
+            <h2 className={`${style?.education?.dottedheading?"dotted-heading":""}`} style={style?.education?.heading}>
                 Education
             </h2>
 

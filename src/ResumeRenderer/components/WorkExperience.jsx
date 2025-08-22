@@ -199,7 +199,7 @@ export default function WorkExperience() {
             style={{ ...style?.workExpe?.box, position: "relative" }}
             ref={workExpRef}
         >
-            <h2 className="dotted-heading" style={style?.workExpe?.heading}>
+            <h2 className={`${style?.workExpe?.dottedheading?"dotted-heading":""}`} style={style?.workExpe?.heading}>
                 Work Experience
             </h2>
             <LayoutComponent

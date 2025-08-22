@@ -4017,6 +4017,7 @@ const templateStyles = {
             }
         },
         workExpe:{
+            dottedheading: "true",
             layoutType: "layout2",
             viewType: "block",
             dates:{
@@ -4050,6 +4051,7 @@ const templateStyles = {
             }
         },
         education:{
+            dottedheading: "true",
             layoutType: "layout2",
             box:{
                 marginBottom: "2rem"
