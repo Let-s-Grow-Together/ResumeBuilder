@@ -1,6 +1,5 @@
 import bgImage from "../../public/assets/bg.jpg";
-
-
+import designIcons from "../ResumeRenderer/components/DesignComponent";
 
 const template1 = {
     id: 1,
@@ -749,28 +748,30 @@ const template16 = {
     layout: {
         grid: {
             templateRows: "auto",
-            templateColumns: "125mm 60mm",
+            templateColumns: "120mm 60mm",
             columnGap: "1.5rem",
             areas: [
                 {
-                    name: "sidebar",
+                    name: "leftColumn",
                     rowStart: 1, rowEnd: 2,
                     colStart: 2, colEnd: 3,
-                    style: { backgroundColor: "#2e7d32", color: "white", padding: "10px" },
+                    style: { color: "white", padding: "0px", },
                     sections: ["personalInfo", "contact", "skills", "language"]
                 },
                 {
-                    name: "main",
+                    name: "rightColumn",
                     rowStart: 1, rowEnd: 2,
                     colStart: 1, colEnd: 2,
-                    sections: ["summary", "workExperience", "projects", "education", "awards", "organizations"]
+                    style: { marginTop: "150px" },
+                    sections: ["designIcons1", "summary", "workExperience", "projects", "education", "awards", "organizations"]
                 }
             ]
         },
-        padding: "8mm",
-        fontFamily: "'Roboto', sans-serif",
+        padding: "0mm 15mm ",
+        fontFamily: "comic sans ms",
         fontLink: "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap",
         fontSize: "13px",
+        borderTop: "25px solid lightGray",
         colorScheme: { background: "#ffffff", text: "#333333" }
     }
 };
@@ -906,7 +907,8 @@ const template113 = {
                     rowEnd: 2,
                     colStart: 1,
                     colEnd: 3,
-                    sections: ["personalInfo"]
+                    // style:{position:"relative"},
+                    sections: ["personalInfo", "designIcons1"]
                 },
                 {
                     name: "contacts",
@@ -922,7 +924,7 @@ const template113 = {
                     rowEnd: 4,
                     colStart: 1,
                     colEnd: 2,
-                    sections: ["summary", "workExperience", "education"]
+                    sections: ["summary", "workExperience", "education", "designIcons2"]
                 },
                 {
                     name: "rightColumn",
@@ -1273,7 +1275,7 @@ const template1111 = {
         grid: {
             templateRows: "auto 12fr",
             templateColumns: "115mm 65mm",
-            columnGap: "2rem",
+            columnGap: "1.5rem",
 
             areas: [
                 {
@@ -1282,7 +1284,8 @@ const template1111 = {
                     rowEnd: 2,
                     colStart: 1,
                     colEnd: 2,
-                    sections: ["avatar"]
+                    style: { backgroundColor: "#142c45", color: "white", width: "104%", },
+                    sections: ["avatar", "designIcons1"]
                 },
                 {
                     name: "contact",
@@ -1290,6 +1293,7 @@ const template1111 = {
                     rowEnd: 2,
                     colStart: 2,
                     colEnd: 3,
+                    style: { marginBottom: "-15px" },
                     sections: ["contact"]
                 },
 
@@ -1299,7 +1303,7 @@ const template1111 = {
                     rowEnd: 3,
                     colStart: 1,
                     colEnd: 2,
-                    sections: ["summary", "workExperience", "education",]
+                    sections: ["summary", "workExperience", "education", "designIcons2"]
                 },
                 {
                     name: 'rightColumn',
@@ -1307,7 +1311,7 @@ const template1111 = {
                     rowEnd: 3,
                     colStart: 2,
                     colEnd: 3,
-                    style: { backgroundColor: "#142c45ff", borderRadius: "10px", color: "white", padding: "10px" },
+                    style: { backgroundColor: "#142c45ff", borderRadius: "1px", color: "white", padding: "10px", marginTop: "-10px" },
                     sections: ["skills", "organizations", "awards"]
                 }
             ]
@@ -1566,7 +1570,7 @@ const template1114 = {
         }
     }
 
-}
+};
 
 const template1115 = {
     id: 1115,
@@ -1614,16 +1618,11 @@ const template1115 = {
         fontSize: "14px",
         colorScheme: {
             background: "#ffffff",
-            text: "#003366",
+            text: "rgb(92 126 92)",
             primary: "#00a66f",
         }
     }
 };
-
-
-
-
-
 
 const template24 = {
     id: 24,
@@ -1727,6 +1726,48 @@ const template25 = {
     }
 };
 
+const template26 = {
+    id: 26,
+    name: "new26",
+    layout: {
+        grid: {
+            templateRows: "1fr 12fr",
+            templateColumns: "60mm 125mm",
+            columnGap: "3rem",
+            areas: [
+
+                {
+                    name: "leftColumn",
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 1,
+                    colEnd: 2,
+                    style: { background: "#FFFFFF", marginTop: "1rem" },
+                    sections: ["contact", "summary", "skills", "language",]
+                    
+                },
+                {
+                    name: "rightColumn",
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 2,
+                    colEnd: 4,
+                    style: { marginTop: '1rem', padding: '0rem', },
+                    sections: ["personalInfo", "education", "workExperience", "projects"]
+                },
+
+            ]
+        },
+        fontFamily: "'Montserrat', sans-serif",
+        fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
+        fontSize: "14px",
+        colorScheme: {
+            background: "#ffffff",
+            text: "#333333"
+        }
+    }
+
+}
 const template501 = {
     id: 501,
     name: 'Corporate Green CV',
@@ -1769,4 +1810,4 @@ const template501 = {
     }
 }
 
-export const templates = [template1, template3, template7, template9, template10, template11, template12, template13, template14, template15, template16, template111, template113, template114, template115, template116, template117, template119, template1110, template1111, template1112, template1113, template1114, template1115, template21, template22, template23, template24, template25, template501];
+export const templates = [template1, template3, template7, template9, template10, template11, template12, template13, template14, template15, template16, template111, template113, template114, template115, template116, template117, template119, template1110, template1111, template1112, template1113,template1114,template1115,template21, template22, template23, template24, template25, template26, template501 ];

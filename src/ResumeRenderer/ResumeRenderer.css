@@ -22,7 +22,7 @@
 }
 
 .personalInfo {
-    border-bottom: var(--basic-black-border);
+    /* border-bottom: var(--basic-black-border); */
     text-align: var(--left-align);
     position: var(--rel-position);
 }
@@ -401,6 +401,7 @@
     font-family: sans-serif;
     color: #5b7bb0;
     position: relative;
+    border:none,
 }
 
 .profile-image {

@@ -335,9 +335,52 @@ const templateStyles = {
             "--secondary-heading-color": "#2091FF",
             "--content-color": "gray",
         },
+        designIcons1: {
+            box: {
+                background: "rgba(112, 24, 166, 0.3)",
+                height: "90px",
+                width: "90px",
+                borderRadius: "15%",
+                // border: "3.5px solid white",
+                position: "absolute",
+                top: "9%",
+                left: "22%",
+                transform: "rotate(45deg)"
+            }
+        },
+        designIcons2: {
+            box: {
+                // background: "linear-gradient(150deg, pink 50%, transparent 50%)",
+                background: "pink",
+                height: "100px",
+                width: "100px",
+                borderRadius: "20%",
+                // border: "3.5px solid white",
+                position: "absolute",
+                top: "5%",
+                left: "17%",
+                zIndex: "1",
+                transform: "rotate(45deg)"
+            }
+        },
+        designIcons3: {
+            box: {
+                background: "rgba(16, 164, 172, 0.2)",
+                height: "90px",
+                width: "90px",
+                borderRadius: "15%",
+                // border: "3.5px solid white",
+                position: "absolute",
+                top: "10%",
+                left: "16%",
+                zIndex: "1",
+                transform: "rotate(45deg)"
+            }
+        },
         personalInfo: {
             box: {
                 border: "1px solid white",
+                position: "relative"
             },
             name: {
                 color: "var(--heading-color)",
@@ -348,13 +391,19 @@ const templateStyles = {
             },
             summary: {
                 display: "none",
+            },
+            avatar: {
+                imageDiv: {
+                    zIndex: "10",
+                }
             }
         },
         contact: {
             visibleFields: ["phoneNo", "portfolio", "linkedin", "address"],
             box: {
                 display: "flex",
-                flexWrap: "wrap"
+                flexWrap: "wrap",
+                position: "relative"
             },
             heading: {
                 display: "none"
@@ -1402,11 +1451,35 @@ const templateStyles = {
             "--left-heading-color": "#142c45",
             "--right-heading-color": "#ffff"
         },
+        designIcons1: {
+            box: {
+                background: "#142c45",
+                height: "30px",
+                width: "30px",
+                borderRadius: "50%",
+                border: "3.5px solid white",
+                position: "absolute",
+                top: "16.2%",
+                left: "60.5%"
+            }
+        },
+        designIcons2: {
+            box: {
+                background: "#142c45",
+                height: "30px",
+                width: "30px",
+                borderRadius: "50%",
+                border: "3.5px solid white",
+                position: "absolute",
+                top: "23%",
+                left: "1%"
+            }
+        },
         avatar: {
             showAvatar: true,
             showImage: true,
             card: {
-                top: '31px',
+              top: '20px',
                 left: '22px'
 
                 // background: "none",
@@ -1417,7 +1490,7 @@ const templateStyles = {
                 marginTop: '-6rem'
             },
             heading: {
-                color: "#142c45ff",
+                color: "white",
                 // marginLeft: "173px",
                 marginTop: "-71px",
                 fontSize: "26px",
@@ -1426,7 +1499,7 @@ const templateStyles = {
 
             },
             position: {
-                color: "#142c45ff",
+                color: "white",
                 marginTop: "0px",
                 fontSize: "large"
             },
@@ -1486,7 +1559,7 @@ const templateStyles = {
                 padding: "10px",
                 background: "#142c45ff",
                 color: "white",
-                borderRadius: "8px",
+                borderRadius: "0px",
             },
             heading: {
                 // borderBottom: "1px solid #142c45ff",
@@ -2313,7 +2386,7 @@ const templateStyles = {
                 borderRadius: '10px'
 
             },
-            heading: {
+                        heading: {
                 display: 'flex',
                 borderBottom: 'none'
             },
@@ -2344,313 +2417,555 @@ const templateStyles = {
             }
         }
 
+
     },
 
 
 
 
-    "12": {
-        avatar: {
-            card: { background: "none", display: "none" },
-            imageDiv: {
-                border: "3px solid white",
-                boxShadow: "0 0 0 3px #00897b",
-                borderRadius: "50%",
-                overflow: "hidden",
-                width: "100px",
-                height: "100px",
-                margin: "0 auto"
-            }
+"12": {
+    avatar: {
+        card: { background: "none", display: "none" },
+        imageDiv: {
+            border: "3px solid white",
+            boxShadow: "0 0 0 3px #00897b",
+            borderRadius: "50%",
+            overflow: "hidden",
+            width: "100px",
+            height: "100px",
+            margin: "0 auto"
+        }
+    },
+    personalInfo: {
+        box: {
+            background: "#00897b",
+            color: "white",
+            padding: "20px",
+            textAlign: "center",
+            borderRadius: "8px"
         },
-        personalInfo: {
+        name: { fontSize: "26px", fontWeight: "600" },
+        position: { fontSize: "16px", opacity: 0.9 }
+    },
+    contact: {
+        box: { marginTop: "20px" },
+        heading: {
+            borderBottom: "2px solid #00897b",
+            marginBottom: "10px",
+            fontWeight: "600"
+        },
+        listItem: { padding: "5px 0" }
+    },
+    skills: {
+        box: { marginTop: "20px" },
+        heading: {
+            borderBottom: "2px solid #00897b",
+            marginBottom: "10px",
+            fontWeight: "600"
+        },
+        eachSkillBox: {
+            background: "#00897b",
+            color: "white",
+            borderRadius: "5px",
+            padding: "4px 8px",
+            margin: "4px",
+            display: "inline-block"
+        }
+    },
+    language: {
+        box: { marginTop: "20px" },
+        heading: {
+            borderBottom: "2px solid #00897b",
+            marginBottom: "10px",
+            fontWeight: "600"
+        }
+    },
+    summary: {
+        box: { marginTop: "20px" },
+        heading: {
+            borderBottom: "2px solid #00897b",
+            marginBottom: "10px",
+            fontWeight: "600"
+        }
+    },
+    workExpe: {
+        box: { marginTop: "20px" },
+        heading: {
+            borderBottom: "2px solid #00897b",
+            marginBottom: "10px",
+            fontWeight: "600"
+        },
+        eachWorkPlace: { marginBottom: "15px" }
+    },
+    education: {
+        box: { marginTop: "20px" },
+        heading: {
+            borderBottom: "2px solid #00897b",
+            marginBottom: "10px",
+            fontWeight: "600"
+        },
+        eachEducation: { marginBottom: "15px" }
+    },
+    projects: {
+        box: { marginTop: "20px" },
+        heading: {
+            borderBottom: "2px solid #00897b",
+            marginBottom: "10px",
+            fontWeight: "600"
+        }
+    },
+    award: {
+        box: { marginTop: "20px" },
+        heading: {
+            borderBottom: "2px solid #00897b",
+            marginBottom: "10px",
+            fontWeight: "600"
+        }
+    },
+    organiz: {
+        box: { marginTop: "20px" },
+        heading: {
+            borderBottom: "2px solid #00897b",
+            marginBottom: "10px",
+            fontWeight: "600"
+        }
+    }
+},
+"13": {
+    avatar: {
+        card:{
+            background:"linear-gradient(135deg, #fbc02d 50%, white 50%)",
+            display:"none"
+        },
+        imageDiv: {
+            border: "3px solid #fbc02d",
+            borderRadius: "50%",
+            overflow: "hidden",
+            width: "100px",
+            height: "100px",
+            margin: "0 auto",    
+        }
+    },
+    personalInfo: {
+        box: { textAlign: "center", marginTop: "15px" },
+        name: { fontSize: "22px", fontWeight: "600", color: "#fbc02d" },
+        position: { fontSize: "14px", opacity: 0.9 }
+    },
+    contact: {
+        heading: { borderBottom: "2px solid #fbc02d", marginBottom: "10px" },
+        listItem: { padding: "4px 0" }
+    },
+    skills: {
+        heading: { borderBottom: "2px solid #fbc02d", marginBottom: "10px" },
+        eachSkillBox: {
+            background: "#fbc02d",
+            color: "#1b263b",
+            borderRadius: "5px",
+            padding: "4px 8px",
+            margin: "4px",
+            display: "inline-block"
+        }
+    },
+    summary: {
+        heading: { borderBottom: "2px solid #1b263b", marginBottom: "10px" }
+    },
+    workExpe: {
+        box:{
+            backgroundImage: "url(`https://novoresume.com/yna_pub/images/bg-select/squared.png`)"
+        },
+        heading: { borderBottom: "2px solid #1b263b", marginBottom: "10px" }
+    },
+    education: {
+        heading: { borderBottom: "2px solid #1b263b", marginBottom: "10px" }
+    },
+    projects: {
+        heading: { borderBottom: "2px solid #1b263b", marginBottom: "10px" }
+    },
+    award: {
+        heading: { borderBottom: "2px solid #1b263b", marginBottom: "10px" }
+    },
+    organiz: {
+        heading: { borderBottom: "2px solid #1b263b", marginBottom: "10px" }
+    }
+},
+"14": {
+    avatar: {
+        card:{
+            display:"none"
+        },
+        imageDiv: {
+            border: "3px solid white",
+            borderRadius: "50%",
+            overflow: "hidden",
+            width: "80px",
+            height: "80px",
+            marginRight: "15px"
+        }
+    },
+    personalInfo: {
+        box: { display: "inline-block",  },
+        name: { fontSize: "24px", fontWeight: "700", color: "white" },
+        position: { fontSize: "14px", opacity: 0.9 }
+    },
+    contact: {
+        box: { display: "inline-block", marginLeft: "auto", textAlign: "right" },
+        listItem: { padding: "2px 0", color: "white" }
+    },
+    summary: {
+        heading: { borderBottom: "2px solid #ff6f61", marginBottom: "10px" }
+    },
+    workExpe: {
+        heading: { borderBottom: "2px solid #ff6f61", marginBottom: "10px" }
+    },
+    projects: {
+        heading: { borderBottom: "2px solid #ff6f61", marginBottom: "10px" }
+    },
+    education: {
+        heading: { borderBottom: "2px solid #ff6f61", marginBottom: "10px" }
+    },
+    skills: {
+        heading: { borderBottom: "2px solid #ff6f61", marginBottom: "10px" },
+        eachSkillBox: {
+            background: "#ff6f61",
+            color: "white",
+            borderRadius: "5px",
+            padding: "4px 8px",
+            margin: "4px",
+            display: "inline-block"
+        }
+    },
+    language: {
+        heading: { borderBottom: "2px solid #ff6f61", marginBottom: "10px" }
+    },
+    award: {
+        heading: { borderBottom: "2px solid #ff6f61", marginBottom: "10px" }
+    },
+    organiz: {
+        heading: { borderBottom: "2px solid #ff6f61", marginBottom: "10px" }
+    }
+},
+"15": {
+    avatar: {
+        card: { display: "none" },
+        imageDiv: {
+            border: "3px solid white",
+            borderRadius: "50%",
+            overflow: "hidden",
+            width: "70px",
+            height: "70px",
+            marginRight: "12px"
+        }
+    },
+    personalInfo: {
+        box: { display: "inline-block" },
+        name: { fontSize: "22px", fontWeight: "700", color: "white" },
+        position: { fontSize: "13px", opacity: 0.9 }
+    },
+    contact: {
+        box: { display: "inline-block", marginLeft: "auto", textAlign: "right" },
+        listItem: { padding: "2px 0", color: "white" }
+    },
+    summary: {
+        heading: { borderBottom: "2px solid #00796b", marginBottom: "8px" }
+    },
+    skills: {
+        heading: { borderBottom: "2px solid #00796b", marginBottom: "8px" },
+        eachSkillBox: {
+            background: "#00796b",
+            color: "white",
+            borderRadius: "4px",
+            padding: "3px 7px",
+            margin: "3px",
+            display: "inline-block"
+        }
+    },
+    language: {
+        heading: { borderBottom: "2px solid #00796b", marginBottom: "8px" }
+    },
+    award: {
+        heading: { borderBottom: "2px solid #00796b", marginBottom: "8px" }
+    },
+    workExpe: {
+        heading: { borderBottom: "2px solid #00796b", marginBottom: "8px" }
+    },
+    projects: {
+        heading: { borderBottom: "2px solid #00796b", marginBottom: "8px" }
+    },
+    education: {
+        heading: { borderBottom: "2px solid #00796b", marginBottom: "8px" }
+    },
+    organiz: {
+        heading: { borderBottom: "2px solid #00796b", marginBottom: "8px" }
+    }
+,
+"16": {
+        designIcon1: {
             box: {
-                background: "#00897b",
-                color: "white",
-                padding: "20px",
-                textAlign: "center",
-                borderRadius: "8px"
-            },
-            name: { fontSize: "26px", fontWeight: "600" },
-            position: { fontSize: "16px", opacity: 0.9 }
-        },
-        contact: {
-            box: { marginTop: "20px" },
-            heading: {
-                borderBottom: "2px solid #00897b",
-                marginBottom: "10px",
-                fontWeight: "600"
-            },
-            listItem: { padding: "5px 0" }
-        },
-        skills: {
-            box: { marginTop: "20px" },
-            heading: {
-                borderBottom: "2px solid #00897b",
-                marginBottom: "10px",
-                fontWeight: "600"
-            },
-            eachSkillBox: {
-                background: "#00897b",
-                color: "white",
-                borderRadius: "5px",
-                padding: "4px 8px",
-                margin: "4px",
-                display: "inline-block"
+                backgroundColor: "#626262ff",
+                height: "5vh",
+                width: "2vh",
+                zIndex: "100",
+                position: "absolute",
+                left: "-50%"
             }
         },
-        language: {
-            box: { marginTop: "20px" },
-            heading: {
-                borderBottom: "2px solid #00897b",
-                marginBottom: "10px",
-                fontWeight: "600"
-            }
-        },
-        summary: {
-            box: { marginTop: "20px" },
-            heading: {
-                borderBottom: "2px solid #00897b",
-                marginBottom: "10px",
-                fontWeight: "600"
-            }
-        },
-        workExpe: {
-            box: { marginTop: "20px" },
-            heading: {
-                borderBottom: "2px solid #00897b",
-                marginBottom: "10px",
-                fontWeight: "600"
-            },
-            eachWorkPlace: { marginBottom: "15px" }
-        },
-        education: {
-            box: { marginTop: "20px" },
-            heading: {
-                borderBottom: "2px solid #00897b",
-                marginBottom: "10px",
-                fontWeight: "600"
-            },
-            eachEducation: { marginBottom: "15px" }
-        },
-        projects: {
-            box: { marginTop: "20px" },
-            heading: {
-                borderBottom: "2px solid #00897b",
-                marginBottom: "10px",
-                fontWeight: "600"
-            }
-        },
-        award: {
-            box: { marginTop: "20px" },
-            heading: {
-                borderBottom: "2px solid #00897b",
-                marginBottom: "10px",
-                fontWeight: "600"
-            }
-        },
-        organiz: {
-            box: { marginTop: "20px" },
-            heading: {
-                borderBottom: "2px solid #00897b",
-                marginBottom: "10px",
-                fontWeight: "600"
-            }
-        }
-    },
-    "13": {
-        avatar: {
-            card: {
-                background: "linear-gradient(135deg, #fbc02d 50%, white 50%)",
-                display: "none"
-            },
-            imageDiv: {
-                border: "3px solid #fbc02d",
-                borderRadius: "50%",
-                overflow: "hidden",
-                width: "100px",
-                height: "100px",
-                margin: "0 auto",
-            }
-        },
-        personalInfo: {
-            box: { textAlign: "center", marginTop: "15px" },
-            name: { fontSize: "22px", fontWeight: "600", color: "#fbc02d" },
-            position: { fontSize: "14px", opacity: 0.9 }
-        },
-        contact: {
-            heading: { borderBottom: "2px solid #fbc02d", marginBottom: "10px" },
-            listItem: { padding: "4px 0" }
-        },
-        skills: {
-            heading: { borderBottom: "2px solid #fbc02d", marginBottom: "10px" },
-            eachSkillBox: {
-                background: "#fbc02d",
-                color: "#1b263b",
-                borderRadius: "5px",
-                padding: "4px 8px",
-                margin: "4px",
-                display: "inline-block"
-            }
-        },
-        summary: {
-            heading: { borderBottom: "2px solid #1b263b", marginBottom: "10px" }
-        },
-        workExpe: {
-            box: {
-                backgroundImage: "url(`https://novoresume.com/yna_pub/images/bg-select/squared.png`)"
-            },
-            heading: { borderBottom: "2px solid #1b263b", marginBottom: "10px" }
-        },
-        education: {
-            heading: { borderBottom: "2px solid #1b263b", marginBottom: "10px" }
-        },
-        projects: {
-            heading: { borderBottom: "2px solid #1b263b", marginBottom: "10px" }
-        },
-        award: {
-            heading: { borderBottom: "2px solid #1b263b", marginBottom: "10px" }
-        },
-        organiz: {
-            heading: { borderBottom: "2px solid #1b263b", marginBottom: "10px" }
-        }
-    },
-    "14": {
-        avatar: {
-            card: {
-                display: "none"
-            },
-            imageDiv: {
-                border: "3px solid white",
-                borderRadius: "50%",
-                overflow: "hidden",
-                width: "80px",
-                height: "80px",
-                marginRight: "15px"
-            }
-        },
-        personalInfo: {
-            box: { display: "inline-block", },
-            name: { fontSize: "24px", fontWeight: "700", color: "white" },
-            position: { fontSize: "14px", opacity: 0.9 }
-        },
-        contact: {
-            box: { display: "inline-block", marginLeft: "auto", textAlign: "right" },
-            listItem: { padding: "2px 0", color: "white" }
-        },
-        summary: {
-            heading: { borderBottom: "2px solid #ff6f61", marginBottom: "10px" }
-        },
-        workExpe: {
-            heading: { borderBottom: "2px solid #ff6f61", marginBottom: "10px" }
-        },
-        projects: {
-            heading: { borderBottom: "2px solid #ff6f61", marginBottom: "10px" }
-        },
-        education: {
-            heading: { borderBottom: "2px solid #ff6f61", marginBottom: "10px" }
-        },
-        skills: {
-            heading: { borderBottom: "2px solid #ff6f61", marginBottom: "10px" },
-            eachSkillBox: {
-                background: "#ff6f61",
-                color: "white",
-                borderRadius: "5px",
-                padding: "4px 8px",
-                margin: "4px",
-                display: "inline-block"
-            }
-        },
-        language: {
-            heading: { borderBottom: "2px solid #ff6f61", marginBottom: "10px" }
-        },
-        award: {
-            heading: { borderBottom: "2px solid #ff6f61", marginBottom: "10px" }
-        },
-        organiz: {
-            heading: { borderBottom: "2px solid #ff6f61", marginBottom: "10px" }
-        }
-    },
-    "15": {
         avatar: {
             card: { display: "none" },
             imageDiv: {
-                border: "3px solid white",
-                borderRadius: "50%",
-                overflow: "hidden",
-                width: "70px",
-                height: "70px",
-                marginRight: "12px"
+                border: "2px solid white",
+                borderRadius: "0%",
+                width: "100px",
+                height: "100px",
+                marginLeft: "-10px"
             }
         },
+
         personalInfo: {
-            box: { display: "inline-block" },
-            name: { fontSize: "22px", fontWeight: "700", color: "white" },
-            position: { fontSize: "13px", opacity: 0.9 }
+            box: {
+                background: "#626262ff",
+                border: "none",
+
+            },
+            avatar: {
+                imageDiv: {
+                    margin: "-57px 10px 0px 11px",
+                    borderRadius: "0px",
+                    height: "25vh",
+                    width: "11vw"
+                }
+            },
+            name: {
+                fontSize: "50px",
+                fontWeight: "500",
+                color: "#626262ff",
+                position: "absolute",
+                left: "-180%",
+                top: "5%",
+                width: "7.2vw",
+                display: "flex",
+                flexWrap: "wrap"
+            },
+            position: {
+                fontSize: "14px",
+                fontStyle: "italic",
+                display: "none"
+            },
+            summaryContent: { display: "none" }
         },
+
         contact: {
-            box: { display: "inline-block", marginLeft: "auto", textAlign: "right" },
-            listItem: { padding: "2px 0", color: "white" }
-        },
-        summary: {
-            heading: { borderBottom: "2px solid #00796b", marginBottom: "8px" }
-        },
-        skills: {
-            heading: { borderBottom: "2px solid #00796b", marginBottom: "8px" },
-            eachSkillBox: {
-                background: "#00796b",
+            heading: { display: "none" },
+            box: {
+                background: "#626262ff",
+                padding: "0px 10px",
+                textAlign: "center",
+                borderLeft: "2px solid #626262ff"
+            },
+            listItem: {
                 color: "white",
+                marginBottom: "4px"
+            }
+        },
+
+        skills: {
+            box: {
+                background: "white",
+                borderLeft: "2px solid #626262ff",
+                paddingLeft: "10px"
+            },
+            heading: {
+                color: "#626262ff",
+                fontWeight: "500",
+                fontSize: "23px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            eachSkillBox: {
+                background: "1px solid #626262ff",
+                color: "#626262ff",
                 borderRadius: "4px",
-                padding: "3px 7px",
-                margin: "3px",
+                padding: "3px 6px",
+                margin: "2px",
                 display: "inline-block"
             }
         },
+
         language: {
-            heading: { borderBottom: "2px solid #00796b", marginBottom: "8px" }
+            box: {
+                borderLeft: "2px solid #626262ff",
+                paddingLeft: "10px"
+            },
+            heading: {
+                color: "#626262ff",
+                fontWeight: "500",
+                fontSize: "23px",
+                paddingBottom: "10px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            listItem: {
+                color: "#304160ff",
+                padding: "2px"
+            }
         },
-        award: {
-            heading: { borderBottom: "2px solid #00796b", marginBottom: "8px" }
+
+        summary: {
+            box: {
+                borderLeft: "2px solid #626262ff",
+                paddingLeft: "10px"
+            },
+            heading: {
+                marginBottom: "8px",
+                color: "#626262ff",
+                fontWeight: "500",
+                fontSize: "23px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            }
         },
+
         workExpe: {
-            heading: { borderBottom: "2px solid #00796b", marginBottom: "8px" }
+            box: {
+                borderLeft: "2px solid #626262ff",
+                paddingLeft: "10px"
+            },
+            heading: {
+                marginBottom: "8px",
+                color: "#626262ff",
+                fontWeight: "500",
+                fontSize: "23px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            eachWorkPlace: {
+                marginBottom: "15px"
+            },
+            role: {
+                color: "#112850ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            },
+            organization: {
+                color: "#304160ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            },
+            dates: {
+                color: "#626262ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            },
+            listItem: {
+                padding: "2px"
+            }
         },
+
         projects: {
-            heading: { borderBottom: "2px solid #00796b", marginBottom: "8px" }
+            box: {
+                borderLeft: "2px solid #626262ff",
+                paddingLeft: "10px"
+            },
+            heading: {
+                marginBottom: "8px",
+                color: "#626262ff",
+                fontWeight: "500",
+                fontSize: "23px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            eachProject: {
+                marginBottom: "15px"
+            },
+            title: {
+                color: "#112850ff",
+                fontWeight: "500",
+                paddingBottom: "5px"
+            },
+            listItem: {
+                padding: "2px"
+            }
         },
+
         education: {
-            heading: { borderBottom: "2px solid #00796b", marginBottom: "8px" }
+            box: {
+                borderLeft: "2px solid #626262ff",
+                paddingLeft: "10px"
+            },
+            heading: {
+                marginBottom: "8px",
+                color: "#626262ff",
+                fontWeight: "500",
+                fontSize: "23px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            eachEducation: {
+                marginBottom: "15px"
+            },
+            degree: {
+                color: "#112850ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            },
+            school: {
+                color: "#304160ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            },
+            dates: {
+                color: "#626262ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            },
+            listItem: {
+                padding: "2px"
+            }
         },
+
+        award: {
+            box: {
+                borderLeft: "2px solid #626262ff",
+                paddingLeft: "10px"
+            },
+            heading: {
+                marginBottom: "8px",
+                color: "#626262ff",
+                fontWeight: "500",
+                fontSize: "23px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            innerbox: {
+                marginBottom: "15px"
+            },
+            title: {
+                color: "#112850ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            }
+        },
+
         organiz: {
-            heading: { borderBottom: "2px solid #00796b", marginBottom: "8px" }
-        }
-        ,
-        "16": {
-            avatar: {
-                card: { display: "none" },
-                imageDiv: { border: "2px solid white", borderRadius: "50%", width: "100px", height: "100px", margin: "0 auto 10px" }
+            box: {
+                borderLeft: "2px solid #626262ff",
+                paddingLeft: "10px"
             },
-            personalInfo: {
-                name: { fontSize: "26px", fontWeight: "700", color: "#2e7d32" },
-                position: { fontSize: "14px", fontStyle: "italic" }
+            heading: {
+                marginBottom: "8px",
+                color: "#626262ff",
+                fontWeight: "500",
+                fontSize: "23px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
             },
-            contact: {
-                listItem: { color: "white", marginBottom: "4px" }
-            },
-            skills: {
-                eachSkillBox: { background: "#2e7d32", color: "white", borderRadius: "4px", padding: "3px 6px", margin: "2px", display: "inline-block" }
-            },
-            language: {
-                listItem: { color: "white" }
-            },
-            summary: { heading: { borderBottom: "2px solid #2e7d32", marginBottom: "8px" } },
-            workExpe: { heading: { borderBottom: "2px solid #2e7d32", marginBottom: "8px" } },
-            projects: { heading: { borderBottom: "2px solid #2e7d32", marginBottom: "8px" } },
-            education: { heading: { borderBottom: "2px solid #2e7d32", marginBottom: "8px" } },
-            award: { heading: { borderBottom: "2px solid #2e7d32", marginBottom: "8px" } },
-            organiz: { heading: { borderBottom: "2px solid #2e7d32", marginBottom: "8px" } },
-        }
+            title: {
+                color: "#112850ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            }
+        },
     },
-    "21": {
+ "21": {
         personalInfo: {
             box: {
                 backgroundColor: "#2e3c47ff",
@@ -3379,6 +3694,263 @@ const templateStyles = {
                 margin: "5px"
             }
         },
+
+    },
+
+    "26": {
+        contact: {
+            box: {
+                textAlign: "right"
+            },
+            heading: {
+                display: "none"
+            },
+            listItem: {
+                color: "#626262ff",
+                marginBottom: "4px"
+            }
+        },
+        summary: {
+            box: {
+                textAlign: "right",
+                marginBottom: "2rem"
+            },
+            heading: {
+                marginBottom: "20px",
+                color: "#626262ff",
+                fontWeight: "600",
+                fontSize: "20px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            }
+        },
+        skills: {
+            box: {
+                textAlign: "right",
+                marginBottom: "2rem"
+            },
+            heading: {
+                marginBottom: "20px",
+                color: "#626262ff",
+                fontWeight: "600",
+                fontSize: "20px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            eachSkillBox: {
+                background: "1px solid #626262ff",
+                color: "#626262ff",
+                borderRadius: "4px",
+                padding: "3px 6px",
+                margin: "2px",
+                display: "inline-block"
+            }
+        },
+        language: {
+            box: {
+                textAlign: "right",
+                marginBottom: "2rem"
+            },
+            heading: {
+                marginBottom: "20px",
+                color: "#626262ff",
+                fontWeight: "600",
+                fontSize: "20px",
+                paddingBottom: "10px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            listItem: {
+                color: "#626262ff",
+                padding: "2px"
+            }
+        },
+        personalInfo: {
+            box: {
+                textAlign: "left",
+                borderBottom: "2px solid #626262ff",
+                paddingBottom: "60px"
+            },
+            avatar: {
+                imageDiv: {
+                    display: "none"
+                }
+            },
+            name: {
+                display: "flex",
+                fontSize: "45px",
+                marginLeft: "-300px",
+                letterSpacing: "4px",
+                textTransform: "uppercase",
+                fontWeight: "500",
+                color: "#626262ff"
+            },
+            firstName: {
+                paddingRight: "10px"
+            },
+            position: {
+                display: "flex",
+                marginLeft: "-300px",
+                fontSize: "16px",
+                fontWeight: "500",
+                color: "#626262ff"
+            },
+            summaryContent: {
+                display: "none"
+            }
+        },
+        education: {
+            box: {
+                // textAlign:"left",
+                borderBottom: "2px solid #626262ff",
+                marginBottom: "2rem"
+            },
+            heading: {
+                marginBottom: "20px",
+                color: "#626262ff",
+                fontWeight: "600",
+                fontSize: "20px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            eachEducation: {
+                marginBottom: "25px"
+            },
+            degree: {
+                color: "#626262ff",
+                fontWeight: "600",
+                paddingBottom: "4px"
+            },
+            school: {
+                color: "#626262ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            },
+            dates: {
+                color: "#626262ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            },
+            listItem: {
+                padding: "2px",
+                color: "#626262ff"
+            }
+        },
+        workExpe: {
+            box: {
+                textAlign: "left",
+                borderBottom: "2px solid #626262ff",
+                marginBottom: "2rem"
+            },
+            heading: {
+                marginBottom: "20px",
+                color: "#626262ff",
+                fontWeight: "600",
+                fontSize: "20px",
+                letterSpacing: "3px",
+                textTransform: "uppercase",
+            },
+            eachWorkPlace: {
+                marginBottom: "25px"
+            },
+            role: {
+                color: "#626262ff",
+                fontWeight: "600",
+                paddingBottom: "4px"
+            },
+            organization: {
+                color: "#304160ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            },
+            dates: {
+                color: "#626262ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            },
+            listItem: {
+                padding: "2px",
+                color: "#626262ff"
+            }
+        },
+        projects: {
+            box: {
+                textAlign: "left",
+                marginBottom: "2rem"
+            },
+            heading: {
+                marginBottom: "20px",
+                color: "#626262ff",
+                fontWeight: "600",
+                fontSize: "20px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            eachProject: {
+                marginBottom: "25px"
+            },
+            title: {
+                color: "#626262ff",
+                fontWeight: "600",
+                paddingBottom: "5px"
+            },
+            listItem: {
+                padding: "2px",
+                color: "#626262ff"
+            }
+        },
+
+        award: {
+            box: {
+                textAlign: "left",
+                marginBottom: "2rem",
+                borderBottom: "2px solid #626262ff"
+            },
+            heading: {
+                marginBottom: "20px",
+                color: "#626262ff",
+                fontWeight: "600",
+                fontSize: "20px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            innerbox: {
+                marginBottom: "25px",
+                color: "#626262ff"
+            },
+            title: {
+                color: "#626262ff",
+                fontWeight: "600",
+                paddingBottom: "4px"
+            }
+        },
+
+        organiz: {
+            box: {
+                textAlign: "left",
+                marginBottom: "2rem",
+                borderBottom: "2px solid #626262ff",
+            },
+            heading: {
+                marginBottom: "20px",
+                color: "#626262ff",
+                fontWeight: "600",
+                fontSize: "20px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            innerbox: {
+                marginBottom: "25px",
+                color: "#626262ff"
+            },
+            title: {
+                color: "#626262ff",
+                fontWeight: "600",
+                paddingBottom: "4px"
+            }
+        },
+
+    },
 
     },
     "501": {
