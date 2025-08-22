@@ -13,6 +13,7 @@ import Language from "./components/Language";
 import Awards from "./components/Awards";
 import Organizations from "./components/Organizations";
 import Certificates from "./components/Certificates";
+import designIcons from "./components/DesignComponent";
 import "./ResumeRenderer.css";
 import { useResume } from "../context/ResumeContext";
 import templateStyles from "../data/templateStyle";
@@ -31,7 +32,10 @@ const sectionComponents = {
     avatar: Avatar,
     language: Language,
     awards: Awards,
-    certificates: Certificates
+    certificates: Certificates,
+    designIcons1:designIcons,
+    designIcons2:designIcons,
+    designIcons3:designIcons
 };
 
 export default function ResumeRenderer({ template }) {
@@ -50,7 +54,7 @@ export default function ResumeRenderer({ template }) {
         };
     }, []);
 
-    const { grid, fontFamily, fontSize, colorScheme } = template.layout;
+    const { grid, fontFamily, fontSize, colorScheme, borderTop, padding } = template.layout;
 
     const templateId = String(template.id);
     const templateStyle = templateStyles[templateId] || {};
@@ -107,6 +111,8 @@ export default function ResumeRenderer({ template }) {
                 rowGap: grid.rowGap,
                 columnGap: grid.columnGap,
                 display: "grid",
+                borderTop:borderTop,
+                padding:padding,
                 gridTemplateAreas,
                 ...cssVariables
             }}
