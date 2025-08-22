@@ -4114,6 +4114,7 @@ const templateStyles = {
             }
         },
         contact:{
+            polygon: "true",
             box:{
                 width: "124%",
                 marginBottom: "2rem",
