@@ -21,7 +21,9 @@ export default function Summary() {
             style={{ ...style?.summary?.box, position: "relative" }}
             onClick={() => setSelectedSection("summary")}
         >
-            <h2 style={style?.summary?.heading}>Summary</h2>
+            <h2 style={style?.summary?.heading}>
+                {style?.summary?.about ? "ABOUT": "Summary"}
+            </h2>
 
             {viewType === "list" ? (
                 <ul style={style?.summary?.list}>

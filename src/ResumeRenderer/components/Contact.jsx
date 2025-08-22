@@ -64,7 +64,7 @@ export default function Contact() {
     return (
         <div style={style?.contact?.box}
             onClick={() => setSelectedSection("contact")}
-            className={`contact resumeSection ${editMode && isSelected ? "selected" : ""}`}
+            className={`contact resumeSection ${style?.contact?.polygon ? "polygon" : ""} ${editMode && isSelected ? "selected" : ""}`}
         >
             <h2 style={style?.contact?.heading}>Contact</h2>
             <ul className="contactList" style={style?.contact?.list}>

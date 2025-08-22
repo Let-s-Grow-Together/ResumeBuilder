@@ -112,8 +112,8 @@ export default function ResumeRenderer({ template }) {
                 columnGap: grid.columnGap,
                 display: "grid",
                 borderTop:borderTop,
-                padding:padding,
                 gridTemplateAreas,
+                padding,
                 ...cssVariables
             }}
         >

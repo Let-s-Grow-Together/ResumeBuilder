@@ -1,20 +1,163 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useResume } from "../../context/ResumeContext";
 import InlineToolbar from "../../Components/shared/InlineToolbar";
 
-export default function Skills() {
-    const { data, style, editMode, updateField, selectedSection, setSelectedSection, viewTypes } = useResume();
-    const skillsRef = useRef();
+const layoutComponents = {
+    layout2: LayoutBars,
+};
 
-    const handleBlur = (index, e) => {
+function LayoutDefault({ data, style, viewType, editMode, handleTextBlur }) {
+    return viewType === "list" ? (
+        <ul style={style?.skills?.wholeList}>
+            {data.map((skill, index) => (
+                <li
+                    key={skill.id}
+                    data-id={skill.id}
+                    contentEditable={editMode}
+                    suppressContentEditableWarning
+                    onBlur={(e) => handleTextBlur(index, e)}
+                    style={style?.skills?.listItem}
+                    dangerouslySetInnerHTML={{ __html: skill.text }}
+                />
+            ))}
+        </ul>
+    ) : (
+        <div className="individualSkill" style={style?.skills?.everySkillBox}>
+            {data.map((skill, index) => (
+                <span
+                    key={skill.id}
+                    data-id={skill.id}
+                    contentEditable={editMode}
+                    suppressContentEditableWarning
+                    onBlur={(e) => handleTextBlur(index, e)}
+                    style={style?.skills?.eachSkillBox}
+                    dangerouslySetInnerHTML={{ __html: skill.text }}
+                />
+            ))}
+        </div>
+    );
+}
+
+function LayoutBars({ data, style, editMode, viewType, handleTextBlur, handleMouseDown, draggingIndex }) {
+    if (viewType === "list") {
+        return (
+            <ul style={style?.skills?.wholeList}>
+                {data.map((skill, index) => (
+                    <li
+                        key={skill.id}
+                        data-id={skill.id}
+                        contentEditable={editMode}
+                        suppressContentEditableWarning
+                        onBlur={(e) => handleTextBlur(index, e)}
+                        style={style?.skills?.listItem}
+                        dangerouslySetInnerHTML={{ __html: skill.text }}
+                    />
+                ))}
+            </ul>
+        );
+    }
+    return (
+        <div className="skillsBars" style={{ display: "flex", flexDirection: "column", gap: "12px",...style?.skills?.bars }}>
+            {data.map((skill, index) => (
+                <div
+                    className="skillItem"
+                    key={skill.id}
+                    style={{ display: "flex", alignItems: "center", gap: "12px",...style?.skills?.skillItem }}
+                >
+                    <span
+                        contentEditable={editMode}
+                        suppressContentEditableWarning
+                        onBlur={(e) => handleTextBlur(index, e)}
+                        dangerouslySetInnerHTML={{ __html: skill.text }}
+                        style={{ width: "120px", ...style?.skills?.label }}
+                    />
+                    <div
+                        onMouseDown={(e) => handleMouseDown(index, e)}
+                        style={{
+                            flex: 1,
+                            background: "#ccc",
+                            height: "6px",
+                            borderRadius: "4px",
+                            cursor: editMode ? "pointer" : "default",
+                            position: "relative",
+                            ...style?.skills?.backBars
+                        }}
+                    >
+                        <div
+                            style={{
+                                width: `${skill.value}%`,
+                                height: "100%",
+                                background: "#fff",
+                                borderRadius: "4px",
+                                transition: draggingIndex === index ? "none" : "width 0.2s ease",
+                                ...style?.skills?.frontBars
+                            }}
+                        />
+                    </div>
+                    <span style={{ minWidth: "30px", textAlign: "right",...style?.skills?.perValues }}>{skill.value}%</span>
+                </div>
+            ))}
+        </div>
+    );
+}
+
+export default function Skills() {
+    const {
+        data,
+        style,
+        editMode,
+        updateField,
+        selectedSection,
+        setSelectedSection,
+        viewTypes,
+    } = useResume();
+
+    const skillsRef = useRef();
+    const [draggingIndex, setDraggingIndex] = useState(null);
+
+    const viewType = viewTypes?.skills || "block";
+    const layoutType = style?.skills?.layoutType;
+    const LayoutComponent = layoutComponents[layoutType] || LayoutDefault;
+    const isSelected = selectedSection === "skills";
+
+    const handleTextBlur = (index, e) => {
         const newValue = e.target.innerHTML.trim();
         const updatedSkills = [...data.skills];
         updatedSkills[index] = { ...updatedSkills[index], text: newValue };
         updateField("skills", null, updatedSkills);
     };
 
-    const viewType = viewTypes?.skills || "block";
-    const isSelected = selectedSection === "skills";
+    const updateValueFromEvent = (index, e, barElement) => {
+        const barRect = barElement.getBoundingClientRect();
+        const posX = e.clientX - barRect.left;
+        let newValue = Math.round((posX / barRect.width) * 100);
+        newValue = Math.max(0, Math.min(100, newValue));
+
+        const updatedSkills = [...data.skills];
+        updatedSkills[index] = { ...updatedSkills[index], value: newValue };
+        updateField("skills", null, updatedSkills);
+    };
+
+    const handleMouseDown = (index, e) => {
+        if (!editMode) return;
+        const barElement = e.currentTarget;
+        setDraggingIndex(index);
+        updateValueFromEvent(index, e, barElement);
+
+        const handleMouseMove = (moveEvent) => {
+            updateValueFromEvent(index, moveEvent, barElement);
+        };
+
+        const handleMouseUp = () => {
+            setDraggingIndex(null);
+            document.removeEventListener("mousemove", handleMouseMove);
+            document.removeEventListener("mouseup", handleMouseUp);
+        };
+
+        document.addEventListener("mousemove", handleMouseMove);
+        document.addEventListener("mouseup", handleMouseUp);
+    };
+
     return (
         <div
             className={`skills resumeSection ${editMode && isSelected ? "selected" : ""}`}
@@ -24,35 +167,15 @@ export default function Skills() {
         >
             <h2 style={style?.skills?.heading}>Skills</h2>
 
-            {viewType === "list" ? (
-                <ul style={style?.skills?.wholeList}>
-                    {data.skills.map((skill, index) => (
-                        <li
-                            key={skill.id}
-                            data-id={skill.id}
-                            contentEditable={editMode}
-                            suppressContentEditableWarning
-                            onBlur={(e) => handleBlur(index, e)}
-                            style={style?.skills?.listItem}
-                            dangerouslySetInnerHTML={{ __html: skill.text }}
-                        />
-                    ))}
-                </ul>
-            ) : (
-                <div className="individualSkill" style={style?.skills?.everySkillBox}>
-                    {data.skills.map((skill, index) => (
-                        <span
-                            key={skill.id}
-                            data-id={skill.id}
-                            contentEditable={editMode}
-                            suppressContentEditableWarning
-                            onBlur={(e) => handleBlur(index, e)}
-                            style={style?.skills?.eachSkillBox}
-                            dangerouslySetInnerHTML={{ __html: skill.text }}
-                        />
-                    ))}
-                </div>
-            )}
+            <LayoutComponent
+                data={data.skills}
+                style={style}
+                editMode={editMode}
+                viewType={viewType}
+                handleTextBlur={handleTextBlur}
+                handleMouseDown={handleMouseDown}
+                draggingIndex={draggingIndex}
+            />
 
             <InlineToolbar editMode={editMode} containerRef={skillsRef} sectionName="skills" />
         </div>

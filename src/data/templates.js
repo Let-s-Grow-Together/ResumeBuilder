@@ -1768,5 +1768,46 @@ const template26 = {
     }
 
 }
+const template501 = {
+    id: 501,
+    name: 'Corporate Green CV',
+    filteredColumn: "2",
+    isAvatar: "true",
+    layout: {
+        grid: {
+            templateRows: "auto",
+            templateColumns: "2fr 3fr",
+            rowGap: "0px",
+            areas: [
+                {
+                    name: 'leftColumn',
+                    rowStart: 1,
+                    rowEnd: 2,
+                    colStart: 1,
+                    colEnd: 2,
+                    style: { backgroundColor: "#394E63", color: "white", padding: "1.5rem",fontFamily: "Lato,Sansation" },
+                    sections: ["personalInfo","contact", "skills", "language",]
+                },
+                {
+                    name: 'rightColumn',
+                    rowStart: 1,
+                    rowEnd: 2,
+                    colStart: 2,
+                    colEnd: 3,
+                    style: { padding: "0rem 1.5rem" },
+                    sections: ["avatar","summary","workExperience", "education"]
+                }
+            ]
+        },
+        padding: "0mm",
+        fontFamily: "'Montserrat', sans-serif",
+        fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
+        fontSize: "14px",
+        colorScheme: {
+            background: "#ffffff",
+            text: "#333333"
+        }
+    }
+}
 
-export const templates = [template1, template3, template7, template9, template10, template11, template12, template13, template14, template15, template16, template111, template113, template114, template115, template116, template117, template119, template1110, template1111, template1112, template1113, template1114, template1115, template21, template22, template23, template24, template25, template26];
+export const templates = [template1, template3, template7, template9, template10, template11, template12, template13, template14, template15, template16, template111, template113, template114, template115, template116, template117, template119, template1110, template1111, template1112, template1113,template1114,template1115,template21, template22, template23, template24, template25, template26, template501 ];
