@@ -2705,8 +2705,8 @@ const templateStyles = {
                 height: "5vh",
                 width: "2vh",
                 zIndex: "100",
-                position:"absolute",
-                left:"-50%"
+                position: "absolute",
+                left: "-50%"
             }
         },
         avatar: {
@@ -3698,58 +3698,257 @@ const templateStyles = {
     },
 
     "26": {
-       contact:{
-        box:{
-            textAlign:"right"
-        }
-       },
-       summary:{
-        box:{
-            textAlign:"right"
-        }
-       },
-       skills:{
-        box:{
-            textAlign:"right"
-        }
-       },
-       language:{
-        box:{
-            textAlign:"right"
-        }
-       },
-       personalInfo:{
-        box:{
-            textAlign:"left"
-        },
-        avatar:{
-            imageDiv:{
-                display:"none"
+        contact: {
+            box: {
+                textAlign: "right"
+            },
+            heading: {
+                display: "none"
+            },
+            listItem: {
+                color: "#626262ff",
+                marginBottom: "4px"
             }
         },
-        name:{
-            display:"flex",
-            fontSize:"40px"
+        summary: {
+            box: {
+                textAlign: "right",
+                marginBottom: "2rem"
+            },
+            heading: {
+                marginBottom: "20px",
+                color: "#626262ff",
+                fontWeight: "600",
+                fontSize: "20px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            }
         },
-        position:{
-            display:"flex"
-        }
-       },
-       education:{
-        box:{
-            textAlign:"left"
-        }
-       },
-       workExpe:{
-        box:{
-            textAlign:"left"
-        }
-       },
-       projects:{
-        box:{
-            textAlign:"left"
-        }
-       },
+        skills: {
+            box: {
+                textAlign: "right",
+                marginBottom: "2rem"
+            },
+            heading: {
+                marginBottom: "20px",
+                color: "#626262ff",
+                fontWeight: "600",
+                fontSize: "20px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            eachSkillBox: {
+                background: "1px solid #626262ff",
+                color: "#626262ff",
+                borderRadius: "4px",
+                padding: "3px 6px",
+                margin: "2px",
+                display: "inline-block"
+            }
+        },
+        language: {
+            box: {
+                textAlign: "right",
+                marginBottom: "2rem"
+            },
+            heading: {
+                marginBottom: "20px",
+                color: "#626262ff",
+                fontWeight: "600",
+                fontSize: "20px",
+                paddingBottom: "10px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            listItem: {
+                color: "#626262ff",
+                padding: "2px"
+            }
+        },
+        personalInfo: {
+            box: {
+                textAlign: "left",
+                borderBottom: "2px solid #626262ff",
+                paddingBottom: "60px"
+            },
+            avatar: {
+                imageDiv: {
+                    display: "none"
+                }
+            },
+            name: {
+                display: "flex",
+                fontSize: "45px",
+                marginLeft: "-300px",
+                letterSpacing: "4px",
+                textTransform: "uppercase",
+                fontWeight: "500",
+                color: "#626262ff"
+            },
+            firstName: {
+                paddingRight: "10px"
+            },
+            position: {
+                display: "flex",
+                marginLeft: "-300px",
+                fontSize: "16px",
+                fontWeight: "500",
+                color: "#626262ff"
+            },
+            summaryContent: {
+                display: "none"
+            }
+        },
+        education: {
+            box: {
+                // textAlign:"left",
+                borderBottom: "2px solid #626262ff",
+                marginBottom: "2rem"
+            },
+            heading: {
+                marginBottom: "20px",
+                color: "#626262ff",
+                fontWeight: "600",
+                fontSize: "20px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            eachEducation: {
+                marginBottom: "25px"
+            },
+            degree: {
+                color: "#626262ff",
+                fontWeight: "600",
+                paddingBottom: "4px"
+            },
+            school: {
+                color: "#626262ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            },
+            dates: {
+                color: "#626262ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            },
+            listItem: {
+                padding: "2px",
+                color: "#626262ff"
+            }
+        },
+        workExpe: {
+            box: {
+                textAlign: "left",
+                borderBottom: "2px solid #626262ff",
+                marginBottom: "2rem"
+            },
+            heading: {
+                marginBottom: "20px",
+                color: "#626262ff",
+                fontWeight: "600",
+                fontSize: "20px",
+                letterSpacing: "3px",
+                textTransform: "uppercase",
+            },
+            eachWorkPlace: {
+                marginBottom: "25px"
+            },
+            role: {
+                color: "#626262ff",
+                fontWeight: "600",
+                paddingBottom: "4px"
+            },
+            organization: {
+                color: "#304160ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            },
+            dates: {
+                color: "#626262ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            },
+            listItem: {
+                padding: "2px",
+                color: "#626262ff"
+            }
+        },
+        projects: {
+            box: {
+                textAlign: "left",
+                marginBottom: "2rem"
+            },
+            heading: {
+                marginBottom: "20px",
+                color: "#626262ff",
+                fontWeight: "600",
+                fontSize: "20px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            eachProject: {
+                marginBottom: "25px"
+            },
+            title: {
+                color: "#626262ff",
+                fontWeight: "600",
+                paddingBottom: "5px"
+            },
+            listItem: {
+                padding: "2px",
+                color: "#626262ff"
+            }
+        },
+
+        award: {
+            box: {
+                textAlign: "left",
+                marginBottom: "2rem",
+                borderBottom: "2px solid #626262ff"
+            },
+            heading: {
+                marginBottom: "20px",
+                color: "#626262ff",
+                fontWeight: "600",
+                fontSize: "20px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            innerbox: {
+                marginBottom: "25px",
+                color: "#626262ff"
+            },
+            title: {
+                color: "#626262ff",
+                fontWeight: "600",
+                paddingBottom: "4px"
+            }
+        },
+
+        organiz: {
+            box: {
+                textAlign: "left",
+                marginBottom: "2rem",
+                borderBottom: "2px solid #626262ff",
+            },
+            heading: {
+                marginBottom: "20px",
+                color: "#626262ff",
+                fontWeight: "600",
+                fontSize: "20px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            innerbox: {
+                marginBottom: "25px",
+                color: "#626262ff"
+            },
+            title: {
+                color: "#626262ff",
+                fontWeight: "600",
+                paddingBottom: "4px"
+            }
+        },
 
     },
 

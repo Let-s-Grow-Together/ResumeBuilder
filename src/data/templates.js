@@ -771,7 +771,7 @@ const template16 = {
         fontFamily: "comic sans ms",
         fontLink: "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap",
         fontSize: "13px",
-        border: "25px solid lightGray",
+        borderTop: "25px solid lightGray",
         colorScheme: { background: "#ffffff", text: "#333333" }
     }
 };
@@ -1742,7 +1742,7 @@ const template26 = {
                     rowEnd: 3,
                     colStart: 1,
                     colEnd: 2,
-                    style: { background: "#FFFFFF", marginTop: "-4.5rem" },
+                    style: { background: "#FFFFFF", marginTop: "1rem" },
                     sections: ["contact", "summary", "skills", "language",]
                     
                 },
@@ -1752,7 +1752,7 @@ const template26 = {
                     rowEnd: 3,
                     colStart: 2,
                     colEnd: 4,
-                    style: { marginTop: '-6.5rem', padding: '0rem', },
+                    style: { marginTop: '1rem', padding: '0rem', },
                     sections: ["personalInfo", "education", "workExperience", "projects"]
                 },
 
