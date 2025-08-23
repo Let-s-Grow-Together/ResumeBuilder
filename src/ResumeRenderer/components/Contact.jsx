@@ -5,6 +5,7 @@ import { useResume } from "../../context/ResumeContext";
 import AddLinkButton from "../../Components/shared/AddLinkButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
+import "/src/ResumeRenderer/ResumeRenderer.css";
 
 export default function Contact() {
     const { editMode, data, style, selectedSection, setSelectedSection } = useResume();

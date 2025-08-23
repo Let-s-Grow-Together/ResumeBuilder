@@ -34,7 +34,7 @@ const template1 = {
                     rowEnd: 3,
                     colStart: 2,
                     colEnd: 3,
-                    sections: ["workExperience", "projects", "education"]
+                    sections: ["education", "organizations", "awards",  "workExperience", "projects", ]
                 },
             ],
         },

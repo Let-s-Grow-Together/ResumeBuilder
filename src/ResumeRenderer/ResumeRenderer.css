@@ -41,7 +41,7 @@
 
 .name {
     font-size: 1.8rem;
-    font-weight: 600;
+    font-weight: 400;
     margin: 0;
     color: black;
 }
@@ -50,6 +50,7 @@
     font-size: 1rem;
     color: #a0a0a0;
     margin-top: 0.5rem;
+    font-weight: 400;
 }
 
 .personalInfo {
@@ -77,12 +78,15 @@
 
 .personalInfo>div:nth-child(1)>div:nth-child(2) {
     margin-top: 0.5rem;
-    margin-left: 1rem;
+    margin-left: 2rem;
+    font-weight: 400;
+    letter-spacing: 3px;
 }
 
 .personalInfo>div:nth-child(2) {
     outline: var(--none);
-    font-size: 18px;
+    font-size: 16px;
+    padding: 0px 0px 10px 20px;
 }
 
 .personalInfo>div:nth-child(3)>p {
@@ -105,13 +109,19 @@
     position: relative;
 }
 
+.contact h2 {
+    padding-bottom: 10px;
+    font-weight: 500;
+}
+
 .contactList {
     list-style: var(--none);
+    padding-left: 15px;
 }
 
 .contactItem {
     padding-left: var(--basic-pixel-margin);
-    padding-bottom: var(--basic-pixel-margin);
+     padding-bottom: 8px;
 }
 
 .icon-picker-popup {
@@ -137,11 +147,13 @@
 }
 
 .skills>h2 {
-    padding-bottom: var(--basic-pixel-margin);
+    padding-bottom: 15px;
+    font-weight: 500;
 }
 
 .skills>ul {
     display: inline-block;
+
 }
 
 .skills>ul>li {
@@ -151,6 +163,7 @@
 .individualSkill {
     display: flex;
     flex-wrap: wrap;
+    padding-left: 15px;
     /* justify-content: space-between; */
 }
 
@@ -167,16 +180,24 @@
     margin-bottom: var(--basic-font-size);
 }
 
+.strengths h2 {
+    padding-bottom: 10px;
+    font-weight: 500;
+}
+
 .eachStrength {
-    margin-bottom: var(--basic-pixel-margin);
+    margin-bottom: 20px;
+    padding-left: 15px;
 }
 
 .eachStrength>h3 {
     outline: var(--none);
+    padding-bottom: 5px;
+    font-weight: 500;
 }
 
 .eachStrength>ul {
-    padding-left: 1.2rem;
+    padding-left: 1.7rem;
 }
 
 .eachStrength>ul>li {
@@ -194,33 +215,43 @@
 
 .workExperience>h2 {
     outline: var(--none);
+    padding-bottom: 10px;
+    font-weight: 500;
 }
 
 .workPlace {
-    margin-bottom: var(--basic-pixel-margin);
+    margin-bottom: 20px;
     margin-left: var(--basic-pixel-margin);
+    padding-left: 15px;
 }
 
 .workPlace>h3 {
     outline: var(--none);
+    padding-bottom: 5px;
+    font-weight: 500;
 }
 
 .workPlace>h4 {
     outline: var(--none);
+    padding: 0px 0px 5px 0px;
+    font-weight: 500;
 }
 
 .workPlace>h6 {
     font-size: 14px;
     outline: var(--none);
+    padding: 0px 0px 5px 0px;
+    font-weight: 500;
 }
 
 .workPlace>div>p {
     margin-left: var(--basic-pixel-margin);
     outline: var(--none);
+    padding: 0px 0px 5px 8px;
 }
 
 .workPlace>ul {
-    padding-left: var(--basic-font-size);
+    padding: 0px 0px 5px 25px;
 }
 
 .workPlace>ul>li {
@@ -230,26 +261,34 @@
 .projects {
     margin-bottom: var(--basic-font-size);
     text-align: var(--left-align);
+    
 }
 
 .projects>h2 {
     outline: var(--none);
+    padding-bottom: 10px;
+    font-weight: 500;
 }
 
 .eachProject {
     padding-left: var(--basic-pixel-margin);
+    padding: 0px 0px 20px 15px;
 }
 
 .eachProject>h3 {
     outline: var(--none);
+    padding: 0px 0px 5px 0px;
+    font-weight: 500;
 }
 
 .eachProject>div>p {
     outline: var(--none);
+    padding: 0px 0px 5px 8px;
 }
 
 .eachProject>ul {
     padding-left: var(--basic-font-size);
+    padding: 0px 0px 5px 25px;
 }
 
 .eachProject>ul>li {
@@ -263,28 +302,42 @@
 
 .education>h2 {
     outline: var(--none);
+    padding-bottom: 10px;
+    font-weight: 500;
+}
+
+.educationItem {
+    padding: 0px 0px 20px 15px;
 }
 
 .educationItem>h3 {
     outline: var(--none);
+    padding: 0px 0px 5px 0px;
+    font-weight: 500;
 }
 
 .educationItem>h4 {
     outline: var(--none);
+     padding: 0px 0px 5px 0px;
+     font-weight: 500;
 }
 
 .educationItem>h6 {
     font-size: 14px;
     outline: var(--none);
+     padding: 0px 0px 5px 0px;
+     font-weight: 500;
 }
 
 .educationItem>div>p {
     padding-left: var(--basic-pixel-margin);
     outline: var(--none);
+    padding: 0px 0px 5px 8px;
 }
 
 .educationItem>ul {
     padding-left: var(--basic-font-size);
+    padding: 0px 0px 5px 25px;
 }
 
 .educationItem>ul>li {
@@ -314,12 +367,24 @@
     text-align: var(--left-align);
 }
 
+.organizations h2 {
+    padding: 0px 0px 10px 0px;
+    font-weight: 500;
+}
+
+.eachOrganization {
+    padding: 0px 0px 20px 15px;
+}
+
 .eachOrganization>h3 {
     outline: var(--none);
+    padding: 0px 0px 5px 0px;
+    font-weight: 500;
 }
 
 .eachOrganization>ul {
     padding-left: var(--basic-font-size);
+    padding: 0px 0px 0px 25px;
 }
 
 .eachOrganization>ul>li {
@@ -336,12 +401,24 @@
     text-align: var(--left-align);
 }
 
+.awards h2 {
+    padding: 0px 0px 10px 0px;
+    font-weight: 500;
+}
+
+.eachAward {
+     padding: 0px 0px 20px 15px;
+}
+
 .eachAward>h3 {
     outline: var(--none);
+     padding: 0px 0px 5px 0px;
+     font-weight: 500;
 }
 
 .eachAward>ul {
     padding-left: var(--basic-font-size);
+     padding: 0px 0px 0px 25px;
 }
 
 .eachAward>ul>li {
@@ -357,13 +434,22 @@
     text-align: var(--left-align);
     margin-bottom: var(--basic-font-size);
 }
+.certificates h2 {
+    padding: 0px 0px 10px 0px;
+    font-weight: 500;
+}
+.eachCertificate {
+     padding: 0px 0px 20px 15px;
+}
 
 .eachCertificate>h3 {
     outline: var(--none);
+    font-weight: 500;
 }
 
 .eachCertificate>h4 {
     outline: var(--none);
+    font-weight: 500;
 }
 
 .eachCertificate>h5 {
@@ -391,10 +477,12 @@
 
 .languages>h2 {
     margin-bottom: var(--basic-pixel-margin);
+    padding: 0px 0px 10px 0px;
+    font-weight: 500;
 }
 
 .languages>ul {
-    padding-left: var(--basic-font-size);
+   padding: 0px 0px 0px 25px;
 }
 
 .languages>ul>li {
@@ -419,12 +507,24 @@
     margin-bottom: var(--basic-font-size);
 }
 
+.achievements h2 {
+    padding: 0px 0px 10px 0px;
+    font-weight: 500;
+}
+.eachAchievement {
+     padding: 0px 0px 20px 15px;
+}
+
 .eachAchievement>h3 {
     outline: var(--none);
+     padding: 0px 0px 5px 0px;
+    font-weight: 500;
 }
 
 .eachAchievement>ul {
     padding-left: var(--basic-font-size);
+     padding: 0px 0px 0px 25px;
+    
 }
 
 .eachAchievement>ul>li {

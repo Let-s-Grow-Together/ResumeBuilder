@@ -114,6 +114,7 @@ export default function PersonalInfo() {
                         onBlur={(e) => handleFieldBlur("position", e)}
                         style={style?.personalInfo?.position}
                         dangerouslySetInnerHTML={{ __html: data.position }}
+                        className={"position"}
                     />
                 </div>
             </div>
