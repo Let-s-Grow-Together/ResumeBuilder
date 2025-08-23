@@ -33,9 +33,9 @@ const sectionComponents = {
     language: Language,
     awards: Awards,
     certificates: Certificates,
-    designIcons1:designIcons,
-    designIcons2:designIcons,
-    designIcons3:designIcons
+    designIcons1: designIcons,
+    designIcons2: designIcons,
+    designIcons3: designIcons
 };
 
 export default function ResumeRenderer({ template }) {
@@ -60,9 +60,14 @@ export default function ResumeRenderer({ template }) {
     const templateStyle = templateStyles[templateId] || {};
     const cssVariables = templateStyle.vars || {};
 
-    const renderSection = (sectionName) => {
+    const renderSection = (sectionName, areaName) => {
         const SectionComponent = sectionComponents[sectionName];
-        return SectionComponent ? <SectionComponent key={sectionName} /> : null;
+        return SectionComponent
+            ? <SectionComponent
+                key={sectionName}
+                areaName={areaName}
+            />
+            : null;
     };
 
     const numRows = grid.templateRows.split(" ").length;
@@ -111,7 +116,7 @@ export default function ResumeRenderer({ template }) {
                 rowGap: grid.rowGap,
                 columnGap: grid.columnGap,
                 display: "grid",
-                borderTop:borderTop,
+                borderTop: borderTop,
                 gridTemplateAreas,
                 padding,
                 ...cssVariables
@@ -126,7 +131,12 @@ export default function ResumeRenderer({ template }) {
                         ...(area.style || {})
                     }}
                 >
-                    {area.sections.map((sectionName) => renderSection(sectionName))}
+                    {area.sections.map((sectionName) =>
+                        renderSection(
+                            sectionName,
+                            area.name
+                        )
+                    )}
                 </div>
             ))}
         </div>
