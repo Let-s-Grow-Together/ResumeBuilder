@@ -10,7 +10,7 @@
  #resume-view {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
      width: 794px; 
-    /* min-height: 297mm; */
+    /* height: 297mm;  */
     padding: 10mm;
     box-sizing: border-box;
     display: grid;
@@ -19,8 +19,6 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background: white;
 } 
-
-
 
 .personalInfo {
     border-bottom: var(--basic-black-border);
