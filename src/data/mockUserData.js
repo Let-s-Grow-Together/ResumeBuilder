@@ -134,19 +134,6 @@ const rawMockUserData = {
                 { id: 'des2', text: "Integrated REST APIs" },
                 { id: 'des3', text: "Improved UI performance in main project of the company" },
             ]
-        },
-        {
-            id: "exp3",
-            role: "Web Designer Intern",
-            organization: "TechNova Pvt Ltd",
-            location: "Remote",
-            startDate: "2020",
-            endDate: "2021",
-            description: [
-                { id: 'des1', text: "Built reusable React components" },
-                { id: 'des2', text: "Integrated REST APIs" },
-                { id: 'des3', text: "Improved UI performance" },
-            ]
         }
     ],
 

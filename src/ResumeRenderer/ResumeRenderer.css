@@ -73,7 +73,7 @@
 
 .profile-card {
     position: relative;
-    border:none,
+    border: none,
 }
 
 .personalInfo>div:nth-child(1)>div:nth-child(2) {
@@ -116,12 +116,12 @@
 
 .contactList {
     list-style: var(--none);
-    padding-left: 15px;
+    padding-left: 0px;
 }
 
 .contactItem {
     padding-left: var(--basic-pixel-margin);
-     padding-bottom: 8px;
+    padding-bottom: 8px;
 }
 
 .icon-picker-popup {
@@ -147,7 +147,7 @@
 }
 
 .skills>h2 {
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     font-weight: 500;
 }
 
@@ -163,7 +163,7 @@
 .individualSkill {
     display: flex;
     flex-wrap: wrap;
-    padding-left: 15px;
+    padding-left: 0px;
     /* justify-content: space-between; */
 }
 
@@ -187,7 +187,7 @@
 
 .eachStrength {
     margin-bottom: 20px;
-    padding-left: 15px;
+    padding-left: 0px;
 }
 
 .eachStrength>h3 {
@@ -197,7 +197,7 @@
 }
 
 .eachStrength>ul {
-    padding-left: 1.7rem;
+    padding-left: 18px;
 }
 
 .eachStrength>ul>li {
@@ -220,25 +220,26 @@
 }
 
 .workPlace {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     margin-left: var(--basic-pixel-margin);
-    padding-left: 15px;
+    padding-left: 0px;
 }
 
 .workPlace>h3 {
     outline: var(--none);
-    padding-bottom: 5px;
-    font-weight: 500;
+    padding-bottom: 0px;
+    font-weight: 700;
 }
 
 .workPlace>h4 {
     outline: var(--none);
-    padding: 0px 0px 5px 0px;
+    padding: 0px 0px 1px 0px;
     font-weight: 500;
 }
 
 .workPlace>h6 {
     font-size: 14px;
+    font-style: italic;
     outline: var(--none);
     padding: 0px 0px 5px 0px;
     font-weight: 500;
@@ -247,11 +248,11 @@
 .workPlace>div>p {
     margin-left: var(--basic-pixel-margin);
     outline: var(--none);
-    padding: 0px 0px 5px 8px;
+    padding: 0px 0px 1.5px 0px;
 }
 
 .workPlace>ul {
-    padding: 0px 0px 5px 25px;
+    padding: 0px 0px 5px 18px;
 }
 
 .workPlace>ul>li {
@@ -261,7 +262,7 @@
 .projects {
     margin-bottom: var(--basic-font-size);
     text-align: var(--left-align);
-    
+
 }
 
 .projects>h2 {
@@ -272,13 +273,13 @@
 
 .eachProject {
     padding-left: var(--basic-pixel-margin);
-    padding: 0px 0px 20px 15px;
+    padding: 0px 0px 20px 0px;
 }
 
 .eachProject>h3 {
     outline: var(--none);
     padding: 0px 0px 5px 0px;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .eachProject>div>p {
@@ -288,7 +289,7 @@
 
 .eachProject>ul {
     padding-left: var(--basic-font-size);
-    padding: 0px 0px 5px 25px;
+    padding: 0px 0px 5px 18px;
 }
 
 .eachProject>ul>li {
@@ -307,37 +308,37 @@
 }
 
 .educationItem {
-    padding: 0px 0px 20px 15px;
+    padding: 0px 0px 15px 0px;
 }
 
 .educationItem>h3 {
     outline: var(--none);
-    padding: 0px 0px 5px 0px;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .educationItem>h4 {
     outline: var(--none);
-     padding: 0px 0px 5px 0px;
-     font-weight: 500;
+    padding: 0px 0px 1px 0px;
+    font-weight: 500;
 }
 
 .educationItem>h6 {
     font-size: 14px;
     outline: var(--none);
-     padding: 0px 0px 5px 0px;
-     font-weight: 500;
+    padding: 0px 0px 5px 0px;
+    font-style: italic;
+    font-weight: 500;
 }
 
 .educationItem>div>p {
     padding-left: var(--basic-pixel-margin);
     outline: var(--none);
-    padding: 0px 0px 5px 8px;
+    padding: 0px 0px 1px 8px;
 }
 
 .educationItem>ul {
     padding-left: var(--basic-font-size);
-    padding: 0px 0px 5px 25px;
+    padding: 0px 0px 5px 18px;
 }
 
 .educationItem>ul>li {
@@ -349,8 +350,12 @@
     margin-bottom: var(--basic-font-size);
 }
 
+.summary h2{
+    padding-bottom: 10px;
+}
+
 .summary>ul {
-    padding-left: 10px;
+    padding-left: 0px;
 }
 
 .summary>ul>li {
@@ -359,7 +364,7 @@
 
 .summary>div>p {
     outline: var(--none);
-    padding-left: 16px;
+    padding-left: 0px;
 }
 
 .organizations {
@@ -373,7 +378,7 @@
 }
 
 .eachOrganization {
-    padding: 0px 0px 20px 15px;
+    padding: 0px 0px 20px 0px;
 }
 
 .eachOrganization>h3 {
@@ -384,7 +389,7 @@
 
 .eachOrganization>ul {
     padding-left: var(--basic-font-size);
-    padding: 0px 0px 0px 25px;
+    padding: 0px 0px 0px 21px;
 }
 
 .eachOrganization>ul>li {
@@ -407,39 +412,43 @@
 }
 
 .eachAward {
-     padding: 0px 0px 20px 15px;
+    padding: 0px 0px 20px 0px;
 }
 
 .eachAward>h3 {
     outline: var(--none);
-     padding: 0px 0px 5px 0px;
-     font-weight: 500;
+    padding: 0px 0px 5px 0px;
+    font-weight: 500;
 }
 
 .eachAward>ul {
     padding-left: var(--basic-font-size);
-     padding: 0px 0px 0px 25px;
+    padding: 0px 0px 0px 18px;
 }
 
 .eachAward>ul>li {
+    font-style: italic;
     outline: var(--none);
 }
 
 .eachAward>div>p {
     outline: var(--none);
-    padding-left: var(--basic-pixel-margin);
+    padding-left: 0px;
+    font-style: italic;
 }
 
 .certificates {
     text-align: var(--left-align);
     margin-bottom: var(--basic-font-size);
 }
+
 .certificates h2 {
     padding: 0px 0px 10px 0px;
     font-weight: 500;
 }
+
 .eachCertificate {
-     padding: 0px 0px 20px 15px;
+    padding: 0px 0px 20px 0px;
 }
 
 .eachCertificate>h3 {
@@ -449,11 +458,13 @@
 
 .eachCertificate>h4 {
     outline: var(--none);
+    font-style: italic;
     font-weight: 500;
 }
 
 .eachCertificate>h5 {
     outline: var(--none);
+    font-style: italic;
     font-size: 15px;
 }
 
@@ -482,7 +493,7 @@
 }
 
 .languages>ul {
-   padding: 0px 0px 0px 25px;
+    padding: 0px 0px 0px 21px;
 }
 
 .languages>ul>li {
@@ -511,20 +522,20 @@
     padding: 0px 0px 10px 0px;
     font-weight: 500;
 }
+
 .eachAchievement {
-     padding: 0px 0px 20px 15px;
+    padding: 0px 0px 20px 0px;
 }
 
 .eachAchievement>h3 {
     outline: var(--none);
-     padding: 0px 0px 5px 0px;
+    padding: 0px 0px 5px 0px;
     font-weight: 500;
 }
 
 .eachAchievement>ul {
     padding-left: var(--basic-font-size);
-     padding: 0px 0px 0px 25px;
-    
+    padding: 0px 0px 0px 18px;
 }
 
 .eachAchievement>ul>li {
@@ -533,7 +544,7 @@
 
 .eachAchievement>div>p {
     outline: var(--none);
-    padding-left: var(--basic-pixel-margin);
+    padding-left: 0px;
 }
 
 .timeline {
