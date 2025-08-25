@@ -1026,16 +1026,42 @@ const template21 = {
     isAvatar: "true",
     layout: {
         grid: {
-            templateRows: "auto",
-            templateColumns: "1fr",  // single column
+            templateRows: "auto auto auto",
+            templateColumns: "1fr 1fr",  // single column
             areas: [
                 {
                     name: "header",
                     rowStart: 1,
                     rowEnd: 2,
                     colStart: 1,
+                    colEnd: 3,
+                    style:{background:"#1C3345", padding:"10px", color:"white", width:"110.5%", marginLeft:"-38px", marginTop:"-40px"},
+                    sections: ["personalInfo",]
+                },
+                {
+                    name: "contact",
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 1,
+                    colEnd: 3,
+                    style:{background:"#12232D", color:"white", padding:"10px", width:"110.5%", marginLeft:"-38px", marginTop:"-26px"},
+                    sections: ["contact",]
+                },
+                {
+                    name: "leftColumn",
+                    rowStart: 3,
+                    rowEnd: 4,
+                    colStart: 1,
                     colEnd: 2,
-                    sections: ["personalInfo", "summary", "workExperience", "education", "skills", "organizations", "awards", "language"]
+                    sections: ["workExperience", "education", "organizations",]
+                },
+                {
+                    name: "rightColumn",
+                    rowStart: 3,
+                    rowEnd: 4,
+                    colStart: 2,
+                    colEnd: 3,
+                    sections: ["skills", "awards", "language"]
                 },
             ]
         },
@@ -1046,33 +1072,53 @@ const template21 = {
         fontSize: "14px",
         colorScheme: {
             background: "#ffffff",
-            text: "#333333"
+            text: "#F4C562"
         }
     }
 };
 
-const template22 = {
-    id: 22,
+const template6 = {
+    id: 6,
     name: "Simple Single Column2",
-    pdf: "/templates/template22.pdf",
     filteredColumn: "1",
     isAvatar: "true",
     layout: {
         grid: {
-            templateRows: "auto",
-            templateColumns: "1fr",  // single column
+            templateRows: "auto auto",
+            templateColumns: "1fr 2fr",
+            columnGap:"3rem",
+            rowGap:"0rem",
             areas: [
                 {
                     name: "header",
                     rowStart: 1,
                     rowEnd: 2,
                     colStart: 1,
+                    colEnd: 3,
+                    style:{background:"#323B4C"},
+                    sections: ["personalInfo",]
+                },
+                {
+                    name: "leftColumn",
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 1,
                     colEnd: 2,
-                    sections: ["personalInfo", "summary", "workExperience", "education", "skills", "organizations", "awards", "language"]
+                    style:{background:"#E4E4E4", padding:"5rem 1rem 1rem 2rem",},
+                    sections: ["contact", "skills", "language", "awards"]
+                },
+                {
+                    name: "rightColumn",
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 2,
+                    colEnd: 3,
+                    style:{paddingTop:"2rem",paddingRight: "20px"},
+                    sections: ["summary", "workExperience", "education", "organizations"]
                 },
             ]
         },
-        padding: "10mm",
+        padding: "0mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink:
             "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
@@ -1092,20 +1138,41 @@ const template23 = {
     isAvatar: "true",
     layout: {
         grid: {
-            templateRows: "auto",
-            templateColumns: "1fr",  // single column
+            templateRows: "auto auto",
+            templateColumns: "1fr 2fr",
+            columnGap:"3rem",
+            rowGap:"0rem",
             areas: [
                 {
                     name: "header",
                     rowStart: 1,
                     rowEnd: 2,
                     colStart: 1,
+                    colEnd: 3,
+                    style:{background:"#323B4C"},
+                    sections: ["personalInfo",]
+                },
+                {
+                    name: "leftColumn",
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 1,
                     colEnd: 2,
-                    sections: ["personalInfo", "summary", "workExperience", "education", "skills", "organizations", "awards", "language"]
+                    style:{background:"#E4E4E4", padding:"5rem 1rem 1rem 2rem",},
+                    sections: ["contact", "skills", "language", "awards"]
+                },
+                {
+                    name: "rightColumn",
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 2,
+                    colEnd: 3,
+                    style:{paddingTop:"2rem"},
+                    sections: ["summary", "workExperience", "education", "organizations"]
                 },
             ]
         },
-        padding: "10mm",
+        padding: "0mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink:
             "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
@@ -1177,44 +1244,47 @@ const template24 = {
     isAvatar: "true",
     layout: {
         grid: {
-            templateRows: "40mm 1fr",
-            templateColumns: "1.2fr 0.8fr",
+            templateRows: "auto auto",
+            templateColumns: "1fr 2fr",  // single column
+            columnGap:"3rem",
+            rowGap:"0rem",
             areas: [
+                // {
+                //     name: "header",
+                //     rowStart: 1,
+                //     rowEnd: 2,
+                //     colStart: 1,
+                //     colEnd: 3,
+                //     // style:{background:"#323B4C"},
+                //     sections: ["personalInfo",]
+                // },
                 {
-                    name: "header",
+                    name: "leftColumn",
                     rowStart: 1,
                     rowEnd: 2,
                     colStart: 1,
-                    colEnd: 3,
-                    sections: ["personalInfo"]
-                },
-                {
-                    name: "leftColumn",
-                    rowStart: 2,
-                    rowEnd: 3,
-                    colStart: 1,
                     colEnd: 2,
-                    style: { marginTop: "60px", paddingLeft: "10px" },
-                    sections: ["summary", "workExperience", "organizations", "awards", "language"]
+                    style:{ padding:"2rem 1rem 1rem 2rem", color:"white"},
+                    sections: ["personalInfo", "contact", "skills", "language"]
                 },
                 {
                     name: "rightColumn",
-                    rowStart: 2,
-                    rowEnd: 3,
+                    rowStart: 1,
+                    rowEnd: 2,
                     colStart: 2,
                     colEnd: 3,
-                    style: { marginTop: "60px", borderLeft: "2px solid #2e3c47ff" },
-                    sections: ["contact", "education", "skills",]
+                    style:{padding:"2rem 0.5rem 0rem 2rem", background:"white", borderRadius:"100px 0px 0px 100px", color:"879AB2"},
+                    sections: ["summary", "workExperience", "education", "organizations"]
                 },
             ]
         },
-        padding: "10mm",
+        padding: "0mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink:
             "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
         fontSize: "14px",
         colorScheme: {
-            background: "#ffffff",
+            background: "#879AB2",
             text: "#333333"
         }
     }
@@ -1228,8 +1298,10 @@ const template25 = {
     isAvatar: "true",
     layout: {
         grid: {
-            templateRows: "40mm 1fr",
-            templateColumns: "1.2fr 0.8fr",
+            templateRows: "auto auto",
+            templateColumns: "1.2fr 1.8fr",
+            columnGap:"3rem",
+            rowGap:"4.5rem",
             areas: [
                 {
                     name: "header",
@@ -1237,7 +1309,10 @@ const template25 = {
                     rowEnd: 2,
                     colStart: 1,
                     colEnd: 3,
-                    sections: ["personalInfo"]
+                    style:{background:"#D6DEE8", height:"180px",
+                        width:"75%", marginLeft:"216px"
+                    },
+                    sections: ["personalInfo",]
                 },
                 {
                     name: "leftColumn",
@@ -1245,8 +1320,8 @@ const template25 = {
                     rowEnd: 3,
                     colStart: 1,
                     colEnd: 2,
-                    style: { marginTop: "60px", paddingLeft: "10px" },
-                    sections: ["summary", "workExperience", "organizations", "awards", "language"]
+                    style:{background:"#D6DEE8", padding:"1rem 1rem 1rem 2rem", borderRadius:"40px"},
+                    sections: ["contact", "skills", "language", "awards"]
                 },
                 {
                     name: "rightColumn",
@@ -1254,8 +1329,8 @@ const template25 = {
                     rowEnd: 3,
                     colStart: 2,
                     colEnd: 3,
-                    style: { marginTop: "60px", borderLeft: "2px solid #2e3c47ff", backgroundColor: "#2e3c47ff", color: "white", paddingTop: "10px", borderRadius: "10px" },
-                    sections: ["contact", "education", "skills",]
+                    style:{paddingTop:"1rem"},
+                    sections: ["summary", "workExperience", "education"]
                 },
             ]
         },
@@ -1313,4 +1388,4 @@ const template501 = {
     }
 }
 
-export const templates = [template1, template3, template9, template10, template11, template12, template13, template14, template15, template113, template115, template116, template117, template1110, template1111, template1112, template1113,template1115,template21, template22, template23, template24, template25, template501 ];
+export const templates = [template1, template3, template9, template10, template11, template12, template13, template14, template15, template113, template115, template116, template117, template1110, template1111, template1112, template1113,template1115,template21, template6, template23, template24, template25, template501 ];
