@@ -60,21 +60,21 @@ const sharedStyles = {
 
 const templateStyles = {
     "1": {
-        /* layoutStyles: {
+        layoutStyles: {
             leftColumn: {
                 heading: {
-                    borderBottom: "2px solid #ffffff",
-                    color:"red"
+                    borderBottom: "2px solid blue",
+                    color: "red"
                 }
             },
             rightColumn: {
                 heading: {
                     color: "#394E63",
                     borderBottom: "2px solid #394E63",
-                    marginBottom: "1rem"
+                    // marginBottom: "1rem"
                 }
             }
-        }, */
+        },
         /* vars: {
             "--left-heading-color": "#000",
             "--right-heading-color": "#000",
@@ -2718,6 +2718,7 @@ const templateStyles = {
         organiz: {
             heading: { borderBottom: "2px solid #00796b", marginBottom: "8px" }
         }
+
         ,
         "16": {
             designIcon1: {
@@ -2986,992 +2987,6 @@ const templateStyles = {
                 }
             },
         },
-        "21": {
-            personalInfo: {
-                box: {
-                    backgroundColor: "#2e3c47ff",
-                    color: "white",
-                    padding: "10px",
-                    marginBottom: "15px"
-                },
-                avatar: {
-                    card: {
-                        background: "none"
-                    },
-                    imageDiv: {
-                        marginLeft: "-15px",
-                        marginTop: "-35px"
-                    }
-                },
-                summaryBox: {
-                    marginTop: "-40px"
-                },
-                position: {
-                    fontWeight: "100"
-                }
-            },
-            summary: {
-                box: {
-                    borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "15px"
-                },
-                heading: {
-                    // marginLeft:"45%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    // width:"fit-content",
-                    // marginBottom:"15px"
-                },
-            },
-            workExpe: {
-                box: {
-                    borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "15px"
-                },
-                heading: {
-                    // marginLeft:"40%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    // width:"fit-content",
-                    // marginBottom:"15px"
-                },
-                eachWorkPlace: {
-                    padding: "10px"
-                }
-            },
-            education: {
-                box: {
-                    borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "5px",
-                    padding: "15px"
-                },
-                heading: {
-                    // paddingLeft:"45%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    // width:"fit-content",
-                    // marginBottom:"15px"
-                },
-                eachEducation: {
-                    padding: "10px",
-                    degree: {
-                        margin: "5px"
-                    }
-                }
-            },
-            skills: {
-                box: {
-                    borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "15px"
-                },
-                heading: {
-                    // marginLeft:"47%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    width: "fit-content",
-                    // marginBottom:"15px"
-                },
-            },
-            organiz: {
-                box: {
-                    borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "15px"
-                },
-                heading: {
-                    // marginLeft:"40%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    width: "fit-content",
-                    // marginBottom:"15px"
-                },
-                innerbox: {
-                    padding: "10px"
-                }
-            },
-            award: {
-                box: {
-                    borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "15px"
-                },
-                heading: {
-                    // marginLeft:"35%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    width: "fit-content",
-                    // marginBottom:"15px"
-                },
-                innerbox: {
-                    padding: "10px"
-                }
-            },
-            language: {
-                box: {
-                    borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "15px"
-                },
-                heading: {
-                    // marginLeft:"43%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    width: "fit-content",
-                    // marginBottom:"15px"
-                },
-                listItem: {
-                    margin: "5px 15px"
-                }
-            },
-
-        },
-        "22": {
-            personalInfo: {
-                box: {
-                    // backgroundColor:"#2e3c47ff",
-                    color: "#2e3c47ff",
-                    padding: "10px",
-                    marginBottom: "15px"
-                },
-                avatar: {
-                    card: {
-                        background: "none"
-                    },
-                    imageDiv: {
-                        marginLeft: "-15px",
-                        marginTop: "-35px"
-                    },
-                },
-                summaryBox: {
-                    marginTop: "-40px"
-                },
-                position: {
-                    fontWeight: "100"
-                }
-            },
-            summary: {
-                box: {
-                    // borderBottom:"2px solid #2e3c47ff",
-                    marginBottom: "15px"
-                },
-                heading: {
-                    // marginLeft:"45%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    // width:"fit-content",
-                    // marginBottom:"15px"
-                },
-            },
-            workExpe: {
-                box: {
-                    // borderBottom:"2px solid #2e3c47ff",
-                    marginBottom: "15px"
-                },
-                heading: {
-                    // marginLeft:"40%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    // width:"fit-content",
-                    // marginBottom:"15px"
-                },
-                eachWorkPlace: {
-                    padding: "10px"
-                }
-            },
-            education: {
-                box: {
-                    // borderBottom:"2px solid #2e3c47ff",
-                    marginBottom: "5px",
-                    padding: "15px"
-                },
-                heading: {
-                    // paddingLeft:"45%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    // width:"fit-content",
-                    // marginBottom:"15px"
-                },
-                eachEducation: {
-                    padding: "10px",
-                    degree: {
-                        margin: "5px"
-                    }
-                }
-            },
-            skills: {
-                box: {
-                    // borderBottom:"2px solid #2e3c47ff",
-                    marginBottom: "15px"
-                },
-                heading: {
-                    // marginLeft:"47%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    width: "fit-content",
-                    // marginBottom:"15px"
-                },
-            },
-            organiz: {
-                box: {
-                    // borderBottom:"2px solid #2e3c47ff",
-                    marginBottom: "15px"
-                },
-                heading: {
-                    // marginLeft:"40%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    width: "fit-content",
-                    // marginBottom:"15px"
-                },
-                innerbox: {
-                    padding: "10px"
-                }
-            },
-            award: {
-                box: {
-                    // borderBottom:"2px solid #2e3c47ff",
-                    marginBottom: "15px"
-                },
-                heading: {
-                    // marginLeft:"35%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    width: "fit-content",
-                    // marginBottom:"15px"
-                },
-                innerbox: {
-                    padding: "10px"
-                }
-            },
-            language: {
-                box: {
-                    // borderBottom:"2px solid #2e3c47ff",
-                    marginBottom: "15px"
-                },
-                heading: {
-                    // marginLeft:"43%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    width: "fit-content",
-                    // marginBottom:"15px"
-                },
-                listItem: {
-                    margin: "5px 15px"
-                }
-            },
-
-        },
-        "23": {
-            personalInfo: {
-                box: {
-                    backgroundColor: "#2e3c47ff",
-                    color: "white",
-                    padding: "10px",
-                    marginBottom: "15px"
-                },
-                avatar: {
-                    card: {
-                        background: "none"
-                    },
-                    imageDiv: {
-                        marginLeft: "-15px",
-                        marginTop: "-35px"
-                    }
-                },
-                summaryBox: {
-                    marginTop: "-40px"
-                },
-                position: {
-                    fontWeight: "100"
-                },
-                anotherBox: {
-                    marginLeft: "-140px",
-                    marginTop: "10px"
-                }
-            },
-            summary: {
-                box: {
-                    borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "15px"
-                },
-                heading: {
-                    // marginLeft:"45%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    // width:"fit-content",
-                    // marginBottom:"15px"
-                },
-            },
-            workExpe: {
-                box: {
-                    borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "15px"
-                },
-                heading: {
-                    // marginLeft:"40%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    // width:"fit-content",
-                    // marginBottom:"15px"
-                },
-                eachWorkPlace: {
-                    padding: "10px 150px"
-                }
-            },
-            education: {
-                box: {
-                    borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "5px",
-                    padding: "15px"
-                },
-                heading: {
-                    // paddingLeft:"45%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    // width:"fit-content",
-                    // marginBottom:"15px"
-                },
-                eachEducation: {
-                    padding: "10px 140px",
-                }
-            },
-            skills: {
-                box: {
-                    borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "15px"
-                },
-                heading: {
-                    // marginLeft:"47%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    width: "fit-content",
-                    // marginBottom:"15px"
-                },
-                listItem: {
-                    marginLeft: "90px"
-                }
-            },
-            organiz: {
-                box: {
-                    borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "15px"
-                },
-                heading: {
-                    // marginLeft:"40%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    width: "fit-content",
-                    // marginBottom:"15px"
-                },
-                innerbox: {
-                    padding: "10px 140px"
-                }
-            },
-            award: {
-                box: {
-                    borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "15px"
-                },
-                heading: {
-                    // marginLeft:"35%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    width: "fit-content",
-                    // marginBottom:"15px"
-                },
-                innerbox: {
-                    padding: "10px 139px"
-                }
-            },
-            language: {
-                box: {
-                    borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "15px"
-                },
-                heading: {
-                    // marginLeft:"43%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    width: "fit-content",
-                    // marginBottom:"15px"
-                },
-                listItem: {
-                    margin: "5px 139px"
-                }
-            },
-
-        },
-
-        "24": {
-            personalInfo: {
-                box: {
-                    borderTop: "25px solid #2e3c47ff",
-                    borderBottom: "none",
-                    borderRadius: "10px 0px 0px 0px",
-                    color: "#2e3c47ff",
-                    padding: "10px",
-                    marginBottom: "15px"
-                },
-                avatar: {
-                    card: {
-                        background: "none"
-                    },
-                    imageDiv: {
-                        marginLeft: "-15px",
-                        marginTop: "-35px"
-                    }
-                },
-                summaryBox: {
-                    marginTop: "-35px",
-                    borderTop: "2px solid #2e3c47ff",
-                    borderBottom: "2px solid #2e3c47ff",
-                    padding: "5px",
-                    paddingBottom: "5px"
-                },
-                position: {
-                    fontWeight: "100"
-                },
-                anotherBox: {
-                    marginLeft: "-140px",
-                    marginTop: "10px"
-                }
-            },
-            summary: {
-                box: {
-                    // borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "35px"
-                },
-                heading: {
-                    // marginLeft:"45%",
-                    color: "#2e3c47ff",
-                    borderBottom: "2px solid #2e3c47ff",
-                    width: "fit-content",
-                    marginBottom: "10px"
-                },
-            },
-            workExpe: {
-                box: {
-                    // borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "35px"
-                },
-                heading: {
-                    // marginLeft:"40%",
-                    color: "#2e3c47ff",
-                    borderBottom: "2px solid #2e3c47ff",
-                    width: "fit-content",
-                    // marginBottom:"15px"
-                },
-                eachWorkPlace: {
-                    padding: "10px"
-                }
-            },
-            contact: {
-                box: {
-                    marginLeft: "20px"
-                },
-                heading: {
-                    borderBottom: "2px solid #2e3c47ff",
-                    width: "fit-content",
-                    marginBottom: "10px"
-                }
-            },
-            education: {
-                box: {
-                    // borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "35px",
-                    padding: "15px"
-                },
-                heading: {
-                    // paddingLeft:"45%",
-                    color: "#2e3c47ff",
-                    borderBottom: "2px solid #2e3c47ff",
-                    width: "fit-content",
-                    // marginBottom:"15px"
-                },
-                eachEducation: {
-                    padding: "10px",
-                }
-            },
-            skills: {
-                box: {
-                    // borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "35px",
-                    marginLeft: "20px"
-                },
-                heading: {
-                    // marginLeft:"47%",
-                    color: "#2e3c47ff",
-                    borderBottom: "2px solid #2e3c47ff",
-                    width: "fit-content",
-                    marginBottom: "15px"
-                },
-                listItem: {
-                    marginLeft: "90px"
-                }
-            },
-            organiz: {
-                box: {
-                    // borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "35px"
-                },
-                heading: {
-                    // marginLeft:"40%",
-                    color: "#2e3c47ff",
-                    borderBottom: "2px solid #2e3c47ff",
-                    width: "fit-content",
-                    // marginBottom:"15px"
-                },
-                innerbox: {
-                    padding: "10px"
-                }
-            },
-            award: {
-                box: {
-                    // borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "35px"
-                },
-                heading: {
-                    // marginLeft:"35%",
-                    color: "#2e3c47ff",
-                    borderBottom: "2px solid #2e3c47ff",
-                    width: "fit-content",
-                    // marginBottom:"15px"
-                },
-                innerbox: {
-                    padding: "10px"
-                }
-            },
-            language: {
-                box: {
-                    // borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "35px"
-                },
-                heading: {
-                    // marginLeft:"43%",
-                    color: "#2e3c47ff",
-                    borderBottom: "2px solid #2e3c47ff",
-                    width: "fit-content",
-                    // marginBottom:"15px"
-                },
-                listItem: {
-                    margin: "5px"
-                }
-            },
-
-        },
-
-        "25": {
-            personalInfo: {
-                box: {
-                    border: "15px solid #2e3c47ff",
-                    // borderBottom:"none",
-                    borderRadius: "10px",
-                    color: "#2e3c47ff",
-                    padding: "10px",
-                    marginBottom: "15px"
-                },
-                avatar: {
-                    card: {
-                        background: "none"
-                    },
-                    imageDiv: {
-                        marginLeft: "-15px",
-                        marginTop: "-35px"
-                    }
-                },
-                summaryBox: {
-                    marginTop: "-35px",
-                    borderTop: "2px solid #2e3c47ff",
-                    borderBottom: "2px solid #2e3c47ff",
-                    padding: "5px",
-                    paddingBottom: "5px"
-                },
-                position: {
-                    fontWeight: "100"
-                },
-                anotherBox: {
-                    marginLeft: "-140px",
-                    marginTop: "10px"
-                }
-            },
-            summary: {
-                box: {
-                    borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "35px"
-                },
-                heading: {
-                    // marginLeft:"45%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    width: "fit-content",
-                    marginBottom: "10px"
-                },
-            },
-            workExpe: {
-                box: {
-                    borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "35px"
-                },
-                heading: {
-                    // marginLeft:"40%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    width: "fit-content",
-                    // marginBottom:"15px"
-                },
-                eachWorkPlace: {
-                    padding: "10px"
-                }
-            },
-            contact: {
-                box: {
-                    marginLeft: "20px",
-                    borderBottom: "2px solid #2e3c47ff",
-                },
-                heading: {
-                    // borderBottom:"2px solid #2e3c47ff",
-                    width: "fit-content",
-                    marginBottom: "10px"
-                }
-            },
-            education: {
-                box: {
-                    borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "35px",
-                    padding: "15px",
-                    width: "fit-content",
-                    paddingLeft: "20px"
-                },
-                heading: {
-                    // paddingLeft:"45%",
-                    // color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    width: "fit-content",
-                    // marginBottom:"15px"
-                },
-                eachEducation: {
-                    padding: "10px",
-                }
-            },
-            skills: {
-                box: {
-                    borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "35px",
-                    marginLeft: "20px"
-                },
-                heading: {
-                    // marginLeft:"47%",
-                    // color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    width: "fit-content",
-                    marginBottom: "15px"
-                },
-                listItem: {
-                    marginLeft: "90px"
-                }
-            },
-            organiz: {
-                box: {
-                    borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "35px"
-                },
-                heading: {
-                    // marginLeft:"40%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    width: "fit-content",
-                    // marginBottom:"15px"
-                },
-                innerbox: {
-                    padding: "10px"
-                }
-            },
-            award: {
-                box: {
-                    borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "35px"
-                },
-                heading: {
-                    // marginLeft:"35%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    width: "fit-content",
-                    // marginBottom:"15px"
-                },
-                innerbox: {
-                    padding: "10px"
-                }
-            },
-            language: {
-                box: {
-                    borderBottom: "2px solid #2e3c47ff",
-                    marginBottom: "35px"
-                },
-                heading: {
-                    // marginLeft:"43%",
-                    color: "#2e3c47ff",
-                    // borderBottom:"2px solid #2e3c47ff",
-                    width: "fit-content",
-                    // marginBottom:"15px"
-                },
-                listItem: {
-                    margin: "5px"
-                }
-            },
-
-        },
-
-        "26": {
-            contact: {
-                box: {
-                    textAlign: "right"
-                },
-                heading: {
-                    display: "none"
-                },
-                listItem: {
-                    color: "#626262ff",
-                    marginBottom: "4px"
-                }
-            },
-            summary: {
-                box: {
-                    textAlign: "right",
-                    marginBottom: "2rem"
-                },
-                heading: {
-                    marginBottom: "20px",
-                    color: "#626262ff",
-                    fontWeight: "600",
-                    fontSize: "20px",
-                    letterSpacing: "3px",
-                    textTransform: "uppercase"
-                }
-            },
-            skills: {
-                box: {
-                    textAlign: "right",
-                    marginBottom: "2rem"
-                },
-                heading: {
-                    marginBottom: "20px",
-                    color: "#626262ff",
-                    fontWeight: "600",
-                    fontSize: "20px",
-                    letterSpacing: "3px",
-                    textTransform: "uppercase"
-                },
-                eachSkillBox: {
-                    background: "1px solid #626262ff",
-                    color: "#626262ff",
-                    borderRadius: "4px",
-                    padding: "3px 6px",
-                    margin: "2px",
-                    display: "inline-block"
-                }
-            },
-            language: {
-                box: {
-                    textAlign: "right",
-                    marginBottom: "2rem"
-                },
-                heading: {
-                    marginBottom: "20px",
-                    color: "#626262ff",
-                    fontWeight: "600",
-                    fontSize: "20px",
-                    paddingBottom: "10px",
-                    letterSpacing: "3px",
-                    textTransform: "uppercase"
-                },
-                listItem: {
-                    color: "#626262ff",
-                    padding: "2px"
-                }
-            },
-            personalInfo: {
-                box: {
-                    textAlign: "left",
-                    borderBottom: "2px solid #626262ff",
-                    paddingBottom: "60px"
-                },
-                avatar: {
-                    imageDiv: {
-                        display: "none"
-                    }
-                },
-                name: {
-                    display: "flex",
-                    fontSize: "45px",
-                    marginLeft: "-300px",
-                    letterSpacing: "4px",
-                    textTransform: "uppercase",
-                    fontWeight: "500",
-                    color: "#626262ff"
-                },
-                firstName: {
-                    paddingRight: "10px"
-                },
-                position: {
-                    display: "flex",
-                    marginLeft: "-300px",
-                    fontSize: "16px",
-                    fontWeight: "500",
-                    color: "#626262ff"
-                },
-                summaryContent: {
-                    display: "none"
-                }
-            },
-            education: {
-                box: {
-                    // textAlign:"left",
-                    borderBottom: "2px solid #626262ff",
-                    marginBottom: "2rem"
-                },
-                heading: {
-                    marginBottom: "20px",
-                    color: "#626262ff",
-                    fontWeight: "600",
-                    fontSize: "20px",
-                    letterSpacing: "3px",
-                    textTransform: "uppercase"
-                },
-                eachEducation: {
-                    marginBottom: "25px"
-                },
-                degree: {
-                    color: "#626262ff",
-                    fontWeight: "600",
-                    paddingBottom: "4px"
-                },
-                school: {
-                    color: "#626262ff",
-                    fontWeight: "500",
-                    paddingBottom: "4px"
-                },
-                dates: {
-                    color: "#626262ff",
-                    fontWeight: "500",
-                    paddingBottom: "4px"
-                },
-                listItem: {
-                    padding: "2px",
-                    color: "#626262ff"
-                }
-            },
-            workExpe: {
-                box: {
-                    textAlign: "left",
-                    borderBottom: "2px solid #626262ff",
-                    marginBottom: "2rem"
-                },
-                heading: {
-                    marginBottom: "20px",
-                    color: "#626262ff",
-                    fontWeight: "600",
-                    fontSize: "20px",
-                    letterSpacing: "3px",
-                    textTransform: "uppercase",
-                },
-                eachWorkPlace: {
-                    marginBottom: "25px"
-                },
-                role: {
-                    color: "#626262ff",
-                    fontWeight: "600",
-                    paddingBottom: "4px"
-                },
-                organization: {
-                    color: "#304160ff",
-                    fontWeight: "500",
-                    paddingBottom: "4px"
-                },
-                dates: {
-                    color: "#626262ff",
-                    fontWeight: "500",
-                    paddingBottom: "4px"
-                },
-                listItem: {
-                    padding: "2px",
-                    color: "#626262ff"
-                }
-            },
-            projects: {
-                box: {
-                    textAlign: "left",
-                    marginBottom: "2rem"
-                },
-                heading: {
-                    marginBottom: "20px",
-                    color: "#626262ff",
-                    fontWeight: "600",
-                    fontSize: "20px",
-                    letterSpacing: "3px",
-                    textTransform: "uppercase"
-                },
-                eachProject: {
-                    marginBottom: "25px"
-                },
-                title: {
-                    color: "#626262ff",
-                    fontWeight: "600",
-                    paddingBottom: "5px"
-                },
-                listItem: {
-                    padding: "2px",
-                    color: "#626262ff"
-                }
-            },
-
-            award: {
-                box: {
-                    textAlign: "left",
-                    marginBottom: "2rem",
-                    borderBottom: "2px solid #626262ff"
-                },
-                heading: {
-                    marginBottom: "20px",
-                    color: "#626262ff",
-                    fontWeight: "600",
-                    fontSize: "20px",
-                    letterSpacing: "3px",
-                    textTransform: "uppercase"
-                },
-                innerbox: {
-                    marginBottom: "25px",
-                    color: "#626262ff"
-                },
-                title: {
-                    color: "#626262ff",
-                    fontWeight: "600",
-                    paddingBottom: "4px"
-                }
-            },
-
-            organiz: {
-                box: {
-                    textAlign: "left",
-                    marginBottom: "2rem",
-                    borderBottom: "2px solid #626262ff",
-                },
-                heading: {
-                    marginBottom: "20px",
-                    color: "#626262ff",
-                    fontWeight: "600",
-                    fontSize: "20px",
-                    letterSpacing: "3px",
-                    textTransform: "uppercase"
-                },
-                innerbox: {
-                    marginBottom: "25px",
-                    color: "#626262ff"
-                },
-                title: {
-                    color: "#626262ff",
-                    fontWeight: "600",
-                    paddingBottom: "4px"
-                }
-            },
-
-        },
 
     },
     "501": {
@@ -4151,24 +3166,1392 @@ const templateStyles = {
                 marginBottom: "0.3rem"
             }
         },
-        projects:{
-            heading:{
+        projects: {
+            heading: {
                 ...sharedStyles["501"].heading,
             },
-            eachProject:{
+            eachProject: {
                 paddingLeft: "0px"
             },
-            title:{
+            title: {
                 fontWeight: "700",
                 fontSize: "1.2rem"
             }
         },
-        organiz:{
-            heading:{
+        organiz: {
+            heading: {
                 ...sharedStyles["501"].heading,
             }
         }
-    }
+    },
+    "21": {
+        personalInfo: {
+            box: {
+                // backgroundColor: "#2e3c47ff",
+                color: "white",
+                // padding: "10px",
+                // marginBottom: "15px",
+                // justifyContent:"flex-reverse"
+            },
+            avatar: {
+                card: {
+                    background: "none",
+                    display: "flex",
+                    justifyContent: "flex-reverse"
+                },
+                imageDiv: {
+                    // marginLeft: "-15px",
+                    // marginTop: "-35px"
+                }
+            },
+            summaryBox: {
+                marginTop: "0px"
+            },
+            position: {
+                fontWeight: "100"
+            }
+        },
+        summary: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"45%",
+                color: "#F4C562",
+                borderBottom: "2px solid #F4C562",
+                width: "fit-content",
+                marginBottom: "10px"
+            },
+        },
+        workExpe: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"40%",
+                color: "#F4C562",
+                borderBottom: "2px solid #F4C562",
+                width: "fit-content",
+                marginBottom: "10px"
+            },
+            eachWorkPlace: {
+                padding: "0px",
+                color: "#2e3c47ff"
+            },
+
+        },
+        education: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px",
+                // padding: "15px"
+            },
+            heading: {
+                // paddingLeft:"45%",
+                color: "#F4C562",
+                borderBottom: "2px solid #F4C562",
+                width: "fit-content",
+                marginBottom: "15px"
+            },
+            eachEducation: {
+                // padding: "0px",
+                color: "#2e3c47ff",
+                // degree: {
+                //     margin: "0px"
+                // },
+
+            },
+
+        },
+        skills: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                borderBottom: "2px solid #F4C562",
+                width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px"
+            },
+            eachSkillBox: {
+                background: "#1C3345"
+            }
+        },
+        organiz: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"40%",
+                // color: "#2e3c47ff",
+                borderBottom: "2px solid #F4C562",
+                width: "fit-content",
+                marginBottom: "15px"
+            },
+            innerbox: {
+                // padding: "10px"
+            }
+        },
+        award: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"35%",
+                // color: "#2e3c47ff",
+                borderBottom: "2px solid #F4C562",
+                width: "fit-content",
+                marginBottom: "15px"
+            },
+            innerbox: {
+                // padding: "0px",
+                color: "#2e3c47ff"
+            }
+        },
+        language: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"43%",
+                // color: "#2e3c47ff",
+                borderBottom: "2px solid #F4C562",
+                width: "fit-content",
+                marginBottom: "15px"
+            },
+            listItem: {
+                margin: "5px 0px",
+                color: "#2e3c47ff"
+            }
+        },
+        projects: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                borderBottom: "2px solid #F4C562",
+                width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px"
+            },
+            eachProject: {
+                color: "#2e3c47ff"
+            }
+        },
+        achieve: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                borderBottom: "2px solid #F4C562",
+                width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px"
+            },
+            innerbox: {
+                color: "#2e3c47ff"
+            }
+        },
+        certificate: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                borderBottom: "2px solid #F4C562",
+                width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px"
+            },
+            eachcertificate: {
+                color: "#2e3c47ff"
+            }
+        },
+        contact: {
+            box: {
+                padding: "0px 30px"
+            },
+            list: {
+                display: "flex",
+                justifyContent: "space-between"
+            }
+        }
+
+    },
+    "6": {
+        personalInfo: {
+            box: {
+                // backgroundColor:"#2e3c47ff",
+                color: "#2e3c47ff",
+                padding: "10px",
+                marginBottom: "15px"
+            },
+            avatar: {
+                card: {
+                    background: "none"
+                },
+                imageDiv: {
+                    // marginLeft: "-15px",
+                    // marginTop: "35px",
+                    width:"150px",
+                    height:"150px",
+                    position:"absolute",
+                    top:"2rem",
+                    left:"2.5rem",
+                    border:"5px solid white"
+                },
+            },
+            summaryBox: {
+                marginTop: "-40px",
+                display:"none"
+            },
+            position: {
+                fontWeight: "100",
+                marginLeft:"13rem"
+            },
+            name:{
+                color:"white",
+                marginLeft:"13rem",
+                display:"flex",
+                paddingTop:"1rem",
+                fontSize:"35px"
+            },
+            firstName:{
+                paddingRight:"10px"
+            }
+        },
+        summary: {
+            box: {
+                // borderBottom:"2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"45%",
+                color: "#2e3c47ff",
+                borderBottom:"2px solid #2e3c47ff",
+                // width:"fit-content",
+                marginBottom:"15px",
+                paddingBottom:"0px",
+                fontWeight:"500"
+            },
+        },
+        workExpe: {
+            box: {
+                // borderBottom:"2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"40%",
+                color: "#2e3c47ff",
+                borderBottom:"2px solid #2e3c47ff",
+                // width:"fit-content",
+                marginBottom:"15px",
+                paddingBottom:"0px"
+            },
+            eachWorkPlace: {
+                // padding: "10px"
+            }
+        },
+        education: {
+            box: {
+                // borderBottom:"2px solid #2e3c47ff",
+                marginBottom: "5px",
+                // padding: "15px"
+            },
+            heading: {
+                // paddingLeft:"45%",
+                color: "#2e3c47ff",
+                borderBottom:"2px solid #2e3c47ff",
+                // width:"fit-content",
+                marginBottom:"15px",
+                paddingBottom:"0px"
+            },
+            eachEducation: {
+                // padding: "10px",
+                degree: {
+                    margin: "5px"
+                }
+            }
+        },
+        skills: {
+            box: {
+                // borderBottom:"2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                color: "#2e3c47ff",
+                borderBottom:"2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom:"15px",
+                paddingBottom:"0px"
+            },
+        },
+        organiz: {
+            box: {
+                // borderBottom:"2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"40%",
+                color: "#2e3c47ff",
+                borderBottom:"2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom:"15px",
+                paddingBottom:"0px"
+            },
+            innerbox: {
+                // padding: "10px"
+            }
+        },
+        award: {
+            box: {
+                // borderBottom:"2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"35%",
+                color: "#2e3c47ff",
+                borderBottom:"2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom:"15px",
+                paddingBottom:"0px"
+            },
+            innerbox: {
+                // padding: "10px"
+            }
+        },
+        language: {
+            box: {
+                // borderBottom:"2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"43%",
+                color: "#2e3c47ff",
+                borderBottom:"2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom:"15px",
+                paddingBottom:"0px"
+            },
+            listItem: {
+                margin: "5px 0px"
+            }
+        },
+        projects: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                borderBottom: "2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px"
+            },
+            
+        },
+        achieve: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                borderBottom: "2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px"
+            },
+            
+        },
+        certificate: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                borderBottom: "2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px"
+            },
+            eachcertificate: {
+                color: "#2e3c47ff"
+            }
+        },
+        contact:{
+            heading:{
+                borderBottom:"2px solid #2e3c47ff",
+                marginBottom:"15px",
+                paddingBottom:"0px"
+            },
+        }
+
+    },
+    "23": {
+        personalInfo: {
+            box: {
+                // backgroundColor:"#2e3c47ff",
+                color: "#2e3c47ff",
+                padding: "10px",
+                marginBottom: "15px"
+            },
+            avatar: {
+                card: {
+                    background: "none"
+                },
+                imageDiv: {
+                    // marginLeft: "-15px",
+                    // marginTop: "35px",
+                    width:"150px",
+                    height:"150px",
+                    position:"absolute",
+                    top:"2rem",
+                    left:"2.5rem",
+                    border:"5px solid white"
+                },
+            },
+            summaryBox: {
+                marginTop: "-40px",
+                display:"none"
+            },
+            position: {
+                fontWeight: "100",
+                marginLeft:"13rem"
+            },
+            name:{
+                color:"white",
+                marginLeft:"13rem",
+                display:"flex",
+                paddingTop:"1rem",
+                fontSize:"35px"
+            },
+            firstName:{
+                paddingRight:"10px"
+            }
+        },
+        summary: {
+            box: {
+                // borderBottom:"2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"45%",
+                // color: "#2e3c47ff",
+                // borderBottom:"2px solid #2e3c47ff",
+                // width:"fit-content",
+                marginBottom:"15px",
+                background:"#2e3c47ff",
+                color:"white",
+                padding:"5px 0px 5px 10px",
+                fontWeight:"500"
+            },
+        },
+        workExpe: {
+            box: {
+                // borderBottom:"2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"40%",
+                // color: "#2e3c47ff",
+                // borderBottom:"2px solid #2e3c47ff",
+                // width:"fit-content",
+                marginBottom:"15px",
+                background:"#2e3c47ff",
+                color:"white",
+                padding:"5px 0px 5px 10px"
+            },
+            eachWorkPlace: {
+                // padding: "10px"
+            }
+        },
+        education: {
+            box: {
+                // borderBottom:"2px solid #2e3c47ff",
+                marginBottom: "5px",
+                // padding: "15px"
+            },
+            heading: {
+                // paddingLeft:"45%",
+                // color: "#2e3c47ff",
+                // borderBottom:"2px solid #2e3c47ff",
+                // width:"fit-content",
+                marginBottom:"15px",
+                background:"#2e3c47ff",
+                color:"white",
+                padding:"5px 0px 5px 10px"
+            },
+            eachEducation: {
+                // padding: "10px",
+                degree: {
+                    margin: "5px"
+                }
+            }
+        },
+        skills: {
+            box: {
+                // borderBottom:"2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                // borderBottom:"2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom:"15px",
+                background:"#2e3c47ff",
+                color:"white",
+                padding:"5px 0px 5px 10px"
+            },
+        },
+        organiz: {
+            box: {
+                // borderBottom:"2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"40%",
+                // color: "#2e3c47ff",
+                // borderBottom:"2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom:"15px",
+                background:"#2e3c47ff",
+                color:"white",
+                padding:"5px 0px 5px 10px"
+            },
+            innerbox: {
+                // padding: "10px"
+            }
+        },
+        award: {
+            box: {
+                // borderBottom:"2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"35%",
+                // color: "#2e3c47ff",
+                // borderBottom:"2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom:"15px",
+                background:"#2e3c47ff",
+                color:"white",
+                padding:"5px 0px 5px 10px"
+            },
+            innerbox: {
+                // padding: "10px"
+            }
+        },
+        language: {
+            box: {
+                // borderBottom:"2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"43%",
+                // color: "#2e3c47ff",
+                // borderBottom:"2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom:"15px",
+                background:"#2e3c47ff",
+                color:"white",
+                padding:"5px 0px 5px 10px"
+            },
+            listItem: {
+                margin: "5px 0px"
+            }
+        },
+        projects: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom: "15px",
+                background:"#2e3c47ff",
+                color:"white",
+                padding:"5px 0px 5px 10px"
+            },
+            
+        },
+        achieve: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom: "15px",
+                // paddingBottom: "0px",
+                background:"#2e3c47ff",
+                color:"white",
+                padding:"5px 0px 5px 10px"
+            },
+            
+        },
+        certificate: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom: "15px",
+                // paddingBottom: "0px",
+                background:"#2e3c47ff",
+                color:"white",
+                padding:"5px 0px 5px 10px"
+            },
+            eachcertificate: {
+                color: "#2e3c47ff"
+            }
+        },
+        contact:{
+            heading:{
+                background:"#2e3c47ff",
+                color:"white",
+                padding:"5px 0px 5px 10px",
+                marginBottom:"15px"
+            }
+        }
+
+    },
+
+    "24": {
+        personalInfo: {
+            box:{
+                marginBottom:"1rem"
+            },
+            mixBox:{
+                display:"flex",
+                flexDirection:"column"
+            },
+            avatar: {
+                card: {
+                    background: "none"
+                },
+                imageDiv: {
+                    width:"170px",
+                    height:"170px",
+                    border:"5px solid white"
+                }
+            },
+            summaryBox: {
+                display:"none"
+            },
+            name:{
+                // display:"flex",
+            },
+            position: {
+                fontWeight: "100",
+                color:"white",
+                display:"none"
+            },
+            anotherBox: {
+                // marginLeft: "-140px",
+                // marginTop: "10px"
+            }
+        },
+        summary: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "35px"
+            },
+            heading: {
+                // marginLeft:"45%",
+                // color: "#2e3c47ff",
+                borderBottom: "2px solid #2e3c47ff",
+                width: "fit-content",
+                marginBottom: "10px",
+                fontWeight:"500"
+            },
+        },
+        workExpe: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "35px"
+            },
+            heading: {
+                // marginLeft:"40%",
+                // color: "#2e3c47ff",
+                borderBottom: "2px solid #2e3c47ff",
+                width: "fit-content",
+                marginBottom:"15px",
+                padding:"0px"
+            },
+            eachWorkPlace: {
+                // padding: "10px"
+            }
+        },
+        contact: {
+            box: {
+                marginLeft: "20px"
+            },
+            heading: {
+                borderBottom: "2px solid #2e3c47ff",
+                width: "fit-content",
+                marginBottom: "10px"
+            }
+        },
+        education: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "35px",
+                // padding: "15px"
+            },
+            heading: {
+                // paddingLeft:"45%",
+                // color: "#2e3c47ff",
+                borderBottom: "2px solid #2e3c47ff",
+                width: "fit-content",
+                marginBottom:"15px",
+                padding:"0px"
+            },
+            eachEducation: {
+                // padding: "10px",
+            }
+        },
+        skills: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "35px",
+                // marginLeft: "20px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                borderBottom: "2px solid white",
+                width: "fit-content",
+                marginBottom: "15px",
+                padding:"0px"
+            },
+            eachSkillBox:{
+                border:"1px solid white"
+            },
+            listItem: {
+                marginLeft: "90px"
+            }
+        },
+        organiz: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "35px"
+            },
+            heading: {
+                // marginLeft:"40%",
+                // color: "#2e3c47ff",
+                borderBottom: "2px solid #2e3c47ff",
+                width: "fit-content",
+                marginBottom:"15px",
+                padding:"0px"
+            },
+            innerbox: {
+                // padding: "10px"
+            }
+        },
+        award: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "35px"
+            },
+            heading: {
+                // marginLeft:"35%",
+                // color: "#2e3c47ff",
+                borderBottom: "2px solid white",
+                width: "fit-content",
+                marginBottom:"15px",
+                padding:"0px"
+            },
+            innerbox: {
+                // padding: "10px"
+            }
+        },
+        language: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "35px"
+            },
+            heading: {
+                // marginLeft:"43%",
+                // color: "#2e3c47ff",
+                borderBottom: "2px solid white",
+                width: "fit-content",
+                marginBottom:"15px",
+                padding:"0px"
+            },
+            listItem: {
+                margin: "5px 0px"
+            }
+        },
+        projects: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                borderBottom: "2px solid #2e3c47ff",
+                width: "fit-content",
+                marginBottom: "15px",
+                // background:"#2e3c47ff",
+                // color:"white",
+                padding:" 0px"
+            },
+            
+        },
+        achieve: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                borderBottom: "2px solid #2e3c47ff",
+                width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px",
+                
+            },
+            
+        },
+        certificate: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                borderBottom: "2px solid #2e3c47ff",
+                width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px",
+            },
+            eachcertificate: {
+                // color: "#2e3c47ff"
+            }
+        },
+        contact:{
+            heading:{
+                // background:"#2e3c47ff",
+                color:"white",
+                // padding:"5px 0px 5px 10px",
+                marginBottom:"15px",
+                borderBottom:"2px solid white"
+            }
+        }
+
+    },
+
+    "25": {
+        personalInfo: {
+            box: {
+                // backgroundColor:"#2e3c47ff",
+                color: "#2e3c47ff",
+                padding: "-10px 0px -10px 0px",
+                marginBottom: "15px"
+            },
+            avatar: {
+                card: {
+                    background: "none"
+                },
+                imageDiv: {
+                    marginLeft: "20px",
+                    marginTop: "35px",
+                    width:"245px",
+                    height:"245px",
+                    position:"absolute",
+                    bottom:"-14.5rem",
+                    right:"-3rem",
+                    border:"10px solid white",
+                    boxShadow:"none"
+                },
+            },
+            summaryBox: {
+                marginTop: "-40px",
+                display:"none"
+            },
+            position: {
+                fontWeight: "100",
+                paddingLeft:"2rem",
+                marginLeft:"1rem"
+            },
+            name:{
+                color:"white",
+                marginLeft:"1.5rem",
+                display:"flex",
+                paddingTop:"3rem",
+                paddingLeft:"1.2rem",
+                fontSize:"43px"
+            },
+            firstName:{
+                paddingRight:"10px"
+            }
+        },
+        summary: {
+            box: {
+                // borderBottom:"2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"45%",
+                color: "#2e3c47ff",
+                borderBottom:"2px solid #2e3c47ff",
+                // width:"fit-content",
+                marginBottom:"15px",
+                paddingBottom:"0px",
+                fontWeight:"500"
+            },
+        },
+        workExpe: {
+            box: {
+                // borderBottom:"2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"40%",
+                color: "#2e3c47ff",
+                borderBottom:"2px solid #2e3c47ff",
+                // width:"fit-content",
+                marginBottom:"15px",
+                paddingBottom:"0px"
+            },
+            eachWorkPlace: {
+                // padding: "10px"
+            }
+        },
+        education: {
+            box: {
+                // borderBottom:"2px solid #2e3c47ff",
+                marginBottom: "5px",
+                // padding: "15px"
+            },
+            heading: {
+                // paddingLeft:"45%",
+                color: "#2e3c47ff",
+                borderBottom:"2px solid #2e3c47ff",
+                // width:"fit-content",
+                marginBottom:"15px",
+                paddingBottom:"0px"
+            },
+            eachEducation: {
+                // padding: "10px",
+                degree: {
+                    margin: "5px"
+                }
+            }
+        },
+        skills: {
+            box: {
+                // borderBottom:"2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                color: "#2e3c47ff",
+                borderBottom:"2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom:"15px",
+                paddingBottom:"0px"
+            },
+        },
+        organiz: {
+            box: {
+                // borderBottom:"2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"40%",
+                color: "#2e3c47ff",
+                borderBottom:"2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom:"15px",
+                paddingBottom:"0px"
+            },
+            innerbox: {
+                // padding: "10px"
+            }
+        },
+        award: {
+            box: {
+                // borderBottom:"2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"35%",
+                color: "#2e3c47ff",
+                borderBottom:"2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom:"15px",
+                paddingBottom:"0px"
+            },
+            innerbox: {
+                // padding: "10px"
+            }
+        },
+        language: {
+            box: {
+                // borderBottom:"2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"43%",
+                color: "#2e3c47ff",
+                borderBottom:"2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom:"15px",
+                paddingBottom:"0px"
+            },
+            listItem: {
+                margin: "5px 0px"
+            }
+        },
+        projects: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                borderBottom: "2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px"
+            },
+            
+        },
+        achieve: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                borderBottom: "2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px"
+            },
+            
+        },
+        certificate: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                borderBottom: "2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px"
+            },
+            eachcertificate: {
+                color: "#2e3c47ff"
+            }
+        },
+        contact:{
+            heading:{
+                borderBottom:"2px solid #2e3c47ff",
+                marginBottom:"15px",
+                paddingBottom:"0px"
+            },
+        }
+
+    },
+
+    "26": {
+        contact: {
+            box: {
+                textAlign: "right"
+            },
+            heading: {
+                display: "none"
+            },
+            listItem: {
+                color: "#626262ff",
+                marginBottom: "4px"
+            }
+        },
+        summary: {
+            box: {
+                textAlign: "right",
+                marginBottom: "2rem"
+            },
+            heading: {
+                marginBottom: "20px",
+                color: "#626262ff",
+                fontWeight: "600",
+                fontSize: "20px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            }
+        },
+        skills: {
+            box: {
+                textAlign: "right",
+                marginBottom: "2rem"
+            },
+            heading: {
+                marginBottom: "20px",
+                color: "#626262ff",
+                fontWeight: "600",
+                fontSize: "20px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            eachSkillBox: {
+                background: "1px solid #626262ff",
+                color: "#626262ff",
+                borderRadius: "4px",
+                padding: "3px 6px",
+                margin: "2px",
+                display: "inline-block"
+            }
+        },
+        language: {
+            box: {
+                textAlign: "right",
+                marginBottom: "2rem"
+            },
+            heading: {
+                marginBottom: "20px",
+                color: "#626262ff",
+                fontWeight: "600",
+                fontSize: "20px",
+                paddingBottom: "10px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            listItem: {
+                color: "#626262ff",
+                padding: "2px"
+            }
+        },
+        personalInfo: {
+            box: {
+                textAlign: "left",
+                borderBottom: "2px solid #626262ff",
+                paddingBottom: "60px"
+            },
+            avatar: {
+                imageDiv: {
+                    display: "none"
+                }
+            },
+            name: {
+                display: "flex",
+                fontSize: "45px",
+                marginLeft: "-300px",
+                letterSpacing: "4px",
+                textTransform: "uppercase",
+                fontWeight: "500",
+                color: "#626262ff"
+            },
+            firstName: {
+                paddingRight: "10px"
+            },
+            position: {
+                display: "flex",
+                marginLeft: "-300px",
+                fontSize: "16px",
+                fontWeight: "500",
+                color: "#626262ff"
+            },
+            summaryContent: {
+                display: "none"
+            }
+        },
+        education: {
+            box: {
+                // textAlign:"left",
+                borderBottom: "2px solid #626262ff",
+                marginBottom: "2rem"
+            },
+            heading: {
+                marginBottom: "20px",
+                color: "#626262ff",
+                fontWeight: "600",
+                fontSize: "20px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            eachEducation: {
+                marginBottom: "25px"
+            },
+            degree: {
+                color: "#626262ff",
+                fontWeight: "600",
+                paddingBottom: "4px"
+            },
+            school: {
+                color: "#626262ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            },
+            dates: {
+                color: "#626262ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            },
+            listItem: {
+                padding: "2px",
+                color: "#626262ff"
+            }
+        },
+        workExpe: {
+            box: {
+                textAlign: "left",
+                borderBottom: "2px solid #626262ff",
+                marginBottom: "2rem"
+            },
+            heading: {
+                marginBottom: "20px",
+                color: "#626262ff",
+                fontWeight: "600",
+                fontSize: "20px",
+                letterSpacing: "3px",
+                textTransform: "uppercase",
+            },
+            eachWorkPlace: {
+                marginBottom: "25px"
+            },
+            role: {
+                color: "#626262ff",
+                fontWeight: "600",
+                paddingBottom: "4px"
+            },
+            organization: {
+                color: "#304160ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            },
+            dates: {
+                color: "#626262ff",
+                fontWeight: "500",
+                paddingBottom: "4px"
+            },
+            listItem: {
+                padding: "2px",
+                color: "#626262ff"
+            }
+        },
+        projects: {
+            box: {
+                textAlign: "left",
+                marginBottom: "2rem"
+            },
+            heading: {
+                marginBottom: "20px",
+                color: "#626262ff",
+                fontWeight: "600",
+                fontSize: "20px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            eachProject: {
+                marginBottom: "25px"
+            },
+            title: {
+                color: "#626262ff",
+                fontWeight: "600",
+                paddingBottom: "5px"
+            },
+            listItem: {
+                padding: "2px",
+                color: "#626262ff"
+            }
+        },
+
+        award: {
+            box: {
+                textAlign: "left",
+                marginBottom: "2rem",
+                borderBottom: "2px solid #626262ff"
+            },
+            heading: {
+                marginBottom: "20px",
+                color: "#626262ff",
+                fontWeight: "600",
+                fontSize: "20px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            innerbox: {
+                marginBottom: "25px",
+                color: "#626262ff"
+            },
+            title: {
+                color: "#626262ff",
+                fontWeight: "600",
+                paddingBottom: "4px"
+            }
+        },
+
+        organiz: {
+            box: {
+                textAlign: "left",
+                marginBottom: "2rem",
+                borderBottom: "2px solid #626262ff",
+            },
+            heading: {
+                marginBottom: "20px",
+                color: "#626262ff",
+                fontWeight: "600",
+                fontSize: "20px",
+                letterSpacing: "3px",
+                textTransform: "uppercase"
+            },
+            innerbox: {
+                marginBottom: "25px",
+                color: "#626262ff"
+            },
+            title: {
+                color: "#626262ff",
+                fontWeight: "600",
+                paddingBottom: "4px"
+            }
+        },
+
+    },
 }
 
 
