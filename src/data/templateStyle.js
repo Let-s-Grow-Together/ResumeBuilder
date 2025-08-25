@@ -523,8 +523,9 @@ const templateStyles = {
                 background: "#7c2b2b",
                 color: "#fff",
                 borderRadius: "5px",
+                border: "none"
                 // padding: "4px 8px",
-                marginTop: '1rem',
+                // marginTop: '1rem',
                 // display: "inline-block"
             }
         },

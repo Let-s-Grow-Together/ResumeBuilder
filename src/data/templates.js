@@ -1,6 +1,3 @@
-import bgImage from "../../public/assets/bg.jpg";
-import designIcons from "../ResumeRenderer/components/DesignComponent";
-
 const template1 = {
     id: 1,
     name: "Modern Grid",
@@ -144,7 +141,6 @@ const template8 = {
 const template9 = {
     id: 9,
     name: "Modern Sidebar Resume",
-    pdf: "/templates/template9.pdf",
     filteredColumn: "1",
     isAvatar: "true",
     layout: {
@@ -159,7 +155,7 @@ const template9 = {
                     rowEnd: 2,
                     colStart: 1,
                     colEnd: 2,
-                    sections: ["avatar", "contact", "achievements", "skills", "education"]
+                    sections: ["avatar", "contact", "achievements", "skills","certificates"]
                 },
                 {
                     name: 'rightColumn',
@@ -167,7 +163,7 @@ const template9 = {
                     rowEnd: 2,
                     colStart: 2,
                     colEnd: 3,
-                    sections: [ "summary", "workExperience"]
+                    sections: [ "summary", "workExperience", "education","projects"]
                 }
             ]
         },
