@@ -69,7 +69,7 @@ function LayoutBars({ data, style, editMode, viewType, handleTextBlur, handleMou
                         suppressContentEditableWarning
                         onBlur={(e) => handleTextBlur(index, e)}
                         dangerouslySetInnerHTML={{ __html: skill.text }}
-                        style={{ width: "120px", ...style?.skills?.label }}
+                        style={{ width: "120px",outline:"none",paddingLeft:"5px", ...style?.skills?.label }}
                     />
                     <div
                         onMouseDown={(e) => handleMouseDown(index, e)}

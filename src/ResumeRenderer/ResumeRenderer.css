@@ -186,7 +186,7 @@
 }
 
 .eachStrength {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     padding-left: 0px;
 }
 
@@ -273,7 +273,7 @@
 
 .eachProject {
     padding-left: var(--basic-pixel-margin);
-    padding: 0px 0px 20px 0px;
+    padding: 0px 0px 15px 0px;
 }
 
 .eachProject>h3 {
@@ -351,6 +351,7 @@
 }
 
 .summary h2{
+    font-weight: 500;
     padding-bottom: 10px;
 }
 
@@ -378,7 +379,7 @@
 }
 
 .eachOrganization {
-    padding: 0px 0px 20px 0px;
+    padding: 0px 0px 15px 0px;
 }
 
 .eachOrganization>h3 {
@@ -412,7 +413,7 @@
 }
 
 .eachAward {
-    padding: 0px 0px 20px 0px;
+    padding: 0px 0px 15px 0px;
 }
 
 .eachAward>h3 {
@@ -448,7 +449,7 @@
 }
 
 .eachCertificate {
-    padding: 0px 0px 20px 0px;
+    padding: 0px 0px 15px 0px;
 }
 
 .eachCertificate>h3 {
@@ -524,7 +525,7 @@
 }
 
 .eachAchievement {
-    padding: 0px 0px 20px 0px;
+    padding: 0px 0px 15px 0px;
 }
 
 .eachAchievement>h3 {

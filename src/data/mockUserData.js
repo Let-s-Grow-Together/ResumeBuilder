@@ -94,7 +94,7 @@ const rawMockUserData = {
                 { id: "des2", text: "Top 5% of graduating class" },
             ]
         },
-        {
+        /* {
             id: "edu3",
             school: "ABC Public School",
             degree: "Junior Secondary (Science)",
@@ -105,7 +105,7 @@ const rawMockUserData = {
                 { id: "des1", text: "Scored 9.5 CGPA in Class 10" },
                 { id: "des2", text: "Top 2% of graduating class" },
             ]
-        },
+        }, */
     ],
 
     experience: [

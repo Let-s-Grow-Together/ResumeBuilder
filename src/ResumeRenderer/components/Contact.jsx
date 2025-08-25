@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import "/src/ResumeRenderer/ResumeRenderer.css";
 
-export default function Contact() {
+export default function Contact({areaName}) {
     const { editMode, data, style, selectedSection, setSelectedSection } = useResume();
 
     const [contacts, setContacts] = useState(() => {
@@ -62,12 +62,14 @@ export default function Contact() {
         setIconMap({ ...iconMap, [newIndex]: "email" });
     };
     const isSelected = selectedSection === "contact";
+    const layoutHeading = style?.layoutStyles && areaName && style.layoutStyles[areaName]?.heading;
+    const headingStyle = layoutHeading ?? style?.contact?.heading;
     return (
         <div style={style?.contact?.box}
             onClick={() => setSelectedSection("contact")}
             className={`contact resumeSection ${style?.contact?.polygon ? "polygon" : ""} ${editMode && isSelected ? "selected" : ""}`}
         >
-            <h2 style={style?.contact?.heading}>Contact</h2>
+            <h2 style={headingStyle}>Contact</h2>
             <ul className="contactList" style={style?.contact?.list}>
                 {contacts.map((contact, index) => (
                     <li key={index} className="contactItem" style={style?.contact?.listItem}>

@@ -143,7 +143,7 @@ function LayoutTwo({ data, style, viewType, editMode, handleFieldBlur, handleDes
     ));
 }
 
-export default function WorkExperience() {
+export default function WorkExperience({areaName}) {
     const {
         data,
         style,
@@ -191,6 +191,8 @@ export default function WorkExperience() {
     const isSelected = selectedSection === "experience";
     const layoutType = style?.workExpe?.layoutType;
     const LayoutComponent = layoutComponents[layoutType] || LayoutDefault;
+    const layoutHeading = style?.layoutStyles && areaName && style.layoutStyles[areaName]?.heading;
+    const headingStyle = layoutHeading ?? style?.workExpe?.heading;
 
     return (
         <div
@@ -199,7 +201,7 @@ export default function WorkExperience() {
             style={{ ...style?.workExpe?.box, position: "relative" }}
             ref={workExpRef}
         >
-            <h2 className={`${style?.workExpe?.dottedheading?"dotted-heading":""}`} style={style?.workExpe?.heading}>
+            <h2 className={`${style?.workExpe?.dottedheading?"dotted-heading":""}`} style={headingStyle}>
                 Work Experience
             </h2>
             <LayoutComponent
