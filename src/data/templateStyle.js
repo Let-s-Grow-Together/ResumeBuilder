@@ -1,3 +1,4 @@
+
 const sharedStyles = {
     "2": {
         heading: {
@@ -60,7 +61,7 @@ const sharedStyles = {
 
 const templateStyles = {
     "1": {
-        /* layoutStyles: {
+     layoutStyles: {
             leftColumn: {
                 heading: {
                     borderBottom: "2px solid #ffffff",
@@ -74,7 +75,7 @@ const templateStyles = {
                     marginBottom: "1rem"
                 }
             }
-        }, */
+        },
         /* vars: {
             "--left-heading-color": "#000",
             "--right-heading-color": "#000",
@@ -279,11 +280,21 @@ const templateStyles = {
     },
 
     "9": {
-        vars: {
-            "--left-heading-color": "#6d4a4aff",
-            "--right-heading-color": "#6d4a4aff",
-            "--right-heading-spacing": "0.75rem",
-            "--left-heading-spacing": "0.75rem"
+        layoutStyles: {
+            leftColumn: {
+                heading: {
+                    borderBottom: "2px solid #6d4a4aff",
+                    color:"#6d4a4aff",
+                     marginBottom: "0.75rem"
+                }
+            },
+            rightColumn: {
+                heading: {
+                    color: "#6d4a4aff",
+                    borderBottom: "2px solid #6d4a4aff",
+                    marginBottom: "0.75rem"
+                }
+            }
         },
         avatar: {
             showAvatar: true,
@@ -291,7 +302,8 @@ const templateStyles = {
             card: {
                 backgroundColor: '#7c2b2b',
                 color: '#F5F5F5',
-                borderRadius: '5px'
+                borderRadius: '5px',
+                padding:'1rem',
 
             },
             heading: {
@@ -309,13 +321,29 @@ const templateStyles = {
                 // display: "inline-block"
             }
         },
+        contact:{
+            box:{
+            marginTop: "20px",
+
+            }
+        }
     },
     "10": {
-        vars: {
-            "--left-heading-color": "#3f51b5",
-            "--right-heading-color": "#0d47a1",
-            "--right-heading-spacing": "1rem",
-            "--left-heading-spacing": "1rem"
+       layoutStyles: {
+            leftColumn: {
+                heading: {
+                    borderBottom: "2px solid #0d47a1",
+                    color:"red",
+                    marginBottom: "0.75rem"
+                }
+            },
+            rightColumn: {
+                heading: {
+                    color: "#0d47a1",
+                    borderBottom: "2px solid #0d47a1",
+                    marginBottom: "0.75rem"
+                }
+            }
         },
         avatar: {
             showAvatar: true,
@@ -326,23 +354,26 @@ const templateStyles = {
                 gap: '5px',
                 marginLeft: '5rem'
             },
+            card:{
+                padding:'1rem',
+                backgroundColor:'red'
+            },
             position: {
 
             },
             innerBox: {
-                marginTop: '1rem'
+                // marginTop: '1rem'
+                display:'flex'
             },
-            card: {
-                margin: '-1.5rem -3rem'
-            }
+          
         },
         contact: {
             box: {
-                marginTop: ".7rem"
+                // marginTop: ".7rem"
             },
             icon: {
                 color: "#3f51b5",
-                marginLeft: "10px"
+                // marginLeft: "10px"
             },
             deleteIcon: {
                 color: '#3f51b5',
@@ -979,8 +1010,21 @@ const templateStyles = {
         }
     },
     "117": {
-        vars: {
-            "--primary-color": '#2EBCB0',
+         layoutStyles: {
+            leftColumn: {
+                heading: {
+                    borderBottom: "2px solid #8cbcb0",
+                    color:"#000",
+                     marginBottom: "0.75rem"
+                }
+            },
+            rightColumn: {
+                heading: {
+                    color: "#000",
+                    borderBottom: "2px solid #8cbcb0",
+                    marginBottom: "0.75rem"
+                }
+            }
         },
 
         avatar: {
@@ -990,6 +1034,7 @@ const templateStyles = {
                 background: "none",
                 width: "300px",
                 height: '150px',
+                padding:'1.5rem'
             },
             imageDiv: {
                 marginLeft: '0px'
@@ -2094,7 +2139,7 @@ const templateStyles = {
 
         contact: {
             box: {
-                marginTop: '2rem'
+                // marginTop: '2rem'
             },
             heading: {
                 display: "none"
@@ -2107,10 +2152,10 @@ const templateStyles = {
             },
             icon: {
                 color: "#002F5F",
-                marginLeft: "10px"
+                // marginLeft: "10px"
             },
             deleteIcon: {
-                marginLeft: "10px",
+                // marginLeft: "10px",
                 color: '#002F5F',
                 border: 'none'
             }
@@ -2445,6 +2490,22 @@ const templateStyles = {
 
 
     "12": {
+         layoutStyles: {
+            leftColumn: {
+                heading: {
+                    borderBottom: "2px solid #00897b",
+                    color:"#000",
+                     marginBottom: "0.75rem"
+                }
+            },
+            rightColumn: {
+                heading: {
+                    color: "#000",
+                    borderBottom: "2px solid #00897b",
+                    marginBottom: "0.75rem"
+                }
+            }
+        },
         avatar: {
             card: { background: "none", display: "none" },
             imageDiv: {
@@ -2666,6 +2727,23 @@ const templateStyles = {
         }
     },
     "15": {
+         layoutStyles: {
+            leftColumn: {
+                heading: {
+                    borderBottom: "2px solid #00796b",
+                    color:"#000",
+                     marginBottom: "0.75rem"
+                }
+            },
+            rightColumn: {
+                heading: {
+                    color: "#000",
+                    borderBottom: "2px solid #00796b",
+                    marginBottom: "0.75rem"
+                }
+            }
+        },
+
         avatar: {
             card: { display: "none" },
             imageDiv: {
@@ -2674,15 +2752,17 @@ const templateStyles = {
                 overflow: "hidden",
                 width: "70px",
                 height: "70px",
-                marginRight: "12px"
+                // marginRight: "12px"
             }
         },
         personalInfo: {
             box: { display: "inline-block" },
             name: { fontSize: "22px", fontWeight: "700", color: "white" },
-            position: { fontSize: "13px", opacity: 0.9 }
+            position: { fontSize: "13px", opacity: 0.9 },
+            summaryBox:{display:'none'}
         },
         contact: {
+            heading:{display:'none'},
             box: { display: "inline-block", marginLeft: "auto", textAlign: "right" },
             listItem: { padding: "2px 0", color: "white" }
         },
