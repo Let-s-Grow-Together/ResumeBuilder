@@ -49,6 +49,12 @@ const sharedStyles = {
             borderBottom: '2px solid var(--primary-color)',
             paddingLeft: '10px'
         }
+    },
+    "501": {
+        heading: {
+            fontSize: "1.7rem",
+            marginBottom: "0.1rem"
+        }
     }
 };
 
@@ -3982,6 +3988,8 @@ const templateStyles = {
             avatar: {
                 box: {
                     padding: "0px",
+                    paddingTop: "10px",
+                    paddingBottom: "10px",
                     margin: "auto"
                 },
                 imageDiv: {
@@ -3999,7 +4007,8 @@ const templateStyles = {
         },
         avatar: {
             box: {
-                marginBottom: "2rem"
+                marginBottom: "2rem",
+                paddingTop: "20px"
             },
             hexWrapper: {
                 display: "none"
@@ -4023,8 +4032,7 @@ const templateStyles = {
                 marginBottom: "2rem"
             },
             heading: {
-                fontSize: "1.7rem",
-                marginBottom: "1rem"
+                ...sharedStyles["501"].heading,
             },
             content: {
                 padding: "0px",
@@ -4043,8 +4051,7 @@ const templateStyles = {
                 marginBottom: "2rem"
             },
             heading: {
-                fontSize: "1.7rem",
-                marginBottom: "1rem"
+                ...sharedStyles["501"].heading,
             },
             leftWork: {
                 width: "30%",
@@ -4072,8 +4079,7 @@ const templateStyles = {
                 marginBottom: "2rem"
             },
             heading: {
-                fontSize: "1.7rem",
-                marginBottom: "1rem"
+                ...sharedStyles["501"].heading,
             },
             viewType: "block",
             leftEdu: {
@@ -4105,8 +4111,7 @@ const templateStyles = {
                 marginBottom: "2rem"
             },
             heading: {
-                fontSize: "1.7rem",
-                marginBottom: "1rem"
+                ...sharedStyles["501"].heading,
             },
             backBars: {
                 background: "#394E63"
@@ -4123,31 +4128,46 @@ const templateStyles = {
                 marginBottom: "1rem"
             },
             heading: {
-                fontSize: "1.7rem",
-                marginBottom: "1rem"
+                ...sharedStyles["501"].heading,
             },
             eachLanguageBox: {
                 border: "1px solid #ccc"
             }
         },
         contact: {
-            polygon: "true",
             box: {
-                width: "124%",
+                width: "118%",
                 marginBottom: "2rem",
                 marginLeft: "-1.5rem",
                 backgroundColor: "#32A548",
                 paddingLeft: "1.5rem",
-                paddingTop: "1rem",
-                paddingBottom: "1rem"
+                paddingTop: "0.5rem",
+                paddingBottom: "0.5rem"
             },
             heading: {
-                marginBottom: "1rem"
+                marginBottom: "0.1rem"
             },
             listItem: {
                 marginBottom: "0.3rem"
             }
         },
+        projects:{
+            heading:{
+                ...sharedStyles["501"].heading,
+            },
+            eachProject:{
+                paddingLeft: "0px"
+            },
+            title:{
+                fontWeight: "700",
+                fontSize: "1.2rem"
+            }
+        },
+        organiz:{
+            heading:{
+                ...sharedStyles["501"].heading,
+            }
+        }
     }
 }
 

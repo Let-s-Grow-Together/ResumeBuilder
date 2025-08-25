@@ -350,7 +350,7 @@
 }
 
 .summary>ul {
-    padding-left: var(--basic-font-size);
+    padding-left: 10px;
 }
 
 .summary>ul>li {
@@ -359,7 +359,7 @@
 
 .summary>div>p {
     outline: var(--none);
-    padding-left: var(--basic-pixel-margin);
+    padding-left: 16px;
 }
 
 .organizations {
@@ -621,7 +621,7 @@
 }
 
 .polygon::after {
-    top: 200px;
+    top: 220px;
     left: 293px;
     transform: rotateX(180deg);
     transform-origin: center;
