@@ -94,7 +94,7 @@ const rawMockUserData = {
                 { id: "des2", text: "Top 5% of graduating class" },
             ]
         },
-        {
+        /* {
             id: "edu3",
             school: "ABC Public School",
             degree: "Junior Secondary (Science)",
@@ -105,7 +105,7 @@ const rawMockUserData = {
                 { id: "des1", text: "Scored 9.5 CGPA in Class 10" },
                 { id: "des2", text: "Top 2% of graduating class" },
             ]
-        },
+        }, */
     ],
 
     experience: [
@@ -133,19 +133,6 @@ const rawMockUserData = {
                 { id: 'des1', text: "Built reusable React components that were generic and can be changed according to developers needs" },
                 { id: 'des2', text: "Integrated REST APIs" },
                 { id: 'des3', text: "Improved UI performance in main project of the company" },
-            ]
-        },
-        {
-            id: "exp3",
-            role: "Web Designer Intern",
-            organization: "TechNova Pvt Ltd",
-            location: "Remote",
-            startDate: "2020",
-            endDate: "2021",
-            description: [
-                { id: 'des1', text: "Built reusable React components" },
-                { id: 'des2', text: "Integrated REST APIs" },
-                { id: 'des3', text: "Improved UI performance" },
             ]
         }
     ],

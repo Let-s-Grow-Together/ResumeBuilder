@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useResume } from "../../context/ResumeContext";
 import InlineToolbar from "../../Components/shared/InlineToolbar";
 
-export default function Certificates() {
+export default function Certificates({areaName}) {
     const {
         data,
         style,
@@ -28,6 +28,8 @@ export default function Certificates() {
 
     const viewType = viewTypes?.certifications || "list";
     const isSelected = selectedSection === "certifications";
+    const layoutHeading = style?.layoutStyles && areaName && style.layoutStyles[areaName]?.heading;
+    const headingStyle = layoutHeading ?? style?.certificate?.heading;
     return (
         <div
             className={`certificates resumeSection ${editMode && isSelected ? "selected" : ""}`}
@@ -35,7 +37,7 @@ export default function Certificates() {
             onClick={() => setSelectedSection("certifications")}
             ref={certificateRef}
         >
-            <h2 style={style?.certificate?.heading} >
+            <h2 style={headingStyle} >
                 Certificates
             </h2>
 

@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useResume } from "../../context/ResumeContext";
 import InlineToolbar from "../../Components/shared/InlineToolbar";
 
-export default function Languages() {
+export default function Languages({areaName}) {
     const { data, style, editMode, updateField, selectedSection, setSelectedSection, viewTypes } = useResume();
     const languagesRef = useRef();
 
@@ -15,6 +15,8 @@ export default function Languages() {
 
     const viewType = viewTypes?.language || "list";
     const isSelected = selectedSection === "language";
+    const layoutHeading = style?.layoutStyles && areaName && style.layoutStyles[areaName]?.heading;
+    const headingStyle = layoutHeading ?? style?.language?.heading;
     return (
         <div
             className={`languages resumeSection ${editMode && isSelected ? "selected" : ""}`}
@@ -22,7 +24,7 @@ export default function Languages() {
             onClick={() => setSelectedSection("language")}
             ref={languagesRef}
         >
-            <h2 style={style?.language?.heading}>Languages</h2>
+            <h2 style={headingStyle}>Languages</h2>
 
             {viewType === "list" ? (
                 <ul style={style?.language?.wholeList}>

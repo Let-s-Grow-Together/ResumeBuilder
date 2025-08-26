@@ -8,7 +8,7 @@ export default function Header({ onLoginClick }) {
     const [menuOpen, setMenuOpen] = useState(false);
     const navRef = useRef();
     const toggleRef = useRef();
-    const location = useLocation(); 
+    const location = useLocation();
 
     useEffect(() => {
         const fetchUser = async () => {
@@ -50,7 +50,7 @@ export default function Header({ onLoginClick }) {
     return (
         <header className="headerr">
             <Link to="/" className="logo" onClick={handleNavClick} style={{ textDecoration: "none" }}>
-                Heitech.
+                NextStepCV.
             </Link>
 
             <button
@@ -73,7 +73,7 @@ export default function Header({ onLoginClick }) {
                     >
                         Home
                     </Link>
-                       <Link
+                    <Link
                         to="/templates"
                         onClick={handleNavClick}
                         className={location.pathname === "/templates" ? "active" : ""}
@@ -88,7 +88,7 @@ export default function Header({ onLoginClick }) {
                         About
                     </Link>
 
-                 
+
 
                     {user ? (
                         <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>

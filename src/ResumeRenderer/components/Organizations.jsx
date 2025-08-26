@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useResume } from "../../context/ResumeContext";
 import InlineToolbar from "../../Components/shared/InlineToolbar";
 
-export default function Organizations() {
+export default function Organizations({areaName}) {
     const {
         data,
         style,
@@ -39,6 +39,8 @@ export default function Organizations() {
 
     const viewType = viewTypes?.organizations || "list";
     const isSelected = selectedSection === "organizations";
+    const layoutHeading = style?.layoutStyles && areaName && style.layoutStyles[areaName]?.heading;
+    const headingStyle = layoutHeading ?? style?.organiz?.heading;
     return (
         <div
             className={`organizations resumeSection ${editMode && isSelected ? "selected" : ""}`}
@@ -46,7 +48,7 @@ export default function Organizations() {
             onClick={() => setSelectedSection("organizations")}
             ref={orgRef}
         >
-            <h2 style={style?.organiz?.heading} >
+            <h2 style={headingStyle} >
                 Organizations
             </h2>
 

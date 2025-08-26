@@ -143,7 +143,7 @@ function LayoutTwo({ data, style, viewType, editMode, handleFieldBlur, handleDes
     ));
 }
 
-export default function Education() {
+export default function Education({areaName}) {
     const {
         data,
         style,
@@ -189,6 +189,8 @@ export default function Education() {
         };
         updateField("education", null, updated);
     };
+    const layoutHeading = style?.layoutStyles && areaName && style.layoutStyles[areaName]?.heading;
+    const headingStyle = layoutHeading ?? style?.education?.heading;
 
     return (
         <div
@@ -197,7 +199,7 @@ export default function Education() {
             style={{ ...style?.education?.box, position: "relative" }}
             ref={educationRef}
         >
-            <h2 className={`${style?.education?.dottedheading?"dotted-heading":""}`} style={style?.education?.heading}>
+            <h2 className={`${style?.education?.dottedheading?"dotted-heading":""}`} style={headingStyle}>
                 Education
             </h2>
 

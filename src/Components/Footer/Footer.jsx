@@ -3,7 +3,7 @@ import { FaFacebookF, FaLinkedinIn, FaTwitter, FaInstagram } from 'react-icons/f
 
 export default function Footer() {
     return (
-        <footer className="heitech-footer">
+        <footer className="NextStepCV-footer">
             <div className="footer-top">
                 <h2>Let’s Build the Future, One Resume at a Time.</h2>
                 <p>Join 1000+ users building standout resumes powered by smart templates & creativity.</p>
@@ -18,7 +18,7 @@ export default function Footer() {
 
             <div className="footer-links">
                 <div className="link-col">
-                    <h4>Heitech</h4>
+                    <h4>NextStepCV</h4>
                     <a href="#">Templates</a>
                     <a href="#">Resume Builder</a>
                     <a href="#">Cover Letters</a>
@@ -37,12 +37,12 @@ export default function Footer() {
                 </div>
                 <div className="link-col contact-box">
                     <h4>Contact Us</h4>
-                    <p>Email: <a href="mailto:hello@heitechresume.com">hello@heitechresume.com</a></p>
+                    <p>Email: <a href="mailto:hello@NextStepCVresume.com">hello@NextStepCVresume.com</a></p>
                 </div>
             </div>
 
             <div className="footer-bottom">
-                © {new Date().getFullYear()} Heitech Resume Builder — Powered by Let's Grow Together 🌱
+                © {new Date().getFullYear()} NextStepCV Resume Builder — Powered by Let's Grow Together 🌱
             </div>
         </footer>
     );

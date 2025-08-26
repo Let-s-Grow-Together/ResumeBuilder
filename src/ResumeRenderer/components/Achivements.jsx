@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useResume } from "../../context/ResumeContext";
 import InlineToolbar from "../../Components/shared/InlineToolbar";
 
-export default function Achievements() {
+export default function Achievements({areaName}) {
     const {
         data,
         style,
@@ -38,6 +38,8 @@ export default function Achievements() {
 
     const viewType = viewTypes?.achievements || "list";
     const isSelected = selectedSection === "achievements";
+    const layoutHeading = style?.layoutStyles && areaName && style.layoutStyles[areaName]?.heading;
+    const headingStyle = layoutHeading ?? style?.achieve?.heading;
     return (
         <div
             className={`achievements resumeSection ${editMode && isSelected ? "selected" : ""}`}
@@ -45,7 +47,7 @@ export default function Achievements() {
             onClick={() => setSelectedSection("achievements")}
             ref={achievementRef}
         >
-            <h2 style={style?.achieve?.heading} >
+            <h2 style={headingStyle} >
                 Achievements
             </h2>
 

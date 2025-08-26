@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useResume } from "../../context/ResumeContext";
 import InlineToolbar from "../../Components/shared/InlineToolbar";
 
-export default function Strengths() {
+export default function Strengths({areaName}) {
     const {
         data,
         style,
@@ -38,6 +38,8 @@ export default function Strengths() {
 
     const viewType = viewTypes?.strengths || "list";
     const isSelected = selectedSection === "strengths";
+    const layoutHeading = style?.layoutStyles && areaName && style.layoutStyles[areaName]?.heading;
+    const headingStyle = layoutHeading ?? style?.strength?.heading;
     return (
         <div
             className={`strengths resumeSection ${editMode && isSelected ? "selected" : ""}`}
@@ -45,7 +47,7 @@ export default function Strengths() {
             onClick={() => setSelectedSection("strengths")}
             ref={strengthRef}
         >
-            <h2 style={style?.strength?.heading}>
+            <h2 style={headingStyle}>
                 Strengths
             </h2>
 

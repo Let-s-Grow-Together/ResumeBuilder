@@ -2,7 +2,7 @@ import { useRef } from "react";
 import InlineToolbar from "../../Components/shared/InlineToolbar";
 import { useResume } from "../../context/ResumeContext";
 
-export default function Awards() {
+export default function Awards({areaName}) {
     const {
         data,
         style,
@@ -38,6 +38,8 @@ export default function Awards() {
 
     const viewType = viewTypes?.awards || "list";
     const isSelected = selectedSection === "awards";
+    const layoutHeading = style?.layoutStyles && areaName && style.layoutStyles[areaName]?.heading;
+    const headingStyle = layoutHeading ?? style?.award?.heading;
     return (
         <div
             className={`awards resumeSection ${editMode && isSelected ? "selected" : ""}`}
@@ -45,7 +47,7 @@ export default function Awards() {
             onClick={() => setSelectedSection("awards")}
             ref={awardsRef}
         >
-            <h2 style={style?.award?.heading} >
+            <h2 style={headingStyle} >
                 Honours and Awards
             </h2>
 

@@ -57,19 +57,19 @@ function LayoutBars({ data, style, editMode, viewType, handleTextBlur, handleMou
         );
     }
     return (
-        <div className="skillsBars" style={{ display: "flex", flexDirection: "column", gap: "12px",...style?.skills?.bars }}>
+        <div className="skillsBars" style={{ display: "flex", flexDirection: "column", gap: "12px", ...style?.skills?.bars }}>
             {data.map((skill, index) => (
                 <div
                     className="skillItem"
                     key={skill.id}
-                    style={{ display: "flex", alignItems: "center", gap: "12px",...style?.skills?.skillItem }}
+                    style={{ display: "flex", alignItems: "center", gap: "12px", ...style?.skills?.skillItem }}
                 >
                     <span
                         contentEditable={editMode}
                         suppressContentEditableWarning
                         onBlur={(e) => handleTextBlur(index, e)}
                         dangerouslySetInnerHTML={{ __html: skill.text }}
-                        style={{ width: "120px", ...style?.skills?.label }}
+                        style={{ width: "120px",outline:"none",paddingLeft:"5px", ...style?.skills?.label }}
                     />
                     <div
                         onMouseDown={(e) => handleMouseDown(index, e)}
@@ -94,14 +94,14 @@ function LayoutBars({ data, style, editMode, viewType, handleTextBlur, handleMou
                             }}
                         />
                     </div>
-                    <span style={{ minWidth: "30px", textAlign: "right",...style?.skills?.perValues }}>{skill.value}%</span>
+                    <span style={{ minWidth: "30px", textAlign: "right", ...style?.skills?.perValues }}>{skill.value}%</span>
                 </div>
             ))}
         </div>
     );
 }
 
-export default function Skills() {
+export default function Skills({ areaName }) {
     const {
         data,
         style,
@@ -158,6 +158,9 @@ export default function Skills() {
         document.addEventListener("mouseup", handleMouseUp);
     };
 
+    const layoutHeading = style?.layoutStyles && areaName && style.layoutStyles[areaName]?.heading;
+    const headingStyle = layoutHeading ?? style?.skills?.heading;
+
     return (
         <div
             className={`skills resumeSection ${editMode && isSelected ? "selected" : ""}`}
@@ -165,7 +168,7 @@ export default function Skills() {
             onClick={() => setSelectedSection("skills")}
             ref={skillsRef}
         >
-            <h2 style={style?.skills?.heading}>Skills</h2>
+            <h2 style={headingStyle}>Skills</h2>
 
             <LayoutComponent
                 data={data.skills}

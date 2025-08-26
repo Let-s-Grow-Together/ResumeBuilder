@@ -21,6 +21,38 @@
     background: white;
 }
 
+
+.profile-image {
+    width: 120px;
+    aspect-ratio: 1;
+    border: 12px solid green;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 1);
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1rem;
+    background: white;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin: 0;
+    color: black;
+}
+
+.position {
+    font-size: 1rem;
+    color: #a0a0a0;
+    margin-top: 0.5rem;
+    font-weight: 400;
+}
+
 .personalInfo {
     /* border-bottom: var(--basic-black-border); */
     text-align: var(--left-align);
@@ -38,9 +70,23 @@
     font-weight: 700;
 }
 
+
+.profile-card {
+    position: relative;
+    border: none,
+}
+
+.personalInfo>div:nth-child(1)>div:nth-child(2) {
+    margin-top: 0.5rem;
+    margin-left: 2rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
 .personalInfo>div:nth-child(2) {
     outline: var(--none);
-    font-size: 18px;
+    font-size: 16px;
+    padding: 0px 0px 10px 20px;
 }
 
 .personalInfo>div:nth-child(3)>p {
@@ -63,13 +109,19 @@
     position: relative;
 }
 
+.contact h2 {
+    padding-bottom: 10px;
+    font-weight: 500;
+}
+
 .contactList {
     list-style: var(--none);
+    padding-left: 0px;
 }
 
 .contactItem {
     padding-left: var(--basic-pixel-margin);
-    padding-bottom: var(--basic-pixel-margin);
+    padding-bottom: 8px;
 }
 
 .icon-picker-popup {
@@ -85,7 +137,7 @@
 
 .editable-text {
     display: inline;
-    padding-left: var(--basic-pixel-margin);
+    padding-left: 12px;
     outline: var(--none);
 }
 
@@ -95,11 +147,13 @@
 }
 
 .skills>h2 {
-    padding-bottom: var(--basic-pixel-margin);
+    padding-bottom: 10px;
+    font-weight: 500;
 }
 
 .skills>ul {
     display: inline-block;
+
 }
 
 .skills>ul>li {
@@ -109,7 +163,8 @@
 .individualSkill {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    padding-left: 0px;
+    /* justify-content: space-between; */
 }
 
 .individualSkill>span {
@@ -117,6 +172,7 @@
     outline: var(--none);
     padding: var(--basic-pixel-margin);
     margin-bottom: 12px;
+    margin-right: 10px;
 }
 
 .strengths {
@@ -124,16 +180,24 @@
     margin-bottom: var(--basic-font-size);
 }
 
+.strengths h2 {
+    padding-bottom: 10px;
+    font-weight: 500;
+}
+
 .eachStrength {
-    margin-bottom: var(--basic-pixel-margin);
+    margin-bottom: 15px;
+    padding-left: 0px;
 }
 
 .eachStrength>h3 {
     outline: var(--none);
+    padding-bottom: 5px;
+    font-weight: 500;
 }
 
 .eachStrength>ul {
-    padding-left: 1.2rem;
+    padding-left: 18px;
 }
 
 .eachStrength>ul>li {
@@ -151,33 +215,44 @@
 
 .workExperience>h2 {
     outline: var(--none);
+    padding-bottom: 10px;
+    font-weight: 500;
 }
 
 .workPlace {
-    margin-bottom: var(--basic-pixel-margin);
+    margin-bottom: 15px;
     margin-left: var(--basic-pixel-margin);
+    padding-left: 0px;
 }
 
 .workPlace>h3 {
     outline: var(--none);
+    padding-bottom: 0px;
+    font-weight: 700;
 }
 
 .workPlace>h4 {
     outline: var(--none);
+    padding: 0px 0px 1px 0px;
+    font-weight: 500;
 }
 
 .workPlace>h6 {
     font-size: 14px;
+    font-style: italic;
     outline: var(--none);
+    padding: 0px 0px 5px 0px;
+    font-weight: 500;
 }
 
 .workPlace>div>p {
     margin-left: var(--basic-pixel-margin);
     outline: var(--none);
+    padding: 0px 0px 1.5px 0px;
 }
 
 .workPlace>ul {
-    padding-left: var(--basic-font-size);
+    padding: 0px 0px 5px 18px;
 }
 
 .workPlace>ul>li {
@@ -187,26 +262,34 @@
 .projects {
     margin-bottom: var(--basic-font-size);
     text-align: var(--left-align);
+
 }
 
 .projects>h2 {
     outline: var(--none);
+    padding-bottom: 10px;
+    font-weight: 500;
 }
 
 .eachProject {
     padding-left: var(--basic-pixel-margin);
+    padding: 0px 0px 15px 0px;
 }
 
 .eachProject>h3 {
     outline: var(--none);
+    padding: 0px 0px 5px 0px;
+    font-weight: 700;
 }
 
 .eachProject>div>p {
     outline: var(--none);
+    padding: 0px 0px 5px 8px;
 }
 
 .eachProject>ul {
     padding-left: var(--basic-font-size);
+    padding: 0px 0px 5px 18px;
 }
 
 .eachProject>ul>li {
@@ -220,28 +303,42 @@
 
 .education>h2 {
     outline: var(--none);
+    padding-bottom: 10px;
+    font-weight: 500;
+}
+
+.educationItem {
+    padding: 0px 0px 15px 0px;
 }
 
 .educationItem>h3 {
     outline: var(--none);
+    font-weight: 700;
 }
 
 .educationItem>h4 {
     outline: var(--none);
+    padding: 0px 0px 1px 0px;
+    font-weight: 500;
 }
 
 .educationItem>h6 {
     font-size: 14px;
     outline: var(--none);
+    padding: 0px 0px 5px 0px;
+    font-style: italic;
+    font-weight: 500;
 }
 
 .educationItem>div>p {
     padding-left: var(--basic-pixel-margin);
     outline: var(--none);
+    padding: 0px 0px 1px 8px;
 }
 
 .educationItem>ul {
     padding-left: var(--basic-font-size);
+    padding: 0px 0px 5px 18px;
 }
 
 .educationItem>ul>li {
@@ -253,8 +350,13 @@
     margin-bottom: var(--basic-font-size);
 }
 
+.summary h2{
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+
 .summary>ul {
-    padding-left: var(--basic-font-size);
+    padding-left: 0px;
 }
 
 .summary>ul>li {
@@ -263,7 +365,7 @@
 
 .summary>div>p {
     outline: var(--none);
-    padding-left: var(--basic-pixel-margin);
+    padding-left: 0px;
 }
 
 .organizations {
@@ -271,12 +373,24 @@
     text-align: var(--left-align);
 }
 
+.organizations h2 {
+    padding: 0px 0px 10px 0px;
+    font-weight: 500;
+}
+
+.eachOrganization {
+    padding: 0px 0px 15px 0px;
+}
+
 .eachOrganization>h3 {
     outline: var(--none);
+    padding: 0px 0px 5px 0px;
+    font-weight: 500;
 }
 
 .eachOrganization>ul {
     padding-left: var(--basic-font-size);
+    padding: 0px 0px 0px 21px;
 }
 
 .eachOrganization>ul>li {
@@ -293,21 +407,35 @@
     text-align: var(--left-align);
 }
 
+.awards h2 {
+    padding: 0px 0px 10px 0px;
+    font-weight: 500;
+}
+
+.eachAward {
+    padding: 0px 0px 15px 0px;
+}
+
 .eachAward>h3 {
     outline: var(--none);
+    padding: 0px 0px 5px 0px;
+    font-weight: 500;
 }
 
 .eachAward>ul {
     padding-left: var(--basic-font-size);
+    padding: 0px 0px 0px 18px;
 }
 
 .eachAward>ul>li {
+    font-style: italic;
     outline: var(--none);
 }
 
 .eachAward>div>p {
     outline: var(--none);
-    padding-left: var(--basic-pixel-margin);
+    padding-left: 0px;
+    font-style: italic;
 }
 
 .certificates {
@@ -315,16 +443,29 @@
     margin-bottom: var(--basic-font-size);
 }
 
+.certificates h2 {
+    padding: 0px 0px 10px 0px;
+    font-weight: 500;
+}
+
+.eachCertificate {
+    padding: 0px 0px 15px 0px;
+}
+
 .eachCertificate>h3 {
     outline: var(--none);
+    font-weight: 500;
 }
 
 .eachCertificate>h4 {
     outline: var(--none);
+    font-style: italic;
+    font-weight: 500;
 }
 
 .eachCertificate>h5 {
     outline: var(--none);
+    font-style: italic;
     font-size: 15px;
 }
 
@@ -348,10 +489,12 @@
 
 .languages>h2 {
     margin-bottom: var(--basic-pixel-margin);
+    padding: 0px 0px 10px 0px;
+    font-weight: 500;
 }
 
 .languages>ul {
-    padding-left: var(--basic-font-size);
+    padding: 0px 0px 0px 21px;
 }
 
 .languages>ul>li {
@@ -376,12 +519,24 @@
     margin-bottom: var(--basic-font-size);
 }
 
+.achievements h2 {
+    padding: 0px 0px 10px 0px;
+    font-weight: 500;
+}
+
+.eachAchievement {
+    padding: 0px 0px 15px 0px;
+}
+
 .eachAchievement>h3 {
     outline: var(--none);
+    padding: 0px 0px 5px 0px;
+    font-weight: 500;
 }
 
 .eachAchievement>ul {
     padding-left: var(--basic-font-size);
+    padding: 0px 0px 0px 18px;
 }
 
 .eachAchievement>ul>li {
@@ -390,47 +545,7 @@
 
 .eachAchievement>div>p {
     outline: var(--none);
-    padding-left: var(--basic-pixel-margin);
-}
-
-.profile-card {
-    /* width: 300px; */
-    text-align: center;
-    /* background: linear-gradient(135deg, #5b7bb0 50%, white 50%); */
-    padding: 2rem 1rem 1.5rem;
-    font-family: sans-serif;
-    color: #5b7bb0;
-    position: relative;
-    border:none,
-}
-
-.profile-image {
-    width: 120px;
-    aspect-ratio: 1;
-    border: 6px solid white;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0 auto 1rem;
-    background: white;
-}
-
-.profile-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.name {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin: 0;
-    color: black;
-}
-
-.position {
-    font-size: 1rem;
-    color: #a0a0a0;
-    margin-top: 0.5rem;
+    padding-left: 0px;
 }
 
 .timeline {
@@ -446,7 +561,7 @@
     margin-bottom: 30px;
 }
 
-.area-leftColumn h2 {
+/* .area-leftColumn h2 {
     border-bottom: 2px solid var(--left-heading-color);
     color: var(--left-heading-color);
     margin-bottom: var(--left-heading-spacing);
@@ -456,9 +571,7 @@
     border-bottom: 2px solid var(--right-heading-color);
     color: var(--right-heading-color);
     margin-bottom: var(--right-heading-spacing);
-
-
-}
+} */
 
 .timeline-item .dot {
     width: 12px;
@@ -520,7 +633,7 @@
 }
 
 .polygon::after {
-    top: 200px;
+    top: 220px;
     left: 293px;
     transform: rotateX(180deg);
     transform-origin: center;
