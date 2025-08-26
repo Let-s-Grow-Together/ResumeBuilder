@@ -11,7 +11,7 @@ export default function AboutPage() {
   const [formData, setFormData] = useState({ name: "", text: "" });
 
   useEffect(() => {
-    const stored = JSON.parse(localStorage.getItem("heitech-reviews")) || [];
+    const stored = JSON.parse(localStorage.getItem("NextStepCV-reviews")) || [];
     setReviews(stored);
   }, []);
 
@@ -19,7 +19,7 @@ export default function AboutPage() {
     e.preventDefault();
     const updated = [...reviews, formData];
     setReviews(updated);
-    localStorage.setItem("heitech-reviews", JSON.stringify(updated));
+    localStorage.setItem("NextStepCV-reviews", JSON.stringify(updated));
     setFormData({ name: "", text: "" });
   };
 
@@ -30,7 +30,7 @@ export default function AboutPage() {
       <main className="about-container">
         <section className="hero-section">
           <div className="hero-content">
-            <h1>About Heitech Resume Builder</h1>
+            <h1>About NextStepCV Resume Builder</h1>
             <p>We help you land your dream job with a resume that reflects <em>your uniqueness</em>.</p>
           </div>
         </section>
@@ -61,7 +61,7 @@ export default function AboutPage() {
           <h2>Built With Passion</h2>
           <div className="creator-row">
             <div className="creator-photo-placeholder" />
-            <p>Hi, I'm Kritika 👋 I created Heitech to help you land your dream job with confidence and style.</p>
+            <p>Hi, I'm Kritika 👋 I created NextStepCV to help you land your dream job with confidence and style.</p>
           </div>
         </section> */}
 
@@ -88,7 +88,7 @@ export default function AboutPage() {
               required
             />
             <textarea
-              name="text" placeholder="What did you love about Heitech?"
+              name="text" placeholder="What did you love about NextStepCV?"
               value={formData.text}
               onChange={(e) => setFormData({ ...formData, text: e.target.value })}
               required
@@ -97,7 +97,7 @@ export default function AboutPage() {
           </form>
         </section>
 
-       
+
       </main>
 
       <Footer />
