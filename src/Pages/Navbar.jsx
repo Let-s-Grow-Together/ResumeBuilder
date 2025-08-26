@@ -55,7 +55,7 @@ export default function Navbar({ onDownload, onLoginClick }) {
           onClick={() => navigate("/")}
           style={{ cursor: "pointer", fontWeight: "bold", fontSize: "1.2rem" }}
         >
-          Heitech.
+          NextStepCV.
         </div>
       </div>
 
@@ -102,13 +102,13 @@ export default function Navbar({ onDownload, onLoginClick }) {
           </div>
         ) : (
           <button
-          className="nav-loginBtn"
+            className="nav-loginBtn"
             onClick={() => {
               console.log("Login Clicked");
               onLoginClick();
             }}
             style={{
-              
+
             }}
           >
             Log In
