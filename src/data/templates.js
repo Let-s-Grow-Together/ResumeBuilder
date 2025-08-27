@@ -683,16 +683,18 @@ const template116 = {
         }
     }
 };
-/* abhishek doing 117 */
+
 const template117 = {
     id: 117,
     name: 'Premium Template',
+    pdf: "/templates/template7.pdf",
     filteredColumn: "2",
     isAvatar: "true",
     layout: {
         grid: {
             templateRows: "1fr 12fr",
             templateColumns: "1fr 1fr",
+            columnGap:"3rem",
             areas: [
                 {
                     name: "header",
@@ -729,7 +731,7 @@ const template117 = {
                 }
             ]
         },
-        padding: "20px",
+        padding: "8mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
         fontSize: "14px",
@@ -1595,8 +1597,8 @@ const template526 = {
 
                 {
                     name: "leftColumn",
-                    rowStart: 2,
-                    rowEnd: 3,
+                    rowStart: 1,
+                    rowEnd: 2,
                     colStart: 1,
                     colEnd: 2,
                     style: { background: "#FFFFFF", marginTop: "1rem" },
@@ -1605,10 +1607,10 @@ const template526 = {
                 },
                 {
                     name: "rightColumn",
-                    rowStart: 2,
-                    rowEnd: 3,
+                    rowStart: 1,
+                    rowEnd: 2,
                     colStart: 2,
-                    colEnd: 4,
+                    colEnd: 3,
                     style: { marginTop: '1rem', padding: '0rem', },
                     sections: ["personalInfo", "education", "workExperience", "projects"]
                 },

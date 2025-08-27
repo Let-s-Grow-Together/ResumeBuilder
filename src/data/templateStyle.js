@@ -1430,24 +1430,9 @@ const templateStyles = {
     },
     "117": {
         vars: {
-            "--primary-color": "#8cbcb0"
+            "--primary-color": '#2EBCB0',
         },
-        layoutStyles: {
-            leftColumn: {
-                heading: {
-                    borderBottom: "2px solid #8cbcb0",
-                    color: "#000",
-                    marginBottom: "0.75rem"
-                }
-            },
-            rightColumn: {
-                heading: {
-                    color: "#000",
-                    borderBottom: "2px solid #8cbcb0",
-                    marginBottom: "0.75rem"
-                }
-            }
-        },
+
         avatar: {
             showAvatar: true,
             showImage: true,
@@ -1455,7 +1440,6 @@ const templateStyles = {
                 background: "none",
                 width: "300px",
                 height: '150px',
-                padding: '1.5rem'
             },
             imageDiv: {
                 marginLeft: '0px'
@@ -1482,7 +1466,7 @@ const templateStyles = {
 
         contact: {
             box: {
-                // marginTop: '2rem',
+                marginTop: '2rem',
                 display: 'flex',
                 flexDirection: 'column'
             },
@@ -1497,10 +1481,10 @@ const templateStyles = {
             },
             icon: {
                 color: "#8cbcb0",
-                // marginLeft: "10px"
+                marginLeft: "10px"
             },
             deleteIcon: {
-                // marginLeft: "10px",
+                marginLeft: "10px",
                 color: '#8cbcb0',
                 border: 'none'
             }
@@ -1508,7 +1492,7 @@ const templateStyles = {
 
         summary: {
             box: {
-                paddingLeft: "15px",
+                paddingLeft: "0px",
                 marginBottom: "15px"
             },
             heading: {
@@ -1517,7 +1501,7 @@ const templateStyles = {
                 fontSize: "23px"
             },
             content: {
-
+                paddingLeft:"10px"
             }
         },
         workExpe: {
@@ -1532,7 +1516,7 @@ const templateStyles = {
                 color: 'var(--primary-color)'
             },
             wholeList: {
-                marginTop: '5px',
+                margin: '5px 0px 5px 15px',
                 padding: '4px',
                 borderLeft: '1px solid var(--primary-color)',
                 borderRight: '1px solid var(--primary-color)',
@@ -1550,7 +1534,7 @@ const templateStyles = {
                 marginRight: "0.5rem",
             },
             eachWorkPlace: {
-                paddingLeft: '10px'
+                paddingLeft: '0px'
             },
             sideline: 'false',
             timeline: {
@@ -1582,7 +1566,7 @@ const templateStyles = {
             dot: {
                 backgroundColor: 'var(--primary-color)',
                 top: '7px',
-                left: '-20px'
+                left: '0px'
             }
         },
         projects: {
@@ -1629,16 +1613,20 @@ const templateStyles = {
                 marginBottom: '10px',
                 color: '#333',
             },
-            innerBox: {
+            innerbox: {
                 textAlign: 'left',
                 paddingLeft: '10px'
             },
-            eachOrganiz: {
-                marginBottom: '10px'
+            title: {
+                marginBottom: '5px',
+                fontWeight:"600"
+            },
+            listItem:{
+                fontStyle:"italic"
             }
         },
         award: {
-            viewType: "block",
+            // viewType: "block",
             box: {
                 border: 'none',
                 marginBottom: '1rem'
@@ -1649,16 +1637,13 @@ const templateStyles = {
                 marginBottom: '10px',
                 color: '#333',
             },
-            innerBox: {
+            innerbox: {
                 textAlign: 'left',
                 paddingLeft: '10px'
             },
-            date: {
-                fontStyle: 'italic'
+            title: {
+                fontWeight: '600'
             },
-            eachAward: {
-                marginBottom: '5px'
-            }
         },
         language: {
             viewType: "list",
@@ -1667,7 +1652,7 @@ const templateStyles = {
             },
             list: 'true',
             wholeList: {
-                paddingLeft: '35px'
+                paddingLeft: '30px'
             }
         },
         certificate: {
