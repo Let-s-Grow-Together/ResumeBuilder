@@ -6,7 +6,7 @@ const layoutComponents = {
     layout2: LayoutBars,
 };
 
-function LayoutDefault({ data, style, viewType, editMode, handleTextBlur }) {
+function LayoutDefault({ data, style, viewType, editMode, handleTextBlur,BoxStyle }) {
     return viewType === "list" ? (
         <ul style={style?.skills?.wholeList}>
             {data.map((skill, index) => (
@@ -30,7 +30,7 @@ function LayoutDefault({ data, style, viewType, editMode, handleTextBlur }) {
                     contentEditable={editMode}
                     suppressContentEditableWarning
                     onBlur={(e) => handleTextBlur(index, e)}
-                    style={style?.skills?.eachSkillBox}
+                    style={BoxStyle}
                     dangerouslySetInnerHTML={{ __html: skill.text }}
                 />
             ))}
@@ -38,7 +38,7 @@ function LayoutDefault({ data, style, viewType, editMode, handleTextBlur }) {
     );
 }
 
-function LayoutBars({ data, style, editMode, viewType, handleTextBlur, handleMouseDown, draggingIndex }) {
+function LayoutBars({ data, style, editMode, viewType, handleTextBlur, handleMouseDown, draggingIndex,BoxStyle }) {
     if (viewType === "list") {
         return (
             <ul style={style?.skills?.wholeList}>
@@ -161,6 +161,9 @@ export default function Skills({ areaName }) {
     const layoutHeading = style?.layoutStyles && areaName && style.layoutStyles[areaName]?.heading;
     const headingStyle = layoutHeading ?? style?.skills?.heading;
 
+    const layoutBoxStyle = style?.layoutStyles && areaName && style.layoutStyles[areaName]?.eachSkillBox;
+    const BoxStyle = layoutBoxStyle ?? style?.skills?.eachSkillBox;
+
     return (
         <div
             className={`skills resumeSection ${editMode && isSelected ? "selected" : ""}`}
@@ -178,6 +181,7 @@ export default function Skills({ areaName }) {
                 handleTextBlur={handleTextBlur}
                 handleMouseDown={handleMouseDown}
                 draggingIndex={draggingIndex}
+                BoxStyle={BoxStyle}
             />
 
             <InlineToolbar editMode={editMode} containerRef={skillsRef} sectionName="skills" />
