@@ -17,6 +17,9 @@ export default function Languages({areaName}) {
     const isSelected = selectedSection === "language";
     const layoutHeading = style?.layoutStyles && areaName && style.layoutStyles[areaName]?.heading;
     const headingStyle = layoutHeading ?? style?.language?.heading;
+    
+    const layoutBoxStyle = style?.layoutStyles && areaName && style.layoutStyles[areaName]?.eachSkillBox;
+    const BoxStyle = layoutBoxStyle ?? style?.skills?.eachSkillBox;
     return (
         <div
             className={`languages resumeSection ${editMode && isSelected ? "selected" : ""}`}
@@ -49,7 +52,7 @@ export default function Languages({areaName}) {
                             contentEditable={editMode}
                             suppressContentEditableWarning
                             onBlur={(e) => handleBlur(index, e)}
-                            style={style?.language?.eachLanguageBox}
+                            style={BoxStyle}
                             dangerouslySetInnerHTML={{ __html: lang.text || "" }}
                         />
                     ))}
