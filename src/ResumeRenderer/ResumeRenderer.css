@@ -141,6 +141,15 @@
     outline: var(--none);
 }
 
+.add-btn {
+    width: fit-content;
+    padding: 5px 10px;
+    /* margin-left: 225px;
+    margin-top: 10px; */
+    border: none;
+    background: none;
+}
+
 .skills {
     text-align: var(--left-align);
     margin-bottom: var(--basic-font-size);

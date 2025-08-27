@@ -47,7 +47,7 @@ const sharedStyles = {
         heading: {
             textDecoration: 'none',
             borderBottom: '2px solid var(--primary-color)',
-            paddingLeft: '10px'
+            marginBottom: '10px'
         }
     },
     "501": {
@@ -1042,7 +1042,7 @@ const templateStyles = {
 
         summary: {
             box: {
-                paddingLeft: "15px",
+                paddingLeft: "0px",
                 marginBottom: "15px"
             },
             heading: {
@@ -1051,7 +1051,7 @@ const templateStyles = {
                 fontSize: "23px"
             },
             content: {
-
+                paddingLeft:"10px"
             }
         },
         workExpe: {
@@ -1066,7 +1066,7 @@ const templateStyles = {
                 color: 'var(--primary-color)'
             },
             wholeList: {
-                marginTop: '5px',
+                margin: '5px 0px 5px 15px',
                 padding: '4px',
                 borderLeft: '1px solid var(--primary-color)',
                 borderRight: '1px solid var(--primary-color)',
@@ -1084,7 +1084,7 @@ const templateStyles = {
                 marginRight: "0.5rem",
             },
             eachWorkPlace: {
-                paddingLeft: '10px'
+                paddingLeft: '0px'
             },
             sideline: 'false',
             timeline: {
@@ -1116,7 +1116,7 @@ const templateStyles = {
             dot: {
                 backgroundColor: 'var(--primary-color)',
                 top: '7px',
-                left: '-20px'
+                left: '0px'
             }
         },
         projects: {
@@ -1163,16 +1163,20 @@ const templateStyles = {
                 marginBottom: '10px',
                 color: '#333',
             },
-            innerBox: {
+            innerbox: {
                 textAlign: 'left',
                 paddingLeft: '10px'
             },
-            eachOrganiz: {
-                marginBottom: '10px'
+            title: {
+                marginBottom: '5px',
+                fontWeight:"600"
+            },
+            listItem:{
+                fontStyle:"italic"
             }
         },
         award: {
-            viewType: "block",
+            // viewType: "block",
             box: {
                 border: 'none',
                 marginBottom: '1rem'
@@ -1183,16 +1187,13 @@ const templateStyles = {
                 marginBottom: '10px',
                 color: '#333',
             },
-            innerBox: {
+            innerbox: {
                 textAlign: 'left',
                 paddingLeft: '10px'
             },
-            date: {
-                fontStyle: 'italic'
+            title: {
+                fontWeight: '600'
             },
-            eachAward: {
-                marginBottom: '5px'
-            }
         },
         language: {
             viewType: "list",
@@ -1201,7 +1202,7 @@ const templateStyles = {
             },
             list: 'true',
             wholeList: {
-                paddingLeft: '35px'
+                paddingLeft: '30px'
             }
         },
         certificate: {

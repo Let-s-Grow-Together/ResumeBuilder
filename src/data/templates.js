@@ -886,6 +886,7 @@ const template117 = {
         grid: {
             templateRows: "1fr 12fr",
             templateColumns: "1fr 1fr",
+            columnGap:"3rem",
             areas: [
                 {
                     name: "header",
@@ -922,7 +923,7 @@ const template117 = {
                 }
             ]
         },
-        padding: "0mm",
+        padding: "8mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
         fontSize: "14px",
