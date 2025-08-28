@@ -139,6 +139,14 @@
   background-color: rgba(255, 255, 255, 0.25);
   transform: scale(1.02);
 }
+.sectionItem.locked {
+  opacity: 0.6;
+  cursor: not-allowed;
+  border-style: dashed;
+}
+.muted { opacity: .7; font-size: 0.9rem; margin-top: -0.25rem; }
+.gridAreaPreview.twoCol { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+.gridAreaPreview.oneCol { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
 @media (max-width: 768px) {
   .layoutEditorModal {

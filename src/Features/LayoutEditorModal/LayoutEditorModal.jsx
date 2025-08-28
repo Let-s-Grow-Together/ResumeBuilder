@@ -1,192 +1,290 @@
-
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import "./LayoutEditorModal.css";
 import { useResume } from "../../context/ResumeContext";
 
-const allSections = [
-  "contact", "summary", "education", "workExperience", "skills",
-  "projects", "organizations", "awards", "language", "strengths", "achievements", "certificates"
+const ALL_EDITABLE_SECTIONS = [
+    "personalInfo",
+    "avatar",
+    "contact",
+    "summary",
+    "education",
+    "workExperience",
+    "skills",
+    "projects",
+    "organizations",
+    "awards",
+    "language",
+    "strengths",
+    "achievements",
+    "certificates",
 ];
 
-const formatAreaName = (name) =>
-  name.replace(/([A-Z])/g, " $1").replace(/^./, (str) => str.toUpperCase());
+const formatLabel = (name) =>
+    name.replace(/([A-Z])/g, " $1").replace(/^./, (s) => s.toUpperCase());
 
-export default function LayoutEditorModal({ isOpen, onClose }) {
-  const {
-    style,
-    setSectionOrder,
-    sectionOrder,
-    customLayoutAreas,
-    setCustomLayoutAreas,
-  } = useResume();
-
-  const modalRef = useRef();
-
-  const originalGridAreas = customLayoutAreas || style?.layout?.grid?.areas || [];
-
-  const [gridAreas, setGridAreas] = useState(() => {
-    const copy = JSON.parse(JSON.stringify(originalGridAreas));
-    const allowedNames = ["leftColumn", "rightColumn"];
-    const filtered = copy.filter((a) => allowedNames.includes(a.name));
-
-    const used = filtered.flatMap((a) => a.sections);
-    const unused = allSections.filter((s) => !used.includes(s));
-
-    return [...filtered, { name: "unused", sections: unused }];
-  });
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (modalRef.current && !modalRef.current.contains(e.target)) {
-        onClose();
-      }
-    };
-
-    const handleEscapeKey = (e) => {
-      if (e.key === "Escape") {
-        onClose();
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-      document.addEventListener("keydown", handleEscapeKey);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("keydown", handleEscapeKey);
-    };
-  }, [isOpen, onClose]);
-
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const copy = JSON.parse(JSON.stringify(originalGridAreas));
-    const allowedNames = ["leftColumn", "rightColumn"];
-    const filtered = copy.filter((a) => allowedNames.includes(a.name));
-
-    const used = filtered.flatMap((a) => a.sections);
-    const unused = allSections.filter((s) => !used.includes(s));
-
-    setGridAreas((prev) => {
-      const newGrid = [...filtered, { name: "unused", sections: unused }];
-      return JSON.stringify(prev) !== JSON.stringify(newGrid) ? newGrid : prev;
-    });
-  }, [isOpen]);
-
-
-  if (!isOpen || !style?.layout?.grid) return null;
-
-  const onDragEnd = (result) => {
-    const { source, destination } = result;
-    if (!destination) return;
-
-    const updated = [...gridAreas];
-    const sourceArea = updated.find((a) => a.name === source.droppableId);
-    const destArea = updated.find((a) => a.name === destination.droppableId);
-
-    const [moved] = sourceArea.sections.splice(source.index, 1);
-    destArea.sections.splice(destination.index, 0, moved);
-
-    setGridAreas(updated);
-  };
-
-  const handleApply = () => {
-    const editedAreas = gridAreas.filter((a) =>
-      ["leftColumn", "rightColumn"].includes(a.name)
-    );
-    const untouchedAreas = originalGridAreas.filter(
-      (a) => !["leftColumn", "rightColumn"].includes(a.name)
-    );
-
-    const unusedArea = gridAreas.find((a) => a.name === "unused");
-
-    const newLayout = [
-      ...untouchedAreas,
-      ...editedAreas,
-      ...(unusedArea ? [unusedArea] : []),
-    ];
-
-    const newSectionsInLayout = newLayout.flatMap((a) => a.sections);
-    const newSectionOrder = Array.from(
-      new Set([...sectionOrder, ...newSectionsInLayout])
-    );
-
-    setSectionOrder(newSectionOrder);
-    setCustomLayoutAreas(newLayout);
-    onClose();
-  };
-
-  const StrictModeDroppable = ({ children, ...props }) => {
+const StrictModeDroppable = ({ children, ...props }) => {
     const [enabled, setEnabled] = useState(false);
-
     useEffect(() => {
-      const animation = requestAnimationFrame(() => setEnabled(true));
-      return () => cancelAnimationFrame(animation);
+        const animation = requestAnimationFrame(() => setEnabled(true));
+        return () => cancelAnimationFrame(animation);
     }, []);
-
     if (!enabled) return null;
     return <Droppable {...props}>{children}</Droppable>;
-  };
+};
 
-  return (
-    <div className="layoutEditorModalOverlay">
-      <div className="layoutEditorModal" ref={modalRef}>
-        <div className="modalContent">
-          <h2>Edit Layout</h2>
+export default function LayoutEditorModal({ isOpen, onClose }) {
+    const {
+        style,
+        sectionOrder,
+        setSectionOrder,
+        customLayoutAreas,
+        setCustomLayoutAreas,
+    } = useResume();
 
-          <DragDropContext onDragEnd={onDragEnd}>
-            <div className="gridAreaPreview">
-              {["leftColumn", "rightColumn", "unused"].map((areaName) => {
-                const area = gridAreas.find((a) => a.name === areaName);
-                if (!area) return null;
+    const modalRef = useRef();
 
-                return (
-                  <div key={area.name} className="gridAreaBox">
-                    <h4>{formatAreaName(area.name)}</h4>
-                    <StrictModeDroppable droppableId={area.name}>
-                      {(provided, snapshot) => (
-                        <div
-                          className={`droppableZone ${snapshot.isDraggingOver ? "dragOver" : ""}`}
-                          ref={provided.innerRef}
-                          {...provided.droppableProps}
-                        >
-                          {area.sections.map((section, index) => (
-                            <Draggable
-                              key={section}
-                              draggableId={String(section)}
-                              index={index}
-                            >
-                              {(provided, snapshot) => (
-                                <div
-                                  ref={provided.innerRef}
-                                  {...provided.draggableProps}
-                                  {...provided.dragHandleProps}
-                                  className={`sectionItem ${snapshot.isDragging ? "dragging" : ""}`}
-                                >
-                                  {formatAreaName(section)}
+    const templateAreas = style?.layout?.grid?.areas || [];
+    const frozenSections = style?.layout?.frozenSections || [];
+
+    const hasTwoColumns = useMemo(() => {
+        const names = new Set(templateAreas.map((a) => a.name));
+        return names.has("leftColumn") && names.has("rightColumn");
+    }, [templateAreas]);
+
+    const editableAreaNames = useMemo(() => {
+        if (hasTwoColumns) return ["leftColumn", "rightColumn"];
+        if (templateAreas.length === 1) return [templateAreas[0].name];
+        const nonHeader = templateAreas.find((a) => a.name !== "header");
+        return [nonHeader?.name || templateAreas[0].name];
+    }, [hasTwoColumns, templateAreas]);
+
+    const originalAreas = useMemo(() => {
+        return (customLayoutAreas || templateAreas).map((a) => ({ ...a, sections: [...(a.sections || [])] }));
+    }, [customLayoutAreas, templateAreas]);
+
+    const untouchedSections = useMemo(() => {
+        return originalAreas
+            .filter((a) => !editableAreaNames.includes(a.name) && a.name !== "unused")
+            .flatMap((a) => a.sections || []);
+    }, [editableAreaNames, originalAreas]);
+
+    const computeInitialBuckets = () => {
+        const byName = Object.fromEntries(originalAreas.map((a) => [a.name, { ...a, sections: [...(a.sections || [])] }]));
+
+        editableAreaNames.forEach((name) => {
+            if (!byName[name]) byName[name] = { name, sections: [] };
+        });
+
+        const usedInEditable = editableAreaNames.flatMap((n) => byName[n]?.sections || []);
+
+        const firstEditable = editableAreaNames[0];
+
+        const referencedEverywhere = new Set(originalAreas.flatMap((a) => a.sections || []));
+
+        const allowedUniverse = ALL_EDITABLE_SECTIONS.filter(
+            (s) => !untouchedSections.includes(s)
+        );
+
+        let unusedSections = allowedUniverse.filter(
+            (s) => !usedInEditable.includes(s) && !frozenSections.includes(s)
+        );
+
+        unusedSections = unusedSections.filter((s) => !untouchedSections.includes(s));
+
+        editableAreaNames.forEach((name) => {
+            const seen = new Set();
+            byName[name].sections = byName[name].sections.filter((s) => {
+                if (seen.has(s)) return false;
+                seen.add(s);
+                return true;
+            });
+        });
+
+        const buckets = [
+            ...editableAreaNames.map((name) => ({ name, sections: byName[name].sections })),
+            { name: "unused", sections: unusedSections },
+        ];
+
+        return buckets;
+    };
+
+    const [buckets, setBuckets] = useState(computeInitialBuckets);
+
+    useEffect(() => {
+        if (!isOpen) return;
+        setBuckets(computeInitialBuckets());
+    }, [isOpen, customLayoutAreas, style]);
+
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+            if (modalRef.current && !modalRef.current.contains(e.target)) onClose?.();
+        };
+        const handleEsc = (e) => {
+            if (e.key === "Escape") onClose?.();
+        };
+        if (isOpen) {
+            document.addEventListener("mousedown", handleClickOutside);
+            document.addEventListener("keydown", handleEsc);
+        }
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+            document.removeEventListener("keydown", handleEsc);
+        };
+    }, [isOpen, onClose]);
+
+    if (!isOpen || !style?.layout?.grid) return null;
+
+    const isFrozen = (section) => frozenSections.includes(section);
+
+    const onDragEnd = (result) => {
+        const { source, destination, draggableId } = result;
+        if (!destination) return;
+
+        if (isFrozen(draggableId)) return;
+
+        const updated = buckets.map((b) => ({ ...b, sections: [...b.sections] }));
+        const sourceBucket = updated.find((b) => b.name === source.droppableId);
+        const destBucket = updated.find((b) => b.name === destination.droppableId);
+        if (!sourceBucket || !destBucket) return;
+
+        const [moved] = sourceBucket.sections.splice(source.index, 1);
+        if (!destBucket.sections.includes(moved)) {
+            const frozenCount = destBucket.sections.filter((s) => isFrozen(s)).length;
+
+            const insertIndex = Math.max(destination.index, frozenCount);
+
+            destBucket.sections.splice(insertIndex, 0, moved);
+        }
+
+        if (destBucket.name === "unused" && isFrozen(moved)) {
+            sourceBucket.sections.splice(source.index, 0, moved);
+            return;
+        }
+
+        setBuckets(updated);
+    };
+
+    const handleApply = () => {
+        const edited = buckets.filter((b) => b.name !== "unused");
+        const unused = buckets.find((b) => b.name === "unused");
+
+        const originalsByName = Object.fromEntries(originalAreas.map((a) => [a.name, a]));
+
+        const safeUnused = (unused?.sections || []).filter(
+            (s) => !frozenSections.includes(s) && !untouchedSections.includes(s)
+        );
+
+        const newLayout = originalAreas.map((orig) => {
+            if (orig.name === "unused") {
+                return { ...orig, sections: safeUnused };
+            }
+
+            if (editableAreaNames.includes(orig.name)) {
+                const editedBucket = edited.find((b) => b.name === orig.name);
+                return {
+                    ...orig,
+                    sections: (editedBucket?.sections || []).filter((s) => ALL_EDITABLE_SECTIONS.includes(s)),
+                };
+            }
+
+            return { ...orig, sections: [...(orig.sections || [])] };
+        });
+
+        if (!newLayout.some((a) => a.name === "unused")) {
+            newLayout.push({ name: "unused", sections: safeUnused });
+        }
+
+        const newSectionsInLayout = newLayout.flatMap((a) => a.sections || []);
+        const mergedOrder = Array.from(
+            new Set([...(sectionOrder || []), ...newSectionsInLayout])
+        );
+
+        setSectionOrder(mergedOrder);
+        setCustomLayoutAreas(newLayout);
+        onClose?.();
+    };
+
+    const orderedBucketNames = hasTwoColumns
+        ? ["leftColumn", "rightColumn", "unused"]
+        : [editableAreaNames[0], "unused"];
+
+    const bucketsToRender = orderedBucketNames
+        .map((name) => buckets.find((b) => b.name === name))
+        .filter(Boolean);
+
+    return (
+        <div className="layoutEditorModalOverlay">
+            <div className="layoutEditorModal" ref={modalRef}>
+                <div className="modalContent">
+                    <h2>Arrange Sections</h2>
+                    <p className="muted">
+                        {hasTwoColumns
+                            ? "Drag sections between Left and Right columns, or to Unused to hide them."
+                            : `Drag sections into ${formatLabel(editableAreaNames[0])} or move to Unused to hide them.`}
+                    </p>
+
+                    <DragDropContext onDragEnd={onDragEnd}>
+                        <div className={`gridAreaPreview ${hasTwoColumns ? "twoCol" : "oneCol"}`}>
+                            {bucketsToRender.map((bucket) => (
+                                <div key={bucket.name} className="gridAreaBox">
+                                    <h4>{formatLabel(bucket.name)}</h4>
+                                    <StrictModeDroppable droppableId={bucket.name}>
+                                        {(provided, snapshot) => (
+                                            <div
+                                                ref={provided.innerRef}
+                                                {...provided.droppableProps}
+                                                className={`droppableZone ${snapshot.isDraggingOver ? "dragOver" : ""}`}
+                                            >
+                                                {bucket.sections.map((section, index) => {
+                                                    const frozen = frozenSections.includes(section) || untouchedSections.includes(section);
+                                                    const content = (
+                                                        <div
+                                                            className={`sectionItem ${frozen ? "locked" : ""}`}
+                                                            title={frozen ? "This section is frozen in this template" : "Drag to rearrange"}
+                                                        >
+                                                            {formatLabel(section)} {frozen ? "🔒" : ""}
+                                                        </div>
+                                                    );
+
+                                                    if (frozen) {
+                                                        return (
+                                                            <div key={section} className="sectionItemWrapper">
+                                                                {content}
+                                                            </div>
+                                                        );
+                                                    }
+
+                                                    return (
+                                                        <Draggable key={section} draggableId={section} index={index}>
+                                                            {(provided, snapshot) => (
+                                                                <div
+                                                                    ref={provided.innerRef}
+                                                                    {...provided.draggableProps}
+                                                                    {...provided.dragHandleProps}
+                                                                    className={`sectionItem ${snapshot.isDragging ? "dragging" : ""}`}
+                                                                >
+                                                                    {formatLabel(section)}
+                                                                </div>
+                                                            )}
+                                                        </Draggable>
+                                                    );
+                                                })}
+                                                {provided.placeholder}
+                                            </div>
+                                        )}
+                                    </StrictModeDroppable>
                                 </div>
-                              )}
-                            </Draggable>
-                          ))}
-                          {provided.placeholder}
+                            ))}
                         </div>
-                      )}
-                    </StrictModeDroppable>
-                  </div>
-                );
-              })}
-            </div>
-          </DragDropContext>
+                    </DragDropContext>
 
-          <div className="modalButtons">
-            <button onClick={handleApply}>Apply</button>
-            <button onClick={onClose}>Cancel</button>
-          </div>
+                    <div className="modalButtons">
+                        <button onClick={handleApply}>Apply</button>
+                        <button onClick={onClose}>Cancel</button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 }

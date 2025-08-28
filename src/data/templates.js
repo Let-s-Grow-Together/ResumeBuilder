@@ -167,6 +167,7 @@ const template9 = {
                 }
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         padding: "25px",
         fontFamily: "'Poppins', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap",
@@ -1462,15 +1463,16 @@ const template523 = {
             templateColumns: "1fr",  // single column
             areas: [
                 {
-                    name: "header",
+                    name: "mainSection",
                     rowStart: 1,
                     rowEnd: 2,
                     colStart: 1,
                     colEnd: 2,
-                    sections: ["personalInfo", "summary", "workExperience", "education", "skills", "organizations", "awards", "language"]
+                    sections: ["personalInfo", "awards", "language"]
                 },
             ]
         },
+        frozenSections: ["contact", "summary", "personalInfo"],
         padding: "10mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink:
