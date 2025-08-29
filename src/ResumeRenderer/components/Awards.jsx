@@ -48,7 +48,7 @@ export default function Awards({areaName}) {
             ref={awardsRef}
         >
             <h2 style={headingStyle} >
-                Honours and Awards
+                Honours & Awards
             </h2>
 
             {data.awards.map((award, awardIndex) => (

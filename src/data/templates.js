@@ -1662,10 +1662,10 @@ const template526 = {
 
 };
 
-const template527 = {
-    id: 527,
+const template27 = {
+    id: 27,
     name: "Creative Resume",
-    pdf: "/templates/template527.pdf",
+    pdf: "/templates/template27.pdf",
     filteredColumn: "1",
     isAvatar: "true",
     layout: {
@@ -1679,7 +1679,7 @@ const template527 = {
                     rowEnd: 2,
                     colStart: 1,
                     colEnd: 2,
-                    style:{width:"700px", marginLeft:"120px", padding:"50px 30px 10px 150px", background:"#EED66E"},
+                    style:{width:"700px", marginLeft:"120px", padding:"50px 40px 10px 150px", background:"#EED66E"},
                     sections: ["personalInfo", "summary", "workExperience", "education", "skills", "organizations",]
                 },
             ]
@@ -1696,4 +1696,69 @@ const template527 = {
         }
     }
 };
-export const templates = [template1, template3, template9, template10, template11, template12, template13, template14, template15, template113, template115, template116, template117, template1110, template1111, template1112, template1113, template1115, template21, template6, template23, template24, template25, template501,template516,template521,template522,template523,template524,template525,template526,template527];
+
+const template28 = {
+    id: 28,
+    name: "Simple double Column1",
+    pdf: "/templates/template28.pdf",
+    filteredColumn: "1",
+    isAvatar: "true",
+    layout: {
+        grid: {
+            templateRows: "auto auto auto",
+            templateColumns: "2fr 1fr",  // single column
+            columnGap:"2rem",
+            areas: [
+                {
+                    name: "header",
+                    rowStart: 1,
+                    rowEnd: 2,
+                    colStart: 1,
+                    colEnd: 3,
+                    style: { padding: "10px",  marginLeft: "-38px", marginTop: "-40px", },
+                    sections: ["personalInfo", "contact",]
+                },
+                // {
+                //     name: "contact",
+                //     rowStart: 2,
+                //     rowEnd: 3,
+                //     colStart: 1,
+                //     colEnd: 3,
+                //     style: { paddingBottom: "-30px", width: "110.5%", marginLeft: "-38px", marginTop: "-26px", borderBottom:"2px solid black" },
+                //     sections: ["contact",]
+                // },
+                {
+                    name: "leftColumn",
+                    rowStart: 3,
+                    rowEnd: 4,
+                    colStart: 1,
+                    colEnd: 2,
+                    style:{marginTop:"-380px"},
+                    sections: ["skills","workExperience", ]
+                },
+                {
+                    name: "rightColumn",
+                    rowStart: 3,
+                    rowEnd: 4,
+                    colStart: 2,
+                    colEnd: 3,
+                    style:{marginTop:"-380px"},
+                    sections: ["education", "awards", "language"]
+                },
+            ]
+        },
+        frozenSections: ["avatar","contact", "personalInfo"],
+        padding: "7mm",
+        fontFamily: "'Montserrat', sans-serif",
+        fontLink:
+            "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
+        fontSize: "14px",
+        colorScheme: {
+            background: "#ffffff",
+            text: "black"
+        }
+    }
+};
+export const templates = [template1, template3, template9, template10, template11, template12, template13, template14, template15, template113, template115, 
+    template116, template117, template1110, template1111, template1112, template1113, template1115, template21, template6, 
+    template23, template24, template25, template501,template516,template521,template522,template523,template524,template525,template526,template27, template28];
