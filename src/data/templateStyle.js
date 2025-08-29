@@ -533,33 +533,33 @@ const templateStyles = {
                 marginTop: "20px",
             }
         },
-        certificate:{
-            list:{
-                marginLeft:"5px",
-                marginTop:"5px"
+        certificate: {
+            list: {
+                marginLeft: "5px",
+                marginTop: "5px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
-        achieve:{
-            title:{
-                fontWeight:"600"
+        achieve: {
+            title: {
+                fontWeight: "600"
             },
         },
-        organiz:{
-            title:{
-                fontWeight:"600"
+        organiz: {
+            title: {
+                fontWeight: "600"
             },
         },
-        award:{
-            title:{
-                fontWeight:"600"
+        award: {
+            title: {
+                fontWeight: "600"
             },
         },
-        strength:{
-            title:{
-                fontWeight:"600"
+        strength: {
+            title: {
+                fontWeight: "600"
             },
         }
     },
@@ -612,33 +612,33 @@ const templateStyles = {
                 border: 'none'
             }
         },
-        certificate:{
-            list:{
-                marginLeft:"5px",
-                marginTop:"5px"
+        certificate: {
+            list: {
+                marginLeft: "5px",
+                marginTop: "5px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
-        achieve:{
-            title:{
-                fontWeight:"600"
+        achieve: {
+            title: {
+                fontWeight: "600"
             },
         },
-        organiz:{
-            title:{
-                fontWeight:"600"
+        organiz: {
+            title: {
+                fontWeight: "600"
             },
         },
-        award:{
-            title:{
-                fontWeight:"600"
+        award: {
+            title: {
+                fontWeight: "600"
             },
         },
-        strength:{
-            title:{
-                fontWeight:"600"
+        strength: {
+            title: {
+                fontWeight: "600"
             },
         }
     },
@@ -658,33 +658,33 @@ const templateStyles = {
                 display: "none"
             }
         },
-        certificate:{
-            list:{
-                marginLeft:"5px",
-                marginTop:"5px"
+        certificate: {
+            list: {
+                marginLeft: "5px",
+                marginTop: "5px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
-        achieve:{
-            title:{
-                fontWeight:"600"
+        achieve: {
+            title: {
+                fontWeight: "600"
             },
         },
-        organiz:{
-            title:{
-                fontWeight:"600"
+        organiz: {
+            title: {
+                fontWeight: "600"
             },
         },
-        award:{
-            title:{
-                fontWeight:"600"
+        award: {
+            title: {
+                fontWeight: "600"
             },
         },
-        strength:{
-            title:{
-                fontWeight:"600"
+        strength: {
+            title: {
+                fontWeight: "600"
             },
         }
     },
@@ -805,24 +805,24 @@ const templateStyles = {
             }
         },
 
-        certificate:{
-            list:{
-                marginLeft:"5px",
-                marginTop:"5px"
+        certificate: {
+            list: {
+                marginLeft: "5px",
+                marginTop: "5px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
-        achieve:{
-            title:{
-                fontWeight:"600"
+        achieve: {
+            title: {
+                fontWeight: "600"
             },
         },
-        
-        strength:{
-            title:{
-                fontWeight:"600"
+
+        strength: {
+            title: {
+                fontWeight: "600"
             },
         }
     },
@@ -888,31 +888,31 @@ const templateStyles = {
             heading: { borderBottom: "2px solid #1b263b", marginBottom: "10px" }
         },
         projects: {
-            heading: { borderBottom: "2px solid #1b263b", marginBottom: "10px", fontWeight:"600" }
+            heading: { borderBottom: "2px solid #1b263b", marginBottom: "10px", fontWeight: "600" }
         },
         award: {
-            heading: { borderBottom: "2px solid #1b263b", marginBottom: "10px", fontWeight:"600" }
+            heading: { borderBottom: "2px solid #1b263b", marginBottom: "10px", fontWeight: "600" }
         },
         organiz: {
-            heading: { borderBottom: "2px solid #1b263b", marginBottom: "10px", fontWeight:"600" }
+            heading: { borderBottom: "2px solid #1b263b", marginBottom: "10px", fontWeight: "600" }
         },
-        certificate:{
-            list:{
-                marginLeft:"5px",
-                marginTop:"5px"
+        certificate: {
+            list: {
+                marginLeft: "5px",
+                marginTop: "5px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
-        achieve:{
-            title:{
-                fontWeight:"600"
+        achieve: {
+            title: {
+                fontWeight: "600"
             },
         },
-        strength:{
-            title:{
-                fontWeight:"600"
+        strength: {
+            title: {
+                fontWeight: "600"
             },
         }
     },
@@ -981,24 +981,24 @@ const templateStyles = {
         organiz: {
             heading: { borderBottom: "2px solid #ff6f61", marginBottom: "10px" }
         },
-        certificate:{
-            list:{
-                marginLeft:"5px",
-                marginTop:"5px"
+        certificate: {
+            list: {
+                marginLeft: "5px",
+                marginTop: "5px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
-        achieve:{
-            title:{
-                fontWeight:"600"
+        achieve: {
+            title: {
+                fontWeight: "600"
             },
         },
-        
-        strength:{
-            title:{
-                fontWeight:"600"
+
+        strength: {
+            title: {
+                fontWeight: "600"
             },
         }
     },
@@ -1189,8 +1189,8 @@ const templateStyles = {
                 padding: "2px",
                 color: "var(--content-color)"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         strength: {
@@ -1206,8 +1206,8 @@ const templateStyles = {
                 padding: "2px",
                 color: "var(--content-color)"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         projects: {
@@ -1219,8 +1219,8 @@ const templateStyles = {
                 textDecoration: "none",
                 ...sharedStyles["3"].heading
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         certificate: {
@@ -1300,8 +1300,8 @@ const templateStyles = {
                 ...sharedStyles["5"].heading,
                 marginBottom: "1rem"
             },
-            list:{
-                paddingLeft:"30px"
+            list: {
+                paddingLeft: "30px"
             }
         },
         skills: {
@@ -1361,8 +1361,8 @@ const templateStyles = {
                 ...sharedStyles["5"].heading,
                 marginBottom: "1rem"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         projects: {
@@ -1370,8 +1370,8 @@ const templateStyles = {
                 ...sharedStyles["5"].heading,
                 marginBottom: "1rem"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         summary: {
@@ -1385,8 +1385,8 @@ const templateStyles = {
                 ...sharedStyles["5"].heading,
                 marginBottom: "1rem"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         organiz: {
@@ -1394,8 +1394,8 @@ const templateStyles = {
                 ...sharedStyles["5"].heading,
                 marginBottom: "1rem"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         award: {
@@ -1403,8 +1403,8 @@ const templateStyles = {
                 ...sharedStyles["5"].heading,
                 marginBottom: "1rem"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         certificate: {
@@ -1412,8 +1412,8 @@ const templateStyles = {
                 ...sharedStyles["5"].heading,
                 marginBottom: "1rem"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         }
     },
@@ -1426,7 +1426,7 @@ const templateStyles = {
             leftColumn: {
                 heading: {
                     borderBottom: "2px solid #ffffff",
-                    marginBottom:"15px"
+                    marginBottom: "15px"
                 }
             },
             rightColumn: {
@@ -1500,7 +1500,7 @@ const templateStyles = {
             wholeList: {
                 marginTop: "5px",
                 marginBottom: "10px",
-                
+
                 // color: "var(--primary-color)",
             }
         },
@@ -1554,8 +1554,8 @@ const templateStyles = {
                 // borderBottom: "2px solid var(--primary-color)",
                 marginBottom: "5px"
             },
-            list:{
-                marginLeft:"10px"
+            list: {
+                marginLeft: "10px"
             }
         },
         workExpe: {
@@ -1571,8 +1571,8 @@ const templateStyles = {
                 borderBottom: "2px solid var(--primary-color)",
                 marginBottom: "5px"
             },
-            wholeList:{
-                marginLeft:"5px"
+            wholeList: {
+                marginLeft: "5px"
             }
         },
         projects: {
@@ -1588,8 +1588,8 @@ const templateStyles = {
                 borderBottom: "2px solid var(--primary-color)",
                 marginBottom: "5px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         certificate: {
@@ -1609,28 +1609,28 @@ const templateStyles = {
             innerBox: {
                 paddingLeft: "10px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
-        achieve:{
-            title:{
-                fontWeight:"600"
+        achieve: {
+            title: {
+                fontWeight: "600"
             }
         },
-        award:{
-            title:{
-                fontWeight:"600"
+        award: {
+            title: {
+                fontWeight: "600"
             }
         },
-        organiz:{
-            title:{
-                fontWeight:"600"
+        organiz: {
+            title: {
+                fontWeight: "600"
             }
         },
-        strength:{
-            title:{
-                fontWeight:"600"
+        strength: {
+            title: {
+                fontWeight: "600"
             }
         }
     },
@@ -1707,7 +1707,7 @@ const templateStyles = {
                 fontSize: "23px"
             },
             content: {
-                paddingLeft:"10px"
+                paddingLeft: "10px"
             }
         },
         workExpe: {
@@ -1825,10 +1825,10 @@ const templateStyles = {
             },
             title: {
                 marginBottom: '5px',
-                fontWeight:"600"
+                fontWeight: "600"
             },
-            listItem:{
-                fontStyle:"italic"
+            listItem: {
+                fontStyle: "italic"
             }
         },
         award: {
@@ -1964,7 +1964,7 @@ const templateStyles = {
             title: {
                 marginTop: "10px",
                 marginBottom: "5px",
-                fontWeight:"600"
+                fontWeight: "600"
             },
         },
         contact: {
@@ -2073,8 +2073,8 @@ const templateStyles = {
             dates: {
                 margin: "5px 0px"
             },
-            wholeList:{
-                marginLeft:"5px"
+            wholeList: {
+                marginLeft: "5px"
             }
         },
         education: {
@@ -2106,7 +2106,7 @@ const templateStyles = {
             },
             title: {
                 marginBottom: "5px",
-                fontWeight:"600"
+                fontWeight: "600"
             },
             innerbox: {
                 marginBottom: "10px",
@@ -2119,7 +2119,7 @@ const templateStyles = {
             },
             title: {
                 marginBottom: "5px",
-                fontWeight:"600"
+                fontWeight: "600"
             },
             organiz: {
                 marginBottom: "3px"
@@ -2128,9 +2128,9 @@ const templateStyles = {
                 marginBottom: "10px"
             }
         },
-        strength:{
-            title:{
-                fontWeight:"600"
+        strength: {
+            title: {
+                fontWeight: "600"
             }
         }
     },
@@ -2230,7 +2230,7 @@ const templateStyles = {
             title: {
                 marginTop: "10px",
                 marginBottom: "5px",
-                fontWeight:"600"
+                fontWeight: "600"
             },
         },
         contact: {
@@ -2293,7 +2293,7 @@ const templateStyles = {
             },
             title: {
                 marginBottom: "5px",
-                fontWeight:"600"
+                fontWeight: "600"
             }
         },
         projects: {
@@ -2305,7 +2305,7 @@ const templateStyles = {
             },
             title: {
                 marginBottom: "5px",
-                fontWeight:"600"
+                fontWeight: "600"
             },
             eachProject: {
                 marginBottom: "10px"
@@ -2370,7 +2370,7 @@ const templateStyles = {
             },
             title: {
                 marginBottom: "5px",
-                fontWeight:"600"
+                fontWeight: "600"
             },
             innerbox: {
                 marginBottom: "10px",
@@ -2386,7 +2386,7 @@ const templateStyles = {
             },
             title: {
                 marginBottom: "5px",
-                fontWeight:"600"
+                fontWeight: "600"
             },
             organiz: {
                 marginBottom: "3px"
@@ -2395,9 +2395,9 @@ const templateStyles = {
                 marginBottom: "10px"
             }
         },
-        strength:{
-            title:{
-                fontWeight:"600"
+        strength: {
+            title: {
+                fontWeight: "600"
             }
         }
     },
@@ -2545,8 +2545,8 @@ const templateStyles = {
             eachProject: {
                 paddingLeft: '10px'
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         skills: {
@@ -2598,8 +2598,8 @@ const templateStyles = {
             eachOrganiz: {
                 marginBottom: '10px'
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         award: {
@@ -2622,8 +2622,8 @@ const templateStyles = {
             eachAward: {
                 marginBottom: '5px'
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         language: {
@@ -2687,13 +2687,13 @@ const templateStyles = {
             list: {
                 paddingLeft: "15px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
-        strength:{
-            title:{
-                fontWeight:"600"
+        strength: {
+            title: {
+                fontWeight: "600"
             }
         }
     },
@@ -2943,23 +2943,23 @@ const templateStyles = {
             },
             eachOrganiz: {
                 marginBottom: '10px'
-            }, title:{
-                fontWeight:"600"
+            }, title: {
+                fontWeight: "600"
             }
         },
-        certificate:{
-            title:{
-                fontWeight:"600"
+        certificate: {
+            title: {
+                fontWeight: "600"
             }
         },
-        achieve:{
-            title:{
-                fontWeight:"600"
+        achieve: {
+            title: {
+                fontWeight: "600"
             }
         },
-        strength:{
-            title:{
-                fontWeight:"600"
+        strength: {
+            title: {
+                fontWeight: "600"
             }
         }
 
@@ -3017,29 +3017,29 @@ const templateStyles = {
                 borderRadius: '5px'
             }
         },
-        certificate:{
-            title:{
-                fontWeight:"600"
+        certificate: {
+            title: {
+                fontWeight: "600"
             }
         },
-        award:{
-            title:{
-                fontWeight:"600"
+        award: {
+            title: {
+                fontWeight: "600"
             }
         },
-        strength:{
-            title:{
-                fontWeight:"600"
+        strength: {
+            title: {
+                fontWeight: "600"
             }
         },
-        organiz:{
-            title:{
-                fontWeight:"600"
+        organiz: {
+            title: {
+                fontWeight: "600"
             }
         },
-        achieve:{
-            title:{
-                fontWeight:"600"
+        achieve: {
+            title: {
+                fontWeight: "600"
             }
         }
     },
@@ -3081,7 +3081,7 @@ const templateStyles = {
             heading: { display: 'none' },
             box: { display: "inline-block", marginLeft: "auto", textAlign: "right" },
             listItem: { padding: "5px 0", color: "white", display: "flex" },
-            addIcon:{backgroundColor: "#00796b",border:"1px solid white",color:"white"},
+            addIcon: { backgroundColor: "#00796b", border: "1px solid white", color: "white" },
             // trashIcon:{color:"white"}
         },
         summary: {
@@ -3113,8 +3113,8 @@ const templateStyles = {
         },
         award: {
             heading: { borderBottom: "2px solid #00796b", marginBottom: "8px", },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         workExpe: {
@@ -3128,27 +3128,27 @@ const templateStyles = {
         },
         organiz: {
             heading: { borderBottom: "2px solid #00796b", marginBottom: "8px", },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
-        certificate:{
-            list:{
-                marginLeft:"5px",
-                marginTop:"5px"
+        certificate: {
+            list: {
+                marginLeft: "5px",
+                marginTop: "5px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
-        achieve:{
-            title:{
-                fontWeight:"600"
+        achieve: {
+            title: {
+                fontWeight: "600"
             },
         },
-        strength:{
-            title:{
-                fontWeight:"600"
+        strength: {
+            title: {
+                fontWeight: "600"
             },
         }
     },
@@ -4743,8 +4743,8 @@ const templateStyles = {
                 // padding: "10px"
                 color: "#2e3c47ff"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         award: {
@@ -4763,8 +4763,8 @@ const templateStyles = {
                 // padding: "0px",
                 color: "#2e3c47ff"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         strength: {
@@ -4776,7 +4776,7 @@ const templateStyles = {
             },
             title: {
                 color: "#2e3c47ff",
-                fontWeight:"600"
+                fontWeight: "600"
             }
         },
         language: {
@@ -4812,8 +4812,8 @@ const templateStyles = {
             eachProject: {
                 color: "#2e3c47ff"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         achieve: {
@@ -4832,8 +4832,8 @@ const templateStyles = {
             innerbox: {
                 color: "#2e3c47ff"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         certificate: {
@@ -4852,16 +4852,16 @@ const templateStyles = {
             eachcertificate: {
                 color: "#2e3c47ff"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         contact: {
             box: {
                 margin: "10px 30px 0px 30px"
             },
-            heading:{
-                display:"none"
+            heading: {
+                display: "none"
             },
             list: {
                 display: "flex",
@@ -4995,8 +4995,8 @@ const templateStyles = {
             innerbox: {
                 // padding: "10px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         award: {
@@ -5015,8 +5015,8 @@ const templateStyles = {
             innerbox: {
                 // padding: "10px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         language: {
@@ -5049,8 +5049,8 @@ const templateStyles = {
                 marginBottom: "15px",
                 paddingBottom: "0px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
 
         },
@@ -5067,8 +5067,8 @@ const templateStyles = {
                 marginBottom: "15px",
                 paddingBottom: "0px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
 
         },
@@ -5088,8 +5088,8 @@ const templateStyles = {
             eachcertificate: {
                 color: "#2e3c47ff"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         contact: {
@@ -5099,9 +5099,9 @@ const templateStyles = {
                 paddingBottom: "0px"
             },
         },
-        strength:{
-            title:{
-                fontWeight:"600"
+        strength: {
+            title: {
+                fontWeight: "600"
             }
         }
 
@@ -5241,8 +5241,8 @@ const templateStyles = {
             innerbox: {
                 // padding: "10px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         award: {
@@ -5263,8 +5263,8 @@ const templateStyles = {
             innerbox: {
                 // padding: "10px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         language: {
@@ -5301,8 +5301,8 @@ const templateStyles = {
                 color: "white",
                 padding: "5px 0px 5px 10px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
 
         },
@@ -5322,8 +5322,8 @@ const templateStyles = {
                 color: "white",
                 padding: "5px 0px 5px 10px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
 
         },
@@ -5346,8 +5346,8 @@ const templateStyles = {
             eachcertificate: {
                 color: "#2e3c47ff"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         contact: {
@@ -5358,9 +5358,9 @@ const templateStyles = {
                 marginBottom: "15px"
             }
         },
-        strength:{
-            title:{
-                fontWeight:"600"
+        strength: {
+            title: {
+                fontWeight: "600"
             }
         }
 
@@ -5461,6 +5461,7 @@ const templateStyles = {
             }
         },
         skills: {
+            layoutType: "layout2",
             box: {
                 // borderBottom: "2px solid #2e3c47ff",
                 marginBottom: "35px",
@@ -5497,8 +5498,8 @@ const templateStyles = {
             innerbox: {
                 // padding: "10px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         award: {
@@ -5517,8 +5518,8 @@ const templateStyles = {
             innerbox: {
                 // padding: "10px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         language: {
@@ -5553,8 +5554,8 @@ const templateStyles = {
                 // color:"white",
                 padding: " 0px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
 
         },
@@ -5572,8 +5573,8 @@ const templateStyles = {
                 paddingBottom: "0px",
 
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
 
         },
@@ -5593,8 +5594,8 @@ const templateStyles = {
             eachcertificate: {
                 // color: "#2e3c47ff"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         contact: {
@@ -5606,9 +5607,9 @@ const templateStyles = {
                 borderBottom: "2px solid white"
             }
         },
-        strength:{
-            title:{
-                fontWeight:"600"
+        strength: {
+            title: {
+                fontWeight: "600"
             }
         }
 
@@ -5742,8 +5743,8 @@ const templateStyles = {
             innerbox: {
                 // padding: "10px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         award: {
@@ -5762,8 +5763,8 @@ const templateStyles = {
             innerbox: {
                 // padding: "10px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         language: {
@@ -5796,8 +5797,8 @@ const templateStyles = {
                 marginBottom: "15px",
                 paddingBottom: "0px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
 
         },
@@ -5814,8 +5815,8 @@ const templateStyles = {
                 marginBottom: "15px",
                 paddingBottom: "0px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
 
         },
@@ -5835,8 +5836,8 @@ const templateStyles = {
             eachcertificate: {
                 color: "#2e3c47ff"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         contact: {
@@ -5846,9 +5847,203 @@ const templateStyles = {
                 paddingBottom: "0px"
             },
         },
-        strength:{
-            title:{
-                fontWeight:"600"
+        strength: {
+            title: {
+                fontWeight: "600"
+            }
+        }
+
+    },
+    "527": {
+        personalInfo: {
+            box: {
+                backgroundColor: "white",
+                color: "#2e3c47ff",
+                padding: "20px",
+                marginBottom: "15px",
+                position: "absolute",
+                top: "260px",
+                right: "590px",
+                display: "flex",
+                flexDirection: "column",
+                width: "200px"
+            },
+            mixBox: {
+                display: "flex",
+                flexDirection: "column"
+            },
+            avatar: {
+                card: {
+                    background: "none",
+
+                },
+                imageDiv: {
+                    marginLeft: "15px",
+                    marginTop: "10px",
+                    borderRadius: "0px",
+                    borderBottom: "2px solid #2e3c47ff",
+                }
+            },
+            summaryBox: {
+                marginTop: "5px"
+            },
+            name: {
+                marginLeft: "-25px"
+            },
+            position: {
+                fontWeight: "100",
+                marginLeft: "-25px",
+                marginBottom: "15px"
+            }
+        },
+        summary: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px",
+                display: "none",
+            },
+            heading: {
+                // marginLeft:"45%",
+                color: "#2e3c47ff",
+                fontWeight: "600",
+                // borderBottom:"2px solid #2e3c47ff",
+                // width:"fit-content",
+                // marginBottom:"15px"
+            },
+        },
+        workExpe: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "35px",
+            },
+            heading: {
+                // marginLeft:"40%",
+                color: "#2e3c47ff",
+                fontWeight: "600",
+                // borderBottom:"2px solid #2e3c47ff",
+                // width:"fit-content",
+                // marginBottom:"15px"
+            },
+            eachWorkPlace: {
+                padding: "10px",
+                textAlign: "right"
+            }
+        },
+        education: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "35px",
+                padding: "15px"
+            },
+            heading: {
+                // paddingLeft:"45%",
+                color: "#2e3c47ff",
+                fontWeight: "600",
+                // borderBottom:"2px solid #2e3c47ff",
+                // width:"fit-content",
+                // marginBottom:"15px"
+            },
+            eachEducation: {
+                padding: "10px",
+                textAlign: "right",
+                degree: {
+                    margin: "5px"
+                }
+            }
+        },
+        skills: {
+            layoutType: "layout2",
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "35px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                color: "#2e3c47ff",
+                fontWeight: "600",
+                // borderBottom:"2px solid #2e3c47ff",
+                width: "fit-content",
+                // marginBottom:"15px"
+            },
+            eachSkillBox: {
+                textAlign: "right"
+            }
+        },
+        organiz: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "35px"
+            },
+            heading: {
+                // marginLeft:"40%",
+                color: "#2e3c47ff",
+                fontWeight: "600",
+                // borderBottom:"2px solid #2e3c47ff",
+                width: "fit-content",
+                // marginBottom:"15px"
+            },
+            innerbox: {
+                padding: "10px",
+                textAlign: "right"
+            },
+            title: {
+                fontWeight: "600"
+            }
+        },
+        award: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "35px"
+            },
+            heading: {
+                // marginLeft:"35%",
+                color: "#2e3c47ff",
+                fontWeight: "600",
+                // borderBottom:"2px solid #2e3c47ff",
+                width: "fit-content",
+                // marginBottom:"15px"
+            },
+            innerbox: {
+                padding: "10px",
+                textAlign: "right"
+            },
+            title: {
+                fontWeight: "600"
+            }
+        },
+        language: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "35px"
+            },
+            heading: {
+                // marginLeft:"43%",
+                color: "#2e3c47ff",
+                fontWeight: "600",
+                // borderBottom:"2px solid #2e3c47ff",
+                width: "fit-content",
+                // marginBottom:"15px"
+            },
+            listItem: {
+                margin: "5px 15px"
+            }
+        },
+        strength: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "35px"
+            },
+            title: {
+                fontWeight: "500"
+            }
+        },
+        certificate: {
+            box: {
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "35px"
+            },
+            title: {
+                fontWeight: "500"
             }
         }
 
