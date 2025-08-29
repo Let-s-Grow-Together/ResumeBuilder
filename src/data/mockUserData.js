@@ -29,13 +29,30 @@ const rawMockUserData = {
         }
     ],
 
-    skills: [
-        { id: "skill_1", text: "React", value: "50" },
-        { id: "skill_2", text: "JavaScript", value: "40"  },
-        { id: "skill_3", text: "HTML5", value: "60"  },
-        { id: "skill_4", text: "CSS3", value: "70"  },
-        { id: "skill_5", text: "Git & GitHub", value: "20"  },
-    ],
+   skills: [
+  { id: "skill_1", text: "React", value: 50 },
+  { id: "skill_2", text: "JavaScript", value: 40 },
+  { id: "skill_3", text: "HTML5", value: 60 },
+
+  {
+    id: "s1",
+    category: "BACK END DEVELOPMENT",
+    items: ["Java", "Python", "Spring", "Express", "NodeJS"]
+  },
+  {
+    id: "s2",
+    category: "SOFT SKILLS",
+    items: ["Team player", "Bias for action", "Deliver results"]
+  }
+],
+
+
+  interests: [
+    { id: "int_1", text: "Travel", icon: "✈️" },
+    { id: "int_2", text: "Fitness", icon: "💪" },
+    { id: "int_3", text: "Nutrition", icon: "🥗" },
+    { id: "int_4", text: "Coding", icon: "💻" },
+],
 
     language: [
         { id: "lang_1", text: "English" },
@@ -43,6 +60,17 @@ const rawMockUserData = {
         { id: "lang_3", text: "French" },
         { id: "lang_4", text: "Russian" },
     ],
+    coursework: [
+    { id: "cw_1", text: "Data Structures and Algorithms" },
+    { id: "cw_2", text: "Developing Android Apps" },
+    { id: "cw_3", text: "Machine Learning" },
+    { id: "cw_4", text: "Data Mining" },
+    { id: "cw_5", text: "Applied Statistics" },
+    { id: "cw_6", text: "Linear Algebra" },
+    { id: "cw_7", text: "Differential Equations" },
+    { id: "cw_8", text: "Robotics: Mechanical Design" }
+],
+
 
     projects: [
         {

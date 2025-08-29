@@ -23,7 +23,7 @@ const template1 = {
                     rowEnd: 3,
                     colStart: 1,
                     colEnd: 2,
-                    sections: ["contact", "skills", "education"]
+                    sections: ["contact", "skills","Interests","Coursework", "education"]
                 },
                 {
                     name: "rightColumn",
@@ -1629,4 +1629,5 @@ const template526 = {
     }
 
 }
+
 export const templates = [template1, template3, template9, template10, template11, template12, template13, template14, template15, template113, template115, template116, template117, template1110, template1111, template1112, template1113, template1115, template21, template6, template23, template24, template25, template501,template516,template521,template522,template523,template524,template525,template526];

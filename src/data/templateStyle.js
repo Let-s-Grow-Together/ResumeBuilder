@@ -4228,7 +4228,7 @@ const templateStyles = {
             }
         },
         skills: {
-            layoutType: "layout2",
+            layoutType: "layout3",
             box: {
                 marginBottom: "2rem"
             },

@@ -13,6 +13,8 @@ import Language from "./components/Language";
 import Awards from "./components/Awards";
 import Organizations from "./components/Organizations";
 import Certificates from "./components/Certificates";
+import Interests from "./components/Interests";
+import Coursework from "./components/CourseWork";
 import designIcons from "./components/DesignComponent";
 import "./ResumeRenderer.css";
 import { useResume } from "../context/ResumeContext";
@@ -32,6 +34,8 @@ const sectionComponents = {
     avatar: Avatar,
     language: Language,
     awards: Awards,
+    Interests:Interests,
+    Coursework:Coursework,
     certificates: Certificates,
     designIcons1: designIcons,
     designIcons2: designIcons,
