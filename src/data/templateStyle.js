@@ -6162,15 +6162,18 @@ const templateStyles = {
                 // degree: {
                 //     margin: "0px"
                 // },
-
             },
             school:{
                 textTransform:"uppercase",
                 fontSize:"14px",
+            },
+            content:{
+                paddingLeft:"0px"
             }
 
         },
         skills: {
+            layoutType:"layout3",
             box: {
                 // borderBottom: "2px solid #2e3c47ff",
                 marginBottom: "15px"

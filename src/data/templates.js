@@ -1734,7 +1734,7 @@ const template28 = {
                     rowEnd: 4,
                     colStart: 1,
                     colEnd: 2,
-                    style:{marginTop:"-380px"},
+                    style:{marginTop:"-380px", borderLeft:"1px solid black"},
                     sections: ["skills","workExperience", ]
                 },
                 {
@@ -1743,7 +1743,7 @@ const template28 = {
                     rowEnd: 4,
                     colStart: 2,
                     colEnd: 3,
-                    style:{marginTop:"-380px"},
+                    style:{marginTop:"-380px", textAlign:"left", borderLeft:"1px solid black"},
                     sections: ["education", "awards", "language"]
                 },
             ]
@@ -1764,6 +1764,3 @@ export const templates = [template1, template3, template9, template10, template1
     template116, template117, template1110, template1111, template1112, template1113, template1115, template21, template6, 
     template23, template24, template25, template501,template516,template521,template522,template523,template524,template525,template526,template27, template28];
 
-
-
-// export const templates = [template1, template3, template9, template10, template11, template12, template13, template14, template15, template113, template115, template116, template117, template1110, template1111, template1112, template1113, template1115, template21, template6, template23, template24, template25, template501,template516,template521,template522,template523,template524,template525,template526];
