@@ -6,7 +6,7 @@ const layoutComponents = {
     layout2: LayoutBars,
 };
 
-function LayoutDefault({ data, style, viewType, editMode, handleTextBlur,BoxStyle }) {
+function LayoutDefault({ data, style, viewType, editMode, handleTextBlur, BoxStyle }) {
     return viewType === "list" ? (
         <ul style={style?.skills?.wholeList}>
             {data.map((skill, index) => (
@@ -38,7 +38,7 @@ function LayoutDefault({ data, style, viewType, editMode, handleTextBlur,BoxStyl
     );
 }
 
-function LayoutBars({ data, style, editMode, viewType, handleTextBlur, handleMouseDown, draggingIndex,BoxStyle }) {
+function LayoutBars({ data, style, editMode, viewType, handleTextBlur, handleMouseDown, draggingIndex, BoxStyle }) {
     if (viewType === "list") {
         return (
             <ul style={style?.skills?.wholeList}>
@@ -65,11 +65,12 @@ function LayoutBars({ data, style, editMode, viewType, handleTextBlur, handleMou
                     style={{ display: "flex", alignItems: "center", gap: "12px", ...style?.skills?.skillItem }}
                 >
                     <span
+                        data-id={skill.id}
                         contentEditable={editMode}
                         suppressContentEditableWarning
                         onBlur={(e) => handleTextBlur(index, e)}
                         dangerouslySetInnerHTML={{ __html: skill.text }}
-                        style={{ width: "120px",outline:"none",paddingLeft:"5px", ...style?.skills?.label }}
+                        style={{ width: "120px", outline: "none", paddingLeft: "5px", ...style?.skills?.label }}
                     />
                     <div
                         onMouseDown={(e) => handleMouseDown(index, e)}

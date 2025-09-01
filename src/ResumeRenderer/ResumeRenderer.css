@@ -7,7 +7,7 @@
     --none: none;
 }
 
-#resume-view {
+.resume-view {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 210mm;
     height: 297mm;
@@ -138,12 +138,12 @@
     align-items: center;
 }
 
-.delete-btn{
+.delete-btn {
     border: none;
     background: none;
 }
 
-.add-btn{
+.add-btn {
     padding: 5px;
 }
 
@@ -362,7 +362,7 @@
     margin-bottom: var(--basic-font-size);
 }
 
-.summary h2{
+.summary h2 {
     font-weight: 500;
     padding-bottom: 10px;
 }
@@ -668,4 +668,32 @@
     border-bottom: 3px dotted black;
     height: 0.3em;
     transform: translateY(0.2em);
+}
+
+.page-break {
+    break-before: page;
+}
+
+.resume-doc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10mm;
+  background: #f0f0f0;
+  padding: 10mm 0;
+}
+
+/* A single page = A4 */
+.resume-page {
+  width: 210mm;
+  height: 297mm;
+  background: white;
+  padding: 12mm;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  page-break-after: always; /* important for PDF */
+}
+
+.resume-page:last-child {
+  page-break-after: auto;
 }
