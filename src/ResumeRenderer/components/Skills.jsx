@@ -15,10 +15,10 @@ function LayoutCategories({ data, style, editMode, handleCategoryBlur, handleIte
                         suppressContentEditableWarning
                         onBlur={(e) => handleCategoryBlur(groupIndex, e)}
                         data-id={skillGroup.id}
-                       
+                        style={{ ...style?.skills?.h3}}
                         dangerouslySetInnerHTML={{ __html: skillGroup.category }}
                     />
-                    <div className="skillItems" style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", alignItems: "center" }}>
+                    <div className="skillItems" style={{ display: "flex", flexWrap: "wrap", gap: "0.3rem", alignItems: "center" }}>
                         {skillGroup.items.map((item, itemIndex) => (
                             <React.Fragment key={`${skillGroup.id}-${itemIndex}`}>
                                 <span
@@ -26,7 +26,7 @@ function LayoutCategories({ data, style, editMode, handleCategoryBlur, handleIte
                                     suppressContentEditableWarning
                                     onBlur={(e) => handleItemEdit(groupIndex, itemIndex, e)}
                                     data-id={`${skillGroup.id}-item-${itemIndex}`}
-                                   
+                                    style={{...style?.skills?.span}}
                                     dangerouslySetInnerHTML={{ __html: item }}
                                 />
                                 {itemIndex < skillGroup.items.length - 1 && (

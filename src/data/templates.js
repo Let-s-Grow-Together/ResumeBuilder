@@ -1706,7 +1706,7 @@ const template28 = {
     isAvatar: "true",
     layout: {
         grid: {
-            templateRows: "auto auto auto",
+            templateRows: "1fr 7fr",
             templateColumns: "2fr 1fr",  // single column
             columnGap:"2rem",
             areas: [
@@ -1716,7 +1716,7 @@ const template28 = {
                     rowEnd: 2,
                     colStart: 1,
                     colEnd: 3,
-                    style: { padding: "10px",  marginLeft: "-38px", marginTop: "-40px", },
+                    style: { padding: "15px",  marginLeft: "-38px", marginTop: "0px", },
                     sections: ["personalInfo", "contact",]
                 },
                 // {
@@ -1730,27 +1730,27 @@ const template28 = {
                 // },
                 {
                     name: "leftColumn",
-                    rowStart: 3,
-                    rowEnd: 4,
+                    rowStart: 2,
+                    rowEnd: 3,
                     colStart: 1,
                     colEnd: 2,
-                    style:{marginTop:"-380px", borderLeft:"1px solid black"},
+                    style:{marginTop:"0px",},
                     sections: ["skills","workExperience", ]
                 },
                 {
                     name: "rightColumn",
-                    rowStart: 3,
-                    rowEnd: 4,
+                    rowStart: 2,
+                    rowEnd: 3,
                     colStart: 2,
                     colEnd: 3,
-                    style:{marginTop:"-380px", textAlign:"left", borderLeft:"1px solid black"},
-                    sections: ["education", "awards", "language"]
+                    style:{marginTop:"0px", textAlign:"left",},
+                    sections: [ "education", "awards", "Coursework", "Interests"]
                 },
             ]
         },
         frozenSections: ["avatar","contact", "personalInfo"],
         padding: "7mm",
-        fontFamily: "'Montserrat', sans-serif",
+        fontFamily: "Arial, Helvetica",
         fontLink:
             "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
         fontSize: "14px",
