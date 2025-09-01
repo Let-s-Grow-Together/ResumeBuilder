@@ -127,6 +127,10 @@
     padding-bottom: 8px;
 }
 
+.editable-text {
+    margin-left: -10px;
+}
+
 .icon-picker-popup {
     border: var(--basic-black-border);
 }

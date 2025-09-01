@@ -72,7 +72,10 @@ export default function Contact({areaName}) {
             <h2 style={headingStyle}>Contact</h2>
             <ul className="contactList" style={style?.contact?.list}>
                 {contacts.map((contact, index) => (
-                    <li key={index} className="contactItem" style={style?.contact?.listItem}>
+                    <li key={index} className="contactItem"  style={{
+    ...style?.contact?.listItem,
+    ...(style?.contact?.hiddenItems?.includes(index) ? { display: "none" } : {})
+  }}>
                         <EditableIcon
                             currentIconKey={iconMap[index]}
                             field={index}
