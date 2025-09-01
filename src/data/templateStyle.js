@@ -6118,6 +6118,7 @@ const templateStyles = {
             }
         },
         workExpe: {
+
             box: {
                 // borderBottom: "2px solid #2e3c47ff",
                 marginBottom: "15px"
@@ -6142,6 +6143,7 @@ const templateStyles = {
 
         },
         education: {
+             layoutType: "layout3",
             box: {
                 // borderBottom: "2px solid #2e3c47ff",
                 marginBottom: "15px",

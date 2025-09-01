@@ -97,32 +97,35 @@ const rawMockUserData = {
         },
     ],
 
-    education: [
+  education: [
         {
             id: "edu1",
-            school: "XYZ Institute of Technology",
-            degree: "B.Tech in Computer Science",
-            city: "Delhi",
+            school: "UNIVERSITY OF ILLINOUS - URBANA CHAMPAIGN (UIUC)",
+            degree: "M.S., Mechanical Engineering",
+            city: "Urbana-Champaign, IL",
             startDate: "2016",
-            endDate: "2020",
+            endDate: "Dec 2016",
             description: [
-                { id: "des1", text: "Scored 8.5 CGPA" },
+                { id: "des1", text: "GPA: 3.74/4" },
                 { id: "des2", text: "Top 1% of graduating class" },
             ]
         },
         {
             id: "edu2",
-            school: "ABC Public School",
-            degree: "Senior Secondary (Science)",
-            city: "Delhi",
+            school: "INDIAN INSTITUTE OF TECHNOLOGY DELHI (ITD)",
+            degree: "B.S., Mechanical Engineering",
+            city: "New Delhi, India",
             startDate: "2015",
-            endDate: "2016",
+            endDate: "May 2014 ",
             description: [
-                { id: "des1", text: "Scored 8.9 CGPA in Class 12" },
+                { id: "des1", text: "GPA: 8.98/10" },
                 { id: "des2", text: "Top 5% of graduating class" },
             ]
         },
-        /* {
+        /*
+
+
+         {
             id: "edu3",
             school: "ABC Public School",
             degree: "Junior Secondary (Science)",
