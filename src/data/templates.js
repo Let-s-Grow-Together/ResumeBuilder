@@ -1707,7 +1707,7 @@ const template28 = {
     layout: {
         grid: {
             templateRows: "1fr 7fr",
-            templateColumns: "2fr 1fr",  // single column
+            templateColumns: "2fr 1fr",
             columnGap:"2rem",
             areas: [
                 {

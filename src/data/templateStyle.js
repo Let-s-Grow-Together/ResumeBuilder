@@ -6087,9 +6087,11 @@ const templateStyles = {
             },
             name: {
                 display: "flex",
-                marginLeft: "12.5rem",
+                marginLeft: "11rem",
                 marginTop: "2rem",
-                fontSize: "2rem"
+                fontSize: "2rem",
+                alignItems:"center",
+                justifyContent:"center"
             },
             firstName: {
                 marginRight: "10px"
@@ -6438,7 +6440,7 @@ const templateStyles = {
                 marginBottom: "40px"
             },
             heading: {
-                marginBottom: "0px",
+                marginBottom: "5px",
                 textTransform: "uppercase",
                 fontSize: "18px"
             },
@@ -6459,7 +6461,7 @@ const templateStyles = {
             },
             heading: {
                 textTransform: "uppercase",
-                marginBottom: "0px",
+                marginBottom: "10px",
                 fontSize: "18px"
             },
             everyInterestBox: {
