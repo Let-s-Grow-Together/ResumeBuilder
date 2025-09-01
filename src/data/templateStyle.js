@@ -1,6 +1,6 @@
 // import { fontWeight } from "html2canvas/dist/types/css/property-descriptors/font-weight";
 
-import Coursework from "../ResumeRenderer/components/CourseWork";
+// import Coursework from "../ResumeRenderer/components/CourseWork";
 
 // import { fontWeight } from "html2canvas/dist/types/css/property-descriptors/font-weight";
 

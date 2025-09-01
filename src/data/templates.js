@@ -1708,7 +1708,7 @@ const template28 = {
         grid: {
             templateRows: "1fr 7fr",
             templateColumns: "2fr 1fr",
-            columnGap:"2rem",
+            columnGap:"1.5rem",
             areas: [
                 {
                     name: "header",
