@@ -167,7 +167,7 @@ const template9 = {
                 }
             ]
         },
-        frozenSections: ["avatar","contact", "personalInfo"],
+        frozenSections: ["avatar", "contact", "personalInfo"],
         padding: "25px",
         fontFamily: "'Poppins', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap",
@@ -239,7 +239,7 @@ const template11 = {
                     rowEnd: 2,
                     colStart: 1,
                     colEnd: 2,
-                    style: { padding: "30px", paddingBottom: "0px",paddingTop:"40px" },
+                    style: { padding: "30px", paddingBottom: "0px", paddingTop: "40px" },
                     sections: ["personalInfo"]
                 },
                 {
@@ -407,7 +407,7 @@ const template14 = {
                     rowEnd: 3,
                     colStart: 2,
                     colEnd: 3,
-                    sections: ["contact","education", "skills", "language"]
+                    sections: ["contact", "education", "skills", "language"]
                 }
             ]
         },
@@ -695,7 +695,7 @@ const template117 = {
         grid: {
             templateRows: "1fr 12fr",
             templateColumns: "1fr 1fr",
-            columnGap:"3rem",
+            columnGap: "3rem",
             areas: [
                 {
                     name: "header",
@@ -978,7 +978,8 @@ const template1113 = {
             text: "#333333"
         }
     }
-}
+};
+
 const template21 = {
     id: 21,
     name: "Simple Single Column1",
@@ -1348,7 +1349,8 @@ const template501 = {
             text: "#333333"
         }
     }
-}
+};
+
 const template516 = {
     id: 516,
     name: 'SidebarLeft',
@@ -1385,6 +1387,7 @@ const template516 = {
         colorScheme: { background: "#ffffff", text: "#333333" }
     }
 };
+
 const template521 = {
     id: 521,
     name: "Simple Single Column1",
@@ -1605,7 +1608,7 @@ const template526 = {
                     colEnd: 2,
                     style: { background: "#FFFFFF", marginTop: "1rem" },
                     sections: ["contact", "summary", "skills", "language",]
-                    
+
                 },
                 {
                     name: "rightColumn",
@@ -1628,5 +1631,6 @@ const template526 = {
         }
     }
 
-}
-export const templates = [template1, template3, template9, template10, template11, template12, template13, template14, template15, template113, template115, template116, template117, template1110, template1111, template1112, template1113, template1115, template21, template6, template23, template24, template25, template501,template516,template521,template522,template523,template524,template525,template526];
+};
+
+export const templates = [template1, template3, template9, template10, template11, template12, template13, template14, template15, template113, template115, template116, template117, template1110, template1111, template1112, template1113, template1115, template21, template6, template23, template24, template25, template501, template516, template521, template522, template523, template524, template525, template526];
