@@ -36,11 +36,6 @@ export default function ResumePage({ onLoginClick }) {
         });
     }, []);
 
-
-
-
-
-
     useEffect(() => {
         fetch("/api/templates")
             .then((res) => res.json())
@@ -113,8 +108,6 @@ export default function ResumePage({ onLoginClick }) {
             console.error("Error generating PDF", err);
         }
     };
-
-
 
     if (!selectedTemplate || !userData)
         return <p style={{ textAlign: "center", paddingTop: "2rem" }}>Loading template...</p>;
