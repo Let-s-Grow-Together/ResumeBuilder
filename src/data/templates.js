@@ -1760,7 +1760,71 @@ const template28 = {
         }
     }
 };
+
+const template29 = {
+    id: 29,
+    name: "Simple double Column2",
+    pdf: "/templates/template29.pdf",
+    filteredColumn: "1",
+    isAvatar: "true",
+    layout: {
+        grid: {
+            templateRows: "1fr 7fr",
+            templateColumns: "2fr 1fr",
+            columnGap:"1.5rem",
+            areas: [
+                {
+                    name: "header",
+                    rowStart: 1,
+                    rowEnd: 2,
+                    colStart: 1,
+                    colEnd: 3,
+                    style: { padding: "15px",  marginLeft: "-38px", marginTop: "0px", },
+                    sections: ["personalInfo", "contact",]
+                },
+                // {
+                //     name: "contact",
+                //     rowStart: 2,
+                //     rowEnd: 3,
+                //     colStart: 1,
+                //     colEnd: 3,
+                //     style: { paddingBottom: "-30px", width: "110.5%", marginLeft: "-38px", marginTop: "-26px", borderBottom:"2px solid black" },
+                //     sections: ["contact",]
+                // },
+                {
+                    name: "leftColumn",
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 1,
+                    colEnd: 2,
+                    style:{marginTop:"0px",},
+                    sections: ["skills","workExperience", ]
+                },
+                {
+                    name: "rightColumn",
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 2,
+                    colEnd: 3,
+                    style:{marginTop:"0px", textAlign:"left",},
+                    sections: [ "education", "awards", "Coursework", "Interests"]
+                },
+            ]
+        },
+        frozenSections: ["avatar","contact", "personalInfo"],
+        padding: "10mm",
+        fontFamily: "Arial, Helvetica",
+        fontLink:
+            "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
+        fontSize: "14px",
+        colorScheme: {
+            background: "#ffffff",
+            text: "black"
+        }
+    }
+};
 export const templates = [template1, template3, template9, template10, template11, template12, template13, template14, template15, template113, template115, 
     template116, template117, template1110, template1111, template1112, template1113, template1115, template21, template6, 
-    template23, template24, template25, template501,template516,template521,template522,template523,template524,template525,template526,template27, template28];
+    template23, template24, template25, template501,template516,template521,template522,template523,template524,template525,template526,template27, template28,
+template29];
 

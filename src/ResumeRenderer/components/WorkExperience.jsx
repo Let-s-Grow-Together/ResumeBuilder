@@ -4,6 +4,7 @@ import InlineToolbar from "../../Components/shared/InlineToolbar";
 
 const layoutComponents = {
     layout2: LayoutTwo,
+    layout3: LayoutThree,
 };
 
 function LayoutDefault({ data, style, viewType, editMode, handleFieldBlur, handleDescriptionBlur }) {
@@ -80,7 +81,7 @@ function LayoutTwo({ data, style, viewType, editMode, handleFieldBlur, handleDes
             key={exp.id || index}
             style={{ display: "flex", gap: "16px", ...style?.workExpe?.eachWorkPlace }}
         >
-            <div style={ style?.workExpe?.leftWork}>
+            <div style={style?.workExpe?.leftWork}>
                 <h3
                     contentEditable={editMode}
                     data-id={exp.id}
@@ -143,7 +144,78 @@ function LayoutTwo({ data, style, viewType, editMode, handleFieldBlur, handleDes
     ));
 }
 
-export default function WorkExperience({areaName}) {
+function LayoutThree({ data, style, viewType, editMode, handleFieldBlur, handleDescriptionBlur }) {
+    return data.map((exp, index) => (
+        <div
+            className="workPlace"
+            key={exp.id || index}
+            style={style?.workExpe?.eachWorkPlace}
+        >
+            <h4
+                contentEditable={editMode}
+                data-id={exp.id}
+                suppressContentEditableWarning
+                onBlur={(e) => handleFieldBlur(index, "organization", e)}
+                style={style?.workExpe?.organization}
+                dangerouslySetInnerHTML={{ __html: exp.organization }}
+            />
+
+
+            <div style={style?.workExpe?.dateRole}>
+                <h3
+                    contentEditable={editMode}
+                    data-id={exp.id}
+                    suppressContentEditableWarning
+                    onBlur={(e) => handleFieldBlur(index, "role", e)}
+                    style={style?.workExpe?.role}
+                    dangerouslySetInnerHTML={{ __html: exp.role }}
+                />
+
+
+                <h6
+                    contentEditable={editMode}
+                    data-id={exp.id}
+                    suppressContentEditableWarning
+                    onBlur={(e) => handleFieldBlur(index, "location", e)}
+                    style={style?.workExpe?.dates}
+                >
+                    {exp.startDate} - {exp.endDate} , {exp.location}
+                </h6>
+            </div>
+
+            {viewType === "list" ? (
+                <ul style={style?.workExpe?.wholeList}>
+                    {exp.description?.map((item, i) => (
+                        <li
+                            key={item.id || `desc-${i}`}
+                            data-id={item.id}
+                            contentEditable={editMode}
+                            suppressContentEditableWarning
+                            onBlur={(e) => handleDescriptionBlur(index, i, e)}
+                            style={style?.workExpe?.listItem}
+                            dangerouslySetInnerHTML={{ __html: item.text }}
+                        />
+                    ))}
+                </ul>
+            ) : (
+                <div style={style?.workExpe?.eachExperience}>
+                    {exp.description?.map((item, i) => (
+                        <p
+                            key={item.id || `desc-${i}`}
+                            data-id={item.id}
+                            contentEditable={editMode}
+                            suppressContentEditableWarning
+                            onBlur={(e) => handleDescriptionBlur(index, i, e)}
+                            style={style?.workExpe?.content}
+                            dangerouslySetInnerHTML={{ __html: item.text }}
+                        />
+                    ))}
+                </div>
+            )}
+        </div>
+    ));
+}
+export default function WorkExperience({ areaName }) {
     const {
         data,
         style,
@@ -201,7 +273,7 @@ export default function WorkExperience({areaName}) {
             style={{ ...style?.workExpe?.box, position: "relative" }}
             ref={workExpRef}
         >
-            <h2 className={`${style?.workExpe?.dottedheading?"dotted-heading":""}`} style={headingStyle}>
+            <h2 className={`${style?.workExpe?.dottedheading ? "dotted-heading" : ""}`} style={headingStyle}>
                 Work Experience
             </h2>
             <LayoutComponent
