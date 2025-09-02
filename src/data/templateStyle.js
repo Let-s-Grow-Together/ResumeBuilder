@@ -16,6 +16,7 @@ const sharedStyles = {
             borderBottom: "2px solid var(--heading-color)"
         },
     },
+    
     "3": {
         heading: {
             color: "var(--content-color)",
@@ -27,6 +28,7 @@ const sharedStyles = {
             marginBottom: "2rem"
         }
     },
+
     "4": {
         heading: {
             fontSize: "24px",
@@ -38,12 +40,14 @@ const sharedStyles = {
             margin: "25px 0px"
         },
     },
+
     "5": {
         heading: {
             borderBottom: "2px solid var(--secondary-color)",
             textDecoration: "none"
         },
     },
+
     "7": {
         personalInfo: {
             avatar: {
@@ -58,6 +62,7 @@ const sharedStyles = {
             paddingLeft: '10px'
         }
     },
+
     "501": {
         heading: {
             fontSize: "1.7rem",
@@ -84,6 +89,7 @@ const templateStyles = {
             }
         }, */
     },
+
     "3": {
         vars: {
             "--heading-color": "#333",
@@ -350,6 +356,7 @@ const templateStyles = {
             }
         }
     },
+
     "112": {
         vars: {
             "--heading-color": "#003366",
@@ -482,7 +489,6 @@ const templateStyles = {
         }
     },
 
-
     "9": {
         layoutStyles: {
             leftColumn: {
@@ -565,6 +571,7 @@ const templateStyles = {
             },
         }
     },
+
     "10": {
         layoutStyles: {
             leftColumn: {
@@ -644,6 +651,7 @@ const templateStyles = {
             },
         }
     },
+
     "11": {
         layoutStyles: {
             rightColumn: {
@@ -690,6 +698,7 @@ const templateStyles = {
             },
         }
     },
+
     "12": {
         layoutStyles: {
             leftColumn: {
@@ -828,6 +837,7 @@ const templateStyles = {
             },
         }
     },
+
     "13": {
         layoutStyles: {
             leftColumn: {
@@ -918,6 +928,7 @@ const templateStyles = {
             },
         }
     },
+
     "14": {
         avatar: {
             card: {
@@ -1004,6 +1015,7 @@ const templateStyles = {
             },
         }
     },
+
     "113": {
         vars: {
             "--heading-color": "#333",
@@ -1250,6 +1262,7 @@ const templateStyles = {
             }
         },
     },
+
     "115": {
         vars: {
             '--primary-color': '#163853',
@@ -1419,6 +1432,7 @@ const templateStyles = {
             }
         }
     },
+
     "116": {
         vars: {
             "--primary-color": "#3e465b",
@@ -1636,6 +1650,7 @@ const templateStyles = {
             }
         }
     },
+
     "117": {
         vars: {
             "--primary-color": '#2EBCB0',
@@ -2403,6 +2418,7 @@ const templateStyles = {
             }
         }
     },
+
     "1112": {
         vars: {
             "--left-heading-color": "#fff",
@@ -3045,6 +3061,7 @@ const templateStyles = {
             }
         }
     },
+
     "15": {
         layoutStyles: {
             leftColumn: {
@@ -3154,6 +3171,7 @@ const templateStyles = {
             },
         }
     },
+
     "516": {
         designIcon1: {
             box: {
@@ -3421,6 +3439,7 @@ const templateStyles = {
             }
         },
     },
+
     "521": {
         personalInfo: {
             box: {
@@ -3557,6 +3576,7 @@ const templateStyles = {
         },
 
     },
+
     "522": {
         personalInfo: {
             box: {
@@ -3693,6 +3713,7 @@ const templateStyles = {
         },
 
     },
+
     "523": {
         personalInfo: {
             box: {
@@ -3833,6 +3854,7 @@ const templateStyles = {
         },
 
     },
+
     "524": {
         personalInfo: {
             box: {
@@ -3990,6 +4012,7 @@ const templateStyles = {
         },
 
     },
+
     "525": {
         personalInfo: {
             box: {
@@ -4150,6 +4173,7 @@ const templateStyles = {
         },
 
     },
+
     "526": {
         contact: {
             box: {
@@ -4404,6 +4428,7 @@ const templateStyles = {
         },
 
     },
+
     "501": {
         vars: {
 
@@ -4620,6 +4645,7 @@ const templateStyles = {
             }
         }
     },
+
     "21": {
         personalInfo: {
             box: {
@@ -4872,6 +4898,7 @@ const templateStyles = {
         },
 
     },
+
     "6": {
         personalInfo: {
             box: {
@@ -5108,6 +5135,7 @@ const templateStyles = {
         }
 
     },
+
     "23": {
         personalInfo: {
             box: {
@@ -5856,6 +5884,7 @@ const templateStyles = {
         }
 
     },
+
     "27": {
         personalInfo: {
             box: {
@@ -6090,8 +6119,8 @@ const templateStyles = {
                 marginLeft: "11rem",
                 marginTop: "2rem",
                 fontSize: "2rem",
-                alignItems:"center",
-                justifyContent:"center"
+                alignItems: "center",
+                justifyContent: "center"
             },
             firstName: {
                 marginRight: "10px"
@@ -6109,21 +6138,21 @@ const templateStyles = {
             },
             heading: {
                 // marginLeft:"45%",
-                color: "#F4C562",
+                // color: "#F4C562",
                 // borderBottom: "2px solid #F4C562",
                 width: "fit-content",
                 // marginBottom: "10px",
                 fontSize: "18px"
             },
             list: {
-                color: "#2e3c47ff"
+                // color: "#2e3c47ff"
             },
             eachSummary: {
-                color: "#2e3c47ff"
+                // color: "#2e3c47ff"
             }
         },
         workExpe: {
-            layoutType:"layout3",
+            layoutType: "layout3",
             box: {
                 // borderBottom: "2px solid #2e3c47ff",
                 marginBottom: "30px"
@@ -6138,14 +6167,14 @@ const templateStyles = {
                 textTransform: 'uppercase',
                 fontSize: "18px"
             },
-            dateRole:{
-                display:"flex",
-                alignItems:"center",
-                justifyContent:"flex-start"
+            dateRole: {
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "flex-start"
             },
             eachWorkPlace: {
                 margin: "0px",
-                color: "#2e3c47ff"
+                // color: "#2e3c47ff"
             },
             wholeList: {
                 // listStyle:"none",
@@ -6190,8 +6219,8 @@ const templateStyles = {
             },
             eachEducation: {
                 padding: "0px",
-                color: "#2e3c47ff",
-                marginBottom:"5px",
+                // color: "#2e3c47ff",
+                marginBottom: "5px",
                 // degree: {
                 //     margin: "0px"
                 // },
@@ -6233,6 +6262,7 @@ const templateStyles = {
                 // borderBottom: "2px solid #F4C562",
                 width: "fit-content",
                 marginBottom: "9px",
+                margingLeft: "-5px",
                 paddingBottom: "0px",
                 fontWeight: "700",
                 textTransform: 'uppercase',
@@ -6272,7 +6302,7 @@ const templateStyles = {
             },
             innerbox: {
                 // padding: "10px"
-                color: "#2e3c47ff"
+                // color: "#2e3c47ff"
             },
             title: {
                 fontWeight: "600",
@@ -6297,7 +6327,7 @@ const templateStyles = {
             },
             innerbox: {
                 // padding: "0px",
-                color: "#2e3c47ff"
+                // color: "#2e3c47ff"
             },
             list: {
                 listStyle: "none",
@@ -6312,8 +6342,8 @@ const templateStyles = {
             }
         },
         strength: {
-            box:{
-                marginBottom:"30px"
+            box: {
+                marginBottom: "30px"
             },
             heading: {
                 fontWeight: "900",
@@ -6324,7 +6354,7 @@ const templateStyles = {
                 color: "#2e3c47ff"
             },
             eachStrength: {
-                color: "#2e3c47ff"
+                // color: "#2e3c47ff"
             },
             title: {
                 color: "#2e3c47ff",
@@ -6350,7 +6380,7 @@ const templateStyles = {
             },
             listItem: {
                 margin: "5px 0px",
-                color: "#2e3c47ff"
+                // color: "#2e3c47ff"
             }
         },
         projects: {
@@ -6370,7 +6400,7 @@ const templateStyles = {
                 fontSize: "18px"
             },
             eachProject: {
-                color: "#2e3c47ff"
+                // color: "#2e3c47ff"
             },
             title: {
                 fontWeight: "600",
@@ -6395,7 +6425,7 @@ const templateStyles = {
                 fontSize: "18px"
             },
             innerbox: {
-                color: "#2e3c47ff"
+                // color: "#2e3c47ff"
             },
             title: {
                 fontWeight: "600",
@@ -6420,7 +6450,7 @@ const templateStyles = {
                 fontSize: "18px"
             },
             eachcertificate: {
-                color: "#2e3c47ff"
+                // color: "#2e3c47ff"
             },
             title: {
                 fontWeight: "600",
@@ -6439,8 +6469,8 @@ const templateStyles = {
             list: {
                 display: "flex",
                 justifyContent: "center",
-                alignItems:"center",
-                gap:"10px"
+                alignItems: "center",
+                gap: "10px"
             },
             hiddenItems: [2, 3],
 
@@ -6490,8 +6520,8 @@ const templateStyles = {
         }
 
     },
-    
-     "29": {
+
+    "29": {
         personalInfo: {
             box: {
                 // backgroundColor: "#2e3c47ff",
@@ -6525,8 +6555,8 @@ const templateStyles = {
                 marginLeft: "11rem",
                 marginTop: "2rem",
                 fontSize: "2rem",
-                alignItems:"center",
-                justifyContent:"center"
+                alignItems: "center",
+                justifyContent: "center"
             },
             firstName: {
                 marginRight: "10px"
@@ -6864,8 +6894,8 @@ const templateStyles = {
             list: {
                 display: "flex",
                 justifyContent: "center",
-                alignItems:"center",
-                gap:"10px"
+                alignItems: "center",
+                gap: "10px"
             },
             hiddenItems: [2, 3],
 

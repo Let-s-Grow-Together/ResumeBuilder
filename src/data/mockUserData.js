@@ -177,7 +177,7 @@ SOFT SKILLS| Team player • Bias for action • Deliver results
         },
         {
             id: "exp2",
-            role: "Software Engineer",
+            role: "Software Engineer |",
             organization: "FINTECH CORPORATION",
             location: "Chicago,IL",
             startDate: "Jan 2017",

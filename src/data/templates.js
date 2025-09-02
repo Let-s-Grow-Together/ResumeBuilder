@@ -1734,7 +1734,7 @@ const template28 = {
                     rowEnd: 3,
                     colStart: 1,
                     colEnd: 2,
-                    style:{marginTop:"0px",},
+                    style:{marginTop:"0px",borderLeft:"2px solid black"},
                     sections: ["skills","workExperience", ]
                 },
                 {
