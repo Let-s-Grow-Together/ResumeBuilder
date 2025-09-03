@@ -5,7 +5,8 @@
     padding: 1rem 0.5rem;
     height: 70vh;
     gap: 1rem;
-    background: linear-gradient(to right, #fddb7cc7, #d3bae7);
+    /* background: linear-gradient(to right, #fddb7cc7, #d3bae7); */
+    background: rgba(255, 255, 255, 0.5);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     margin: 1rem;
@@ -22,7 +23,8 @@
         padding: 1rem 0.5rem;
         width: 755px;
         height: 8vh;
-        background: linear-gradient(to right, #fddb7cc7, #d3bae7);
+        /* background: linear-gradient(to right, #fddb7cc7, #d3bae7); */
+        background: rgba(255, 255, 255, 0.5);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         border-radius: 12px;
         margin: 0.35rem;
@@ -39,7 +41,8 @@
         padding: 1rem 0.5rem;
         width: 420px;
         height: 12vh;
-        background: linear-gradient(to right, #fddb7cc7, #d3bae7);
+        background: rgba(255, 255, 255, 0.5);
+        /* background: linear-gradient(to right, #fddb7cc7, #d3bae7); */
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         border-radius: 12px;
         margin: 0.35rem;

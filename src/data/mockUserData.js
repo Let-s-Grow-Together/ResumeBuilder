@@ -159,7 +159,7 @@ SOFT SKILLS| Team player • Bias for action • Deliver results
         {
             id: "exp1",
             role: " Software Engineer |",
-            organization: "AMAZON | Java, Spring, Python, AWS, Machine Learning, Recommendations",
+            organization: "AMAZON ",
             location: "Seattle, WA",
             startDate: " Jul 2019",
             endDate: "Present",
@@ -177,7 +177,7 @@ SOFT SKILLS| Team player • Bias for action • Deliver results
         },
         {
             id: "exp2",
-            role: "Software Engineer |",
+            role: "Software Engineer ",
             organization: "FINTECH CORPORATION",
             location: "Chicago,IL",
             startDate: "Jan 2017",

@@ -137,7 +137,7 @@ export default function ResumePage({ onLoginClick }) {
                 templateId={selectedTemplate.id}
             >
                 <Navbar onDownload={handleDownload} onLoginClick={() => onLoginClick()} />
-                <div className="templateSectionn" style={{ display: "flex", minHeight: "100vh" }}>
+                <div className="templateSectionn" style={{ display: "flex", minHeight: "100vh",backgroundImage: "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSexWQKnB7Du7xZ5RoU5YR9R1v2pk2sOfmYEw&s)",backgroundSize: "cover", backgroundRepeat: "norepeat", backgroundPosition:"center", backgroundBlendMode:"color-burn" }}>
                     <div style={{ width: "220px", flexShrink: 0 }}>
                         <SidebarNav active={activeNav} onChange={setActiveNav} />
                     </div>

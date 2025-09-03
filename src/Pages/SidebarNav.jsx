@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import LayoutEditorModal from "../Features/LayoutEditorModal/LayoutEditorModal";
 import ProfilePage from "../Pages/Profilepage";
 import "./SidebarNav.css";
-import { BookOpen, Ruler, Palette, User } from "lucide-react";
+import { BookOpen, Ruler, Palette, User, Undo, Redo } from "lucide-react";
 
 const navItems = [
     { key: "templates", label: "Templates", icon: <BookOpen size={18} /> },
     { key: "layout", label: "Layout", icon: <Ruler size={18} /> },
     { key: "design", label: "Design & Font", icon: <Palette size={18} /> },
-    // { key: "profile", label: "Profile", icon: <User size={18} /> },
+    { key: "Undo", label: "Undo", icon: <Undo size={18} /> },
+     { key: "Redo", label: "Redo", icon: <Redo size={18} /> },
 ];
 
 const SidebarNav = ({ active, onChange }) => {
@@ -50,20 +51,20 @@ const SidebarNav = ({ active, onChange }) => {
         <>
             <div
                 className="sidebarnav"
-                style={{
-                    width: "160px",
-                    padding: "1rem 0.5rem",
-                    height: "70vh",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "1rem",
-                    background: "linear-gradient(to right, #fddb7cc7, #d3bae7)",
-                    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-                    borderRadius: "12px",
-                    margin: "1rem",
-                    marginTop: "1rem",
-                    border: "1px solid #ffffff5e",
-                }}
+                // style={{
+                //     width: "160px",
+                //     padding: "1rem 0.5rem",
+                //     height: "70vh",
+                //     display: "flex",
+                //     flexDirection: "column",
+                //     gap: "1rem",
+                //     background: "linear-gradient(to right, #fddb7cc7, #d3bae7)",
+                //     boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+                //     borderRadius: "12px",
+                //     margin: "1rem",
+                //     marginTop: "1rem",
+                //     border: "1px solid #ffffff5e",
+                // }}
             >
                 {navItems.map((item) => (
                     <div
@@ -84,6 +85,7 @@ const SidebarNav = ({ active, onChange }) => {
                         {item.icon}
                         {item.label}
                     </div>
+                    
                 ))}
 
                 <LayoutEditorModal
