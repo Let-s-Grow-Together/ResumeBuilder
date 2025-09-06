@@ -14,7 +14,6 @@
     position: relative;
     padding: 10mm;
     box-sizing: border-box;
-    display: grid;
     gap: 1rem;
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

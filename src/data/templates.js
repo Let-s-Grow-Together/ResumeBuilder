@@ -1,4 +1,4 @@
-const template1 = {
+/* const template1 = {
     id: 1,
     name: "Modern Grid",
     filteredColumn: "2",
@@ -6,7 +6,7 @@ const template1 = {
     layout: {
         grid: {
             templateColumns: "1fr 1fr",
-            templateRows: "auto 1fr",
+            templateRows: "min-content min-content",
             columnGap: "2rem",
             areas: [
                 {
@@ -49,7 +49,7 @@ const template3 = {
     isAvatar: "true",
     layout: {
         grid: {
-            templateRows: "1fr 0.1fr 12fr",
+            templateRows: "min-content min-content min-content",
             templateColumns: "3fr 2fr",
             rowGap: "0rem",
             columnGap: "2rem",
@@ -95,7 +95,7 @@ const template3 = {
             text: "#333333"
         }
     }
-};
+}; */
 
 const template8 = {
     id: 8,
@@ -138,14 +138,14 @@ const template8 = {
     }
 };
 
-const template9 = {
+/* const template9 = {
     id: 9,
     name: "Modern Sidebar",
     filteredColumn: "3",
     isAvatar: "true",
     layout: {
         grid: {
-            templateRows: "auto",
+            templateRows: "min-content",
             templateColumns: "1.3fr 2fr",
             columnGap: "2rem",
             areas: [
@@ -178,7 +178,7 @@ const template9 = {
             primary: "#00a66f",
         }
     }
-};
+}; */
 
 const template10 = {
     id: 10,
@@ -1454,7 +1454,7 @@ const template522 = {
     }
 };
 
-const template523 = {
+/* const template523 = {
     id: 523,
     name: "Simple Single Column3",
     pdf: "/templates/template23.pdf",
@@ -1462,8 +1462,8 @@ const template523 = {
     isAvatar: "true",
     layout: {
         grid: {
-            templateRows: "auto",
-            templateColumns: "1fr",  // single column
+            templateRows: "min-content",
+            templateColumns: "1fr",
             areas: [
                 {
                     name: "mainSection",
@@ -1486,7 +1486,7 @@ const template523 = {
             text: "#333333"
         }
     }
-};
+}; */
 
 const template524 = {
     id: 524,
@@ -1633,4 +1633,146 @@ const template526 = {
 
 };
 
+const template1 = {
+    id: 1,
+    name: "Modern Grid",
+    filteredColumn: "2",
+    isAvatar: "true",
+    layout: {
+        direction: "row wrap",
+        rowGap: "1rem",
+        columnGap: "2rem",
+        padding: "10px",
+        colorScheme: {
+            background: "#FFFFFF",
+            text: "#333333"
+        },
+        areas1: [
+            {
+                name: "header",
+                width: "100%",
+                paginate: false,
+                sections: ["personalInfo"]
+            },
+            {
+                name: "leftColumn",
+                width: "47%",
+                sections: ["contact", "skills", "education"]
+            },
+            {
+                name: "rightColumn",
+                width: "48%",
+                sections: ["workExperience", "projects", "language", "awards", "certificates"]
+            }
+        ]
+    }
+};
+
+const template3 = {
+    id: 3,
+    name: "Simple Tactical",
+    filteredColumn: "2",
+    isAvatar: "true",
+    layout: {
+        direction: "row wrap",
+        rowGap: "0rem",
+        columnGap: "2rem",
+        padding: "4px",
+        fontFamily: "'Lato', sans-serif",
+        fontSize: "14px",
+        colorScheme: {
+            background: "#ffffff",
+            text: "#333333"
+        },
+        areas1: [
+            {
+                name: "header",
+                width: "100%",
+                paginate: false,
+                sections: ["personalInfo"]
+            },
+            {
+                name: "contacts",
+                width: "100%",
+                paginate: false,
+                sections: ["contact"]
+            },
+            {
+                name: "leftColumn",
+                width: "57%",
+                sections: ["summary", "workExperience", "education"]
+            },
+            {
+                name: "rightColumn",
+                width: "38%",
+                sections: ["strengths", "skills", "achievements"]
+            }
+        ]
+    }
+};
+
+const template9 = {
+    id: 9,
+    name: "Modern Sidebar",
+    filteredColumn: "2",
+    isAvatar: "true",
+    layout: {
+        direction: "row nowrap",
+        columnGap: "2rem",
+        padding: "25px",
+        frozenSections: ["avatar", "contact", "personalInfo"],
+        fontFamily: "'Poppins', sans-serif",
+        fontLink: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap",
+        fontSize: "14px",
+        colorScheme: {
+            background: "#ffffff",
+            text: "#1c1c1c",
+            primary: "#00a66f",
+        },
+        areas1: [
+            {
+                name: "leftColumn",
+                width: "36%",
+                sections: ["avatar", "contact", "achievements", "skills", "certificates"]
+            },
+            {
+                name: "rightColumn",
+                width: "59%",
+                sections: ["summary", "workExperience", "education", "projects"]
+            }
+        ]
+    }
+};
+
+const template523 = {
+    id: 523,
+    name: "Simple Single Column3",
+    filteredColumn: "1",
+    isAvatar: "true",
+    layout: {
+        direction: "column",
+        padding: "10mm",
+        frozenSections: ["contact", "summary", "personalInfo"],
+        fontFamily: "'Montserrat', sans-serif",
+        fontLink:
+            "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
+        fontSize: "14px",
+        colorScheme: {
+            background: "#ffffff",
+            text: "#333333"
+        },
+        areas1: [
+            {
+                name: "mainSection",
+                width: "100%",
+                sections: ["personalInfo", "awards", "language"]
+            }
+        ]
+    }
+};
+
+export const templates = [template1, template3, template9, template523];
+
+/* 
 export const templates = [template1, template3, template9, template10, template11, template12, template13, template14, template15, template113, template115, template116, template117, template1110, template1111, template1112, template1113, template1115, template21, template6, template23, template24, template25, template501, template516, template521, template522, template523, template524, template525, template526];
+*/
