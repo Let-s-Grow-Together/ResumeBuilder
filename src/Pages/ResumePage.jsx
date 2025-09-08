@@ -1,13 +1,8 @@
-
-
 import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
 import { supabase } from "../supabaseClient";
 import { ResumeProvider } from "../context/ResumeContext";
 import ResumeRenderer from "../ResumeRenderer/ResumeRenderer";
-// import Toolbar from "./Toolbar";
 import SaveControls from "./SaveControl";
 import templateStyles from "../data/templateStyle";
 import { templates } from "../data/templates";
@@ -15,8 +10,8 @@ import Footer from "../Components/Footer/Footer";
 import Navbar from "./Navbar";
 import TemplateSidebar from "./TemplateSidebar";
 import SidebarNav from "./SidebarNav";
+import handleDownload from "../utils/handleDownload";
 import './Resumepage.css';
-import { toPng } from "html-to-image";
 
 export default function ResumePage({ onLoginClick }) {
     const [user, setUser] = useState(null);
@@ -56,59 +51,10 @@ export default function ResumePage({ onLoginClick }) {
         if (newTemplate) setSelectedTemplate(newTemplate);
     };
 
-
-    const handleDownload = async () => {
-        if (editModeFromURL) {
-            alert("Please save your resume before downloading.");
-            return;
-        }
-
-        const {
-            data: { user: currentUser },
-        } = await supabase.auth.getUser();
-
-        if (!currentUser) {
-            navigate("/auth");
-            return;
-        }
-
-        const input = resumeRef.current;
-
-        const images = input.querySelectorAll("img");
-        await Promise.all(
-            Array.from(images).map(
-                (img) =>
-                    new Promise((resolve) => {
-                        if (img.complete) resolve();
-                        else img.onload = img.onerror = resolve;
-                    })
-            )
-        );
-
-        await new Promise((resolve) => requestAnimationFrame(() => setTimeout(resolve, 100)));
-
-        try {
-            const dataUrl = await toPng(input, {
-                cacheBust: true,
-                backgroundColor: "#ffffff",
-                pixelRatio: 2,
-                style: {
-                    margin: 0,
-                    padding: 0,
-                    transform: 'none'
-                }
-            });
-
-            const pdf = new jsPDF("p", "mm", "a4");
-            const pdfWidth = pdf.internal.pageSize.getWidth();
-            const pdfHeight = (input.offsetHeight * pdfWidth) / input.offsetWidth;
-            pdf.addImage(dataUrl, "PNG", 0, 0, pdfWidth, pdfHeight);
-            pdf.save("my-resume.pdf");
-        } catch (err) {
-            console.error("Error generating PDF", err);
-        }
+     const handleDownloadClick = () => {
+        handleDownload(resumeRef, editModeFromURL, navigate);
     };
-
+    
     if (!selectedTemplate || !userData)
         return <p style={{ textAlign: "center", paddingTop: "2rem" }}>Loading template...</p>;
 
@@ -129,7 +75,7 @@ export default function ResumePage({ onLoginClick }) {
                 editModeFromURL={editModeFromURL}
                 templateId={selectedTemplate.id}
             >
-                <Navbar onDownload={handleDownload} onLoginClick={() => onLoginClick()} />
+                <Navbar onDownload={handleDownloadClick} onLoginClick={() => onLoginClick()} />
                 <div className="templateSectionn" style={{ display: "flex", minHeight: "100vh" }}>
                     <div style={{ width: "220px", flexShrink: 0 }}>
                         <SidebarNav active={activeNav} onChange={setActiveNav} />
@@ -188,7 +134,6 @@ export default function ResumePage({ onLoginClick }) {
                             }}
                             className="hide-scroll"
                         >
-                            {/* <Toolbar /> */}
                             <SaveControls />
                             <div
                                 ref={resumeRef}
