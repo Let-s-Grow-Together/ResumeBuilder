@@ -199,7 +199,7 @@ export default function ResumePage({ onLoginClick }) {
 
                                 }}
                             >
-                                <ResumeRenderer template={selectedTemplate} />
+                                <ResumeRenderer template={selectedTemplate} setTemplate={setSelectedTemplate} />
                             </div>
                         </div>
                     </div>

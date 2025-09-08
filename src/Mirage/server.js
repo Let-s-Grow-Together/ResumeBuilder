@@ -1,8 +1,6 @@
-
 import { createServer } from 'miragejs';
 import { templates } from '../data/templates';
 import mockUserData from '../data/mockUserData';
-
 
 export function makeServer() {
 
@@ -15,6 +13,7 @@ export function makeServer() {
                     templates
                 }
             });
+            
             this.get('/user-data', () => {
                 return {
                     data: mockUserData
@@ -24,4 +23,3 @@ export function makeServer() {
     });
 
 }
-

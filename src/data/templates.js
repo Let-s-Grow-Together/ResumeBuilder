@@ -1642,7 +1642,7 @@ const template1 = {
         direction: "row wrap",
         rowGap: "1rem",
         columnGap: "2rem",
-        padding: "10px",
+        padding: "10mm",
         colorScheme: {
             background: "#FFFFFF",
             text: "#333333"
