@@ -86,13 +86,13 @@ const SidebarNav = ({ active, onChange }) => {
                     </div>
                 ))}
 
-                <LayoutEditorModal
+                {/* <LayoutEditorModal
                     isOpen={showLayoutModal}
                     onClose={() => {
                         setShowLayoutModal(false);
                         setActiveModalKey(null);
                     }}
-                />
+                /> */}
             </div>
 
             {showProfile && (

@@ -7,18 +7,19 @@
     --none: none;
 }
 
-#resume-view {
+.resume-view {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 210mm;
     height: 297mm;
-    /* margin: auto; */
+    position: relative;
     padding: 10mm;
     box-sizing: border-box;
-    display: grid;
     gap: 1rem;
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background: white;
+    overflow: hidden;
+    margin-bottom: 3rem;
 }
 
 
@@ -142,12 +143,12 @@
     align-items: center;
 }
 
-.delete-btn{
+.delete-btn {
     border: none;
     background: none;
 }
 
-.add-btn{
+.add-btn {
     padding: 5px;
 }
 
@@ -366,7 +367,7 @@
     margin-bottom: var(--basic-font-size);
 }
 
-.summary h2{
+.summary h2 {
     font-weight: 500;
     padding-bottom: 10px;
 }
@@ -577,18 +578,6 @@
     margin-bottom: 30px;
 }
 
-/* .area-leftColumn h2 {
-    border-bottom: 2px solid var(--left-heading-color);
-    color: var(--left-heading-color);
-    margin-bottom: var(--left-heading-spacing);
-}
-
-.area-rightColumn h2 {
-    border-bottom: 2px solid var(--right-heading-color);
-    color: var(--right-heading-color);
-    margin-bottom: var(--right-heading-spacing);
-} */
-
 .timeline-item .dot {
     width: 12px;
     height: 12px;
@@ -598,11 +587,7 @@
     left: -37px;
 }
 
-#resume-view {
-    position: relative;
-}
-
-#resume-view.editing::before {
+.resume-view.editing::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -613,7 +598,7 @@
     pointer-events: none;
 }
 
-#resume-view.editing .resumeSection {
+.resume-view.editing .resumeSection {
     position: relative;
 }
 
@@ -673,3 +658,4 @@
     height: 0.3em;
     transform: translateY(0.2em);
 }
+

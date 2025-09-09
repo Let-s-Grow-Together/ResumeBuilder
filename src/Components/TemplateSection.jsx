@@ -1,31 +1,42 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ResumeProvider } from '../context/ResumeContext';
 import ResumeRenderer from '../ResumeRenderer/ResumeRenderer';
 import templateStyles from '../data/templateStyle';
 import mockUserData from '../data/mockUserData';
 
-export default function TemplateSection({ templates }) {
-    const navigate = useNavigate();
+export default function TemplateSection() {
     const scrollRef = useRef(null);
+    const [templates, setTemplates] = useState([]);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const fetchTemplates = async () => {
+            try {
+                const response = await fetch('/api/templates');
+                const data = await response.json();
+                setTemplates(data.templates);
+            } 
+            catch (error) {
+                console.error("Error fetching templates:", error);
+            }
+        };
+
+        fetchTemplates();
+    }, []);
 
     useEffect(() => {
         const container = scrollRef.current;
         if (!container) return;
 
-        const scrollSpeed = 1; // pixels per frame
+        const scrollSpeed = 1;
         let isPaused = false;
         let animationId;
-
-        // Duplicate content to create a seamless scroll illusion
-        // const originalContent = container.innerHTML;
-        // container.innerHTML += originalContent;
 
         const autoScroll = () => {
             if (!isPaused) {
                 container.scrollLeft += scrollSpeed;
 
-                // Reset to start when we've scrolled past the first full copy
                 if (container.scrollLeft >= container.scrollWidth / 2) {
                     container.scrollLeft = 0;
                 }
@@ -36,14 +47,12 @@ export default function TemplateSection({ templates }) {
 
         animationId = requestAnimationFrame(autoScroll);
 
-        // Pause on hover (desktop)
         const pauseScroll = () => { isPaused = true; };
         const resumeScroll = () => { isPaused = false; };
 
         container.addEventListener('mouseenter', pauseScroll);
         container.addEventListener('mouseleave', resumeScroll);
 
-        // Pause on long-press (mobile)
         let touchTimer;
         const handleTouchStart = () => {
             touchTimer = setTimeout(pauseScroll, 300);

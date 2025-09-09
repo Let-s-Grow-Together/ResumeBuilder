@@ -481,8 +481,6 @@ const templateStyles = {
             },
         }
     },
-
-
     "9": {
         layoutStyles: {
             leftColumn: {
@@ -1914,7 +1912,6 @@ const templateStyles = {
             },
         }
     },
-
     "1110": {
         avatar: {
             card: {
@@ -2136,7 +2133,6 @@ const templateStyles = {
             }
         }
     },
-
     "1111": {
         vars: {
             "--left-heading-color": "#142c45",
@@ -2967,7 +2963,6 @@ const templateStyles = {
 
 
     },
-
     "1115": {
         vars: {
             "--left-heading-color": "#ffff",
@@ -5367,7 +5362,6 @@ const templateStyles = {
         }
 
     },
-
     "24": {
         personalInfo: {
             box: {
@@ -5616,7 +5610,6 @@ const templateStyles = {
         }
 
     },
-
     "25": {
         personalInfo: {
             box: {

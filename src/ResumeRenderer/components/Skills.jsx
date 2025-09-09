@@ -100,6 +100,7 @@ function LayoutBars({ data, style, editMode, viewType, handleTextBlur, handleMou
                     style={{ display: "flex", alignItems: "center", gap: "12px", ...style?.skills?.skillItem }}
                 >
                     <span
+                        data-id={skill.id}
                         contentEditable={editMode}
                         suppressContentEditableWarning
                         onBlur={(e) => handleTextBlur(index, e)}
