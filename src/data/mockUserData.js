@@ -31,10 +31,10 @@ const rawMockUserData = {
 
     skills: [
         { id: "skill_1", text: "React", value: "50" },
-        { id: "skill_2", text: "JavaScript", value: "40"  },
-        { id: "skill_3", text: "HTML5", value: "60"  },
-        { id: "skill_4", text: "CSS3", value: "70"  },
-        { id: "skill_5", text: "Git & GitHub", value: "20"  },
+        { id: "skill_2", text: "JavaScript", value: "40" },
+        { id: "skill_3", text: "HTML5", value: "60" },
+        { id: "skill_4", text: "CSS3", value: "70" },
+        { id: "skill_5", text: "Git & GitHub", value: "20" },
         {
             id: "s1",
             category: "FRONT END DEVELOPMENT |",
@@ -82,7 +82,7 @@ const rawMockUserData = {
     ],
 
 
-    projects: [
+    /* projects: [
         {
             id: "proj1",
             title: "Weather App",
@@ -132,21 +132,6 @@ const rawMockUserData = {
                 // { id: "des2", text: "Top 5% of graduating class" },
             ]
         },
-        /*
-
-
-         {
-            id: "edu3",
-            school: "ABC Public School",
-            degree: "Junior Secondary (Science)",
-            city: "Delhi",
-            startDate: "2013",
-            endDate: "2014",
-            description: [
-                { id: "des1", text: "Scored 9.5 CGPA in Class 10" },
-                { id: "des2", text: "Top 2% of graduating class" },
-            ]
-        }, */
     ],
 
     experience: [
@@ -289,6 +274,180 @@ const rawMockUserData = {
                 { id: "des1", text: 'For topping the institute among 850 students| IT Delhi | 2011 | New Delhi' }
             ]
         }
+    ] */
+    education: [
+        {
+            id: "edu1",
+            school: "XYZ Institute of Technology",
+            degree: "B.Tech in Computer Science",
+            city: "Delhi",
+            startDate: "2016",
+            endDate: "2020",
+            description: [
+                { id: "des1", text: "Scored 8.5 CGPA" },
+                { id: "des2", text: "Top 1% of graduating class" },
+            ]
+        },
+        {
+            id: "edu2",
+            school: "ABC Public School",
+            degree: "Senior Secondary (Science)",
+            city: "Delhi",
+            startDate: "2015",
+            endDate: "2016",
+            description: [
+                { id: "des1", text: "Scored 8.9 CGPA in Class 12" },
+                { id: "des2", text: "Top 5% of graduating class" },
+            ]
+        },
+        /* {
+            id: "edu3",
+            school: "ABC Public School",
+            degree: "Junior Secondary (Science)",
+            city: "Delhi",
+            startDate: "2013",
+            endDate: "2014",
+            description: [
+                { id: "des1", text: "Scored 9.5 CGPA in Class 10" },
+                { id: "des2", text: "Top 2% of graduating class" },
+            ]
+        }, */
+    ],
+
+    experience: [
+        {
+            id: "exp1",
+            role: "Senior Web Designer",
+            organization: "Art Creative Solution",
+            location: "Remote",
+            startDate: "2023",
+            endDate: "2024",
+            description: [
+                { id: 'des1', text: "Built reusable React components" },
+                { id: 'des2', text: "Integrated REST APIs" },
+                { id: 'des3', text: "Improved UI performance of various projects" },
+            ]
+        },
+        {
+            id: "exp2",
+            role: "Junior Web Designer",
+            organization: "Art Creative Solution",
+            location: "Remote",
+            startDate: "2021",
+            endDate: "2023",
+            description: [
+                { id: 'des1', text: "Built reusable React components that were generic and can be changed according to developers needs" },
+                { id: 'des2', text: "Integrated REST APIs" },
+                { id: 'des3', text: "Improved UI performance in main project of the company" },
+            ]
+        }
+    ],
+
+    certifications: [
+        {
+            id: "cer1",
+            title: "React - Frontend Library",
+            organization: "freeCodeCamp",
+            date: "2023",
+            description: [
+                { id: 'des1', text: "Built reusable React components" },
+                { id: 'des2', text: "Integrated REST APIs" },
+                { id: 'des3', text: "Improved UI performance" },
+            ]
+        },
+        {
+            id: "cer2",
+            title: "Responsive Web Design",
+            organization: "Coursera",
+            date: "2022",
+            description: [
+                { id: 'des1', text: "Built reusable React components" },
+                { id: 'des2', text: "Integrated REST APIs" },
+                { id: 'des3', text: "Improved UI performance" },
+            ]
+        }
+    ],
+
+    achievements: [
+        {
+            id: "ach1",
+            title: "Top 5 Finalist - Hackathon",
+            description: [
+                { id: "des1", text: "Built a disaster alert app during a 24-hour..." }
+            ]
+        },
+        {
+            id: "ach2",
+            title: "Open Source Contributor",
+            description: [
+                { id: "des1", text: "Contributed to documentation and bug fixes..." }
+            ]
+        }
+    ],
+
+    organizations: [
+        {
+            id: "org1",
+            title: "American Management Association",
+            description: [
+                { id: "des1", text: "Contributed to documentation and bug fixes..." }
+            ]
+        },
+        {
+            id: "org2",
+            title: "Association of Private Enterprise Education",
+            description: [
+                { id: "des1", text: "Contributed to documentation and bug fixes..." }
+            ]
+        }
+    ],
+
+    strengths: [
+        {
+            id: "str1",
+            title: "Strategic Planning",
+            description: [
+                { id: "des1", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt dignissimos esse obcaecati, veniam cum quod officia et ut facilis dolorem debitis provident eos" }
+            ]
+        },
+        {
+            id: "str2",
+            title: "Collaboration",
+            description: [
+                { id: "des1", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt dignissimos esse obcaecati, veniam cum quod officia" }
+            ]
+        },
+        {
+            id: "str3",
+            title: "Media Relations",
+            description: [
+                { id: "des1", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt dignissimos esse obcaecati, veniam cum quod officia" }
+            ]
+        }
+    ],
+
+    awards: [
+        {
+            id: "awr1",
+            title: 'Jury Member, Venture Cup Entrepreneurship Competition(2019)',
+            description: [
+                { id: "des1", text: 'Venture(USA)' }
+            ]
+        },
+        {
+            id: "awr2",
+            title: 'Jury Member, Venture Cup Entrepreneurship Competition(2019)',
+            description: [
+                { id: "des1", text: 'Venture(USA)' }
+            ]
+        },
+        {
+            id: "awr3",
+            title: 'Jury Member, Venture Cup Entrepreneurship Competition(2019)',
+            description: [
+                { id: "des1", text: 'Venture(USA)' }
+            ]
+        }
     ]
 };
 
@@ -320,12 +479,12 @@ export default mockUserData;
 
 
 // EXPERIENCE
-//  - , 
+//  - ,
 // Amazon's Choice recommendations for incon
 // Lete missions
-// • 
-// • 
-// • 
+// •
+// •
+// •
 // Personalized. recommendations.with.Topic.Modeling
 // • Implemented a recommendation feature in Java using topics and incomplete missions of customers to improve recommendations on Amazon
 // • Built an extensible 'filters' module to remove Adult topics from final dataset

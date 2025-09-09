@@ -21,6 +21,7 @@ import { useResume } from "../context/ResumeContext";
 import templateStyles from "../data/templateStyle";
 import createNewPageFromBaseFlex from "./createNewPageFromBaseFlex";
 import ensurePageAndMoveSection from "./ensurePageAndMoveSection";
+import tryMoveSectionBack from "./tryMoveSectionBack";
 
 const sectionComponents = {
     personalInfo: PersonalInfo,
@@ -36,8 +37,8 @@ const sectionComponents = {
     avatar: Avatar,
     language: Language,
     awards: Awards,
-    Interests:Interests,
-    Coursework:Coursework,
+    Interests: Interests,
+    Coursework: Coursework,
     certificates: Certificates,
     designIcons1: designIcons,
     designIcons2: designIcons,
@@ -60,55 +61,6 @@ export default function ResumeRenderer({ template, setTemplate }) {
         };
     }, []);
 
-    /* const { grid, fontFamily, fontSize, colorScheme, borderTop, padding } = template.layout;
-
-    const templateId = String(template.id);
-    const templateStyle = templateStyles[templateId] || {};
-    const cssVariables = templateStyle.vars || {};
-
-    const renderSection = (sectionName, areaName) => {
-        const SectionComponent = sectionComponents[sectionName];
-        return SectionComponent
-            ? <SectionComponent
-                key={sectionName}
-                areaName={areaName}
-            />
-            : null;
-    };
-
-    const numRows = grid.templateRows.split(" ").length;
-    const numCols = grid.templateColumns.split(" ").length;
-
-    const gridMatrix = Array.from({ length: numRows }, () =>
-        Array(numCols).fill(".")
-    );
-
-    const areasToRender = (customLayoutAreas || grid.areas).filter(
-        (area) =>
-            Array.isArray(area.sections) &&
-            area.sections.length > 0 &&
-            area.name !== "unused"
-    );
-
-    areasToRender.forEach((area) => {
-        for (let row = area.rowStart - 1; row < area.rowEnd - 1; row++) {
-            for (let col = area.colStart - 1; col < area.colEnd - 1; col++) {
-                if (gridMatrix[row] && gridMatrix[row][col] !== undefined) {
-                    gridMatrix[row][col] = area.name;
-                } else {
-                    console.warn(
-                        `Invalid grid position: row ${row}, col ${col} for area "${area.name}"`
-                    );
-                }
-            }
-        }
-    });
-
-    const gridTemplateAreas = gridMatrix
-        .map((row) => `"${row.join(" ")}"`)
-        .join(" "); */
-
-
     const { layout } = template;
     const {
         direction = "column",
@@ -123,13 +75,6 @@ export default function ResumeRenderer({ template, setTemplate }) {
     const templateId = String(template.id);
     const templateStyle = templateStyles[templateId] || {};
     const cssVariables = templateStyle.vars || {};
-
-    /* const renderSection = (sectionName, areaName) => {
-        const SectionComponent = sectionComponents[sectionName];
-        return SectionComponent ? (
-            <SectionComponent key={sectionName} areaName={areaName} />
-        ) : null;
-    }; */
 
     const areaKeys = Object.keys(layout)
         .filter((key) => key.startsWith("areas"))
@@ -147,9 +92,10 @@ export default function ResumeRenderer({ template, setTemplate }) {
     const renderSection = (sectionName, areaName) => {
         const SectionComponent = sectionComponents[sectionName];
         return SectionComponent ? (
-            <SectionComponent key={sectionName} areaName={areaName} />
+            <SectionComponent areaName={areaName} sectionName={sectionName} />
         ) : null;
     };
+
 
     const measureHeights = () => {
         let newTemplate = { ...template };
@@ -197,7 +143,7 @@ export default function ResumeRenderer({ template, setTemplate }) {
                     }
                     const totalHeight = fullWidthHeight + colHeight;
 
-                    if (totalHeight > availableHeight) {
+                    if (totalHeight > availableHeight+30) {
                         overflowingColumnNames.push(col.name);
                     }
                 }
@@ -233,20 +179,27 @@ export default function ResumeRenderer({ template, setTemplate }) {
         if (anyOverflow) {
             setTemplate(newTemplate);
         }
+        else {
+            const backTemplate = tryMoveSectionBack(template, areaRefs, padding);
+            if (backTemplate !== template) {
+                setTemplate(backTemplate);
+            }
+        }
     };
 
     useEffect(() => {
+        console.log("triggered");
         const t = setTimeout(() => {
             try {
                 measureHeights();
-            } 
+            }
             catch (e) {
                 console.error("measureHeights error:", e);
             }
         }, 100);
         return () => clearTimeout(t);
-    }, [template,data]);
-    // console.log(template)
+    }, [template, data]);
+
     return (
         <>
             {areaKeys.map((areaKey) => {
@@ -284,14 +237,20 @@ export default function ResumeRenderer({ template, setTemplate }) {
                                         ...(area.style || {}),
                                     }}
                                 >
-                                    {area.sections.map((sectionName) =>
-                                        renderSection(sectionName, area.name)
-                                    )}
+                                    {area.sections.map((sectionName) => (
+                                        <div
+                                            key={`${sectionName}-${areaKey}`}
+                                            className="resume-subsection"
+                                            data-section={sectionName}
+                                            data-area-key={areaKey}
+                                        >
+                                            {renderSection(sectionName, area.name)}
+                                        </div>
+                                    ))}
                                 </div>
                             );
                         })}
                     </div>
-
                 );
             })}
         </>
