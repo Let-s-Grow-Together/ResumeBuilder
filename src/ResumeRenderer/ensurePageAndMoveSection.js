@@ -1,8 +1,7 @@
 import createNewPageFromBaseFlex from './createNewPageFromBaseFlex';
 
 function moveLastSectionToNewPageFlex(template, fromAreaName) {
-    const updatedTemplate = JSON.parse(JSON.stringify(template));
-    const layout = updatedTemplate.layout;
+    const layout = { ...template.layout };
 
     const areaKeys = Object.keys(layout).filter(k => k.startsWith("areas")).sort();
     const firstAreaKey = areaKeys[0] || "areas1";
@@ -10,19 +9,27 @@ function moveLastSectionToNewPageFlex(template, fromAreaName) {
 
     const fromArea = layout[firstAreaKey]?.find(area => area.name === fromAreaName);
     if (!fromArea || !fromArea.sections || fromArea.sections.length === 0) {
-        return false;
+        return null;
     }
 
-    const movedSection = fromArea.sections.pop();
+    const movedSection = fromArea.sections[fromArea.sections.length - 1];
 
-    const targetAreaList = layout[lastAreaKey];
-    const targetArea = targetAreaList.find(area => area.name === fromAreaName);
+    const updatedFirstAreaList = layout[firstAreaKey].map(area =>
+        area.name === fromAreaName ? { ...area, sections: area.sections.slice(0, -1) } : area
+    );
 
-    if (!targetArea) {
-        return false;
-    }
+    const updatedLastAreaList = layout[lastAreaKey].map(area =>
+        area.name === fromAreaName ? { ...area, sections: [movedSection, ...area.sections] } : area
+    );
 
-    targetArea.sections.unshift(movedSection);
+    const updatedTemplate = {
+        ...template,
+        layout: {
+            ...layout,
+            [firstAreaKey]: updatedFirstAreaList,
+            [lastAreaKey]: updatedLastAreaList,
+        }
+    };
 
     return updatedTemplate;
 }

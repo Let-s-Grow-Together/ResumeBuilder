@@ -1,6 +1,5 @@
 export default function createNewPageFromBaseFlex(template) {
-    const updatedTemplate = JSON.parse(JSON.stringify(template));
-    const layout = updatedTemplate.layout;
+    const layout = { ...template.layout };
 
     const areaKeys = Object.keys(layout).filter(k => k.startsWith("areas")).sort();
     const lastAreaKey = areaKeys.length > 0 ? areaKeys[areaKeys.length - 1] : "areas1";
@@ -15,7 +14,13 @@ export default function createNewPageFromBaseFlex(template) {
         sections: [],
     }));
 
-    layout[nextAreaKey] = newAreas;
+    const updatedTemplate = {
+        ...template,
+        layout: {
+            ...layout,
+            [nextAreaKey]: newAreas,
+        }
+    };
 
     return updatedTemplate;
 }

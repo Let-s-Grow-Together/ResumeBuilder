@@ -1677,7 +1677,7 @@ const template3 = {
         direction: "row wrap",
         rowGap: "0rem",
         columnGap: "2rem",
-        padding: "4px",
+        padding: "24px",
         fontFamily: "'Lato', sans-serif",
         fontSize: "14px",
         colorScheme: {

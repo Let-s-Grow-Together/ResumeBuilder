@@ -5,7 +5,6 @@ import { ResumeProvider } from "../context/ResumeContext";
 import ResumeRenderer from "../ResumeRenderer/ResumeRenderer";
 import SaveControls from "./SaveControl";
 import templateStyles from "../data/templateStyle";
-import { templates } from "../data/templates";
 import Footer from "../Components/Footer/Footer";
 import Navbar from "./Navbar";
 import TemplateSidebar from "./TemplateSidebar";
@@ -15,6 +14,7 @@ import './Resumepage.css';
 
 export default function ResumePage({ onLoginClick }) {
     const [user, setUser] = useState(null);
+    const [templatesData, setTemplatesData] = useState([]);
     const [selectedTemplate, setSelectedTemplate] = useState(null);
     const [userData, setUserData] = useState(null);
     const [activeNav, setActiveNav] = useState(null);
@@ -22,41 +22,47 @@ export default function ResumePage({ onLoginClick }) {
     const { templateId } = useParams();
     const navigate = useNavigate();
     const resumeRef = useRef();
-
     const editModeFromURL = searchParams.get("edit") === "true";
 
     useEffect(() => {
         supabase.auth.getUser().then(({ data: { user } }) => {
             setUser(user);
         });
-    }, []);
 
-    useEffect(() => {
-        fetch("/api/templates")
-            .then((res) => res.json())
-            .then((data) => {
-                const found = data.templates.find((t) => t.id === Number(templateId));
-                setSelectedTemplate(found);
-            });
+        if (templatesData.length === 0) {
+            fetch("/api/templates")
+                .then((res) => res.json())
+                .then((data) => {
+                    setTemplatesData(data.templates);
+                });
+        }
 
         fetch("/api/user-data")
             .then((res) => res.json())
             .then((data) => {
                 setUserData(data.data);
             });
-    }, [templateId]);
+    }, []);
+
+    useEffect(() => {
+        if (templatesData.length > 0) {
+            const found = templatesData.find((t) => t.id === Number(templateId));
+            setSelectedTemplate(found);
+        }
+    }, [templateId, templatesData]);
 
     const handleTemplateSwitch = (newId) => {
-        const newTemplate = templates.find((t) => t.id === newId);
+        const newTemplate = templatesData.find((t) => t.id === newId);
         if (newTemplate) setSelectedTemplate(newTemplate);
     };
 
-     const handleDownloadClick = () => {
+    const handleDownloadClick = () => {
         handleDownload(resumeRef, editModeFromURL, navigate);
     };
-    
-    if (!selectedTemplate || !userData)
+
+    if (!selectedTemplate || !userData) {
         return <p style={{ textAlign: "center", paddingTop: "2rem" }}>Loading template...</p>;
+    }
 
     const dynamicStyle = {
         ...(templateStyles[selectedTemplate.id] || {}),
@@ -115,7 +121,7 @@ export default function ResumePage({ onLoginClick }) {
                                 </button>
 
                                 <TemplateSidebar
-                                    templates={templates}
+                                    templates={templatesData}
                                     selectedTemplate={selectedTemplate}
                                     onTemplateSelect={handleTemplateSwitch}
                                     resumeData={resumeData}
@@ -138,10 +144,8 @@ export default function ResumePage({ onLoginClick }) {
                             <div
                                 ref={resumeRef}
                                 style={{
-
                                     margin: "-0.9rem auto",
                                     width: "fit-content",
-
                                 }}
                             >
                                 <ResumeRenderer template={selectedTemplate} setTemplate={setSelectedTemplate} />

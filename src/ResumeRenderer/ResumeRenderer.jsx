@@ -1,4 +1,4 @@
-import React, { useEffect,useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import WorkExperience from "./components/WorkExperience";
@@ -148,7 +148,7 @@ export default function ResumeRenderer({ template, setTemplate }) {
     };
 
     const measureHeights = () => {
-        let newTemplate = template;
+        let newTemplate = { ...template };
         let anyOverflow = false;
 
         for (const areaKey of areaKeys) {
@@ -235,13 +235,14 @@ export default function ResumeRenderer({ template, setTemplate }) {
         const t = setTimeout(() => {
             try {
                 measureHeights();
-            } catch (e) {
+            } 
+            catch (e) {
                 console.error("measureHeights error:", e);
             }
         }, 100);
         return () => clearTimeout(t);
-    }, [template]);
-
+    }, [template,data]);
+    // console.log(template)
     return (
         <>
             {areaKeys.map((areaKey) => {
@@ -266,7 +267,7 @@ export default function ResumeRenderer({ template, setTemplate }) {
                             ...cssVariables
                         }}
                     >
-                        {areas.map((area)  => {
+                        {areas.map((area) => {
                             const areaRef = addRef(area.name, areaKey);
                             return (
                                 <div
