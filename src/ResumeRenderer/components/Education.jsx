@@ -4,6 +4,7 @@ import InlineToolbar from "../../Components/shared/InlineToolbar";
 
 const layoutComponents = {
     layout2: LayoutTwo,
+    layout3: LayoutThree,
 };
 
 function LayoutDefault({ data, style, viewType, editMode, handleFieldBlur, handleDescriptionBlur }) {
@@ -142,6 +143,75 @@ function LayoutTwo({ data, style, viewType, editMode, handleFieldBlur, handleDes
         </div>
     ));
 }
+function LayoutThree({ data, style, viewType, editMode, handleFieldBlur, handleDescriptionBlur }) {
+    return data.map((edu, index) => (
+        <div
+            className="educationItem"
+            key={edu.id || index}
+            style={style?.education?.eachEducation}
+        >
+          
+
+            <h4
+                contentEditable={editMode}
+                data-id={edu.id}
+                suppressContentEditableWarning
+                onBlur={(e) => handleFieldBlur(index, "school", e)}
+                style={style?.education?.school}
+                dangerouslySetInnerHTML={{ __html: edu.school }}
+            />
+              <h3
+                contentEditable={editMode}
+                data-id={edu.id}
+                suppressContentEditableWarning
+                onBlur={(e) => handleFieldBlur(index, "degree", e)}
+                style={style?.education?.degree}
+                dangerouslySetInnerHTML={{ __html: edu.degree }}
+            />
+
+            <h6
+                contentEditable={editMode}
+                data-id={edu.id}
+                suppressContentEditableWarning
+                onBlur={(e) => handleFieldBlur(index, "cityLine", e)}
+                style={style?.education?.dates}
+            >
+                  {edu.endDate} | {edu.city}
+            </h6>
+
+            {viewType === "list" ? (
+                <ul style={style?.education?.list}>
+                    {edu.description?.map((item, i) => (
+                        <li
+                            key={item.id || i}
+                            data-id={item.id}
+                            contentEditable={editMode}
+                            suppressContentEditableWarning
+                            onBlur={(e) => handleDescriptionBlur(index, i, e)}
+                            style={style?.education?.listItem}
+                            dangerouslySetInnerHTML={{ __html: item.text }}
+                        />
+                    ))}
+                </ul>
+            ) : (
+                <div style={style?.education?.paragraphWrapper}>
+                    {edu.description?.map((item, i) => (
+                        <p
+                            key={item.id || i}
+                            data-id={item.id}
+                            contentEditable={editMode}
+                            suppressContentEditableWarning
+                            onBlur={(e) => handleDescriptionBlur(index, i, e)}
+                            style={style?.education?.content}
+                            dangerouslySetInnerHTML={{ __html: item.text }}
+                        />
+                    ))}
+                </div>
+            )}
+        </div>
+    ));
+}
+
 
 export default function Education({areaName}) {
     const {

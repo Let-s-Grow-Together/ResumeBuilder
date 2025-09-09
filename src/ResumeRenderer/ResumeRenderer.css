@@ -128,6 +128,10 @@
     padding-bottom: 8px;
 }
 
+.editable-text {
+    margin-left: -10px;
+}
+
 .icon-picker-popup {
     border: var(--basic-black-border);
 }
@@ -344,7 +348,7 @@
 }
 
 .educationItem>div>p {
-    padding-left: var(--basic-pixel-margin);
+    /* padding-left: var(--basic-pixel-margin); */
     outline: var(--none);
     padding: 0px 0px 1px 8px;
 }

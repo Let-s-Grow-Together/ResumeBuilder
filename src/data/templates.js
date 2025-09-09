@@ -23,7 +23,7 @@
                     rowEnd: 3,
                     colStart: 1,
                     colEnd: 2,
-                    sections: ["contact", "skills", "education"]
+                    sections: ["contact", "skills","Interests","Coursework", "education"]
                 },
                 {
                     name: "rightColumn",
@@ -88,6 +88,7 @@ const template3 = {
                 }
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         fontFamily: "'Lato', sans-serif",
         fontSize: "14px",
         colorScheme: {
@@ -147,7 +148,7 @@ const template8 = {
         grid: {
             templateRows: "min-content",
             templateColumns: "1.3fr 2fr",
-            columnGap: "2rem",
+            columnGap: "3rem",
             areas: [
                 {
                     name: 'leftColumn',
@@ -209,6 +210,7 @@ const template10 = {
                 }
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         padding: "30px",
         fontFamily: "'Poppins', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap",
@@ -258,7 +260,7 @@ const template11 = {
                     rowEnd: 3,
                     colStart: 1,
                     colEnd: 2,
-                    style: { paddingLeft: "30px", marginBottom: "10px" },
+                    style: { paddingLeft: "0px", marginBottom: "10px" },
                     sections: ["summary", "workExperience", "education",]
                 },
                 {
@@ -267,12 +269,13 @@ const template11 = {
                     rowEnd: 3,
                     colStart: 2,
                     colEnd: 3,
-                    style: { backgroundColor: "#142c45ff", borderRadius: "10px", color: "white", padding: "10px", paddingRight: "0px", marginBottom: "10px" },
+                    style: { backgroundColor: "#142c45ff", borderRadius: "10px", color: "white", padding: "10px", marginBottom: "10px" },
                     sections: ["skills", "organizations", "awards"]
                 }
             ]
         },
-        padding: "0mm",
+        frozenSections: ["avatar","contact", "personalInfo"],
+        padding: "8mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
         fontSize: "14px",
@@ -308,7 +311,7 @@ const template12 = {
                     rowEnd: 3,
                     colStart: 1,
                     colEnd: 2,
-                    style: { backgroundColor: "#e6f4f1", padding: "5px", borderRadius: "8px" },
+                    style: { backgroundColor: "#e6f4f1", padding: "0px 5px 5px 20px", borderRadius: "8px" },
                     sections: ["avatar", "contact", "skills", "language"]
                 },
                 {
@@ -321,6 +324,7 @@ const template12 = {
                 }
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         padding: "10mm",
         fontFamily: "'Poppins', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap",
@@ -362,6 +366,7 @@ const template13 = {
                 }
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         padding: "10mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap",
@@ -411,6 +416,7 @@ const template14 = {
                 }
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         padding: "10mm",
         fontFamily: "'Lato', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",
@@ -460,6 +466,7 @@ const template15 = {
                 }
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         padding: "8mm",
         fontFamily: "'Poppins', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap",
@@ -587,6 +594,7 @@ const template113 = {
                 }
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         fontFamily: "'Lato', sans-serif",
         fontSize: "14px",
         colorScheme: {
@@ -634,6 +642,7 @@ const template115 = {
                 }
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         fontFamily: "Montserrat, sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poltawski+Nowy:ital,wght@0,400..700;1,400..700&display=swap",
         fontSize: "16px",
@@ -652,7 +661,8 @@ const template116 = {
     layout: {
         grid: {
             templateRows: "auto",
-            templateColumns: "1fr 2fr",
+            templateColumns: "2fr 1fr",
+            columnGap:"2rem",
             areas: [
                 {
                     name: 'leftColumn',
@@ -660,8 +670,8 @@ const template116 = {
                     rowEnd: 2,
                     colStart: 1,
                     colEnd: 2,
-                    sections: ["contact", "summary", "language", "skills"],
-                    style: { paddingTop: "20px", backgroundColor: "#3e465b", color: "white" }
+                    style: { paddingTop: "20px", backgroundColor: "#3e465b", color: "white" },
+                    sections: ["contact", "summary", "language", "skills"],                    
                 },
                 {
                     name: 'rightColumn',
@@ -669,11 +679,12 @@ const template116 = {
                     rowEnd: 2,
                     colStart: 2,
                     colEnd: 3,
-                    style: { paddingTop: "20px", color: "#3e465b", backgroundColor: "white" },
+                    style: { paddingTop: "0px", color: "#3e465b", backgroundColor: "white" },
                     sections: ["personalInfo", "education", "workExperience"]
                 }
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         padding: "0mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
@@ -732,6 +743,7 @@ const template117 = {
                 }
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         padding: "8mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
@@ -813,6 +825,7 @@ const template1110 = {
                 }
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         padding: "25px",
         fontFamily: "'Poppins', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap",
@@ -875,6 +888,7 @@ const template1111 = {
                 }
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         padding: "10mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
@@ -893,6 +907,7 @@ const template1112 = {
         grid: {
             templateRows: "1fr",
             templateColumns: "1fr 2fr",
+            columnGap:"2rem",
             areas: [
                 {
                     name: 'leftColumn',
@@ -914,6 +929,7 @@ const template1112 = {
                 }
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         padding: "0mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
@@ -931,7 +947,8 @@ const template1113 = {
     layout: {
         grid: {
             templateRows: "1fr 12fr",
-            templateColumns: "40% 5% 50%",
+            templateColumns: "1fr 1fr",
+            columnGap:"2rem",
             areas: [
                 {
                     name: "header",
@@ -945,8 +962,8 @@ const template1113 = {
                     name: "contact",
                     rowStart: 1,
                     rowEnd: 2,
-                    colStart: 3,
-                    colEnd: 4,
+                    colStart: 2,
+                    colEnd: 3,
                     sections: ["contact"]
                 },
 
@@ -956,6 +973,7 @@ const template1113 = {
                     rowEnd: 3,
                     colStart: 1,
                     colEnd: 2,
+                    style:{padding:"10px"},
                     sections: ["summary", "skills", "education", "language"]
                 },
                 {
@@ -963,12 +981,14 @@ const template1113 = {
                     rowStart: 2,
                     rowEnd: 3,
                     colStart: 2,
-                    colEnd: 4,
+                    colEnd: 3,
+                    style:{padding:"10px"},
                     sections: ["workExperience", "projects", "organizations"]
                 },
 
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         padding: "20px",
         fontFamily: "'Montserrat', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
@@ -1027,6 +1047,7 @@ const template21 = {
                 },
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         padding: "10mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink:
@@ -1080,6 +1101,7 @@ const template6 = {
                 },
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         padding: "0mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink:
@@ -1134,6 +1156,7 @@ const template23 = {
                 },
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         padding: "0mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink:
@@ -1186,6 +1209,7 @@ const template1115 = {
                 }
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         padding: "25px",
         fontFamily: "'Poppins', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap",
@@ -1240,6 +1264,7 @@ const template24 = {
                 },
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         padding: "0mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink:
@@ -1297,6 +1322,7 @@ const template25 = {
                 },
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         padding: "10mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink:
@@ -1340,6 +1366,7 @@ const template501 = {
                 }
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         padding: "0mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
@@ -1379,6 +1406,7 @@ const template516 = {
                 }
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         padding: "0mm 15mm ",
         fontFamily: "comic sans ms",
         fontLink: "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap",
@@ -1442,6 +1470,7 @@ const template522 = {
                 },
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         padding: "10mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink:
@@ -1475,6 +1504,7 @@ const template522 = {
                 },
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         frozenSections: ["contact", "summary", "personalInfo"],
         padding: "10mm",
         fontFamily: "'Montserrat', sans-serif",
@@ -1527,6 +1557,7 @@ const template524 = {
                 },
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         padding: "10mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink:
@@ -1578,6 +1609,7 @@ const template525 = {
                 },
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         padding: "10mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink:
@@ -1622,6 +1654,7 @@ const template526 = {
 
             ]
         },
+        frozenSections: ["avatar","contact", "personalInfo"],
         fontFamily: "'Montserrat', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
         fontSize: "14px",
@@ -1631,6 +1664,104 @@ const template526 = {
         }
     }
 
+};
+
+const template27 = {
+    id: 27,
+    name: "Creative Resume",
+    pdf: "/templates/template27.pdf",
+    filteredColumn: "1",
+    isAvatar: "true",
+    layout: {
+        grid: {
+            templateRows: "auto",
+            templateColumns: "1fr",  // single column
+            areas: [
+                {
+                    name: "header",
+                    rowStart: 1,
+                    rowEnd: 2,
+                    colStart: 1,
+                    colEnd: 2,
+                    style:{width:"700px", marginLeft:"120px", padding:"50px 40px 10px 150px", background:"#EED66E"},
+                    sections: ["personalInfo", "summary", "workExperience", "education", "skills", "organizations",]
+                },
+            ]
+        },
+        frozenSections:["personalInfo"],
+        padding: "0mm",
+        fontFamily: "'Montserrat', sans-serif",
+        fontLink:
+            "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
+        fontSize: "14px",
+        colorScheme: {
+            background: "#ffffff",
+            text: "#333333"
+        }
+    }
+};
+
+const template28 = {
+    id: 28,
+    name: "Simple double Column1",
+    pdf: "/templates/template28.pdf",
+    filteredColumn: "1",
+    isAvatar: "true",
+    layout: {
+        grid: {
+            templateRows: "1fr 7fr",
+            templateColumns: "2fr 1fr",
+            columnGap:"1.5rem",
+            areas: [
+                {
+                    name: "header",
+                    rowStart: 1,
+                    rowEnd: 2,
+                    colStart: 1,
+                    colEnd: 3,
+                    style: { padding: "15px",  marginLeft: "-38px", marginTop: "0px", },
+                    sections: ["personalInfo", "contact",]
+                },
+                // {
+                //     name: "contact",
+                //     rowStart: 2,
+                //     rowEnd: 3,
+                //     colStart: 1,
+                //     colEnd: 3,
+                //     style: { paddingBottom: "-30px", width: "110.5%", marginLeft: "-38px", marginTop: "-26px", borderBottom:"2px solid black" },
+                //     sections: ["contact",]
+                // },
+                {
+                    name: "leftColumn",
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 1,
+                    colEnd: 2,
+                    style:{marginTop:"0px",},
+                    sections: ["skills","workExperience", ]
+                },
+                {
+                    name: "rightColumn",
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 2,
+                    colEnd: 3,
+                    style:{marginTop:"0px", textAlign:"left",},
+                    sections: [ "education", "awards", "Coursework", "Interests"]
+                },
+            ]
+        },
+        frozenSections: ["avatar","contact", "personalInfo"],
+        padding: "7mm",
+        fontFamily: "Arial, Helvetica",
+        fontLink:
+            "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
+        fontSize: "14px",
+        colorScheme: {
+            background: "#ffffff",
+            text: "black"
+        }
+    }
 };
 
 const template1 = {
