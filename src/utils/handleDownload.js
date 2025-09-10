@@ -15,41 +15,61 @@ const handleDownload = async (resumeRef, editModeFromURL, navigate) => {
         return;
     }
 
-    const input = resumeRef.current;
+    const container = resumeRef.current;
 
-    const images = input.querySelectorAll("img");
-    await Promise.all(
-        Array.from(images).map(
-            (img) =>
+    const resumePages = container.querySelectorAll(".resume-view");
+    if (!resumePages.length) {
+        console.warn("No .resume-view elements found");
+        return;
+    }
+
+    const pdf = new jsPDF("p", "mm", "a4");
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = pdf.internal.pageSize.getHeight();
+
+    let isFirstPage = true;
+
+    for (const page of resumePages) {
+        const images = page.querySelectorAll("img");
+        await Promise.all(
+            Array.from(images).map((img) =>
                 new Promise((resolve) => {
                     if (img.complete) resolve();
                     else img.onload = img.onerror = resolve;
                 })
-        )
-    );
+            )
+        );
 
-    await new Promise((resolve) => requestAnimationFrame(() => setTimeout(resolve, 100)));
+        await new Promise((resolve) => requestAnimationFrame(() => setTimeout(resolve, 100)));
 
-    try {
-        const dataUrl = await toPng(input, {
-            cacheBust: true,
-            backgroundColor: "#ffffff",
-            pixelRatio: 2,
-            style: {
-                margin: 0,
-                padding: 0,
-                transform: 'none'
+        try {
+            const dataUrl = await toPng(page, {
+                cacheBust: true,
+                backgroundColor: "#ffffff",
+                pixelRatio: 2,
+                style: {
+                    transform: 'none'
+                }
+            });
+
+            const imgProps = {
+                width: pdfWidth,
+                height: (page.offsetHeight * pdfWidth) / page.offsetWidth,
+            };
+
+            if (!isFirstPage) {
+                pdf.addPage();
+            } else {
+                isFirstPage = false;
             }
-        });
 
-        const pdf = new jsPDF("p", "mm", "a4");
-        const pdfWidth = pdf.internal.pageSize.getWidth();
-        const pdfHeight = (input.offsetHeight * pdfWidth) / input.offsetWidth;
-        pdf.addImage(dataUrl, "PNG", 0, 0, pdfWidth, pdfHeight);
-        pdf.save("my-resume.pdf");
-    } catch (err) {
-        console.error("Error generating PDF", err);
+            pdf.addImage(dataUrl, "PNG", 0, 0, imgProps.width, imgProps.height);
+        } catch (err) {
+            console.error("Error generating PDF page", err);
+        }
     }
+
+    pdf.save("my-resume.pdf");
 };
 
 export default handleDownload;
