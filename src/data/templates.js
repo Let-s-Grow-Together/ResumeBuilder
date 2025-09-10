@@ -1881,7 +1881,7 @@ const template523 = {
     filteredColumn: "1",
     isAvatar: "true",
     layout: {
-        direction: "column",
+        direction: "row",
         padding: "10mm",
         frozenSections: ["contact", "summary", "personalInfo"],
         fontFamily: "'Montserrat', sans-serif",
@@ -1896,7 +1896,7 @@ const template523 = {
             {
                 name: "mainSection",
                 width: "100%",
-                sections: ["personalInfo", "awards", "language"]
+                sections: ["personalInfo", "awards","education","achievements", "language"]
             }
         ]
     }
