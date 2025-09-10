@@ -188,7 +188,6 @@ export default function ResumeRenderer({ template, setTemplate }) {
     };
 
     useEffect(() => {
-        console.log("triggered");
         const t = setTimeout(() => {
             try {
                 measureHeights();

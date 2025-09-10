@@ -275,6 +275,30 @@ const rawMockUserData = {
             ]
         }
     ] */
+   projects: [
+        {
+            id: "proj1",
+            title: "Weather App",
+            link: "https://github.com/janeDoe/weather-app",
+            githubLink: "",
+            description: [
+                { id: "des1", text: "Built a weather forecast app..." },
+                { id: "des2", text: "Implemented search by city..." },
+                { id: "des3", text: "Displayed real time weather" },
+            ]
+        },
+        {
+            id: "proj2",
+            title: "Weather App",
+            link: "https://github.com/janeDoe/weather-app",
+            githubLink: "",
+            description: [
+                { id: "des1", text: "Built a weather forecast app..." },
+                { id: "des2", text: "Implemented search by city..." },
+                { id: "des3", text: "Displayed real time weather" },
+            ]
+        },
+    ],
     education: [
         {
             id: "edu1",
