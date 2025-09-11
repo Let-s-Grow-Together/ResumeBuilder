@@ -1,5 +1,6 @@
 .NextStepCV-footer {
-    background: linear-gradient(to right, #e0c3fc, #fddb92);
+    /* background: linear-gradient(to right, #e0c3fc, #fddb92); */
+    background:  linear-gradient(115deg, #ffff,  #b8d9b0);
     padding: 4rem 2rem 2rem;
     font-family: 'Segoe UI', sans-serif;
     color: #222;

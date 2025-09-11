@@ -7,6 +7,7 @@
     background: transparent;
     background-color: #d3bae7;
     border: 1px solid #ffffff5e;
+    margin-top: 1rem;
 }
 
 .template-title {
@@ -57,3 +58,4 @@
     text-align: center;
     margin-top: 8px;
 }
+

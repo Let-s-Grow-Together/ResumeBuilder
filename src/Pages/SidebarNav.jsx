@@ -51,17 +51,18 @@ const SidebarNav = ({ active, onChange }) => {
             <div
                 className="sidebarnav"
                 style={{
-                    width: "160px",
+                    width: "200px",
                     padding: "1rem 0.5rem",
-                    height: "70vh",
+                    height: "50vh",
                     display: "flex",
                     flexDirection: "column",
                     gap: "1rem",
-                    background: "linear-gradient(to right, #fddb7cc7, #d3bae7)",
+                    // background: "linear-gradient(to right, #fddb7cc7, #d3bae7)",
+                    background:'transparent',
                     boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
                     borderRadius: "12px",
-                    margin: "1rem",
-                    marginTop: "1rem",
+                    margin: "2rem 2rem",
+                    fontSize:'18px',
                     border: "1px solid #ffffff5e",
                 }}
             >
@@ -118,7 +119,7 @@ const SidebarNav = ({ active, onChange }) => {
                         }}
                         style={{
                             position: "absolute",
-                            top: "1rem",
+                            top: "2rem",
                             right: "1rem",
                             fontSize: "1.2rem",
                             background: "none",

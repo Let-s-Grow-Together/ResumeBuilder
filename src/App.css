@@ -4,8 +4,59 @@
     box-sizing: border-box;
 }
 
+/* :root {
+   --primary-text-color: #fff;
+   --second-text-color:#4b5563;
+   --primary-bg-color:#060813;
+   --secondary-bg-color:#ffff;
+   --button-text-color:  ; 
+} */
+
+:root{
+   
+    --primary-text-color: #ffff;
+    --second-text-color: #0000;
+    --primary-bg-color:#ffff;
+    --secondary-bg-color: #000;
+    --primary-gradient: linear-gradient(115deg, #ffff,  #b8d9b0);
+    --background-gradient: radial-gradient(circle at center, #e6f0e8 0%, #b8d9b0 100%);
+}
+
 body {
-    background: linear-gradient(to right, #d3bae7, #fdda7c);
+    /* background: var(--primary-gradient); */
+    /* background: linear-gradient(to right, #ffff, rgba(128, 0, 128, 0.223)); */
+     /* background: linear-gradient(135deg, #cba7e2, #a0c4ff); */
+     /* background: linear-gradient(13555deg, #cba7e2, #a0c4ff); */
+     /* background: linear-gradient(13555deg, #cba7e2, #99c0ffbd); */
+    /* background: linear-gradient(to right, #ffff,#b699ffbd ); */
+    background:linear-gradient(135deg, #FFDEE9, #B5FFFC);
+;
+
+    /* background: var(--primary-bg-color);
+    color: var(--primary-text-color); */
+  /* background: linear-gradient(to right, #060813, #2f3a79); */
+     /* background: radial-gradient(circle at center, #e6f0e8 0%, #b8d9b0 100%); */
+    /* background: radial-gradient(600px at 699px 278px, rgba(29, 78, 216, 0.15), transparent 80%);
+   background-color: rgba(29, 78, 216, 0.15); */
+    /* background: linear-gradient(135deg, #3FA37C 0%, #0052A5 50%, #00C2D1 100%); */
+    /* background: linear-gradient(135deg, #3EA084 0%, #0C3B66 50%, #58C7B7 100%); */
+    
+ /* background: linear-gradient(135deg, 
+        #5ADBB5 0%,   
+        #4BB8A9 15%,   
+        #3E9AA3 30%,  
+        #2F7D9D 45%,  
+        #1F5F97 60%,   
+        #0F4191 75%,   
+        #05238B 90%,   
+        #001585 100%  
+    );
+     */
+
+    /* background: linear-gradient(to right, #d3bae7, #fdda7c); */
+    /* background: linear-gradient(135deg, #e7cab0, #eda35c, #302a64); */
+
+
     font-family: 'Segoe UI', sans-serif;
 }
 
@@ -27,15 +78,108 @@ html {
     justify-content: flex-start;
 }
 
-.logo {
+/* .logo {
     font-weight: bold;
+    color: var(--primary-text-color);
     font-size: 1.4rem;
-    color: black;
     margin-right: 2rem;
     flex-shrink: 0;
+} */
+
+.logo {
+    position: relative;
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333; /* Dark grey for text */
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    z-index: 1;
 }
 
+.logo-bg {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 487px;
+    height: 400px;
+    background-color: #f0f0f0;
+    /* clip-path: ellipse(70% 50% at 30% 35%); */
+        clip-path: ellipse(70% 57% at 30% 38%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: -1;
+}
+
+
+
 .navWrapper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* .navBar { */
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+    /* background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 999px;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); */
+/* } */
+.authButtons{
+    margin-right: -270px;
+}
+
+/* .navBar a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #ffffff;
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+} */
+
+
+
+
+.navBar{
+        margin-left: -57px;
+
+}
+.navBar a {
+    position: relative;
+    text-decoration: none;
+     font-size: 1.2rem;
+    color: #000;
+    padding: 0.5rem 0;
+}
+
+.navBar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #000; 
+    transition: width 0.3s ease;
+}
+
+.navBar a.active::after {
+    width: 100%;
+}
+
+navWrapper {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -69,6 +213,8 @@ html {
     font-weight: bold;
 }
 
+
+
 .navBar .signup {
     background-color: black;
     color: white;
@@ -79,21 +225,39 @@ html {
 
 .hero {
     padding: 6rem 2rem;
-    text-align: center;
-    color: black;
+    text-align: left;
+    color: var(--primary-text-color);
 }
+.heroContent{
+        margin-left: 68px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap: .7rem;
 
+}
 .heroContent h1 {
     font-size: 3rem;
+    /* color: #000; */
+    color: #615e5e;
+    /* color: var(--primary-text-color); */
+    /* width: 70%; */
+    display: flex;
+    flex-wrap: wrap;
     font-weight: bold;
     margin-bottom: 1rem;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .heroContent p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    color: #615e5e;
+    
+    /* color: var(--primary-text-color); */
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
     margin-bottom: 2rem;
-    color: #444;
 }
 
 
@@ -107,11 +271,10 @@ html {
     border: none;
 }
 
-.heroContent button:first-child {
-    background: linear-gradient(to right, #c6a9e3, #1a1a1a);
+/* .heroContent button:first-child {
     color: white;
     font-weight: 600;
-}
+} */
 
 /* .heroContent button:last-child {
     background-color: white;
@@ -150,14 +313,16 @@ html {
 
 .ctaButtons {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 1rem;
     flex-wrap: wrap;
 }
 
 .btnPrimary {
-    background: linear-gradient(to right, #c6a9e3, #1a1a1a);
-    color: white;
+    /* background: linear-gradient(to right, #c6a9e3, #1a1a1a); */
+    background: #615e5e;
+    color: var(--primary-text-color);
+    
     font-weight: 600;
     padding: 0.75rem 1.5rem;
     border-radius: 999px;
@@ -167,13 +332,15 @@ html {
 }
 
 .btnPrimary:hover {
-    background-color: #8c4cd9;
+    background-color: #000;
     transform: translateY(-2px);
 }
 
 .btnSecondary {
-    background-color: white;
-    color: black;
+    /* background-color: var(--primary-bg-color);
+    color: var(--second-text-color); */
+    background-color: #fff;
+    color: #000;
     border: 1px solid #ccc;
     font-weight: 600;
     padding: 0.75rem 1.5rem;
@@ -230,7 +397,7 @@ html {
     flex: 0 0 auto;
     width: 80vw;
     background: white;
-    border-radius: 16px;
+    /* border-radius: 16px; */
     padding: 1rem;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
@@ -440,8 +607,10 @@ html {
 
 .loginBtn {
     background: transparent;
-    color: #482e56;
-    border: 2px solid #d5bbe2;
+    /* color: #482e56; */
+    color: #000;
+   border: 1px solid black;
+    border-radius: 11px;
 }
 
 .loginBtn:hover {
@@ -451,10 +620,14 @@ html {
 
 .signupBtn {
     /* background: linear-gradient(135deg, #a18cd1, #fbc2eb); */
-    background: linear-gradient(135deg, #cba7e2, #a0c4ff);
+    /* background: linear-gradient(135deg, #cba7e2, #a0c4ff); */
     color: white;
     margin-left: 0.5rem;
     border: none;
+        background: black;
+    color: white;
+    border-radius: 11px;
+
 }
 
 .signupBtn:hover {
@@ -773,6 +946,14 @@ html {
     width: 280px;
     /* consistent with your grid */
 }
+
+
+
+
+
+
+
+
 
 @media (max-width: 1450px) {}
 

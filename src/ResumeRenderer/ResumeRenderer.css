@@ -9,7 +9,7 @@
 
 #resume-view {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 210mm;
+    width: 200mm;
     height: 297mm;
     /* margin: auto; */
     padding: 10mm;
@@ -19,6 +19,7 @@
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background: white;
+    border-radius: .7rem;
 }
 
 

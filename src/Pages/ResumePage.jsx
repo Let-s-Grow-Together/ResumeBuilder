@@ -140,6 +140,8 @@ export default function ResumePage({ onLoginClick }) {
                 <div className="templateSectionn" style={{ display: "flex", minHeight: "100vh" }}>
                     <div style={{ width: "220px", flexShrink: 0 }}>
                         <SidebarNav active={activeNav} onChange={setActiveNav} />
+                          <SaveControls />
+                        
                     </div>
 
                     <div style={{ display: "flex", flexGrow: 1, overflow: "hidden" }} className="">
@@ -183,31 +185,31 @@ export default function ResumePage({ onLoginClick }) {
                                 />
                             </div>
                         )}
-
                         <div
                             style={{
                                 flexGrow: 1,
                                 padding: "2rem",
                                 textAlign: "center",
                                 minWidth: 0,
-                                position: "relative",
+                                // position: "relative",
                                 margin: "1rem 0rem 1rem 0rem"
                             }}
                             className="hide-scroll"
                         >
                             {/* <Toolbar /> */}
-                            <SaveControls />
+                         
                             <div
                                 ref={resumeRef}
                                 style={{
 
                                     margin: "-0.9rem auto",
-                                    width: "fit-content",
+                                    width:'100%',
 
                                 }}
                             >
                                 <ResumeRenderer template={selectedTemplate} />
                             </div>
+                                 
                         </div>
                     </div>
                 </div>

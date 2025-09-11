@@ -50,6 +50,7 @@ export default function Header({ onLoginClick }) {
     return (
         <header className="headerr">
             <Link to="/" className="logo" onClick={handleNavClick} style={{ textDecoration: "none" }}>
+             {/* <span className="logo-bg"></span> */}
                 NextStepCV.
             </Link>
 
@@ -65,7 +66,7 @@ export default function Header({ onLoginClick }) {
             </button>
 
             <div ref={navRef} className={`navWrapper ${menuOpen ? "open" : ""}`}>
-                <nav className="navBar">
+                 <nav className="navBar">
                     <Link
                         to="/"
                         onClick={handleNavClick}
@@ -87,9 +88,6 @@ export default function Header({ onLoginClick }) {
                     >
                         About
                     </Link>
-
-
-
                     {user ? (
                         <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
                             <UserAvatar email={user.email} />
@@ -111,9 +109,28 @@ export default function Header({ onLoginClick }) {
                         </div>
                     )}
                 </nav>
+                    {user ? (
+                        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+                            <UserAvatar email={user.email} />
+                            <button
+                                onClick={async () => {
+                                    await supabase.auth.signOut();
+                                    setUser(null);
+                                    setMenuOpen(false);
+                                }}
+                                className="logoutBtn"
+                            >
+                                Logout
+                            </button>
+                        </div>
+                    ) : (
+                        <div className="authButtons">
+                            {/* <button onClick={onLoginClick} className="loginBtn">Log In</button> */}
+                            {/* <button onClick={onLoginClick} className="signupBtn">Sign Up</button> */}
+                        </div>
+                    )}
             </div>
         </header>
     );
 }
-
 

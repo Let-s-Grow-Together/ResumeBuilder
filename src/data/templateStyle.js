@@ -6123,7 +6123,10 @@ const templateStyles = {
             }
         },
         workExpe: {
-
+          roleOrgContainer:{
+                // display:'flex',
+                justifyContent:'space-between',
+            },
             box: {
                 // borderBottom: "2px solid #2e3c47ff",
                 marginBottom: "15px"
