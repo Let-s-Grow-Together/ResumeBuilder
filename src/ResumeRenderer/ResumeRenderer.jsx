@@ -166,17 +166,18 @@ export default function ResumeRenderer({ template, setTemplate }) {
             if (overflowingColumnNames.length > 0) {
                 anyOverflow = true;
 
-                if (areaKeys.length === 1) {
+                /* if (areaKeys.length === 1) {
                     newTemplate = createNewPageFromBaseFlex(newTemplate);
                 }
 
                 for (const areaName of overflowingColumnNames) {
                     newTemplate = ensurePageAndMoveSection(newTemplate, areaName) || newTemplate;
-                }
+                } */
+                console.log(`Page overflowed! Sections ${overflowingColumnNames.join(", ")} are overflowing.`);
             }
         }
 
-        if (anyOverflow) {
+       /*  if (anyOverflow) {
             setTemplate(newTemplate);
         }
         else {
@@ -184,7 +185,7 @@ export default function ResumeRenderer({ template, setTemplate }) {
             if (backTemplate !== template) {
                 setTemplate(backTemplate);
             }
-        }
+        } */
     };
 
     useEffect(() => {

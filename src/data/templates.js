@@ -1793,7 +1793,7 @@ const template1 = {
             {
                 name: "rightColumn",
                 width: "48%",
-                sections: ["workExperience", "projects", "language", "awards", "certificates"]
+                sections: ["workExperience", "projects", "language"]
             }
         ]
     }
@@ -1864,7 +1864,7 @@ const template9 = {
             {
                 name: "leftColumn",
                 width: "36%",
-                sections: ["avatar", "contact", "achievements", "skills", "certificates"]
+                sections: ["avatar", "contact", "achievements", "skills"]
             },
             {
                 name: "rightColumn",
