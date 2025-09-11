@@ -10,6 +10,8 @@ import Navbar from "./Navbar";
 import TemplateSidebar from "./TemplateSidebar";
 import SidebarNav from "./SidebarNav";
 import handleDownload from "../utils/handleDownload";
+import { ToastContainer } from 'react-toastify'; // Import ToastContainer
+import 'react-toastify/dist/ReactToastify.css'; 
 import './Resumepage.css';
 
 export default function ResumePage({ onLoginClick }) {
@@ -74,6 +76,14 @@ export default function ResumePage({ onLoginClick }) {
 
     return (
         <>
+        <ToastContainer 
+         position="top-center"  // Explicitly set the position
+                autoClose={5000}       // Toast auto close time
+                hideProgressBar={false}
+                closeOnClick={true}
+                pauseOnHover={true}
+                draggable={true}
+        />
             <ResumeProvider
                 key={selectedTemplate.id}
                 initialData={resumeData}

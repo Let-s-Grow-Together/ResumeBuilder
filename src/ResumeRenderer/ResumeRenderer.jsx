@@ -19,9 +19,11 @@ import designIcons from "./components/DesignComponent";
 import "./ResumeRenderer.css";
 import { useResume } from "../context/ResumeContext";
 import templateStyles from "../data/templateStyle";
-import createNewPageFromBaseFlex from "./createNewPageFromBaseFlex";
-import ensurePageAndMoveSection from "./ensurePageAndMoveSection";
-import tryMoveSectionBack from "./tryMoveSectionBack";
+// import createNewPageFromBaseFlex from "./createNewPageFromBaseFlex";
+// import ensurePageAndMoveSection from "./ensurePageAndMoveSection";
+// import tryMoveSectionBack from "./tryMoveSectionBack";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // import the styles
 
 const sectionComponents = {
     personalInfo: PersonalInfo,
@@ -143,7 +145,7 @@ export default function ResumeRenderer({ template, setTemplate }) {
                     }
                     const totalHeight = fullWidthHeight + colHeight;
 
-                    if (totalHeight > availableHeight+30) {
+                    if (totalHeight > availableHeight + 30) {
                         overflowingColumnNames.push(col.name);
                     }
                 }
@@ -174,18 +176,24 @@ export default function ResumeRenderer({ template, setTemplate }) {
                     newTemplate = ensurePageAndMoveSection(newTemplate, areaName) || newTemplate;
                 } */
                 console.log(`Page overflowed! Sections ${overflowingColumnNames.join(", ")} are overflowing.`);
+                if (toast) {
+                    console.log("toast is defined");
+                    toast.error(`Page overflowed! Sections ${overflowingColumnNames.join(", ")} are overflowing.`);
+                } else {
+                    console.error("toast is undefined");
+                }
             }
         }
 
-       /*  if (anyOverflow) {
-            setTemplate(newTemplate);
-        }
-        else {
-            const backTemplate = tryMoveSectionBack(template, areaRefs, padding);
-            if (backTemplate !== template) {
-                setTemplate(backTemplate);
-            }
-        } */
+        /*  if (anyOverflow) {
+             setTemplate(newTemplate);
+         }
+         else {
+             const backTemplate = tryMoveSectionBack(template, areaRefs, padding);
+             if (backTemplate !== template) {
+                 setTemplate(backTemplate);
+             }
+         } */
     };
 
     useEffect(() => {
