@@ -77,8 +77,8 @@ export default function ResumePage({ onLoginClick }) {
     return (
         <>
         <ToastContainer 
-         position="top-center"  // Explicitly set the position
-                autoClose={5000}       // Toast auto close time
+         position="top-center"
+                autoClose={5000}
                 hideProgressBar={false}
                 closeOnClick={true}
                 pauseOnHover={true}
@@ -92,40 +92,21 @@ export default function ResumePage({ onLoginClick }) {
                 templateId={selectedTemplate.id}
             >
                 <Navbar onDownload={handleDownloadClick} onLoginClick={() => onLoginClick()} />
-                <div className="templateSectionn" style={{ display: "flex", minHeight: "100vh" }}>
-                    <div style={{ width: "220px", flexShrink: 0 }}>
+                <div className="resumePage">
+                    <div className="sidebarWrapper">
                         <SidebarNav active={activeNav} onChange={setActiveNav} />
                     </div>
 
-                    <div style={{ display: "flex", flexGrow: 1, overflow: "hidden" }} className="">
+                    <div className="editorWrapper">
                         {activeNav === "templates" && (
-                            <div
+                            <div className="templatesWrapper"
                                 style={{
-                                    width: "100%",
-                                    maxWidth: "500px",
-                                    minWidth: "300px",
-                                    position: "relative",
-                                    overflowY: "auto",
-                                    padding: "1rem",
                                     transform: activeNav === "templates" ? "translateX(0)" : "translateX(-100%)"
                                 }}
                             >
                                 <button
                                     onClick={() => setActiveNav(null)}
                                     className="close-button"
-                                    style={{
-                                        position: "absolute",
-                                        top: "26px",
-                                        right: "27px",
-                                        zIndex: 100,
-                                        background: "transparent",
-                                        border: "none",
-                                        fontSize: "20px",
-                                        cursor: "pointer",
-                                        padding: "4px 8px",
-                                        borderRadius: "4px",
-                                        boxShadow: "0 0 6px rgba(0,0,0,0.1)",
-                                    }}
                                 >
                                     ✖
                                 </button>
@@ -139,24 +120,11 @@ export default function ResumePage({ onLoginClick }) {
                             </div>
                         )}
 
-                        <div
-                            style={{
-                                flexGrow: 1,
-                                padding: "2rem",
-                                textAlign: "center",
-                                minWidth: 0,
-                                position: "relative",
-                                margin: "1rem 0rem 1rem 0rem"
-                            }}
-                            className="hide-scroll"
-                        >
+                        <div className="hide-scroll">
                             <SaveControls />
                             <div
                                 ref={resumeRef}
-                                style={{
-                                    margin: "-0.9rem auto",
-                                    width: "fit-content",
-                                }}
+                                className="resumeWrapper"
                             >
                                 <ResumeRenderer template={selectedTemplate} setTemplate={setSelectedTemplate} />
                             </div>
