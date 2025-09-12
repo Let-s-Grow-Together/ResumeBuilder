@@ -18,10 +18,13 @@
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background: white;
-    overflow: hidden;
     margin-bottom: 3rem;
 }
 
+.resumeSection.overflowing {
+    border: 2px solid red;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
 
 .profile-image {
     width: 120px;

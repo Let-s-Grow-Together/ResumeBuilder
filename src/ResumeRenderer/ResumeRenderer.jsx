@@ -147,6 +147,16 @@ export default function ResumeRenderer({ template, setTemplate }) {
 
                     if (totalHeight > availableHeight + 30) {
                         overflowingColumnNames.push(col.name);
+                        const areaElement = ref.closest('.resumeSection');
+                        if (areaElement) {
+                            areaElement.classList.add('overflowing');
+                        }
+                    }
+                    else{
+                        const areaElement = ref.closest('.resumeSection');
+                        if (areaElement) {
+                            areaElement.classList.remove('overflowing');
+                        }
                     }
                 }
             } else {
@@ -161,6 +171,16 @@ export default function ResumeRenderer({ template, setTemplate }) {
                     }
                     if (singleHeight > availableHeight) {
                         overflowingColumnNames.push(single.name);
+                        const areaElement = ref.closest('.resumeSection');
+                        if (areaElement) {
+                            areaElement.classList.add('overflowing');
+                        }
+                    }
+                    else{
+                        const areaElement = ref.closest('.resumeSection');
+                        if (areaElement) {
+                            areaElement.classList.remove('overflowing');
+                        }
                     }
                 }
             }
@@ -179,7 +199,8 @@ export default function ResumeRenderer({ template, setTemplate }) {
                 if (toast) {
                     console.log("toast is defined");
                     toast.error(`Page overflowed! Sections ${overflowingColumnNames.join(", ")} are overflowing.`);
-                } else {
+                }
+                else {
                     console.error("toast is undefined");
                 }
             }

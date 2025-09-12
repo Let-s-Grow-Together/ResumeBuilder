@@ -1,8 +1,61 @@
+.resumePage{
+    display: flex;
+}
+
+.sidebarWrapper{
+    flex-shrink: 0;
+}
+
+.editorWrapper{
+    display: flex;
+    flex-grow: 1;
+}
+
+.templatesWrapper{
+    width: 100%;
+    max-width: 500px;
+    min-width: 300px;
+    position: relative;
+    overflow: auto;
+    padding: 1rem;
+}
+
+.hide-scroll {
+    flex-grow: 1;
+    padding: 2rem 0rem;
+    text-align: center;
+    min-width: 0;
+    position: relative;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.hide-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.resumeWrapper{
+    margin: 0rem auto;
+    width: fit-content;
+}
+
+.close-button {
+    position: absolute;
+    top: 26px;
+    right: 27px;
+    z-index: 100;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    transition: transform 2s ease;
+}
+
 .close-button:hover {
     transform: rotate(360deg); 
-}
-.close-button {
-    transition: transform 2s ease;
 }
 
 @media (max-width:769px) {
