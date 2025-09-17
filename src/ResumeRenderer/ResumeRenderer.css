@@ -14,17 +14,14 @@
     position: relative;
     padding: 10mm;
     box-sizing: border-box;
+    display: grid;
     gap: 1rem;
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background: white;
-    margin-bottom: 3rem;
+    overflow: hidden;
 }
 
-.resumeSection.overflowing {
-    border: 2px solid red;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-}
 
 .profile-image {
     width: 120px;
@@ -129,10 +126,6 @@
 .contactItem {
     padding-left: var(--basic-pixel-margin);
     padding-bottom: 8px;
-}
-
-.editable-text {
-    margin-left: -10px;
 }
 
 .icon-picker-popup {
@@ -351,7 +344,7 @@
 }
 
 .educationItem>div>p {
-    /* padding-left: var(--basic-pixel-margin); */
+    padding-left: var(--basic-pixel-margin);
     outline: var(--none);
     padding: 0px 0px 1px 8px;
 }
