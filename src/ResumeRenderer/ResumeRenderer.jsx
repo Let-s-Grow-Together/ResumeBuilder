@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import WorkExperience from "./components/WorkExperience";
@@ -13,17 +13,10 @@ import Language from "./components/Language";
 import Awards from "./components/Awards";
 import Organizations from "./components/Organizations";
 import Certificates from "./components/Certificates";
-import Interests from "./components/Interests";
-import Coursework from "./components/CourseWork";
 import designIcons from "./components/DesignComponent";
 import "./ResumeRenderer.css";
 import { useResume } from "../context/ResumeContext";
 import templateStyles from "../data/templateStyle";
-// import createNewPageFromBaseFlex from "./createNewPageFromBaseFlex";
-// import ensurePageAndMoveSection from "./ensurePageAndMoveSection";
-// import tryMoveSectionBack from "./tryMoveSectionBack";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; // import the styles
 
 const sectionComponents = {
     personalInfo: PersonalInfo,
@@ -39,15 +32,13 @@ const sectionComponents = {
     avatar: Avatar,
     language: Language,
     awards: Awards,
-    Interests: Interests,
-    Coursework: Coursework,
     certificates: Certificates,
     designIcons1: designIcons,
     designIcons2: designIcons,
     designIcons3: designIcons
 };
 
-export default function ResumeRenderer({ template, setTemplate }) {
+export default function ResumeRenderer({ template }) {
     const { data, style, editMode, selectedSection, setSelectedSection, customLayoutAreas } = useResume();
 
     useEffect(() => {
@@ -63,225 +54,225 @@ export default function ResumeRenderer({ template, setTemplate }) {
         };
     }, []);
 
-    const { layout } = template;
-    const {
-        direction = "column",
-        fontFamily,
-        fontSize,
-        colorScheme,
-        padding,
-        rowGap = "0rem",
-        columnGap = "1rem"
-    } = layout;
+    const { grid, fontFamily, fontSize, colorScheme, borderTop, padding } = template.layout;
 
     const templateId = String(template.id);
     const templateStyle = templateStyles[templateId] || {};
     const cssVariables = templateStyle.vars || {};
 
-    const areaKeys = Object.keys(layout)
-        .filter((key) => key.startsWith("areas"))
-        .sort();
-    const areaRefs = useRef({});
-
-    const addRef = (areaName, areaKey) => {
-        const key = `${areaName}-${areaKey}`;
-        if (!areaRefs.current[key]) {
-            areaRefs.current[key] = React.createRef();
-        }
-        return areaRefs.current[key];
-    };
-
     const renderSection = (sectionName, areaName) => {
         const SectionComponent = sectionComponents[sectionName];
-        return SectionComponent ? (
-            <SectionComponent areaName={areaName} sectionName={sectionName} />
-        ) : null;
+        return SectionComponent
+            ? <SectionComponent
+                key={sectionName}
+                areaName={areaName}
+            />
+            : null;
     };
 
+    const numRows = grid.templateRows.split(" ").length;
+    const numCols = grid.templateColumns.split(" ").length;
 
-    const measureHeights = () => {
-        let newTemplate = { ...template };
-        let anyOverflow = false;
+    const gridMatrix = Array.from({ length: numRows }, () =>
+        Array(numCols).fill(".")
+    );
 
-        for (const areaKey of areaKeys) {
-            const pageEl = document.querySelector(`.resume-view[data-area-key="${areaKey}"]`);
-            if (!pageEl) continue;
+    const areasToRender = (customLayoutAreas || grid.areas).filter(
+        (area) =>
+            Array.isArray(area.sections) &&
+            area.sections.length > 0 &&
+            area.name !== "unused"
+    );
 
-            const pageHeight = pageEl.offsetHeight || 0;
-            const paddingValue = parseFloat(padding) || 0;
-            const availableHeight = pageHeight - 2 * paddingValue;
-
-            const areas = layout[areaKey] || [];
-
-            const fullWidthAreas = areas.filter(area => {
-                if (area.paginate === false) return true;
-                if (!area.width) return false;
-                const w = ("" + area.width).trim();
-                return w === "100%" || w === "100";
-            });
-
-            let fullWidthHeight = 0;
-            for (const area of fullWidthAreas) {
-                const ref = areaRefs.current[`${area.name}-${areaKey}`]?.current;
-                if (ref) {
-                    const rect = ref.getBoundingClientRect();
-                    const style = getComputedStyle(ref);
-                    fullWidthHeight += rect.height + parseFloat(style.marginTop || 0) + parseFloat(style.marginBottom || 0);
-                }
-            }
-
-            const columnAreas = areas.filter(a => !fullWidthAreas.includes(a));
-            const filteredCols = Number(template.filteredColumn) || 1;
-            const overflowingColumnNames = [];
-
-            if (filteredCols > 1) {
-                for (const col of columnAreas) {
-                    const ref = areaRefs.current[`${col.name}-${areaKey}`]?.current;
-                    let colHeight = 0;
-                    if (ref) {
-                        const rect = ref.getBoundingClientRect();
-                        const style = getComputedStyle(ref);
-                        colHeight = rect.height + parseFloat(style.marginTop || 0) + parseFloat(style.marginBottom || 0);
-                    }
-                    const totalHeight = fullWidthHeight + colHeight;
-
-                    if (totalHeight > availableHeight + 30) {
-                        overflowingColumnNames.push(col.name);
-                        const areaElement = ref.closest('.resumeSection');
-                        if (areaElement) {
-                            areaElement.classList.add('overflowing');
-                        }
-                    }
-                    else{
-                        const areaElement = ref.closest('.resumeSection');
-                        if (areaElement) {
-                            areaElement.classList.remove('overflowing');
-                        }
-                    }
-                }
-            } else {
-                const single = columnAreas[0] ?? areas[0];
-                if (single) {
-                    const ref = areaRefs.current[`${single.name}-${areaKey}`]?.current;
-                    let singleHeight = 0;
-                    if (ref) {
-                        const rect = ref.getBoundingClientRect();
-                        const style = getComputedStyle(ref);
-                        singleHeight = rect.height + parseFloat(style.marginTop || 0) + parseFloat(style.marginBottom || 0);
-                    }
-                    if (singleHeight > availableHeight) {
-                        overflowingColumnNames.push(single.name);
-                        const areaElement = ref.closest('.resumeSection');
-                        if (areaElement) {
-                            areaElement.classList.add('overflowing');
-                        }
-                    }
-                    else{
-                        const areaElement = ref.closest('.resumeSection');
-                        if (areaElement) {
-                            areaElement.classList.remove('overflowing');
-                        }
-                    }
-                }
-            }
-
-            if (overflowingColumnNames.length > 0) {
-                anyOverflow = true;
-
-                /* if (areaKeys.length === 1) {
-                    newTemplate = createNewPageFromBaseFlex(newTemplate);
-                }
-
-                for (const areaName of overflowingColumnNames) {
-                    newTemplate = ensurePageAndMoveSection(newTemplate, areaName) || newTemplate;
-                } */
-                console.log(`Page overflowed! Sections ${overflowingColumnNames.join(", ")} are overflowing.`);
-                if (toast) {
-                    console.log("toast is defined");
-                    toast.error(`Page overflowed! Sections ${overflowingColumnNames.join(", ")} are overflowing.`);
-                }
-                else {
-                    console.error("toast is undefined");
+    areasToRender.forEach((area) => {
+        for (let row = area.rowStart - 1; row < area.rowEnd - 1; row++) {
+            for (let col = area.colStart - 1; col < area.colEnd - 1; col++) {
+                if (gridMatrix[row] && gridMatrix[row][col] !== undefined) {
+                    gridMatrix[row][col] = area.name;
+                } else {
+                    console.warn(
+                        `Invalid grid position: row ${row}, col ${col} for area "${area.name}"`
+                    );
                 }
             }
         }
+    });
 
-        /*  if (anyOverflow) {
-             setTemplate(newTemplate);
-         }
-         else {
-             const backTemplate = tryMoveSectionBack(template, areaRefs, padding);
-             if (backTemplate !== template) {
-                 setTemplate(backTemplate);
-             }
-         } */
-    };
-
-    useEffect(() => {
-        const t = setTimeout(() => {
-            try {
-                measureHeights();
-            }
-            catch (e) {
-                console.error("measureHeights error:", e);
-            }
-        }, 100);
-        return () => clearTimeout(t);
-    }, [template, data]);
+    const gridTemplateAreas = gridMatrix
+        .map((row) => `"${row.join(" ")}"`)
+        .join(" ");
 
     return (
-        <>
-            {areaKeys.map((areaKey) => {
-                const areas = layout[areaKey];
-
-                return (
-                    <div
-                        className={`resume-view ${editMode && selectedSection ? "editing" : ""}`}
-                        key={areaKey}
-                        data-area-key={areaKey}
-                        style={{
-                            display: "flex",
-                            flexDirection: direction.includes("column") ? "column" : "row",
-                            flexWrap: direction.includes("wrap") ? "wrap" : "nowrap",
-                            fontFamily,
-                            fontSize,
-                            background: colorScheme?.background,
-                            color: colorScheme?.text,
-                            padding,
-                            rowGap,
-                            columnGap,
-                            ...cssVariables
-                        }}
-                    >
-                        {areas.map((area) => {
-                            const areaRef = addRef(area.name, areaKey);
-                            return (
-                                <div
-                                    key={`${area.name}-${areaKey}`}
-                                    ref={areaRef}
-                                    className={`resumeSection area-${area.name}`}
-                                    style={{
-                                        flex: `0 0 ${area.width || "100%"}`,
-                                        alignSelf: "flex-start",
-                                        ...(area.style || {}),
-                                    }}
-                                >
-                                    {area.sections.map((sectionName) => (
-                                        <div
-                                            key={`${sectionName}-${areaKey}`}
-                                            className="resume-subsection"
-                                            data-section={sectionName}
-                                            data-area-key={areaKey}
-                                        >
-                                            {renderSection(sectionName, area.name)}
-                                        </div>
-                                    ))}
-                                </div>
-                            );
-                        })}
-                    </div>
-                );
-            })}
-        </>
+        <div
+            className={`resume-view ${editMode && selectedSection ? "editing" : ""}`}
+            style={{
+                fontFamily,
+                fontSize,
+                background: colorScheme.background,
+                color: colorScheme.text,
+                gridTemplateColumns: grid.templateColumns,
+                gridTemplateRows: grid.templateRows,
+                rowGap: grid.rowGap,
+                columnGap: grid.columnGap,
+                display: "grid",
+                borderTop: borderTop,
+                gridTemplateAreas,
+                padding,
+                ...cssVariables
+            }}
+        >
+            {areasToRender.map((area) => (
+                <div
+                    key={area.name}
+                    className={`resumeSection area-${area.name}`}
+                    style={{
+                        gridArea: area.name,
+                        ...(area.style || {})
+                    }}
+                >
+                    {area.sections.map((sectionName) =>
+                        renderSection(
+                            sectionName,
+                            area.name
+                        )
+                    )}
+                </div>
+            ))}
+        </div>
     );
 }
+/* 
+import { useEffect, useRef, useState } from "react";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
+import WorkExperience from "./components/WorkExperience";
+import Education from "./components/Education";
+import PersonalInfo from "./components/PersonalInfo";
+import Contact from "./components/Contact";
+import Summary from "./components/Summary";
+import Avatar from "./components/Avatar";
+import Strengths from "./components/Strength";
+import Achievements from "./components/Achivements";
+import Language from "./components/Language";
+import Awards from "./components/Awards";
+import Organizations from "./components/Organizations";
+import Certificates from "./components/Certificates";
+import designIcons from "./components/DesignComponent";
+import "./ResumeRenderer.css";
+import { useResume } from "../context/ResumeContext";
+import templateStyles from "../data/templateStyle";
+
+const sectionComponents = {
+    personalInfo: PersonalInfo,
+    education: Education,
+    workExperience: WorkExperience,
+    skills: Skills,
+    projects: Projects,
+    contact: Contact,
+    summary: Summary,
+    strengths: Strengths,
+    achievements: Achievements,
+    organizations: Organizations,
+    avatar: Avatar,
+    language: Language,
+    awards: Awards,
+    certificates: Certificates,
+    designIcons1: designIcons,
+    designIcons2: designIcons,
+    designIcons3: designIcons
+};
+
+export default function ResumeRenderer({ template }) {
+    const { data, style, editMode, selectedSection, setSelectedSection, customLayoutAreas } = useResume();
+    const containerRef = useRef(null);
+    const [pages, setPages] = useState([]);
+
+    const { grid, fontFamily, fontSize, colorScheme, borderTop, padding } = template.layout;
+    const templateId = String(template.id);
+    const templateStyle = templateStyles[templateId] || {};
+    const cssVariables = templateStyle.vars || {};
+
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+            if (!e.target.closest(".resumeSection")) {
+                setSelectedSection(null);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+
+    useEffect(() => {
+        if (!containerRef.current) return;
+
+        const pageHeight = containerRef.current.offsetHeight; // height of one page container
+        const threshold = pageHeight - 40; // padding buffer
+
+        const sections = Array.from(containerRef.current.querySelectorAll(".resumeSection"));
+        const paginated = [];
+        let currentPage = [];
+        let usedHeight = 0;
+
+        sections.forEach((section) => {
+            const rect = section.getBoundingClientRect();
+            const height = rect.height;
+
+            // If splittable
+            if (section.dataset.split === "true") {
+                const children = Array.from(section.children);
+                let childGroup = document.createElement("div");
+                childGroup.className = "resumeSection splittable";
+
+                children.forEach((child) => {
+                    const childHeight = child.getBoundingClientRect().height;
+                    if (usedHeight + childHeight > threshold) {
+                        // finish current page
+                        paginated.push(currentPage);
+                        currentPage = [];
+                        usedHeight = 0;
+                    }
+                    currentPage.push({ node: child.cloneNode(true), area: section.dataset.area });
+                    usedHeight += childHeight;
+                });
+            } else {
+                if (usedHeight + height > threshold) {
+                    paginated.push(currentPage);
+                    currentPage = [];
+                    usedHeight = 0;
+                }
+                currentPage.push({ node: section.cloneNode(true), area: section.dataset.area });
+                usedHeight += height;
+            }
+        });
+
+        if (currentPage.length) paginated.push(currentPage);
+
+        setPages(paginated);
+    }, [data, template, customLayoutAreas]);
+
+    return (
+        <div className="resume-doc" style={{ fontFamily, fontSize, background: colorScheme.background, color: colorScheme.text }}>
+            
+            <div ref={containerRef} className="hidden-measure" style={{ position: "absolute", visibility: "hidden", pointerEvents: "none" }}>
+                {customLayoutAreas?.map((area) => (
+                    <div key={area.name} className="resumeSection" data-area={area.name} data-split={area.split ? "true" : "false"}>
+                        {area.sections.map((sectionName) => {
+                            const SectionComponent = sectionComponents[sectionName];
+                            return SectionComponent ? <SectionComponent key={sectionName} areaName={area.name} /> : null;
+                        })}
+                    </div>
+                ))}
+            </div>
+
+            {pages.map((page, i) => (
+                <div key={i} className="resume-page" style={{ padding }}>
+                    {page.map((item, j) => (
+                        <div key={j} className="resumeSection" style={{ gridArea: item.area }} dangerouslySetInnerHTML={{ __html: item.node.outerHTML }} />
+                    ))}
+                </div>
+            ))}
+        </div>
+    );
+}
+
+*/
