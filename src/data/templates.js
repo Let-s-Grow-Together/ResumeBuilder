@@ -999,14 +999,15 @@ const template1113 = {
 
 const template21 = {
     id: 21,
-    name: "Simple Single Column1",
+    name: "Polished Form",
     pdf: "/templates/template21.pdf",
     filteredColumn: "1",
     isAvatar: "true",
     layout: {
         grid: {
             templateRows: "auto auto auto",
-            templateColumns: "1fr 1fr",  // single column
+            templateColumns: "1fr 1fr",
+            columnGap:"2.5rem",
             areas: [
                 {
                     name: "header",
@@ -1044,6 +1045,7 @@ const template21 = {
                 },
             ]
         },
+        frozenSections:["personalInfo", "contact"],
         padding: "10mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink:
@@ -1097,6 +1099,7 @@ const template6 = {
                 },
             ]
         },
+        frozenSections:["personalInfo", "contact", "skills"],
         padding: "0mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink:
@@ -1111,7 +1114,7 @@ const template6 = {
 
 const template23 = {
     id: 23,
-    name: "Simple Single Column3",
+    name: "Career Peak",
     pdf: "/templates/template23.pdf",
     filteredColumn: "1",
     isAvatar: "true",
@@ -1119,7 +1122,7 @@ const template23 = {
         grid: {
             templateRows: "auto auto",
             templateColumns: "1fr 2fr",
-            columnGap: "3rem",
+            columnGap: "2.5rem",
             rowGap: "0rem",
             areas: [
                 {
@@ -1137,7 +1140,7 @@ const template23 = {
                     rowEnd: 3,
                     colStart: 1,
                     colEnd: 2,
-                    style: { background: "#E4E4E4", padding: "5rem 1rem 1rem 2rem", },
+                    style: { background: "#E4E4E4", padding: "5rem 1rem 1rem 1.5rem", },
                     sections: ["contact", "skills", "language", "awards"]
                 },
                 {
@@ -1151,6 +1154,7 @@ const template23 = {
                 },
             ]
         },
+        frozenSections:["personalInfo", "contact", "skills", "language"],
         padding: "0mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink:
@@ -1218,7 +1222,7 @@ const template1115 = {
 
 const template24 = {
     id: 24,
-    name: "Simple Single Column4",
+    name: "Split Vision",
     pdf: "/templates/template24.pdf",
     filteredColumn: "1",
     isAvatar: "true",
@@ -1244,8 +1248,8 @@ const template24 = {
                     rowEnd: 2,
                     colStart: 1,
                     colEnd: 2,
-                    style: { padding: "2rem 1rem 1rem 2rem", color: "white" },
-                    sections: ["personalInfo", "contact", "skills", "language"]
+                    style: { padding: "2rem 1rem 1rem 2rem", color: "white", },
+                    sections: ["personalInfo", "contact", "skills", "language", "certificates"]
                 },
                 {
                     name: "rightColumn",
@@ -1253,18 +1257,19 @@ const template24 = {
                     rowEnd: 2,
                     colStart: 2,
                     colEnd: 3,
-                    style: { padding: "2rem 0.5rem 0rem 2rem", background: "white", borderRadius: "100px 0px 0px 100px", color: "879AB2" },
+                    style: { padding: "2.5rem 0.5rem 0rem 2rem", background: "white", borderRadius: "100px 0px 0px 100px", color: "#73869cff" },
                     sections: ["summary", "workExperience", "education", "organizations"]
                 },
             ]
         },
+        frozenSections:["personalInfo", "contact", "skills", "language", "certificates"],
         padding: "0mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink:
             "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
         fontSize: "14px",
         colorScheme: {
-            background: "#879AB2",
+            background: "#73869cff",
             text: "#333333"
         }
     }
@@ -1280,7 +1285,7 @@ const template25 = {
         grid: {
             templateRows: "auto auto",
             templateColumns: "1.2fr 1.8fr",
-            columnGap: "3rem",
+            columnGap: "2.5rem",
             rowGap: "4.5rem",
             areas: [
                 {
@@ -1290,7 +1295,7 @@ const template25 = {
                     colStart: 1,
                     colEnd: 3,
                     style: {
-                        background: "#D6DEE8", height: "180px",
+                        background: "#D6DEE8", height: "190px",
                         width: "75%", marginLeft: "216px"
                     },
                     sections: ["personalInfo",]
@@ -1301,7 +1306,7 @@ const template25 = {
                     rowEnd: 3,
                     colStart: 1,
                     colEnd: 2,
-                    style: { background: "#D6DEE8", padding: "1rem 1rem 1rem 2rem", borderRadius: "40px" },
+                    style: { background: "#D6DEE8", padding: "1rem 1rem 1rem 1.5rem", borderRadius: "40px" },
                     sections: ["contact", "skills", "language", "awards"]
                 },
                 {
@@ -1315,6 +1320,7 @@ const template25 = {
                 },
             ]
         },
+        frozenSections:["personalInfo", "contact", "skills", "language"],
         padding: "10mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink:
