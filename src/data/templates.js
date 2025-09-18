@@ -35,6 +35,7 @@ const template1 = {
                 },
             ],
         },
+        frozenSections: ["avatar", "personalInfo"],
         colorScheme: {
             background: "#FFFFFF",
             text: "#333333"
@@ -88,6 +89,7 @@ const template3 = {
                 }
             ]
         },
+        frozenSections: ["avatar", "contact", "personalInfo"],
         fontFamily: "'Lato', sans-serif",
         fontSize: "14px",
         colorScheme: {
@@ -209,6 +211,7 @@ const template10 = {
                 }
             ]
         },
+        frozenSections: ["avatar", "contact", "personalInfo"],
         padding: "30px",
         fontFamily: "'Poppins', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap",
@@ -272,6 +275,7 @@ const template11 = {
                 }
             ]
         },
+        frozenSections: ["avatar", "contact", "personalInfo"],
         padding: "0mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
@@ -322,6 +326,7 @@ const template12 = {
             ]
         },
         padding: "10mm",
+        frozenSections: ["avatar", "contact", "personalInfo"],
         fontFamily: "'Poppins', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap",
         fontSize: "14px",
@@ -362,6 +367,7 @@ const template13 = {
                 }
             ]
         },
+        frozenSections: ["avatar", "contact", "personalInfo"],
         padding: "10mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap",
@@ -411,6 +417,7 @@ const template14 = {
                 }
             ]
         },
+        frozenSections: ["avatar", "contact", "personalInfo"],
         padding: "10mm",
         fontFamily: "'Lato', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",
@@ -460,7 +467,8 @@ const template15 = {
                 }
             ]
         },
-        padding: "8mm",
+        padding: "8mm",        
+        frozenSections: ["avatar", "contact", "personalInfo"],
         fontFamily: "'Poppins', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap",
         fontSize: "13px",
@@ -598,7 +606,7 @@ const template113 = {
 
 const template115 = {
     id: 115,
-    name: "Spacious Two Column",
+    name: "Blue Split Professional",
     filteredColumn: "2",
     isAvatar: "true",
     layout: {
@@ -630,10 +638,11 @@ const template115 = {
                     rowEnd: 3,
                     colStart: 2,
                     colEnd: 3,
-                    sections: ["workExperience", "achievements"]
+                    sections: ["workExperience","projects", "achievements"]
                 }
             ]
         },
+        frozenSections: ["avatar", "contact", "personalInfo","summary"],
         fontFamily: "Montserrat, sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poltawski+Nowy:ital,wght@0,400..700;1,400..700&display=swap",
         fontSize: "16px",
@@ -646,13 +655,13 @@ const template115 = {
 
 const template116 = {
     id: 116,
-    name: "Simple Tactical",
+    name: "Dual Essence",
     filteredColumn: "2",
     isAvatar: "true",
     layout: {
         grid: {
-            templateRows: "auto",
-            templateColumns: "1fr 2fr",
+            templateRows: "1fr",
+            templateColumns: "1.1fr 2fr",
             areas: [
                 {
                     name: 'leftColumn',
@@ -660,7 +669,7 @@ const template116 = {
                     rowEnd: 2,
                     colStart: 1,
                     colEnd: 2,
-                    sections: ["contact", "summary", "language", "skills"],
+                    sections: ["contact", "language", "skills"],
                     style: { paddingTop: "20px", backgroundColor: "#3e465b", color: "white" }
                 },
                 {
@@ -674,6 +683,7 @@ const template116 = {
                 }
             ]
         },
+        frozenSections: ["avatar", "contact", "personalInfo","summary"],
         padding: "0mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
@@ -687,8 +697,7 @@ const template116 = {
 
 const template117 = {
     id: 117,
-    name: 'Premium Template',
-    pdf: "/templates/template7.pdf",
+    name: 'Minted Precision',
     filteredColumn: "2",
     isAvatar: "true",
     layout: {
@@ -732,7 +741,8 @@ const template117 = {
                 }
             ]
         },
-        padding: "8mm",
+        padding: "8mm",        
+        frozenSections: ["avatar", "contact", "personalInfo"],
         fontFamily: "'Montserrat', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
         fontSize: "14px",
@@ -786,7 +796,7 @@ const template118 = {
 
 const template1110 = {
     id: 1110,
-    name: "Premium Two Columns",
+    name: "Serene Focus",
     filteredColumn: "2",
     isAvatar: "true",
     layout: {
@@ -814,6 +824,7 @@ const template1110 = {
             ]
         },
         padding: "25px",
+        frozenSections: ["avatar", "contact", "personalInfo"],
         fontFamily: "'Poppins', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap",
         fontSize: "14px",
@@ -888,7 +899,9 @@ const template1111 = {
 
 const template1112 = {
     id: 1112,
-    name: 'Moderan',
+    name: 'Royal Contrast',
+    filteredColumn: "2",
+    isAvatar: "false",
     layout: {
         grid: {
             templateRows: "1fr",
@@ -914,7 +927,8 @@ const template1112 = {
                 }
             ]
         },
-        padding: "0mm",
+        padding: "0mm",        
+        frozenSections: ["avatar", "contact", "personalInfo"],
         fontFamily: "'Montserrat', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
         fontSize: "14px",
@@ -927,7 +941,9 @@ const template1112 = {
 
 const template1113 = {
     id: 1113,
-    name: 'Moderan',
+    name: 'Sleek Initials',
+    filteredColumn: "2",
+    isAvatar: "false",
     layout: {
         grid: {
             templateRows: "1fr 12fr",
@@ -970,6 +986,7 @@ const template1113 = {
             ]
         },
         padding: "20px",
+        frozenSections: ["avatar", "contact", "personalInfo"],
         fontFamily: "'Montserrat', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
         fontSize: "14px",
@@ -1148,7 +1165,7 @@ const template23 = {
 
 const template1115 = {
     id: 1115,
-    name: "Two Columns",
+    name: "Checkered Horizon",
     filteredColumn: "2",
     isAvatar: "true",
     layout: {
@@ -1187,6 +1204,7 @@ const template1115 = {
             ]
         },
         padding: "25px",
+        frozenSections: ["avatar", "contact", "personalInfo"],
         fontFamily: "'Poppins', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap",
         fontSize: "14px",
