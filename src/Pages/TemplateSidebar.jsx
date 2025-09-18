@@ -22,7 +22,7 @@ export default function TemplateSidebar({ templates, selectedTemplate, onTemplat
 
     return (
         <>
-            <div className="template-container" style={{ maxHeight: "90vh", scrollbarWidth: "none", overflowY: "auto", width: "auto" }}>
+            <div className="template-container" style={{ maxHeight: "162vh", scrollbarWidth: "none", overflowY: "auto", width: "auto" }}>
                 <h5 className="template-title">Select a Template</h5>
                 <div className="template-grid">
                     {templates.map((tpl) => (
