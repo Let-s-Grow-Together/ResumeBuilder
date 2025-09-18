@@ -1,6 +1,7 @@
 import { faMoneyBillWave } from "@fortawesome/free-solid-svg-icons";
 
 const sharedStyles = {
+
     "2": {
         heading: {
             color: "var(--heading-color)",
@@ -10,6 +11,7 @@ const sharedStyles = {
             borderBottom: "2px solid var(--heading-color)"
         },
     },
+
     "3": {
         heading: {
             color: "var(--content-color)",
@@ -21,6 +23,7 @@ const sharedStyles = {
             marginBottom: "2rem"
         }
     },
+
     "4": {
         heading: {
             fontSize: "24px",
@@ -32,12 +35,14 @@ const sharedStyles = {
             margin: "25px 0px"
         },
     },
+
     "5": {
         heading: {
             borderBottom: "2px solid var(--secondary-color)",
             textDecoration: "none"
         },
     },
+
     "7": {
         personalInfo: {
             avatar: {
@@ -52,15 +57,18 @@ const sharedStyles = {
             paddingLeft: '10px'
         }
     },
+
     "501": {
         heading: {
             fontSize: "1.7rem",
             marginBottom: "0.1rem"
         }
     }
+
 };
 
 const templateStyles = {
+
     "1": {
         /* layoutStyles: {
             leftColumn: {
@@ -78,6 +86,7 @@ const templateStyles = {
             }
         }, */
     },
+
     "3": {
         vars: {
             "--heading-color": "#333",
@@ -344,6 +353,7 @@ const templateStyles = {
             }
         }
     },
+
     "112": {
         vars: {
             "--heading-color": "#003366",
@@ -475,6 +485,7 @@ const templateStyles = {
             },
         }
     },
+
     "9": {
         layoutStyles: {
             leftColumn: {
@@ -528,6 +539,7 @@ const templateStyles = {
             }
         }
     },
+
     "10": {
         layoutStyles: {
             leftColumn: {
@@ -578,6 +590,7 @@ const templateStyles = {
             }
         }
     },
+
     "11": {
         layoutStyles: {
             rightColumn: {
@@ -595,6 +608,7 @@ const templateStyles = {
             }
         }
     },
+
     "12": {
         layoutStyles: {
             leftColumn: {
@@ -720,6 +734,7 @@ const templateStyles = {
             }
         }
     },
+
     "13": {
         layoutStyles: {
             leftColumn: {
@@ -791,6 +806,7 @@ const templateStyles = {
             heading: { borderBottom: "2px solid #1b263b", marginBottom: "10px" }
         }
     },
+
     "14": {
         avatar: {
             card: {
@@ -857,6 +873,7 @@ const templateStyles = {
             heading: { borderBottom: "2px solid #ff6f61", marginBottom: "10px" }
         }
     },
+
     "113": {
         vars: {
             "--heading-color": "#333",
@@ -1097,6 +1114,7 @@ const templateStyles = {
             }
         }
     },
+
     "115": {
         vars: {
             '--primary-color': '#163853',
@@ -1254,6 +1272,7 @@ const templateStyles = {
             },
         }
     },
+
     "116": {
         vars: {
             "--primary-color": "#3e465b",
@@ -1477,6 +1496,7 @@ const templateStyles = {
             }
         }
     },
+
     "117": {
         vars: {
             "--primary-color": '#2EBCB0',
@@ -1758,6 +1778,7 @@ const templateStyles = {
             },
         }
     },
+
     "1110": {
         avatar: {
             card: {
@@ -1949,6 +1970,7 @@ const templateStyles = {
             }
         }
     },
+
     "1111": {
         vars: {
             "--left-heading-color": "#142c45",
@@ -2205,6 +2227,7 @@ const templateStyles = {
             }
         }
     },
+
     "1112": {
         vars: {
             "--left-heading-color": "#fff",
@@ -2491,6 +2514,7 @@ const templateStyles = {
             },
         }
     },
+
     "1113": {
         vars: {
             "--left-heading-color": "#000",
@@ -2744,6 +2768,7 @@ const templateStyles = {
 
 
     },
+
     "1115": {
         vars: {
             "--left-heading-color": "#ffff",
@@ -2808,6 +2833,7 @@ const templateStyles = {
             }
         }
     },
+
     "15": {
         layoutStyles: {
             leftColumn: {
@@ -2927,6 +2953,7 @@ const templateStyles = {
             }
         }
     },
+
     "516": {
         designIcon1: {
             box: {
@@ -3194,13 +3221,16 @@ const templateStyles = {
             }
         },
     },
+
     "521": {
         personalInfo: {
             box: {
-                backgroundColor: "#2e3c47ff",
-                color: "white",
-                padding: "10px",
-                marginBottom: "15px"
+                // backgroundColor: "#2e3c47ff",
+                color: "#2e3c47ff",
+                padding: "0px",
+                marginBottom: "15px",
+                display:"flex",
+                justifyContent:"center"
             },
             avatar: {
                 card: {
@@ -3208,33 +3238,50 @@ const templateStyles = {
                 },
                 imageDiv: {
                     marginLeft: "-15px",
-                    marginTop: "-35px"
+                    marginTop: "-35px",
+                    display:"none"
                 }
             },
             summaryBox: {
-                marginTop: "-40px"
+                marginTop: "-40px",
+                display:"none"
             },
             position: {
-                fontWeight: "100"
+                fontWeight: "100",
+                // marginLeft:"45px"
+            },
+            anotherBox:{
+                // marginLeft:"200px",
+                display:"flex",
+                flexDirection:"column",
+                alignItems:"center"
+            },
+            name:{
+                display:"flex",
+                gap:"10px",
+                letterSpacing:"7px",
+                fontSize:"38px"
             }
         },
         summary: {
             box: {
                 borderBottom: "2px solid #2e3c47ff",
-                marginBottom: "15px"
+                marginBottom: "20px",
+                paddingBottom:"5px"
             },
             heading: {
                 // marginLeft:"45%",
                 color: "#2e3c47ff",
                 // borderBottom:"2px solid #2e3c47ff",
                 // width:"fit-content",
-                // marginBottom:"15px"
+                // marginBottom:"15px",
+                display:"none"
             },
         },
         workExpe: {
             box: {
                 borderBottom: "2px solid #2e3c47ff",
-                marginBottom: "15px"
+                marginBottom: "20px"
             },
             heading: {
                 // marginLeft:"40%",
@@ -3244,14 +3291,18 @@ const templateStyles = {
                 // marginBottom:"15px"
             },
             eachWorkPlace: {
-                padding: "10px"
-            }
+                padding: "0px",
+                marginLeft:"0px"
+            },
+            listItem:{
+                marginLeft:"10px"
+            },
         },
         education: {
             box: {
                 borderBottom: "2px solid #2e3c47ff",
-                marginBottom: "5px",
-                padding: "15px"
+                marginBottom: "20px",
+                padding: "0px"
             },
             heading: {
                 // paddingLeft:"45%",
@@ -3261,16 +3312,20 @@ const templateStyles = {
                 // marginBottom:"15px"
             },
             eachEducation: {
-                padding: "10px",
+                padding: "0px",
+                marginBottom:"10px",
                 degree: {
                     margin: "5px"
                 }
+            },
+            listItem:{
+                marginLeft:"10px"
             }
         },
         skills: {
             box: {
                 borderBottom: "2px solid #2e3c47ff",
-                marginBottom: "15px"
+                marginBottom: "20px"
             },
             heading: {
                 // marginLeft:"47%",
@@ -3293,7 +3348,14 @@ const templateStyles = {
                 // marginBottom:"15px"
             },
             innerbox: {
-                padding: "10px"
+                padding: "0px",
+                marginBottom:"10px"
+            },
+            title:{
+                fontWeight:"600"
+            },
+            listItem:{
+                marginLeft:"10px"
             }
         },
         award: {
@@ -3309,7 +3371,14 @@ const templateStyles = {
                 // marginBottom:"15px"
             },
             innerbox: {
-                padding: "10px"
+                padding: "0px",
+                marginBottom:"10px"
+            },
+            title:{
+                fontWeight:"600"
+            },
+            listItem:{
+                marginLeft:"10px"
             }
         },
         language: {
@@ -3321,15 +3390,74 @@ const templateStyles = {
                 // marginLeft:"43%",
                 color: "#2e3c47ff",
                 // borderBottom:"2px solid #2e3c47ff",
-                width: "fit-content",
+                // width: "fit-content",
                 // marginBottom:"15px"
             },
             listItem: {
-                margin: "5px 15px"
+                margin: "5px 10px"
             }
         },
+        contact:{
+            box:{
+                borderTop:"2px solid #2e3c47ff",
+                borderBottom:"2px solid #2e3c47ff",
+                padding:"10px 10px 0px 10px"
+            },
+            heading:{
+                display:"none"
+            },
+            list:{
+                display:"flex",
+                justifyContent:"space-around"
+            }
+        },
+        strength:{
+            box:{marginBottom:"20px",
+                borderBottom:"2px solid #2e3c47ff"
+            },
+            title:{
+                fontWeight:"600"
+            },
+            listItem:{
+                marginLeft:"10px"
+            }
+        },
+        certificate:{
+            box:{marginBottom:"20px",
+                borderBottom:"2px solid #2e3c47ff"
+            },
+            title:{
+                fontWeight:"600"
+            },
+            listItem:{
+                marginLeft:"10px"
+            }
+        },
+        achieve:{
+            box:{marginBottom:"20px",
+                borderBottom:"2px solid #2e3c47ff"
+            },
+            title:{
+                fontWeight:"600"
+            },
+            listItem:{
+                marginLeft:"10px"
+            }
+        },
+        projects:{
+            box:{marginBottom:"20px",
+                borderBottom:"2px solid #2e3c47ff"
+            },
+            title:{
+                fontWeight:"600"
+            },
+            listItem:{
+                marginLeft:"10px"
+            }
+        }
 
     },
+
     "522": {
         personalInfo: {
             box: {
@@ -3466,146 +3594,271 @@ const templateStyles = {
         },
 
     },
+
     "523": {
         personalInfo: {
             box: {
-                backgroundColor: "#2e3c47ff",
-                color: "white",
-                padding: "10px",
-                marginBottom: "15px"
+                backgroundColor: "#FEE14B",
+                color: "#111416",
+                padding: "0px",
+                marginBottom: "15px",
+                mixBox:{
+                display:"flex",
             },
+            },
+            
             avatar: {
                 card: {
-                    background: "none"
+                    background: "none",
+                    display:"flex"
                 },
                 imageDiv: {
-                    marginLeft: "-15px",
-                    marginTop: "-35px"
-                }
+                    marginLeft: "-20px",
+                    marginTop: "0px",
+                    marginBottom:"0px",
+                    borderRadius:"0px",
+                    height:"150px",
+                    width:"150px",
+                    boxShadow:"none",
+                    borderRight:"5px solid white"
+                },
+                
             },
             summaryBox: {
-                marginTop: "-40px"
+                marginTop: "-40px",
+                display:"none"
             },
             position: {
-                fontWeight: "100"
+                fontWeight: "100",
+                fontSize:"13px"
             },
             anotherBox: {
-                marginLeft: "-140px",
-                marginTop: "10px"
+                marginLeft: "30px",
+                marginTop: "30px",
+               
+            },
+            name:{
+                fontWeight:"600"
             }
         },
         summary: {
             box: {
-                borderBottom: "2px solid #2e3c47ff",
-                marginBottom: "15px"
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "25px",
+                marginLeft:"85px"
             },
             heading: {
-                // marginLeft:"45%",
-                color: "#2e3c47ff",
-                // borderBottom:"2px solid #2e3c47ff",
-                // width:"fit-content",
-                // marginBottom:"15px"
+                background:"#111416",
+                color:"lightgray",
+                width:"fit-content",
+                padding:"5px 10px",
+                marginBottom:"15px"
             },
+            content:{
+                lineHeight:"20px"
+            }
         },
         workExpe: {
             box: {
-                borderBottom: "2px solid #2e3c47ff",
-                marginBottom: "15px"
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "25px",
+                marginLeft:"85px"
             },
             heading: {
-                // marginLeft:"40%",
-                color: "#2e3c47ff",
-                // borderBottom:"2px solid #2e3c47ff",
-                // width:"fit-content",
-                // marginBottom:"15px"
+                background:"#111416",
+                color:"lightgray",
+                width:"fit-content",
+                padding:"5px 10px",
+                marginBottom:"15px"
             },
             eachWorkPlace: {
-                padding: "10px 150px"
+                padding: "0px 0px 5px 0px",
+                marginLeft:"0px"
             }
         },
         education: {
             box: {
-                borderBottom: "2px solid #2e3c47ff",
-                marginBottom: "5px",
-                padding: "15px"
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "25px",
+                padding: "0px",
+                marginLeft:"85px"
             },
             heading: {
-                // paddingLeft:"45%",
-                color: "#2e3c47ff",
-                // borderBottom:"2px solid #2e3c47ff",
-                // width:"fit-content",
-                // marginBottom:"15px"
+                background:"#111416",
+                color:"lightgray",
+                width:"fit-content",
+                padding:"5px 10px",
+                marginBottom:"15px"
             },
             eachEducation: {
-                padding: "10px 140px",
+                padding: "10px 0px",
+                
             }
         },
         skills: {
+            layoutType:"layout2",
             box: {
-                borderBottom: "2px solid #2e3c47ff",
-                marginBottom: "15px"
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "25px",
+                marginLeft:"85px",
+                paddingRight:"10px"
             },
             heading: {
-                // marginLeft:"47%",
-                color: "#2e3c47ff",
-                // borderBottom:"2px solid #2e3c47ff",
-                width: "fit-content",
-                // marginBottom:"15px"
+                background:"#111416",
+                color:"lightgray",
+                width:"fit-content",
+                padding:"5px 10px",
+                marginBottom:"15px"
             },
             listItem: {
                 marginLeft: "90px"
+            },
+            frontBars:{
+                background:"#111416"
             }
         },
         organiz: {
             box: {
-                borderBottom: "2px solid #2e3c47ff",
-                marginBottom: "15px"
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "25px",
+                marginLeft:"85px"
             },
             heading: {
-                // marginLeft:"40%",
-                color: "#2e3c47ff",
-                // borderBottom:"2px solid #2e3c47ff",
-                width: "fit-content",
-                // marginBottom:"15px"
+                background:"#111416",
+                color:"lightgray",
+                width:"fit-content",
+                padding:"5px 10px",
+                marginBottom:"15px"
             },
             innerbox: {
-                padding: "10px 140px"
+                padding: "10px 0px"
+            },
+            title:{
+                fontWeight:"600"
             }
         },
         award: {
             box: {
-                borderBottom: "2px solid #2e3c47ff",
-                marginBottom: "15px"
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "25px",
+                marginLeft:"85px"
             },
             heading: {
-                // marginLeft:"35%",
-                color: "#2e3c47ff",
-                // borderBottom:"2px solid #2e3c47ff",
-                width: "fit-content",
-                // marginBottom:"15px"
+                background:"#111416",
+                color:"lightgray",
+                width:"fit-content",
+                padding:"5px 10px",
+                marginBottom:"15px"
             },
             innerbox: {
-                padding: "10px 139px"
+                padding: "0px 0px 10px 0px"
+            },
+            title:{
+                fontWeight:"600"
             }
         },
         language: {
             box: {
-                borderBottom: "2px solid #2e3c47ff",
-                marginBottom: "15px"
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "25px",
+                marginLeft:"85px"
             },
             heading: {
-                // marginLeft:"43%",
-                color: "#2e3c47ff",
-                // borderBottom:"2px solid #2e3c47ff",
-                width: "fit-content",
-                // marginBottom:"15px"
+                background:"#111416",
+                color:"lightgray",
+                width:"fit-content",
+                padding:"5px 10px",
+                marginBottom:"15px"
             },
             listItem: {
-                margin: "5px 139px"
+                margin: "5px -5px"
             }
         },
+        contact:{
+            box:{
+                marginLeft:"85px",
+                marginBottom:"25px"
+            },
+            heading:{
+                background:"#111416",
+                color:"lightgray",
+                width:"fit-content",
+                padding:"5px 10px",
+                marginBottom:"15px"
+            }
+        },
+        strength:{
+            box:{
+                marginBottom:"25px",
+                marginLeft:"85px"
+            },
+            heading:{
+                background:"#111416",
+                color:"lightgray",
+                width:"fit-content",
+                padding:"5px 10px",
+                marginBottom:"15px"
+            },
+            title:{
+                fontWeight:"600",
+                padding:"0px",
+            },
+            listItem:{
+                padding:"0px",
+                marginLeft:"2px"
+            }
+        },
+        certificate:{
+            box:{
+                marginBottom:"25px",
+                marginLeft:"85px"
+            },
+            heading:{
+                background:"#111416",
+                color:"lightgray",
+                width:"fit-content",
+                padding:"5px 10px",
+                marginBottom:"15px"
+            },
+            title:{
+                fontWeight:"600"
+            }
+        },
+        projects:{
+            box:{
+                marginBottom:"25px",
+                marginLeft:"85px"
+            },
+            heading:{
+                background:"#111416",
+                color:"lightgray",
+                width:"fit-content",
+                padding:"5px 10px",
+                marginBottom:"15px"
+            },
+            title:{
+                fontWeight:"600"
+            }
+        },
+        achieve:{
+            box:{
+                marginBottom:"25px",
+                marginLeft:"85px"
+            },
+            heading:{
+                background:"#111416",
+                color:"lightgray",
+                width:"fit-content",
+                padding:"5px 10px",
+                marginBottom:"15px"
+            },
+            title:{
+                fontWeight:"600"
+            }
+        }
 
     },
+
     "524": {
         personalInfo: {
             box: {
@@ -3763,6 +4016,7 @@ const templateStyles = {
         },
 
     },
+
     "525": {
         personalInfo: {
             box: {
@@ -3923,6 +4177,7 @@ const templateStyles = {
         },
 
     },
+
     "526": {
         contact: {
             box: {
@@ -4177,6 +4432,7 @@ const templateStyles = {
         },
 
     },
+
     "501": {
         vars: {
 
@@ -4393,6 +4649,7 @@ const templateStyles = {
             }
         }
     },
+
     "21": {
         personalInfo: {
             box: {
@@ -4661,6 +4918,7 @@ const templateStyles = {
         }
 
     },
+
     "6": {
         personalInfo: {
             box: {
@@ -4912,6 +5170,7 @@ const templateStyles = {
         }
 
     },
+
     "23": {
         personalInfo: {
             box: {
@@ -5186,6 +5445,7 @@ const templateStyles = {
         }
 
     },
+
     "24": {
         layoutStyles:{
             leftColumn:{
@@ -5454,6 +5714,7 @@ const templateStyles = {
         }
 
     },
+
     "25": {
         personalInfo: {
             box: {
@@ -5708,6 +5969,7 @@ const templateStyles = {
         }
 
     },
+
 }
 
 
