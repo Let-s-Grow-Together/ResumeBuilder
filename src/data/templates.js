@@ -1061,7 +1061,7 @@ const template21 = {
 
 const template6 = {
     id: 6,
-    name: "Simple Single Column2",
+    name: "Split Balance",
     filteredColumn: "1",
     isAvatar: "true",
     layout: {
@@ -1278,7 +1278,7 @@ const template24 = {
 
 const template25 = {
     id: 25,
-    name: "Simple Single Column5",
+    name: "Neat Columns",
     pdf: "/templates/template24.pdf",
     filteredColumn: "1",
     isAvatar: "true",
@@ -1415,14 +1415,14 @@ const template516 = {
 
 const template521 = {
     id: 521,
-    name: "Simple Single Column1",
+    name: "Simple Flow",
     pdf: "/templates/template21.pdf",
     filteredColumn: "1",
     isAvatar: "true",
     layout: {
         grid: {
-            templateRows: "auto",
-            templateColumns: "1fr",  // single column
+            templateRows: "1fr 6fr",
+            templateColumns: "1fr",
             areas: [
                 {
                     name: "header",
@@ -1430,11 +1430,22 @@ const template521 = {
                     rowEnd: 2,
                     colStart: 1,
                     colEnd: 2,
-                    sections: ["personalInfo", "summary", "workExperience", "education", "skills", "organizations", "awards", "language"]
+                    style:{marginTop:"20px"},
+                    sections: ["personalInfo", "contact"]
+                },
+                {
+                    name: "header",
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 1,
+                    colEnd: 2,
+                    style:{margin:"170px 70px 10px 70px"},
+                    sections: [ "summary", "workExperience", "education", "skills", "organizations", "awards", "language"]
                 },
             ]
         },
-        padding: "10mm",
+        frozenSections:["personalInfo", "contact", "summary"],
+        padding: "0mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink:
             "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
@@ -1481,27 +1492,36 @@ const template522 = {
 
 const template523 = {
     id: 523,
-    name: "Simple Single Column3",
+    name: "One Vision",
     pdf: "/templates/template23.pdf",
     filteredColumn: "1",
     isAvatar: "true",
     layout: {
         grid: {
-            templateRows: "auto",
+            templateRows: " 1fr 6fr",
             templateColumns: "1fr",  // single column
             areas: [
                 {
-                    name: "mainSection",
+                    name: "header",
                     rowStart: 1,
                     rowEnd: 2,
                     colStart: 1,
                     colEnd: 2,
-                    sections: ["personalInfo", "awards", "language"]
+                    sections: ["personalInfo",]
+                },
+                {
+                    name: "mainSection",
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 1,
+                    colEnd: 2,
+                    style:{paddingRight:"15px"},
+                    sections: ["contact","summary", "workExperience", "education","skills", "language"]
                 },
             ]
         },
         frozenSections: ["contact", "summary", "personalInfo"],
-        padding: "10mm",
+        padding: "0mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink:
             "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
