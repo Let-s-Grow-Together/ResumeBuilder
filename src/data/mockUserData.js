@@ -29,12 +29,49 @@ const rawMockUserData = {
         }
     ],
 
-    skills: [
-        { id: "skill_1", text: "React", value: "50" },
-        { id: "skill_2", text: "JavaScript", value: "40"  },
-        { id: "skill_3", text: "HTML5", value: "60"  },
-        { id: "skill_4", text: "CSS3", value: "70"  },
-        { id: "skill_5", text: "Git & GitHub", value: "20"  },
+    "skills": [
+        {
+            "category": "FRONT END DEVELOPMENT",
+            "items": [
+                { "name": "React", "value": 50 },
+                { "name": "JavaScript", "value": 40 },
+                { "name": "HTML5", "value": 60 },
+                { "name": "CSS", "value": 55 },
+                { "name": "Redux", "value": 45 }
+            ]
+        },
+        {
+            "category": "BACK END DEVELOPMENT",
+            "items": [
+                { "name": "Java", "value": 30 },
+                { "name": "Python", "value": 50 },
+                { "name": "Spring", "value": 40 },
+                { "name": "Express", "value": 35 },
+                { "name": "NodeJS", "value": 45 }
+            ]
+        },
+        {
+            "category": "SOFT SKILLS",
+            "items": [
+                { "name": "Team player", "value": 100 },
+                { "name": "Bias for action", "value": 90 },
+                { "name": "Deliver results", "value": 80 }
+            ]
+        },
+        {
+            "category": "DATA PIPELINES",
+            "items": [
+                { "name": "Amazon Redshift", "value": 70 },
+                { "name": "Amazon EFS", "value": 60 }
+            ]
+        }
+    ],
+
+    interests: [
+        { id: "int_1", text: "Travel", icon: "✈️" },
+        { id: "int_2", text: "Fitness", icon: "💪" },
+        { id: "int_3", text: "Nutrition", icon: "🥗" },
+        { id: "int_4", text: "Coding", icon: "💻" },
     ],
 
     language: [
@@ -42,6 +79,17 @@ const rawMockUserData = {
         { id: "lang_2", text: "German" },
         { id: "lang_3", text: "French" },
         { id: "lang_4", text: "Russian" },
+    ],
+
+    coursework: [
+        { id: "cw_1", text: "Data Structures and Algorithms" },
+        { id: "cw_2", text: "Developing Android Apps" },
+        { id: "cw_3", text: "Machine Learning" },
+        { id: "cw_4", text: "Data Mining" },
+        { id: "cw_5", text: "Applied Statistics" },
+        { id: "cw_6", text: "Linear Algebra" },
+        { id: "cw_7", text: "Differential Equations" },
+        { id: "cw_8", text: "Robotics: Mechanical Design" }
     ],
 
     projects: [
@@ -110,29 +158,76 @@ const rawMockUserData = {
 
     experience: [
         {
-            id: "exp1",
-            role: "Senior Web Designer",
-            organization: "Art Creative Solution",
-            location: "Remote",
-            startDate: "2023",
-            endDate: "2024",
-            description: [
-                { id: 'des1', text: "Built reusable React components" },
-                { id: 'des2', text: "Integrated REST APIs" },
-                { id: 'des3', text: "Improved UI performance of various projects" },
-            ]
-        },
-        {
-            id: "exp2",
-            role: "Junior Web Designer",
-            organization: "Art Creative Solution",
-            location: "Remote",
-            startDate: "2021",
-            endDate: "2023",
-            description: [
-                { id: 'des1', text: "Built reusable React components that were generic and can be changed according to developers needs" },
-                { id: 'des2', text: "Integrated REST APIs" },
-                { id: 'des3', text: "Improved UI performance in main project of the company" },
+            items: [
+                {
+                    id: "exp1",
+                    role: "Software Engineer |",
+                    organization: "AMAZON",
+                    location: "Seattle, WA",
+                    startDate: "Jul 2019",
+                    endDate: "Present",
+                    techStack: "Java, Spring, Python, AWS, Machine Learning, Recommendations",
+                    description: [
+                        {
+                            id: "des1",
+                            text: "Ideated and developed a new strategy to recommend Amazon's Choice items related to customer's incomplete missions"
+                        },
+                        {
+                            id: "des2",
+                            text: "Led technical architecture discussions with Amazon's Choice and Amazon API teams and designed user experience with Amazon Gateway team"
+                        },
+                        {
+                            id: "des3",
+                            text: "Built a data pipeline with Amazon Redshift and Amazon EFS to use offline data, thereby limiting traffic for Amazon's Choice service and eliminating scalability issues"
+                        },
+                        {
+                            id: "des4",
+                            text: "Ideated and developed a new strategy to recommend Amazon's Choice items related to customer's incomplete missions"
+                        },
+                        {
+                            id: "des5",
+                            text: "Led technical architecture discussions with Amazon's Choice and Amazon API teams and designed user experience with Amazon Gateway team"
+                        },
+                        {
+                            id: "des6",
+                            text: "Built a data pipeline with Amazon Redshift and Amazon EFS to use offline data, thereby limiting traffic for Amazon's Choice service and eliminating scalability issues"
+                        },
+                        {
+                            id: "des7",
+                            text: "Ideated and developed a new strategy to recommend Amazon's Choice items related to customer's incomplete missions"
+                        },
+                        {
+                            id: "des8",
+                            text: "Led technical architecture discussions with Amazon's Choice and Amazon API teams and designed user experience with Amazon Gateway team"
+                        },
+                        {
+                            id: "des9",
+                            text: "Built a data pipeline with Amazon Redshift and Amazon EFS to use offline data, thereby limiting traffic for Amazon's Choice service and eliminating scalability issues"
+                        }
+                    ]
+                },
+                {
+                    id: "exp2",
+                    role: "Software Engineer",
+                    organization: "FINTECH CORPORATION",
+                    location: "Chicago, IL",
+                    startDate: "Jan 2017",
+                    endDate: "Jun 2019",
+                    description: [
+                        {
+                            id: "des1",
+                            text: "Built reusable React components that were generic and can be changed according to developers needs"
+                        },
+                        {
+                            id: "des2",
+                            text: "Integrated REST APIs"
+                        },
+                        {
+                            id: "des3",
+                            text: "Improved UI performance in main project of the company"
+                        }
+                    ]
+                }
             ]
         }
     ],

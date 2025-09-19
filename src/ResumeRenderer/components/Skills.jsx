@@ -1,107 +1,156 @@
+
 import { useRef, useState } from "react";
+import React from "react";
 import { useResume } from "../../context/ResumeContext";
 import InlineToolbar from "../../Components/shared/InlineToolbar";
 
-const layoutComponents = {
-    layout2: LayoutBars,
-};
-
-function LayoutDefault({ data, style, viewType, editMode, handleTextBlur, BoxStyle }) {
-    return viewType === "list" ? (
-        <ul style={style?.skills?.wholeList}>
-            {data.map((skill, index) => (
-                <li
-                    key={skill.id}
-                    data-id={skill.id}
-                    contentEditable={editMode}
-                    suppressContentEditableWarning
-                    onBlur={(e) => handleTextBlur(index, e)}
-                    style={style?.skills?.listItem}
-                    dangerouslySetInnerHTML={{ __html: skill.text }}
-                />
-            ))}
-        </ul>
-    ) : (
-        <div className="individualSkill" style={style?.skills?.everySkillBox}>
-            {data.map((skill, index) => (
-                <span
-                    key={skill.id}
-                    data-id={skill.id}
-                    contentEditable={editMode}
-                    suppressContentEditableWarning
-                    onBlur={(e) => handleTextBlur(index, e)}
-                    style={BoxStyle}
-                    dangerouslySetInnerHTML={{ __html: skill.text }}
-                />
-            ))}
-        </div>
-    );
-}
-
-function LayoutBars({ data, style, editMode, viewType, handleTextBlur, handleMouseDown, draggingIndex, BoxStyle }) {
-    if (viewType === "list") {
-        return (
-            <ul style={style?.skills?.wholeList}>
-                {data.map((skill, index) => (
-                    <li
-                        key={skill.id}
-                        data-id={skill.id}
-                        contentEditable={editMode}
-                        suppressContentEditableWarning
-                        onBlur={(e) => handleTextBlur(index, e)}
-                        style={style?.skills?.listItem}
-                        dangerouslySetInnerHTML={{ __html: skill.text }}
-                    />
-                ))}
-            </ul>
-        );
-    }
+//
+// === Layout: Categories ===
+//
+function LayoutCategories({ data, style, editMode, handleCategoryBlur, handleItemEdit }) {
     return (
-        <div className="skillsBars" style={{ display: "flex", flexDirection: "column", gap: "12px", ...style?.skills?.bars }}>
-            {data.map((skill, index) => (
+        <div className="categorizedSkills" style={{ ...style?.skills?.categoriesContainer }}>
+            {data.map((group, groupIndex) => (
                 <div
-                    className="skillItem"
-                    key={skill.id}
-                    style={{ display: "flex", alignItems: "center", gap: "12px", ...style?.skills?.skillItem }}
+                    key={groupIndex}
+                    className="skillCategory"
+                    style={{ marginBottom: "1rem", ...style?.skills?.categoryBox }}
                 >
-                    <span
-                        data-id={skill.id}
+                    {/* Category Heading */}
+                    <h3
                         contentEditable={editMode}
                         suppressContentEditableWarning
-                        onBlur={(e) => handleTextBlur(index, e)}
-                        dangerouslySetInnerHTML={{ __html: skill.text }}
-                        style={{ width: "120px", outline: "none", paddingLeft: "15px", ...style?.skills?.label }}
-                    />
-                    <div
-                        onMouseDown={(e) => handleMouseDown(index, e)}
-                        style={{
-                            flex: 1,
-                            background: "#ccc",
-                            height: "6px",
-                            borderRadius: "4px",
-                            cursor: editMode ? "pointer" : "default",
-                            position: "relative",
-                            ...style?.skills?.backBars
-                        }}
+                        onBlur={(e) => handleCategoryBlur(groupIndex, e)}
+                        style={{ ...style?.skills?.h3 }}
                     >
-                        <div
-                            style={{
-                                width: `${skill.value}%`,
-                                height: "100%",
-                                background: "#fff",
-                                borderRadius: "4px",
-                                transition: draggingIndex === index ? "none" : "width 0.2s ease",
-                                ...style?.skills?.frontBars
-                            }}
-                        />
+                        {group.category}
+                    </h3>
+
+                    {/* Items */}
+                    <div
+                        className="skillItems"
+                        style={{ display: "flex", flexWrap: "wrap", gap: "0.3rem", alignItems: "center" }}
+                    >
+                        {group.items.map((item, itemIndex) => (
+                            <React.Fragment key={`${groupIndex}-${itemIndex}`}>
+                                <span
+                                    contentEditable={editMode}
+                                    suppressContentEditableWarning
+                                    onBlur={(e) => handleItemEdit(groupIndex, itemIndex, e)}
+                                    style={{ ...style?.skills?.span }}
+                                >
+                                    {item.name}
+                                </span>
+                                {itemIndex < group.items.length - 1 && (
+                                    <span style={{ marginLeft: "0.5rem", ...style?.skills?.separator }}>•</span>
+                                )}
+                            </React.Fragment>
+                        ))}
                     </div>
-                    <span style={{ minWidth: "30px", textAlign: "right", ...style?.skills?.perValues }}>{skill.value}%</span>
                 </div>
             ))}
         </div>
     );
 }
 
+//
+// === Layout: Bars ===
+//
+function LayoutBars({ data, style, editMode, handleItemEdit, handleMouseDown, draggingIndex }) {
+    return (
+        <div
+            className="skillsBars"
+            style={{ display: "flex", flexDirection: "column", gap: "12px", ...style?.skills?.bars }}
+        >
+            {data.map((group, groupIndex) =>
+                group.items.map((item, itemIndex) => (
+                    <div
+                        className="skillItem"
+                        key={`${groupIndex}-${itemIndex}`}
+                        style={{ display: "flex", alignItems: "center", gap: "12px", ...style?.skills?.skillItem }}
+                    >
+                        {/* Label */}
+                        <span
+                            contentEditable={editMode}
+                            suppressContentEditableWarning
+                            onBlur={(e) => handleItemEdit(groupIndex, itemIndex, e)}
+                            style={{ width: "120px", outline: "none", paddingLeft: "5px", ...style?.skills?.label }}
+                        >
+                            {item.name}
+                        </span>
+
+                        {/* Progress Bar */}
+                        <div
+                            onMouseDown={(e) => handleMouseDown(groupIndex, itemIndex, e)}
+                            style={{
+                                flex: 1,
+                                background: "#ccc",
+                                height: "6px",
+                                borderRadius: "4px",
+                                cursor: editMode ? "pointer" : "default",
+                                position: "relative",
+                                ...style?.skills?.backBars
+                            }}
+                        >
+                            <div
+                                style={{
+                                    width: `${item.value}%`,
+                                    height: "100%",
+                                    background: "#fff",
+                                    borderRadius: "4px",
+                                    transition:
+                                        draggingIndex === `${groupIndex}-${itemIndex}` ? "none" : "width 0.2s ease",
+                                    ...style?.skills?.frontBars
+                                }}
+                            />
+                        </div>
+
+                        {/* Percentage */}
+                        <span style={{ minWidth: "30px", textAlign: "right", ...style?.skills?.perValues }}>
+                            {item.value}%
+                        </span>
+                    </div>
+                ))
+            )}
+        </div>
+    );
+}
+
+//
+// === Layout: Simple List ===
+//
+function LayoutDefault({ data, style, editMode, handleItemEdit }) {
+    return (
+        <ul style={style?.skills?.wholeList}>
+            {data.map((group, groupIndex) =>
+                group.items.map((item, itemIndex) => (
+                    <li
+                        key={`${groupIndex}-${itemIndex}`}
+                        contentEditable={editMode}
+                        suppressContentEditableWarning
+                        onBlur={(e) => handleItemEdit(groupIndex, itemIndex, e)}
+                        style={style?.skills?.listItem}
+                    >
+                        {item.name}
+                    </li>
+                ))
+            )}
+        </ul>
+    );
+}
+
+//
+// === Layout Mapping ===
+//
+const layoutComponents = {
+    layout1: LayoutDefault,
+    layout2: LayoutBars,
+    layout3: LayoutCategories,
+};
+
+//
+// === Main Component ===
+//
 export default function Skills({ areaName }) {
     const {
         data,
@@ -117,36 +166,35 @@ export default function Skills({ areaName }) {
     const [draggingIndex, setDraggingIndex] = useState(null);
 
     const viewType = viewTypes?.skills || "block";
-    const layoutType = style?.skills?.layoutType;
+    const layoutType = style?.skills?.layoutType || "layout1";
     const LayoutComponent = layoutComponents[layoutType] || LayoutDefault;
     const isSelected = selectedSection === "skills";
 
-    const handleTextBlur = (index, e) => {
-        const newValue = e.target.innerHTML.trim();
+    // === Handlers ===
+    const handleCategoryBlur = (groupIndex, e) => {
+        const newValue = e.target.innerText.trim();
         const updatedSkills = [...data.skills];
-        updatedSkills[index] = { ...updatedSkills[index], text: newValue };
+        updatedSkills[groupIndex] = { ...updatedSkills[groupIndex], category: newValue };
         updateField("skills", null, updatedSkills);
     };
 
-    const updateValueFromEvent = (index, e, barElement) => {
-        const barRect = barElement.getBoundingClientRect();
-        const posX = e.clientX - barRect.left;
-        let newValue = Math.round((posX / barRect.width) * 100);
-        newValue = Math.max(0, Math.min(100, newValue));
-
+    const handleItemEdit = (groupIndex, itemIndex, e) => {
+        const newValue = e.target.innerText.trim();
         const updatedSkills = [...data.skills];
-        updatedSkills[index] = { ...updatedSkills[index], value: newValue };
+        const updatedItems = [...updatedSkills[groupIndex].items];
+        updatedItems[itemIndex] = { ...updatedItems[itemIndex], name: newValue };
+        updatedSkills[groupIndex] = { ...updatedSkills[groupIndex], items: updatedItems };
         updateField("skills", null, updatedSkills);
     };
 
-    const handleMouseDown = (index, e) => {
+    const handleMouseDown = (groupIndex, itemIndex, e) => {
         if (!editMode) return;
         const barElement = e.currentTarget;
-        setDraggingIndex(index);
-        updateValueFromEvent(index, e, barElement);
+        setDraggingIndex(`${groupIndex}-${itemIndex}`);
+        updateValueFromEvent(groupIndex, itemIndex, e, barElement);
 
         const handleMouseMove = (moveEvent) => {
-            updateValueFromEvent(index, moveEvent, barElement);
+            updateValueFromEvent(groupIndex, itemIndex, moveEvent, barElement);
         };
 
         const handleMouseUp = () => {
@@ -159,11 +207,23 @@ export default function Skills({ areaName }) {
         document.addEventListener("mouseup", handleMouseUp);
     };
 
-    const layoutHeading = style?.layoutStyles && areaName && style.layoutStyles[areaName]?.heading;
-    const headingStyle = layoutHeading ?? style?.skills?.heading;
+    const updateValueFromEvent = (groupIndex, itemIndex, e, barElement) => {
+        const barRect = barElement.getBoundingClientRect();
+        const posX = e.clientX - barRect.left;
+        let newValue = Math.round((posX / barRect.width) * 100);
+        newValue = Math.max(0, Math.min(100, newValue));
 
-    const layoutBoxStyle = style?.layoutStyles && areaName && style.layoutStyles[areaName]?.eachSkillBox;
-    const BoxStyle = layoutBoxStyle ?? style?.skills?.eachSkillBox;
+        const updatedSkills = [...data.skills];
+        const updatedItems = [...updatedSkills[groupIndex].items];
+        updatedItems[itemIndex] = { ...updatedItems[itemIndex], value: newValue };
+        updatedSkills[groupIndex] = { ...updatedSkills[groupIndex], items: updatedItems };
+        updateField("skills", null, updatedSkills);
+    };
+
+    // === Styles ===
+    const layoutHeading =
+        style?.layoutStyles && areaName && style.layoutStyles[areaName]?.heading;
+    const headingStyle = layoutHeading ?? style?.skills?.heading;
 
     return (
         <div
@@ -179,10 +239,10 @@ export default function Skills({ areaName }) {
                 style={style}
                 editMode={editMode}
                 viewType={viewType}
-                handleTextBlur={handleTextBlur}
+                handleCategoryBlur={handleCategoryBlur}
+                handleItemEdit={handleItemEdit}
                 handleMouseDown={handleMouseDown}
                 draggingIndex={draggingIndex}
-                BoxStyle={BoxStyle}
             />
 
             <InlineToolbar editMode={editMode} containerRef={skillsRef} sectionName="skills" />
