@@ -1169,11 +1169,11 @@ const template521 = {
                     colStart: 1,
                     colEnd: 2,
                     style:{margin:"170px 70px 10px 70px"},
-                    sections: [ "summary", "workExperience", "education", "skills", "organizations", "awards", "language"]
+                    sections: [ "summary", "workExperience", "education", "skills", "organizations"]
                 },
             ]
         },
-        frozenSections:["personalInfo", "contact", "summary"],
+        frozenSections:["personalInfo", "contact", "summary","avatar"],
         padding: "0mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink:

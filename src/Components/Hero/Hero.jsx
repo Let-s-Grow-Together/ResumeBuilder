@@ -8,7 +8,7 @@ export default function Hero() {
         navigate("/all-templates");
     };
     const handleGetStarted = () => {
-        navigate("/resume/7?edit=true");
+        navigate("/resume/1?edit=true");
     };
     return (
         <section className="hero">
