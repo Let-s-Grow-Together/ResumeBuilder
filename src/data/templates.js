@@ -31,7 +31,7 @@ const template1 = {
                     rowEnd: 3,
                     colStart: 2,
                     colEnd: 3,
-                    sections: ["workExperience", "projects", "language"]
+                    sections: ["workExperience", "projects"]
                 },
             ],
         },
@@ -1760,7 +1760,7 @@ const template600 = {
                     colStart: 2,
                     colEnd: 3,
                     style:{marginTop:"0px", textAlign:"left",},
-                    sections: [ "education", "awards", "Coursework", "Interests"]
+                    sections: [ "education", "awards", "Coursework"]
                 },
             ]
         },

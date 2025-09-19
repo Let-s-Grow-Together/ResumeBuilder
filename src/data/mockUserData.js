@@ -35,9 +35,6 @@ const rawMockUserData = {
             "items": [
                 { "name": "React", "value": 50 },
                 { "name": "JavaScript", "value": 40 },
-                { "name": "HTML5", "value": 60 },
-                { "name": "CSS", "value": 55 },
-                { "name": "Redux", "value": 45 }
             ]
         },
         {
@@ -45,26 +42,8 @@ const rawMockUserData = {
             "items": [
                 { "name": "Java", "value": 30 },
                 { "name": "Python", "value": 50 },
-                { "name": "Spring", "value": 40 },
-                { "name": "Express", "value": 35 },
-                { "name": "NodeJS", "value": 45 }
             ]
         },
-        {
-            "category": "SOFT SKILLS",
-            "items": [
-                { "name": "Team player", "value": 100 },
-                { "name": "Bias for action", "value": 90 },
-                { "name": "Deliver results", "value": 80 }
-            ]
-        },
-        {
-            "category": "DATA PIPELINES",
-            "items": [
-                { "name": "Amazon Redshift", "value": 70 },
-                { "name": "Amazon EFS", "value": 60 }
-            ]
-        }
     ],
 
     interests: [
@@ -85,11 +64,6 @@ const rawMockUserData = {
         { id: "cw_1", text: "Data Structures and Algorithms" },
         { id: "cw_2", text: "Developing Android Apps" },
         { id: "cw_3", text: "Machine Learning" },
-        { id: "cw_4", text: "Data Mining" },
-        { id: "cw_5", text: "Applied Statistics" },
-        { id: "cw_6", text: "Linear Algebra" },
-        { id: "cw_7", text: "Differential Equations" },
-        { id: "cw_8", text: "Robotics: Mechanical Design" }
     ],
 
     projects: [
@@ -172,38 +146,6 @@ const rawMockUserData = {
                             id: "des1",
                             text: "Ideated and developed a new strategy to recommend Amazon's Choice items related to customer's incomplete missions"
                         },
-                        {
-                            id: "des2",
-                            text: "Led technical architecture discussions with Amazon's Choice and Amazon API teams and designed user experience with Amazon Gateway team"
-                        },
-                        {
-                            id: "des3",
-                            text: "Built a data pipeline with Amazon Redshift and Amazon EFS to use offline data, thereby limiting traffic for Amazon's Choice service and eliminating scalability issues"
-                        },
-                        {
-                            id: "des4",
-                            text: "Ideated and developed a new strategy to recommend Amazon's Choice items related to customer's incomplete missions"
-                        },
-                        {
-                            id: "des5",
-                            text: "Led technical architecture discussions with Amazon's Choice and Amazon API teams and designed user experience with Amazon Gateway team"
-                        },
-                        {
-                            id: "des6",
-                            text: "Built a data pipeline with Amazon Redshift and Amazon EFS to use offline data, thereby limiting traffic for Amazon's Choice service and eliminating scalability issues"
-                        },
-                        {
-                            id: "des7",
-                            text: "Ideated and developed a new strategy to recommend Amazon's Choice items related to customer's incomplete missions"
-                        },
-                        {
-                            id: "des8",
-                            text: "Led technical architecture discussions with Amazon's Choice and Amazon API teams and designed user experience with Amazon Gateway team"
-                        },
-                        {
-                            id: "des9",
-                            text: "Built a data pipeline with Amazon Redshift and Amazon EFS to use offline data, thereby limiting traffic for Amazon's Choice service and eliminating scalability issues"
-                        }
                     ]
                 },
                 {
@@ -222,10 +164,6 @@ const rawMockUserData = {
                             id: "des2",
                             text: "Integrated REST APIs"
                         },
-                        {
-                            id: "des3",
-                            text: "Improved UI performance in main project of the company"
-                        }
                     ]
                 }
             ]
