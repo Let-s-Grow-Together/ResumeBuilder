@@ -33,18 +33,14 @@ export default function App() {
                     />
                     <Route
                         path='/resume/:templateId'
-                        element={<ResumePage onLoginClick={() => setAuthModalOpen(true)} />}
+                        element={<ResumePage onLoginClick={() => setAuthModalOpen(true)} setAuthModalOpen={setAuthModalOpen} />}
                     />
                     <Route
                         path='/all-templates'
                         element={<AllTemplatesPage onLoginClick={() => setAuthModalOpen(true)} />}
                     />
-
-                    <Route path='/auth' element={<AuthPage />} />
                     <Route path="/about" element={<AboutPage />} />
-                     <Route path="/templates" element={<AllTemplatesPage />} /> 
-
-                    
+                    <Route path="/templates" element={<AllTemplatesPage />} />
 
                 </Routes>
             </Router>

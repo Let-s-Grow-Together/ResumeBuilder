@@ -17,7 +17,7 @@ export default function AuthModal({ isOpen, onClose }) {
       if (error) {
         alert(error.message);
       } else {
-        alert("Logged in successfully!");
+        // alert("Logged in successfully!");
         onClose();
       }
     } else {

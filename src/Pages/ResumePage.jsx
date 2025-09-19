@@ -18,7 +18,7 @@ import SidebarNav from "./SidebarNav";
 import './Resumepage.css';
 import { toPng } from "html-to-image";
 
-export default function ResumePage({ onLoginClick }) {
+export default function ResumePage({ onLoginClick,setAuthModalOpen }) {
     const [user, setUser] = useState(null);
     const [selectedTemplate, setSelectedTemplate] = useState(null);
     const [userData, setUserData] = useState(null);
@@ -29,6 +29,20 @@ export default function ResumePage({ onLoginClick }) {
     const resumeRef = useRef();
 
     const editModeFromURL = searchParams.get("edit") === "true";
+
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if ((event.ctrlKey || event.metaKey) && event.key === 'p') {
+                event.preventDefault();
+                handleDownload();
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+    }, []);
 
     useEffect(() => {
         supabase.auth.getUser().then(({ data: { user } }) => {
@@ -68,7 +82,7 @@ export default function ResumePage({ onLoginClick }) {
         } = await supabase.auth.getUser();
 
         if (!currentUser) {
-            navigate("/auth");
+            setAuthModalOpen(true);
             return;
         }
 
