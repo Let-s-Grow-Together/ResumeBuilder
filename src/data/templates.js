@@ -102,7 +102,7 @@ const template3 = {
 const template6 = {
     id: 6,
     name: "Split Balance",
-    filteredColumn: "1",
+    filteredColumn: "2",
     isAvatar: "true",
     layout: {
         grid: {
@@ -197,7 +197,7 @@ const template8 = {
 const template9 = {
     id: 9,
     name: "Modern Sidebar",
-    filteredColumn: "3",
+    filteredColumn: "2",
     isAvatar: "true",
     layout: {
         grid: {
@@ -536,7 +536,7 @@ const template15 = {
 const template21 = {
     id: 21,
     name: "Polished Form",
-    filteredColumn: "1",
+    filteredColumn: "2",
     isAvatar: "true",
     layout: {
         grid: {
@@ -596,7 +596,7 @@ const template21 = {
 const template23 = {
     id: 23,
     name: "Career Peak",
-    filteredColumn: "1",
+    filteredColumn: "2",
     isAvatar: "true",
     layout: {
         grid: {
@@ -650,7 +650,7 @@ const template23 = {
 const template24 = {
     id: 24,
     name: "Split Vision",
-    filteredColumn: "1",
+    filteredColumn: "2",
     isAvatar: "true",
     layout: {
         grid: {
