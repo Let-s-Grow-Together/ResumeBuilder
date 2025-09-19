@@ -1,5 +1,3 @@
-import { faMoneyBillWave } from "@fortawesome/free-solid-svg-icons";
-
 const sharedStyles = {
     "2": {
         heading: {
@@ -1148,6 +1146,9 @@ const templateStyles = {
             heading: {
                 ...sharedStyles["5"].heading,
                 marginBottom: "1rem"
+            },
+            content: {
+                paddingLeft: "0px"
             }
         },
         skills: {
@@ -1160,7 +1161,10 @@ const templateStyles = {
             },
             list: "true",
             wholeList: {
-                marginLeft: "1rem"
+                // marginLeft: "1rem"
+                paddingLeft: "15px"
+            },
+            everySkillBox: {
             }
         },
         workExpe: {
@@ -1180,14 +1184,21 @@ const templateStyles = {
                 width: "0px",
                 height: "0px"
             },
-            eachWorkPlace:{
-                paddingLeft: "0px"
+            eachWorkPlace: {
+                paddingLeft: "0px",
+                marginLeft: "0px"
+            },
+            content: {
+                marginLeft: "0px"
             }
         },
         contact: {
             heading: {
                 ...sharedStyles["5"].heading,
                 marginBottom: "1rem"
+            },
+            listItem: {
+                paddingLeft: "1px"
             },
             visibleFields: ["phoneNo", "email", "address"],
         },
@@ -1216,6 +1227,9 @@ const templateStyles = {
                 ...sharedStyles["5"].heading,
                 marginBottom: "1rem"
             },
+            content: {
+                paddingLeft: "0px"
+            }
         },
         summary: {
             heading: {
@@ -1228,7 +1242,7 @@ const templateStyles = {
                 ...sharedStyles["5"].heading,
                 marginBottom: "1rem"
             },
-            list:{
+            list: {
                 paddingLeft: "16px"
             }
         },
@@ -1237,8 +1251,11 @@ const templateStyles = {
                 ...sharedStyles["5"].heading,
                 marginBottom: "1rem"
             },
-            list:{
+            list: {
                 paddingLeft: "15px"
+            },
+            content: {
+                paddingLeft: "0px"
             }
         },
         award: {
@@ -1252,6 +1269,9 @@ const templateStyles = {
                 ...sharedStyles["5"].heading,
                 marginBottom: "1rem"
             },
+            content: {
+                paddingLeft: "0px"
+            }
         }
     },
     "116": {
@@ -1375,6 +1395,9 @@ const templateStyles = {
             eachSkillBox: {
                 // color: "var(--primary-color)",
                 border: "1px solid white"
+            },
+            wholeList: {
+                paddingLeft: "16px"
             }
         },
         personalInfo: {
@@ -1393,28 +1416,31 @@ const templateStyles = {
             summary: {
                 display: "none"
             },
-            summaryBox:{
+            /* summaryBox:{
                 paddingLeft: "0px"
-            },
-            anotherBox:{
+            }, */
+            /* anotherBox:{
                 paddingLeft: "0px"
             },
             mixBox:{
                 paddingLeft: "0px"
-            },
+            }, */
         },
         education: {
             box: {
                 // color: "var(--primary-color)",
                 border: "none",
                 paddingTop: "1rem",
-                padding: "0rem"
+                padding: "0rem 1rem"
             },
             heading: {
                 // color: "var(--primary-color)",
                 textDecoration: "none",
                 // borderBottom: "2px solid var(--primary-color)",
                 marginBottom: "5px"
+            },
+            content: {
+                paddingLeft: "0px"
             }
         },
         workExpe: {
@@ -1422,7 +1448,7 @@ const templateStyles = {
                 // color: "var(--primary-color)",
                 border: "none",
                 paddingTop: "1.5rem",
-                padding: "0rem"
+                padding: "0rem 1rem"
             },
             heading: {
                 // color: "var(--primary-color)",
@@ -1430,22 +1456,29 @@ const templateStyles = {
                 borderBottom: "2px solid var(--primary-color)",
                 marginBottom: "5px"
             },
-            eachWorkPlace:{
+            eachWorkPlace: {
                 marginLeft: "2px"
-            }
+            },
+            content: {
+                paddingLeft: "0px",
+                marginLeft: "0px"
+            },
         },
         projects: {
             box: {
                 // color: "var(--primary-color)",
                 border: "none",
                 paddingTop: "1.5rem",
-                padding: "0rem"
+                padding: "0rem 1rem"
             },
             heading: {
                 // color: "var(--primary-color)",
                 textDecoration: "none",
                 borderBottom: "2px solid var(--primary-color)",
                 marginBottom: "5px"
+            },
+            content: {
+                paddingLeft: "0px"
             }
         },
         certificate: {
@@ -1453,7 +1486,7 @@ const templateStyles = {
                 // color: "var(--primary-color)",
                 border: "none",
                 paddingTop: "1.5rem",
-                padding: "0rem",
+                padding: "0rem 1rem",
                 // paddingLeft: "1rem"
             },
             heading: {
@@ -1466,14 +1499,33 @@ const templateStyles = {
                 // paddingLeft: "10px"
             }
         },
-        organiz:{
-            list:{
+        organiz: {
+            box: {
+                padding: "0rem 1rem"
+            },
+            list: {
+                paddingLeft: "15px"
+            },
+            content: {
+                paddingLeft: "0px"
+            }
+        },
+        strength: {
+            box: {
+                padding: "0rem 1rem"
+            },
+            list: {
                 paddingLeft: "15px"
             }
         },
-        strength:{
-            list:{
-                paddingLeft: "15px"
+        award: {
+            box: {
+                padding: "0rem 1rem"
+            }
+        },
+        achieve: {
+            box: {
+                padding: "0rem 1rem"
             }
         }
     },
@@ -1777,6 +1829,14 @@ const templateStyles = {
                 marginLeft: "-20px"
             }
         },
+        strength: {
+            heading: {
+                borderBottom: "1px solid #142c45ff",
+                marginBottom: "10px",
+                marginTop: "20px",
+                paddingBottom: "10px"
+            },
+        },
         skills: {
             heading: {
                 borderBottom: "1px solid #142c45ff",
@@ -1793,6 +1853,9 @@ const templateStyles = {
                 borderRadius: "5px",
                 color: "white",
                 marginRight: "5px"
+            },
+            wholeList:{
+                paddingLeft:"15px"
             }
         },
         achieve: {
@@ -1807,6 +1870,9 @@ const templateStyles = {
                 marginTop: "10px",
                 marginBottom: "5px"
             },
+            list:{
+                paddingLeft:"15px"
+            }
         },
         contact: {
             box: {
@@ -1815,16 +1881,19 @@ const templateStyles = {
             heading: {
                 borderBottom: "1px solid #142c45ff",
                 marginBottom: "10px"
+            },
+            listItem: {
+                paddingLeft: "0px"
             }
         },
         personalInfo: {
             mixBox: {
-                marginLeft: '1rem',
+                // marginLeft: '1rem',
                 display: 'flex',
                 alignItems: 'center'
             },
             box: {
-                padding: "15px",
+                padding: "15px 0px",
                 marginBottom: "10px",
                 background: "#142c45ff",
                 color: "white",
@@ -1858,6 +1927,9 @@ const templateStyles = {
             heading: {
                 marginBottom: "10px",
                 borderBottom: "1px solid #142c45ff"
+            },
+            wholeList: {
+                paddingLeft: "15px"
             }
         },
         award: {
@@ -1882,6 +1954,9 @@ const templateStyles = {
             },
             eachProject: {
                 marginBottom: "10px"
+            },
+            content: {
+                paddingLeft: "0px"
             }
         },
         summary: {
@@ -1905,6 +1980,9 @@ const templateStyles = {
             eachWorkPlace: {
                 marginBottom: "15px"
             },
+            content: {
+                marginLeft: "0px"
+            }
         },
         education: {
             box: {
@@ -1920,6 +1998,9 @@ const templateStyles = {
             degree: {
                 marginBottom: "5px"
             },
+            content: {
+                paddingLeft: "0px"
+            }
         },
         organiz: {
             heading: {
@@ -1932,6 +2013,12 @@ const templateStyles = {
             innerbox: {
                 marginBottom: "10px",
             },
+            content: {
+                paddingLeft: "0px"
+            },
+            list:{
+                paddingLeft:"15px"
+            }
         },
         certificate: {
             heading: {
@@ -1946,6 +2033,9 @@ const templateStyles = {
             },
             eachcertificate: {
                 marginBottom: "10px"
+            },
+            content: {
+                paddingLeft: "0px"
             }
         }
     },
@@ -2261,7 +2351,7 @@ const templateStyles = {
             },
             icon: {
                 color: "var(--primary-color)",
-                marginLeft: "10px",
+                // marginLeft: "10px",
                 marginRight: '20px'
             },
             list: {
@@ -2302,9 +2392,10 @@ const templateStyles = {
             dates: {
                 color: '#0A3965'
             },
-
-
-
+            content:{
+                marginLeft: "0px",
+                paddingLeft: "0px"
+            },
             bulletIcon: {
                 type: "fontawesome",
                 icon: "faWindowMinimize",
@@ -2313,7 +2404,8 @@ const templateStyles = {
                 marginRight: "0.5rem",
             },
             eachWorkPlace: {
-                paddingLeft: '10px',
+                // paddingLeft: '10px',
+                marginLeft: "0px",
                 marginTop: '.5rem'
             }
         },
@@ -2343,7 +2435,14 @@ const templateStyles = {
                 backgroundColor: 'var(--primary-color)',
                 top: '7px',
                 left: '-20px'
-            }
+            },
+            list:{
+                paddingLeft:"15px"
+            },
+            content:{
+                paddingLeft:"0px"
+            },
+            
         },
         projects: {
             viewType: "list",
@@ -2353,9 +2452,12 @@ const templateStyles = {
             heading: {
                 // ...sharedStyles["7"].heading
             },
-            eachProject: {
-                paddingLeft: '10px'
+            list:{
+                paddingLeft: "15px"
             },
+            content:{
+                paddingLeft: "0px"
+            }
         },
         skills: {
             viewType: "list",
@@ -2368,7 +2470,8 @@ const templateStyles = {
                 // ...sharedStyles["7"].heading
             },
             wholeList: {
-                marginLeft: '1rem',
+                marginLeft: '0px',
+                paddingLeft:"16px",
                 marginTop: '.5rem'
             },
             list: {
@@ -2405,6 +2508,12 @@ const templateStyles = {
             },
             eachOrganiz: {
                 marginBottom: '10px'
+            },
+            list:{
+                paddingLeft: "15px"
+            },
+            content:{
+                paddingLeft: "0px"
             }
         },
         award: {
@@ -2426,6 +2535,9 @@ const templateStyles = {
             },
             eachAward: {
                 marginBottom: '5px'
+            },
+            list:{
+                paddingLeft:"15px"
             }
         },
         language: {
@@ -2436,15 +2548,15 @@ const templateStyles = {
             },
             list: 'true',
             wholeList: {
-                paddingLeft: '35px',
-                marginLeft: '-10px'
+                // paddingLeft: '35px',
+                marginLeft: '-4px'
             }
         },
         certificate: {
             viewType: "list",
             box: {
                 border: 'none',
-                marginBottom: '1rem'
+                marginBottom: '1rem',
             },
             heading: {
                 // ...sharedStyles["7"].heading,
@@ -2454,7 +2566,7 @@ const templateStyles = {
             },
             innerBox: {
                 textAlign: 'left',
-                paddingLeft: '10px'
+                // paddingLeft: '10px'
             },
             title: {
                 fontSize: "16px",
@@ -2462,29 +2574,32 @@ const templateStyles = {
             },
             organiz: {
                 fontSize: "15px",
-                marginLeft: "2px",
+                // marginLeft: "2px",
                 color: 'var(--primary-color)'
             },
             date: {
-                marginLeft: "2px",
+                // marginLeft: "2px",
                 fontStyle: 'italic',
             },
             eachcertificate: {
                 marginBottom: '5px'
+            },
+            content:{
+                paddingLeft: "0px"
             }
         },
         achieve: {
             box: {
                 textAlign: "left",
-                paddingLeft: "15px",
+                // paddingLeft: "15px",
                 marginBottom: "15px"
             },
             heading: {
                 marginBottom: "5px"
             },
             innerbox: {
-                paddingLeft: "10px",
-                color: '#000'
+                // paddingLeft: "10px",
+                // color: '#000'
             },
             list: {
                 paddingLeft: "15px"
@@ -2602,7 +2717,8 @@ const templateStyles = {
                 // ...sharedStyles["7"].heading
             },
             wholeList: {
-                marginLeft: '1rem',
+                // marginLeft: '1rem',
+                paddingLeft: "15px",
                 marginTop: '.5rem'
             },
             list: {
@@ -2636,7 +2752,7 @@ const templateStyles = {
                 marginTop: "1rem"
             },
             eachSchool: {
-                paddingLeft: '10px'
+                // paddingLeft: '10px'
             },
             sideline: 'true',
             timeline: {
@@ -2647,6 +2763,9 @@ const templateStyles = {
                 backgroundColor: 'var(--primary-color)',
                 top: '7px',
                 left: '-20px'
+            },
+            content:{
+                paddingLeft: "0px"
             }
         },
         language: {
@@ -2657,8 +2776,8 @@ const templateStyles = {
             },
             list: 'true',
             wholeList: {
-                paddingLeft: '35px',
-                marginLeft: '-10px'
+                // paddingLeft: '35px',
+                marginLeft: '-5px'
             }
         },
         projects: {
@@ -2673,6 +2792,12 @@ const templateStyles = {
                 marginTop: "1rem",
 
             },
+            list:{
+                paddingLeft:"15px"
+            },
+            content:{
+                paddingLeft: "0px"
+            }
 
         },
         workExpe: {
@@ -2694,8 +2819,12 @@ const templateStyles = {
                 marginRight: "0.5rem",
             },
             eachWorkPlace: {
-                paddingLeft: '10px',
+                // paddingLeft: '10px',
+                marginLeft: "0rem",
                 marginTop: '.5rem'
+            },
+            content:{
+                marginLeft:"0px"
             }
 
         },
@@ -2735,13 +2864,23 @@ const templateStyles = {
             },
             innerBox: {
                 textAlign: 'left',
-                paddingLeft: '10px'
+                // paddingLeft: '10px'
             },
             eachOrganiz: {
                 marginBottom: '10px'
+            },
+            list:{
+                paddingLeft: "15px"
+            },
+            content:{
+                paddingLeft: "0px"
             }
         },
-
+        certificate:{
+            content:{
+                paddingLeft: "0px"
+            }
+        }
 
     },
     "1115": {
@@ -2806,6 +2945,57 @@ const templateStyles = {
                 gap: '5px',
                 borderRadius: '5px'
             }
+        },
+        language:{
+            wholeList:{
+                paddingLeft:"15px"
+            }
+        },
+        certificate:{
+            content:{
+                paddingLeft: "0px"
+            }
+        },
+        workExpe:{
+            eachWorkPlace:{
+                marginLeft: "0px"
+            },
+            content: {
+                marginLeft: "0px"
+            }
+        },
+        education:{
+            content:{
+                paddingLeft: "0px"
+            }
+        },
+        projects:{
+            content:{
+                paddingLeft:"0px"
+            }
+        },
+        organiz:{
+            content:{
+                paddingLeft:"0px"
+            },
+            list:{
+                paddingLeft: "10px"
+            }
+        },
+        strength:{
+            list:{
+                paddingLeft: "15px"
+            }
+        },
+        award:{
+            list:{
+                paddingLeft:"15px"
+            }
+        },
+        achieve:{
+            list:{
+                paddingLeft: "15px"
+            }
         }
     },
     "15": {
@@ -2864,7 +3054,7 @@ const templateStyles = {
                 display: "inline-block",
                 border: "none"
             },
-            everySkillBox:{
+            everySkillBox: {
                 marginLeft: "-2px"
             },
         },
@@ -2879,51 +3069,71 @@ const templateStyles = {
                 display: "inline-block",
                 border: "none"
             },
-            wholeList:{
+            wholeList: {
                 paddingLeft: "15px"
+            },
+            everyLanguageBox: {
+                marginLeft: "-2px"
             }
         },
         award: {
             heading: { borderBottom: "2px solid #00796b", marginBottom: "8px" },
-            list:{
-                paddingLeft:"15px"
+            list: {
+                paddingLeft: "15px"
             }
         },
         workExpe: {
             heading: { borderBottom: "2px solid #00796b", marginBottom: "8px" },
-            wholeList:{
+            wholeList: {
                 paddingLeft: "15px",
             },
-            eachWorkPlace:{
+            eachWorkPlace: {
+                marginLeft: "0px"
+            },
+            content: {
                 marginLeft: "0px"
             }
         },
         projects: {
             heading: { borderBottom: "2px solid #00796b", marginBottom: "8px" },
-            list:{
+            list: {
                 paddingLeft: "15px"
+            },
+            content: {
+                paddingLeft: "0px"
             }
         },
         education: {
             heading: { borderBottom: "2px solid #00796b", marginBottom: "8px" },
-            list:{
-                paddingLeft:"15px"
+            list: {
+                paddingLeft: "15px"
+            },
+            content: {
+                paddingLeft: "0px"
             }
         },
         organiz: {
             heading: { borderBottom: "2px solid #00796b", marginBottom: "8px" },
-            list:{
+            list: {
+                paddingLeft: "15px"
+            },
+            content: {
+                paddingLeft: "0px"
+            }
+        },
+        strength: {
+            list: {
                 paddingLeft: "15px"
             }
         },
-        strength:{
-            list:{
+        achieve: {
+            list: {
                 paddingLeft: "15px"
             }
         },
-        achieve:{
-            list:{
-                paddingLeft: "15px"
+        certificate: {
+            content: {
+                paddingLeft: "1px"
             }
         }
     },
@@ -4419,7 +4629,7 @@ const templateStyles = {
             },
             summaryBox: {
                 marginTop: "0px",
-                fontWeight:"100"
+                fontWeight: "100"
             },
             position: {
                 fontWeight: "100"
@@ -4455,14 +4665,14 @@ const templateStyles = {
                 borderBottom: "2px solid #F4C562",
                 width: "fit-content",
                 marginBottom: "10px",
-                padding:"0px"
+                padding: "0px"
             },
             eachWorkPlace: {
                 marginLeft: "0px",
                 color: "#2e3c47ff"
             },
-            organization:{
-                fontWeight:"600"
+            organization: {
+                fontWeight: "600"
             }
 
         },
@@ -4478,7 +4688,7 @@ const templateStyles = {
                 borderBottom: "2px solid #F4C562",
                 width: "fit-content",
                 marginBottom: "15px",
-                padding:"0px"
+                padding: "0px"
             },
             eachEducation: {
                 // padding: "0px",
@@ -4488,8 +4698,8 @@ const templateStyles = {
                 // },
 
             },
-            school:{
-                fontWeight:"600"
+            school: {
+                fontWeight: "600"
             }
 
         },
@@ -4522,14 +4732,14 @@ const templateStyles = {
                 borderBottom: "2px solid #F4C562",
                 width: "fit-content",
                 marginBottom: "15px",
-                padding:"0px"
+                padding: "0px"
             },
             innerbox: {
                 // padding: "10px"
                 color: "#2e3c47ff"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         award: {
@@ -4543,22 +4753,22 @@ const templateStyles = {
                 borderBottom: "2px solid #F4C562",
                 width: "fit-content",
                 marginBottom: "15px",
-                padding:"0px"
+                padding: "0px"
             },
             innerbox: {
                 // padding: "0px",
                 color: "#2e3c47ff"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         strength: {
-            heading:{
-                borderBottom:"2px solid #F4C562",
+            heading: {
+                borderBottom: "2px solid #F4C562",
                 width: "fit-content",
                 marginBottom: "15px",
-                padding:"0px"
+                padding: "0px"
             },
             list: {
                 color: "#2e3c47ff"
@@ -4566,10 +4776,10 @@ const templateStyles = {
             eachStrength: {
                 color: "#2e3c47ff"
             },
-            
-            title:{
-                fontWeight:"600",
-                color:"#2e3c47ff"
+
+            title: {
+                fontWeight: "600",
+                color: "#2e3c47ff"
             }
         },
         language: {
@@ -4583,7 +4793,7 @@ const templateStyles = {
                 borderBottom: "2px solid #F4C562",
                 width: "fit-content",
                 marginBottom: "15px",
-                padding:"0px"
+                padding: "0px"
             },
             listItem: {
                 margin: "5px -5px",
@@ -4623,8 +4833,8 @@ const templateStyles = {
             innerbox: {
                 color: "#2e3c47ff"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         certificate: {
@@ -4643,16 +4853,16 @@ const templateStyles = {
             eachcertificate: {
                 color: "#2e3c47ff"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         contact: {
             box: {
                 margin: "5px 10px -10px 10px"
             },
-            heading:{
-                display:"none"
+            heading: {
+                display: "none"
             },
             list: {
                 display: "flex",
@@ -4734,8 +4944,8 @@ const templateStyles = {
             eachWorkPlace: {
                 // padding: "10px"
             },
-            organization:{
-                fontWeight:"600"
+            organization: {
+                fontWeight: "600"
             }
         },
         education: {
@@ -4758,8 +4968,8 @@ const templateStyles = {
                     margin: "5px"
                 }
             },
-            school:{
-                fontWeight:"600"
+            school: {
+                fontWeight: "600"
             }
         },
         skills: {
@@ -4792,8 +5002,8 @@ const templateStyles = {
             innerbox: {
                 // padding: "10px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         award: {
@@ -4812,8 +5022,8 @@ const templateStyles = {
             innerbox: {
                 // padding: "10px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         language: {
@@ -4846,8 +5056,8 @@ const templateStyles = {
                 marginBottom: "15px",
                 paddingBottom: "0px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
 
         },
@@ -4864,8 +5074,8 @@ const templateStyles = {
                 marginBottom: "15px",
                 paddingBottom: "0px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
 
         },
@@ -4885,8 +5095,8 @@ const templateStyles = {
             eachcertificate: {
                 color: "#2e3c47ff"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         contact: {
@@ -4895,19 +5105,19 @@ const templateStyles = {
                 marginBottom: "15px",
                 paddingBottom: "0px"
             },
-            listItem:{
-                marginLeft:"-5px"
+            listItem: {
+                marginLeft: "-5px"
             }
         },
-        strength:{
-            heading:{
-                
-                borderBottom:"2px solid #2e3c47ff",
+        strength: {
+            heading: {
+
+                borderBottom: "2px solid #2e3c47ff",
                 padding: "0px",
                 marginBottom: "15px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         }
 
@@ -4989,8 +5199,8 @@ const templateStyles = {
             eachWorkPlace: {
                 marginLeft: "0px"
             },
-            organization:{
-                fontWeight:"600"
+            organization: {
+                fontWeight: "600"
             }
         },
         education: {
@@ -5015,8 +5225,8 @@ const templateStyles = {
                     margin: "5px"
                 }
             },
-            school:{
-                fontWeight:"600"
+            school: {
+                fontWeight: "600"
             }
         },
         skills: {
@@ -5053,8 +5263,8 @@ const templateStyles = {
             innerbox: {
                 // padding: "10px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         award: {
@@ -5075,8 +5285,8 @@ const templateStyles = {
             innerbox: {
                 // padding: "10px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         language: {
@@ -5131,11 +5341,11 @@ const templateStyles = {
                 color: "white",
                 padding: "5px 0px 5px 10px"
             },
-            innerbox:{
-                marginLeft:"0px"
+            innerbox: {
+                marginLeft: "0px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
 
         },
@@ -5158,8 +5368,8 @@ const templateStyles = {
             eachcertificate: {
                 color: "#2e3c47ff"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         contact: {
@@ -5169,32 +5379,32 @@ const templateStyles = {
                 padding: "5px 0px 5px 10px",
                 marginBottom: "15px"
             },
-            listItem:{
-                marginLeft:"-5px"
+            listItem: {
+                marginLeft: "-5px"
             }
         },
-        strength:{
-            heading:{
-                background:"#2e3c47ff",
-                color:"white",
+        strength: {
+            heading: {
+                background: "#2e3c47ff",
+                color: "white",
                 padding: "5px 0px 5px 10px",
                 marginBottom: "15px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         }
 
     },
     "24": {
-        layoutStyles:{
-            leftColumn:{
-                
-                color:"white",
-                heading:{
-                    borderBottom:"2px solid white",
-                    padding:"0px",
-                    marginBottom:"16px"
+        layoutStyles: {
+            leftColumn: {
+
+                color: "white",
+                heading: {
+                    borderBottom: "2px solid white",
+                    padding: "0px",
+                    marginBottom: "16px"
                 }
             }
         },
@@ -5221,7 +5431,7 @@ const templateStyles = {
             },
             name: {
                 // display:"flex",
-                fontSize:"26px"
+                fontSize: "26px"
             },
             position: {
                 fontWeight: "100",
@@ -5245,7 +5455,7 @@ const templateStyles = {
                 width: "fit-content",
                 marginBottom: "10px",
                 fontWeight: "500",
-                padding:"0px"
+                padding: "0px"
             },
         },
         workExpe: {
@@ -5264,11 +5474,11 @@ const templateStyles = {
             eachWorkPlace: {
                 margin: "15px 0px"
             },
-            organization:{
-                fontWeight:"600"
+            organization: {
+                fontWeight: "600"
             }
         },
-        
+
         education: {
             box: {
                 // borderBottom: "2px solid #2e3c47ff",
@@ -5286,8 +5496,8 @@ const templateStyles = {
             eachEducation: {
                 // padding: "10px",
             },
-            school:{
-                fontWeight:"600"
+            school: {
+                fontWeight: "600"
             }
         },
         skills: {
@@ -5327,8 +5537,8 @@ const templateStyles = {
             innerbox: {
                 // padding: "10px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         award: {
@@ -5380,8 +5590,8 @@ const templateStyles = {
                 // color:"white",
                 padding: " 0px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
 
         },
@@ -5399,8 +5609,8 @@ const templateStyles = {
                 paddingBottom: "0px",
 
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
 
         },
@@ -5420,26 +5630,26 @@ const templateStyles = {
             eachcertificate: {
                 // color: "#2e3c47ff"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
-            
+
         },
-        strength:{
-            heading:{
-                background:"#2e3c47ff",
-                color:"white",
+        strength: {
+            heading: {
+                background: "#2e3c47ff",
+                color: "white",
                 padding: " 0px",
                 marginBottom: "15px",
-                borderBottom:"2px solid #73869cff"
+                borderBottom: "2px solid #73869cff"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             },
         },
         contact: {
-            box:{
-                marginBottom:"30px"
+            box: {
+                marginBottom: "30px"
             },
             heading: {
                 // background:"#2e3c47ff",
@@ -5448,8 +5658,8 @@ const templateStyles = {
                 marginBottom: "15px",
                 borderBottom: "2px solid white"
             },
-            listItem:{
-                marginLeft:"-5px"
+            listItem: {
+                marginLeft: "-5px"
             }
         }
 
@@ -5518,7 +5728,7 @@ const templateStyles = {
             box: {
                 // borderBottom:"2px solid #2e3c47ff",
                 marginBottom: "15px",
-                
+
             },
             heading: {
                 // marginLeft:"40%",
@@ -5530,10 +5740,10 @@ const templateStyles = {
             },
             eachWorkPlace: {
                 // padding: "10px",
-                marginLeft:"0px"
+                marginLeft: "0px"
             },
-            organization:{
-                fontWeight:"600"
+            organization: {
+                fontWeight: "600"
             }
         },
         education: {
@@ -5556,14 +5766,14 @@ const templateStyles = {
                     margin: "5px"
                 }
             },
-            school:{
-                fontWeight:"600"
+            school: {
+                fontWeight: "600"
             },
-            listItem:{
-                marginLeft:"-5px"
+            listItem: {
+                marginLeft: "-5px"
             },
-            content:{
-                marginLeft:"-5px"
+            content: {
+                marginLeft: "-5px"
             }
         },
         skills: {
@@ -5596,8 +5806,8 @@ const templateStyles = {
             innerbox: {
                 // padding: "10px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         award: {
@@ -5616,8 +5826,8 @@ const templateStyles = {
             innerbox: {
                 // padding: "10px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         language: {
@@ -5650,8 +5860,8 @@ const templateStyles = {
                 marginBottom: "15px",
                 paddingBottom: "0px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
 
         },
@@ -5668,8 +5878,8 @@ const templateStyles = {
                 marginBottom: "15px",
                 paddingBottom: "0px"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
 
         },
@@ -5689,21 +5899,21 @@ const templateStyles = {
             eachcertificate: {
                 color: "#2e3c47ff"
             },
-            title:{
-                fontWeight:"600"
+            title: {
+                fontWeight: "600"
             }
         },
         contact: {
-            box:{
-                marginBottom:"25px"
+            box: {
+                marginBottom: "25px"
             },
             heading: {
                 borderBottom: "2px solid #2e3c47ff",
                 marginBottom: "15px",
                 paddingBottom: "0px"
             },
-            listItem:{
-                marginLeft:"-5px"
+            listItem: {
+                marginLeft: "-5px"
             }
         }
 

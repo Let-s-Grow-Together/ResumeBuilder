@@ -662,6 +662,7 @@ const template116 = {
         grid: {
             templateRows: "1fr",
             templateColumns: "1.1fr 2fr",
+            columnGap: "0rem",
             areas: [
                 {
                     name: 'leftColumn',
@@ -824,7 +825,7 @@ const template1110 = {
             ]
         },
         padding: "25px",
-        frozenSections: ["avatar", "contact", "personalInfo"],
+        frozenSections: ["avatar", "contact", "personalInfo","summary"],
         fontFamily: "'Poppins', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap",
         fontSize: "14px",
