@@ -2215,6 +2215,638 @@ const templateStyles = {
 
     },
 
+    "26": {
+        personalInfo: {
+            box: {
+                // backgroundColor:"#2e3c47ff",
+                color: "#2e3c47ff",
+                padding: "20px 20px 10px 10px",
+                marginBottom: "0px"
+            },
+            avatar: {
+                card: {
+                    background: "none"
+                },
+                imageDiv: {
+                    // marginLeft: "-15px",
+                    // marginTop: "35px",
+                    width: "170px",
+                    height: "170px",
+                    border: "3px solid black",
+                    boxShadow: "none"
+                },
+            },
+            mixBox: {
+                display: "flex",
+                flexDirection: "row-reverse",
+                justifyContent: "space-between",
+                marginLeft: "-30px"
+            },
+            summaryBox: {
+                marginTop: "-40px",
+                display: "none"
+            },
+            position: {
+                fontWeight: "100",
+                // marginLeft: "14.5rem",
+                fontSize: "24px"
+            },
+            name: {
+                // color: "white",
+                // marginLeft: "14.5rem",
+                // display: "flex",
+                marginTop: "1.5rem",
+                fontSize: "35px"
+            },
+            firstName: {
+                paddingRight: "10px",
+                fontWeight: "100"
+            },
+            lastName: {
+                fontWeight: "600"
+            }
+        },
+        summary: {
+            box: {
+                borderBottom: "4px solid #7D7D7D",
+                marginBottom: "15px",
+                paddingBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"45%",
+                color: "#2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
+                // width:"fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px",
+                fontWeight: "600"
+            },
+        },
+        workExpe: {
+            box: {
+                borderBottom: "4px solid #7D7D7D",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"40%",
+                color: "#2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
+                // width:"fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px",
+                fontWeight: "700"
+            },
+            eachWorkPlace: {
+                // padding: "10px",
+                marginLeft: "0px"
+            },
+            organization: {
+                fontWeight: "500"
+            }
+        },
+        education: {
+            box: {
+                borderBottom: "4px solid #7D7D7D",
+                marginBottom: "5px",
+                // padding: "15px"
+            },
+            heading: {
+                // paddingLeft:"45%",
+                color: "#2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
+                // width:"fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px",
+                fontWeight: "700"
+            },
+            eachEducation: {
+                // padding: "10px",
+                degree: {
+                    margin: "5px"
+                }
+            },
+            school: {
+                fontWeight: "500"
+            }
+        },
+        skills: {
+            box: {
+                borderBottom: "4px solid #7D7D7D",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                color: "#2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px",
+                fontWeight: "700"
+            },
+        },
+        organiz: {
+            box: {
+                borderBottom: "4px solid #7D7D7D",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"40%",
+                color: "#2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px",
+                fontWeight: "700"
+            },
+            innerbox: {
+                // padding: "10px"
+            },
+            title: {
+                fontWeight: "500"
+            }
+        },
+        award: {
+            box: {
+                borderBottom: "4px solid #7D7D7D",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"35%",
+                color: "#2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px",
+                fontWeight: "700"
+            },
+            innerbox: {
+                // padding: "10px"
+            },
+            title: {
+                fontWeight: "500"
+            }
+        },
+        language: {
+            box: {
+                borderBottom: "4px solid #7D7D7D",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"43%",
+                color: "#2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px",
+                fontWeight: "700"
+            },
+            listItem: {
+                margin: "5px -5px"
+            }
+        },
+        projects: {
+            box: {
+                borderBottom: "4px solid #7D7D7D",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px",
+                fontWeight: "700"
+            },
+            title: {
+                fontWeight: "500"
+            }
+
+        },
+        achieve: {
+            box: {
+                borderBottom: "4px solid #7D7D7D",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px",
+                fontWeight: "700"
+            },
+            title: {
+                fontWeight: "500"
+            }
+
+        },
+        certificate: {
+            box: {
+                borderBottom: "4px solid #7D7D7D",
+                marginBottom: "15px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px",
+                fontWeight: "700"
+            },
+            eachcertificate: {
+                color: "#2e3c47ff"
+            },
+            title: {
+                fontWeight: "500"
+            }
+        },
+        contact: {
+            box: {
+                background: "#E2E2E2",
+                padding: "5px 10px 5px 10px"
+            },
+            heading: {
+                borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px",
+                paddingBottom: "0px",
+                display: "none"
+            },
+            list: {
+                display: "flex",
+                justifyContent: "space-around"
+            },
+            listItem: {
+                // marginLeft: "-5px",
+                padding: "5px 10px 5px 10px",
+                borderRight: "1px solid  #7D7D7D"
+            }
+        },
+        strength: {
+            box: {
+                borderBottom: "4px solid #7D7D7D",
+            },
+            heading: {
+                fontWeight: "700",
+
+                // borderBottom: "2px solid #2e3c47ff",
+                padding: "0px",
+                marginBottom: "15px"
+            },
+            title: {
+                fontWeight: "500"
+            }
+        },
+
+
+    },
+
+    "27": {
+        layoutStyles: {
+            leftColumn: {
+
+                heading: {
+                    color: "#E5A86B",
+                    textTransform: "uppercase",
+                    borderTop: "10px solid white",
+                    // width:"50px",
+                    paddingTop: "5px"
+                }
+            },
+            rightColumn: {
+
+                heading: {
+                    color: "#353941",
+                    textTransform: "uppercase",
+                    borderTop: "10px solid #353941",
+                    // width:"50px",
+                    paddingTop: "5px"
+                }
+            }
+        },
+        personalInfo: {
+            box: {
+                // backgroundColor:"#2e3c47ff",
+                color: "#2e3c47ff",
+                // padding: "20px 20px 10px 0px",
+                marginBottom: "0px",
+                marginLeft: "-20px"
+            },
+            avatar: {
+                card: {
+                    background: "none",
+                    background: "#353941",
+                    width: "253px",
+                    height: "200px"
+                },
+                imageDiv: {
+                    // marginLeft: "-15px",
+                    marginTop: "0px",
+                    position: "absolute",
+                    top: "25px",
+                    left: "45px",
+                    width: "150px",
+                    height: "150px",
+                    border: "7px solid white",
+                    boxShadow: "none",
+                },
+            },
+            mixBox: {
+                display: "flex",
+                // justifyContent: "space-between",
+                marginLeft: "0px"
+            },
+            summaryBox: {
+                marginTop: "-40px",
+                display: "none"
+            },
+            position: {
+                fontWeight: "100",
+                // marginLeft: "14.5rem",
+                fontSize: "14px"
+            },
+            name: {
+                // color: "white",
+                // marginLeft: "14.5rem",
+                display: "flex",
+                marginTop: "4rem",
+                fontSize: "35px"
+            },
+            firstName: {
+                paddingRight: "10px",
+                fontWeight: "600"
+            },
+            lastName: {
+                fontWeight: "600"
+            }
+        },
+        summary: {
+            box: {
+                // borderBottom: "4px solid #7D7D7D",
+                marginBottom: "15px",
+                paddingBottom: "25px"
+            },
+            heading: {
+                // marginLeft:"45%",
+                color: "#2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
+                // width:"fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px",
+                fontWeight: "600"
+            },
+        },
+        workExpe: {
+            box: {
+                // borderBottom: "4px solid #7D7D7D",
+                marginBottom: "25px"
+            },
+            heading: {
+                // marginLeft:"40%",
+                color: "#2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
+                // width:"fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px",
+                fontWeight: "700"
+            },
+            eachWorkPlace: {
+                // padding: "10px",
+                marginLeft: "0px",
+                marginBottom: "5px"
+            },
+            organization: {
+                fontWeight: "500",
+                marginBottom: "5px",
+                // borderBottom: "1px solid #353941"
+            },
+            listItem: {
+                marginBottom: "5px"
+            },
+            role: {
+                marginBottom: "5px",
+                textTransform:"uppercase"
+            }
+        },
+        education: {
+            box: {
+                // borderBottom: "4px solid #7D7D7D",
+                marginBottom: "25px",
+                // padding: "15px"
+            },
+            heading: {
+                // paddingLeft:"45%",
+                color: "#2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
+                // width:"fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px",
+                fontWeight: "700"
+            },
+            eachEducation: {
+                // padding: "10px",
+                degree: {
+                    margin: "5px"
+                }
+            },
+            school: {
+                fontWeight: "500",
+                marginBottom: "5px",
+                textTransform:"uppercase",
+                // borderBottom: "1px solid #353941"
+            },
+            degree: {
+                marginBottom: "5px",
+                textTransform:"uppercase"
+            },
+            listItem: {
+                marginBottom: "5px"
+            }
+        },
+        skills: {
+            box: {
+                // borderBottom: "4px solid #7D7D7D",
+                marginBottom: "25px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                color: "#2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px",
+                fontWeight: "700"
+            },
+        },
+        organiz: {
+            box: {
+                // borderBottom: "4px solid #7D7D7D",
+                marginBottom: "25px"
+            },
+            heading: {
+                // marginLeft:"40%",
+                color: "#2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px",
+                fontWeight: "700"
+            },
+            innerbox: {
+                // padding: "10px"
+            },
+            title: {
+                fontWeight: "500",
+                marginBottom: "5px"
+            }
+        },
+        award: {
+            box: {
+                // borderBottom: "4px solid #7D7D7D",
+                marginBottom: "25px"
+            },
+            heading: {
+                // marginLeft:"35%",
+                color: "#2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px",
+                fontWeight: "700"
+            },
+            innerbox: {
+                // padding: "10px"
+            },
+            title: {
+                fontWeight: "500",
+                marginBottom: "5px"
+            }
+        },
+        language: {
+            box: {
+                // borderBottom: "4px solid #7D7D7D",
+                marginBottom: "25px"
+            },
+            heading: {
+                // marginLeft:"43%",
+                color: "#2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px",
+                fontWeight: "700"
+            },
+            listItem: {
+                margin: "0px 0px 5px -5px",
+                borderBottom: "1px solid #353941"
+            }
+        },
+        projects: {
+            box: {
+                // borderBottom: "4px solid #7D7D7D",
+                marginBottom: "25px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px",
+                fontWeight: "700"
+            },
+            title: {
+                fontWeight: "500",
+                marginBottom: "5px"
+            }
+
+        },
+        achieve: {
+            box: {
+                // borderBottom: "4px solid #7D7D7D",
+                marginBottom: "25px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px",
+                fontWeight: "700"
+            },
+            title: {
+                fontWeight: "500",
+                marginBottom: "5px"
+            }
+
+        },
+        certificate: {
+            box: {
+                // borderBottom: "4px solid #7D7D7D",
+                marginBottom: "25px"
+            },
+            heading: {
+                // marginLeft:"47%",
+                // color: "#2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
+                // width: "fit-content",
+                marginBottom: "15px",
+                paddingBottom: "0px",
+                fontWeight: "700"
+            },
+            eachcertificate: {
+                color: "#2e3c47ff"
+            },
+            title: {
+                fontWeight: "500",
+                marginBottom: "5px"
+            }
+        },
+        contact: {
+            box: {
+                background: "#E5A86B",
+                padding: " 15px  "
+            },
+            heading: {
+                borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "15px",
+                paddingBottom: "0px",
+                display: "none"
+            },
+            list: {
+                display: "flex",
+                justifyContent: "space-around"
+            },
+            listItem: {
+                // marginLeft: "-5px",
+                padding: "5px 10px 5px 10px",
+                // borderRight: "1px solid  #7D7D7D"
+            }
+        },
+        strength: {
+            box: {
+                // borderBottom: "4px solid #7D7D7D",
+                marginBottom: "25px"
+            },
+            heading: {
+                fontWeight: "700",
+
+                // borderBottom: "2px solid #2e3c47ff",
+                padding: "0px",
+                marginBottom: "15px"
+            },
+            title: {
+                fontWeight: "500",
+                marginBottom: "5px"
+            }
+        },
+
+
+    },
+
     "112": {
         vars: {
             "--heading-color": "#003366",
@@ -4593,159 +5225,276 @@ const templateStyles = {
     "525": {
         personalInfo: {
             box: {
-                border: "15px solid #2e3c47ff",
+                // border: "15px solid #2e3c47ff",
                 // borderBottom:"none",
                 borderRadius: "10px",
                 color: "#2e3c47ff",
                 padding: "10px",
                 marginBottom: "15px"
             },
+            mixBox: {
+                display: "flex",
+                flexDirection: "row-reverse",
+                justifyContent: "space-between"
+            },
             avatar: {
                 card: {
-                    background: "none"
+                    background: "none",
+
                 },
                 imageDiv: {
                     marginLeft: "-15px",
-                    marginTop: "-35px"
+                    marginTop: "-20px",
+                    width: "140px",
+                    height: "140px"
                 }
             },
             summaryBox: {
                 marginTop: "-35px",
                 borderTop: "2px solid #2e3c47ff",
-                borderBottom: "2px solid #2e3c47ff",
+                borderBottom: "4px solid #2e3c47ff",
                 padding: "5px",
-                paddingBottom: "5px"
+                paddingBottom: "5px",
+                display: "none"
             },
             position: {
-                fontWeight: "100"
+                fontWeight: "100",
+                color: "#75CA9B",
+                fontSize: "13px"
             },
             anotherBox: {
-                marginLeft: "-140px",
-                marginTop: "10px"
+                marginLeft: "-30px",
+                marginTop: "0px"
+            },
+            name: {
+                display: "flex",
+                gap: "10px",
+                color: "#124F44",
+                fontWeight: "600"
             }
         },
         summary: {
             box: {
-                borderBottom: "2px solid #2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
                 marginBottom: "35px"
             },
             heading: {
                 // marginLeft:"45%",
-                color: "#2e3c47ff",
-                // borderBottom:"2px solid #2e3c47ff",
-                width: "fit-content",
-                marginBottom: "10px"
+                color: "#3E7067",
+                borderBottom: "4px solid #3E7067",
+                // width: "fit-content",
+                marginBottom: "10px",
+                padding: "0px"
             },
         },
         workExpe: {
             box: {
-                borderBottom: "2px solid #2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
                 marginBottom: "35px"
             },
             heading: {
                 // marginLeft:"40%",
-                color: "#2e3c47ff",
-                // borderBottom:"2px solid #2e3c47ff",
-                width: "fit-content",
-                // marginBottom:"15px"
+                color: "#3E7067",
+                borderBottom: "4px solid #3E7067",
+                // width: "fit-content",
+                marginBottom: "15px",
+                padding: "0px"
             },
             eachWorkPlace: {
-                padding: "10px"
-            }
-        },
-        contact: {
-            box: {
-                marginLeft: "20px",
-                borderBottom: "2px solid #2e3c47ff",
+                // padding: "10px",
+                // marginBottom:"10px",
+                marginLeft: "0px"
             },
-            heading: {
-                // borderBottom:"2px solid #2e3c47ff",
-                width: "fit-content",
-                marginBottom: "10px"
+            role: {
+                color: "#185349",
+                marginBottom: "4px"
+            },
+            organization: {
+                color: "#75CA9B",
+                marginBottom: "4px"
+            },
+            listItem: {
+                marginBottom: "4px"
             }
         },
+
         education: {
             box: {
-                borderBottom: "2px solid #2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
                 marginBottom: "35px",
-                padding: "15px",
-                width: "fit-content",
-                paddingLeft: "20px"
+                // padding: "15px",
+                // width: "fit-content",
+
             },
             heading: {
                 // paddingLeft:"45%",
-                // color: "#2e3c47ff",
-                // borderBottom:"2px solid #2e3c47ff",
-                width: "fit-content",
-                // marginBottom:"15px"
+                color: "#3E7067",
+                borderBottom: "4px solid #3E7067",
+                // width: "fit-content",
+                marginBottom: "15px",
+                padding: "0px"
             },
             eachEducation: {
-                padding: "10px",
+                // padding: "10px",
+                marginBottom: "10px"
+            },
+            degree: {
+                color: "#185349",
+                marginBottom: "4px"
+            },
+            school: {
+                color: "#75CA9B",
+                marginBottom: "4px"
+            },
+            listItem: {
+                marginBottom: "4px"
             }
         },
         skills: {
             box: {
-                borderBottom: "2px solid #2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
                 marginBottom: "35px",
-                marginLeft: "20px"
+                // marginLeft: "20px",
+
             },
             heading: {
                 // marginLeft:"47%",
-                // color: "#2e3c47ff",
-                // borderBottom:"2px solid #2e3c47ff",
-                width: "fit-content",
-                marginBottom: "15px"
+                color: "#3E7067",
+                borderBottom: "4px solid #3E7067",
+                // width: "fit-content",
+                marginBottom: "15px",
+                padding: "0px"
             },
-            listItem: {
-                marginLeft: "90px"
+            eachSkillBox: {
+                marginLeft: "0px",
+                borderBottom: "2px solid #3E7067"
             }
         },
         organiz: {
             box: {
-                borderBottom: "2px solid #2e3c47ff",
-                marginBottom: "35px"
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "35px",
+
             },
             heading: {
                 // marginLeft:"40%",
-                color: "#2e3c47ff",
-                // borderBottom:"2px solid #2e3c47ff",
-                width: "fit-content",
-                // marginBottom:"15px"
+                color: "#3E7067",
+                borderBottom: "4px solid #3E7067",
+                // width: "fit-content",
+                marginBottom: "15px",
+                padding: "0px"
             },
             innerbox: {
-                padding: "10px"
+                // padding: "10px"
+            },
+            title: {
+                fontWeight: "600",
+                color: "#185349"
             }
         },
         award: {
             box: {
-                borderBottom: "2px solid #2e3c47ff",
-                marginBottom: "35px"
+                // borderBottom: "2px solid #2e3c47ff",
+                marginBottom: "35px",
+
             },
             heading: {
                 // marginLeft:"35%",
-                color: "#2e3c47ff",
-                // borderBottom:"2px solid #2e3c47ff",
-                width: "fit-content",
-                // marginBottom:"15px"
+                color: "#3E7067",
+                borderBottom: "4px solid #3E7067",
+                // width: "fit-content",
+                marginBottom: "15px",
+                padding: "0px"
             },
             innerbox: {
-                padding: "10px"
+                // padding: "10px"
+            },
+            title: {
+                fontWeight: "600",
+                color: "#185349"
             }
         },
         language: {
             box: {
-                borderBottom: "2px solid #2e3c47ff",
+                // borderBottom: "2px solid #2e3c47ff",
                 marginBottom: "35px"
             },
             heading: {
                 // marginLeft:"43%",
-                color: "#2e3c47ff",
-                // borderBottom:"2px solid #2e3c47ff",
-                width: "fit-content",
-                // marginBottom:"15px"
+                color: "#3E7067",
+                borderBottom: "4px solid #3E7067",
+                // width: "fit-content",
+                marginBottom: "15px",
+                padding: "0px"
             },
             listItem: {
                 margin: "5px"
+            }
+        },
+        contact: {
+            box: {
+                position: "absolute",
+                left: "35px",
+                top: "110px"
+            },
+            heading: {
+                display: "none",
+            },
+            list: {
+                display: "flex",
+                flexWrap: "wrap",
+                width: "80%",
+                fontSize: "13px"
+            },
+            hiddenItems: [2, 3],
+        },
+
+        achieve: {
+            heading: {
+                borderBottom: "4px solid #3E7067",
+                padding: "0px",
+                marginBottom: "15px",
+                color: "#3E7067"
+            },
+            title: {
+                fontWeight: "600",
+                color: "#185349"
+            }
+        },
+        strength: {
+            heading: {
+                borderBottom: "4px solid #3E7067",
+                padding: "0px",
+                marginBottom: "15px",
+                color: "#3E7067"
+            },
+            title: {
+                fontWeight: "600",
+                color: "#185349"
+            }
+        },
+        certificate: {
+            heading: {
+                borderBottom: "4px solid #3E7067",
+                padding: "0px",
+                marginBottom: "15px",
+                color: "#3E7067"
+            },
+            title: {
+                fontWeight: "600",
+                color: "#185349"
+            }
+        },
+        projects: {
+            heading: {
+                borderBottom: "4px solid #3E7067",
+                padding: "0px",
+                marginBottom: "15px",
+                color: "#3E7067"
+            },
+            title: {
+                fontWeight: "600",
+                color: "#185349"
             }
         },
 
