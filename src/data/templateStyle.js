@@ -61,6 +61,15 @@ const sharedStyles = {
             fontSize: "1.7rem",
             marginBottom: "0.1rem"
         }
+    },
+    "502": {
+        heading: {
+            fontSize: "1.5rem",
+            textTransform: "uppercase",
+            borderBottom: "2px solid #545454",
+            paddingBottom: "5px",
+            marginBottom: "15px"
+        },
     }
 
 };
@@ -3519,6 +3528,137 @@ const templateStyles = {
         certificate: {
             heading: {
                 ...sharedStyles["501"].heading
+            }
+        }
+    },
+
+    "502": {
+        personalInfo: {
+            box: {
+                display: "flex",
+            },
+            avatar: {
+                box: {
+                    display: "none"
+                }
+            },
+            anotherBox: {
+                marginLeft: "0px"
+            },
+            name: {
+                display: "flex",
+                borderBottom: "2px solid #545454",
+                color: "#545454",
+                fontSize: "2.5rem"
+            },
+            lastName: {
+                marginLeft: "10px",
+                fontWeight: "700"
+            },
+            position: {
+                color: "#545454",
+                fontSize: "1.2rem"
+            },
+            list: {
+                display: "none"
+            },
+            summaryBox: {
+                display: "none"
+            }
+        },
+        contact: {
+            heading: {
+                display: "none"
+            },
+            listItem: {
+                display: "flex",
+                flexDirection: "row-reverse"
+            },
+            iconWrapper: {
+                paddingLeft: "15px"
+            }
+        },
+        summary: {
+            heading: {
+                ...sharedStyles["502"].heading,
+                textAlign: "center",
+                width: "80%",
+                margin: "auto",
+                marginBottom: "0px"
+            },
+            eachSummary: {
+                textAlign: "justify",
+                paddingTop: "10px"
+            },
+            list: {
+                textAlign: "justify",
+                paddingTop: "10px"
+            }
+        },
+        education: {
+            heading: {
+                ...sharedStyles["502"].heading,
+                width: "70%",
+            }
+        },
+        skills:{
+            box:{
+                marginBottom: "35px"
+            },
+            heading:{
+                ...sharedStyles["502"].heading,
+                width: "70%"
+            },
+            wholeList:{
+                paddingLeft: "15px"
+            }
+        },
+        certificate:{
+            heading:{
+                ...sharedStyles["502"].heading,
+                width:"70%"
+            }
+        },
+        workExpe:{
+            heading:{
+                ...sharedStyles["502"].heading,
+                width: "80%"
+            }
+        },
+        projects: {
+            heading:{
+                ...sharedStyles["502"].heading,
+                width: "70%"
+            }
+        },
+        organiz:{
+            heading:{
+                ...sharedStyles["502"].heading,
+                width: "70%"
+            }
+        },
+        award:{
+            heading:{
+                ...sharedStyles["502"].heading,
+                width: "80%"
+            }
+        },
+        language:{
+            heading:{
+                ...sharedStyles["502"].heading,
+                width: "70%"
+            }
+        },
+        strength:{
+            heading:{
+                ...sharedStyles["502"].heading,
+                width: "70%"
+            }
+        },
+        achieve:{
+            heading:{
+                ...sharedStyles["502"].heading,
+                width: "70%"
             }
         }
     },
