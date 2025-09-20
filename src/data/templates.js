@@ -818,6 +818,114 @@ const template112 = {
     },
 };
 
+const template26 = {
+    id: 26,
+    name: "Stylish CV",
+    filteredColumn: "2",
+    isAvatar: "true",
+    layout: {
+        grid: {
+            templateRows: "75mm auto",
+            templateColumns: "1fr 2fr",
+            columnGap: "2rem",
+            rowGap: "0rem",
+            areas: [
+                {
+                    name: "header",
+                    rowStart: 1,
+                    rowEnd: 2,
+                    colStart: 1,
+                    colEnd: 3,
+                    style: { marginBottom:"0px"},
+                    sections: ["personalInfo", "contact",]
+                },
+                {
+                    name: "leftColumn",
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 1,
+                    colEnd: 2,
+                    style: { padding: "0rem 0rem 1rem 2rem", borderRight:"4px solid #7D7D7D", },
+                    sections: [ "skills", "language", "awards"]
+                },
+                {
+                    name: "rightColumn",
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 2,
+                    colEnd: 3,
+                    style: { paddingTop: "0rem", paddingRight: "20px", },
+                    sections: ["summary", "workExperience", "education",]
+                },
+            ]
+        },
+        frozenSections:["personalInfo", "contact", "skills"],
+        padding: "0mm",
+        fontFamily: "'Montserrat', sans-serif",
+        fontLink:
+            "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
+        fontSize: "14px",
+        colorScheme: {
+            background: "#ffffff",
+            text: "#333333"
+        }
+    }
+};
+
+const template27 = {
+    id: 27,
+    name: "Stylish CV",
+    filteredColumn: "2",
+    isAvatar: "true",
+    layout: {
+        grid: {
+            templateRows: "67.5mm auto",
+            templateColumns: "1fr 2fr",
+            columnGap: "2rem",
+            rowGap: "0rem",
+            areas: [
+                {
+                    name: "header",
+                    rowStart: 1,
+                    rowEnd: 2,
+                    colStart: 1,
+                    colEnd: 3,
+                    style: { marginBottom:"0px"},
+                    sections: ["personalInfo", "contact",]
+                },
+                {
+                    name: "leftColumn",
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 1,
+                    colEnd: 2,
+                    style: { padding: "2rem 0rem 1rem 2rem", background:"#353941", color:"white", },
+                    sections: [ "skills", "language", "awards"]
+                },
+                {
+                    name: "rightColumn",
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 2,
+                    colEnd: 3,
+                    style: { paddingTop: "2rem", paddingRight: "20px", },
+                    sections: ["summary", "workExperience", "organizations",]
+                },
+            ]
+        },
+        frozenSections:["personalInfo", "contact", "skills"],
+        padding: "0mm",
+        fontFamily: "'Montserrat', sans-serif",
+        fontLink:
+            "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
+        fontSize: "14px",
+        colorScheme: {
+            background: "#ffffff",
+            text: "#333333"
+        }
+    }
+};
+
 const template113 = {
     id: 113,
     name: "Simple Tactical",
@@ -1380,15 +1488,16 @@ const template525 = {
     layout: {
         grid: {
             templateRows: "40mm 1fr",
-            templateColumns: "1.2fr 0.8fr",
+            templateColumns: "1fr 1fr 1fr",
+            columnGap:"2rem",
             areas: [
                 {
                     name: "header",
                     rowStart: 1,
                     rowEnd: 2,
                     colStart: 1,
-                    colEnd: 3,
-                    sections: ["personalInfo"]
+                    colEnd: 4,
+                    sections: ["personalInfo","contact"]
                 },
                 {
                     name: "leftColumn",
@@ -1396,20 +1505,30 @@ const template525 = {
                     rowEnd: 3,
                     colStart: 1,
                     colEnd: 2,
-                    style: { marginTop: "60px", paddingLeft: "10px" },
-                    sections: ["summary", "workExperience", "organizations", "awards", "language"]
+                    style: { marginTop: "0px", },
+                    sections: ["summary", "achievements", "interests", ]
+                },
+                {
+                    name: "middleColumn",
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 2,
+                    colEnd: 3,
+                    style: { marginTop: "0px", },
+                    sections: ["workExperience", "organizations",]
                 },
                 {
                     name: "rightColumn",
                     rowStart: 2,
                     rowEnd: 3,
-                    colStart: 2,
-                    colEnd: 3,
-                    style: { marginTop: "60px", borderLeft: "2px solid #2e3c47ff", backgroundColor: "#2e3c47ff", color: "white", paddingTop: "10px", borderRadius: "10px" },
-                    sections: ["contact", "education", "skills",]
+                    colStart: 3,
+                    colEnd: 4,
+                    style: { marginTop: "0px", },
+                    sections: [ "education", "skills", "language"]
                 },
             ]
         },
+        frozenSections:["personalInfo", "contact"],
         padding: "10mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink:
@@ -1840,4 +1959,5 @@ const template600 = {
 
 /* export const templates = [template1, template3, template9, template10, template11, template12, template13, template14, template15, template113, template115, template116, template117, template1110, template1111, template1112, template1113, template1115, template21, template6, template23, template24, template25, template501, template516, template521, template522, template523, template524, template525, template526]; */
 
-export const templates = [template1, template3, template9, template10, template11, template12, template13, template14, template15, template115, template116, template117, template1110, template1112, template1113, template1115, template21, template6, template23, template24, template25, template501, template503, template523, template28, template600];
+// export const templates = [template1, template3, template9, template10, template11, template12, template13, template14, template15, template115, template116, template117, template1110, template1112, template1113, template1115, template21, template6, template23, template24, template25, template501, template503, template523, template28, template600];
+export const templates = [template1, template3, template9, template10, template11, template12, template13, template14, template15,  template115, template116, template117, template1110, template1112, template1113, template1115, template21, template6, template23, template24, template25, template26, template27, template526, template501, template523, template525];
