@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useResume } from "../../context/ResumeContext";
 import InlineToolbar from "../../Components/shared/InlineToolbar";
 
-export default function Strengths({areaName}) {
+export default function Strengths({ areaName }) {
     const {
         data,
         style,
@@ -11,6 +11,8 @@ export default function Strengths({areaName}) {
         selectedSection,
         setSelectedSection,
         viewTypes,
+        moveSectionToUnused,
+        isFrozenSection
     } = useResume();
     const strengthRef = useRef();
 
@@ -50,6 +52,20 @@ export default function Strengths({areaName}) {
             <h2 style={headingStyle}>
                 Strengths
             </h2>
+
+            {editMode && !isFrozenSection("strengths") && (
+                <button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        moveSectionToUnused("strengths");
+                    }}
+                    className="crossButton"
+                    style={style?.strength?.crossButton}
+                    title="Remove section"
+                >
+                    ✕
+                </button>
+            )}
 
             {data.strengths.map((strength, strengthIndex) => (
                 <div

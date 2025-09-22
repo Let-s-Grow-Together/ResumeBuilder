@@ -7,8 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import "/src/ResumeRenderer/ResumeRenderer.css";
 
-export default function Contact({areaName}) {
-    const { editMode, data, style, selectedSection, setSelectedSection } = useResume();
+export default function Contact({ areaName }) {
+    const { editMode, data, style, selectedSection, setSelectedSection, moveSectionToUnused, isFrozenSection } = useResume();
 
     const [contacts, setContacts] = useState(() => {
         const local = localStorage.getItem("customContactData");
@@ -70,6 +70,21 @@ export default function Contact({areaName}) {
             className={`contact resumeSection ${style?.contact?.polygon ? "polygon" : ""} ${editMode && isSelected ? "selected" : ""}`}
         >
             <h2 style={headingStyle}>Contact</h2>
+
+            {editMode && !isFrozenSection("contact") && (
+                <button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        moveSectionToUnused("contact");
+                    }}
+                    className="crossButton"
+                    style={style?.contact?.crossButton}
+                    title="Remove section"
+                >
+                    ✕
+                </button>
+            )}
+
             <ul className="contactList" style={style?.contact?.list}>
                 {contacts.map((contact, index) => (
                     <li key={index} className="contactItem" style={style?.contact?.listItem}>

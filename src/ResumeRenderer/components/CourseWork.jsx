@@ -81,6 +81,20 @@ export default function Coursework({ areaName }) {
         >
             <h2 style={headingStyle}>Coursework</h2>
 
+            {editMode && !isFrozenSection("Coursework") && (
+                <button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        moveSectionToUnused("Coursework");
+                    }}
+                    className="crossButton"
+                    style={style?.coursework?.crossButton}
+                    title="Remove section"
+                >
+                    ✕
+                </button>
+            )}
+
             <LayoutComponent
                 data={courseworkData}
                 style={style}

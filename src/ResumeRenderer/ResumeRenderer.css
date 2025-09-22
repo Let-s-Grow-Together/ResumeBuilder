@@ -654,3 +654,13 @@
     transform: translateY(0.2em);
 }
 
+.crossButton {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #888;
+}

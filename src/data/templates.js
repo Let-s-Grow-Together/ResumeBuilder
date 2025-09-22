@@ -35,7 +35,7 @@ const template1 = {
                 },
             ],
         },
-        frozenSections: ["avatar", "personalInfo"],
+        frozenSections: ["avatar", "personalInfo","summary"],
         colorScheme: {
             background: "#FFFFFF",
             text: "#333333"

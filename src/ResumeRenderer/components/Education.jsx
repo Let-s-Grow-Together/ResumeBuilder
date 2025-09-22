@@ -80,7 +80,7 @@ function LayoutTwo({ data, style, viewType, editMode, handleFieldBlur, handleDes
             key={edu.id || index}
             style={{ display: "flex", gap: "16px", ...style?.education?.eachEducation }}
         >
-            <div style={style?.education?.leftEdu }>
+            <div style={style?.education?.leftEdu}>
                 <h4
                     contentEditable={editMode}
                     data-id={edu.id}
@@ -100,7 +100,7 @@ function LayoutTwo({ data, style, viewType, editMode, handleFieldBlur, handleDes
                 </h6>
             </div>
 
-            <div style={style?.education?.rightEdu }>
+            <div style={style?.education?.rightEdu}>
                 <h3
                     contentEditable={editMode}
                     data-id={edu.id}
@@ -143,7 +143,7 @@ function LayoutTwo({ data, style, viewType, editMode, handleFieldBlur, handleDes
     ));
 }
 
-export default function Education({areaName}) {
+export default function Education({ areaName }) {
     const {
         data,
         style,
@@ -152,6 +152,8 @@ export default function Education({areaName}) {
         selectedSection,
         setSelectedSection,
         viewTypes,
+        moveSectionToUnused,
+        isFrozenSection
     } = useResume();
 
     const educationRef = useRef();
@@ -199,9 +201,23 @@ export default function Education({areaName}) {
             style={{ ...style?.education?.box, position: "relative" }}
             ref={educationRef}
         >
-            <h2 className={`${style?.education?.dottedheading?"dotted-heading":""}`} style={headingStyle}>
+            <h2 className={`${style?.education?.dottedheading ? "dotted-heading" : ""}`} style={headingStyle}>
                 Education
             </h2>
+
+            {editMode && !isFrozenSection("education") && (
+                <button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        moveSectionToUnused("education");
+                    }}
+                    className="crossButton"
+                    style={style?.education?.crossButton}
+                    title="Remove section"
+                >
+                    ✕
+                </button>
+            )}
 
             <LayoutComponent
                 data={data.education}

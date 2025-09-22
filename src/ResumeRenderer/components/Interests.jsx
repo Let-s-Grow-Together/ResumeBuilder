@@ -83,6 +83,8 @@ export default function Interests({ areaName }) {
         selectedSection,
         setSelectedSection,
         viewTypes,
+        moveSectionToUnused,
+        isFrozenSection
     } = useResume();
 
     const interestsRef = useRef();
@@ -118,8 +120,22 @@ export default function Interests({ areaName }) {
         >
             <h2 style={headingStyle}>Interests</h2>
 
+            {editMode && !isFrozenSection("Interests") && (
+                <button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        moveSectionToUnused("Interests");
+                    }}
+                    className="crossButton"
+                    style={style?.interests?.crossButton}
+                    title="Remove section"
+                >
+                    ✕
+                </button>
+            )}
+
             <LayoutComponent
-                data={interestsData} 
+                data={interestsData}
                 style={style}
                 editMode={editMode}
                 viewType={viewType}
