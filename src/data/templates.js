@@ -1490,14 +1490,16 @@ const template525 = {
             templateRows: "40mm 1fr",
             templateColumns: "1fr 1fr 1fr",
             columnGap:"2rem",
+            templateColumns: "1fr 1fr 1fr",
+            columnGap:"2rem",
             areas: [
                 {
                     name: "header",
                     rowStart: 1,
                     rowEnd: 2,
                     colStart: 1,
-                    colEnd: 4,
-                    sections: ["personalInfo","contact"]
+                    colEnd: 3,
+                    sections: ["personalInfo"]
                 },
                 {
                     name: "leftColumn",
@@ -1505,30 +1507,20 @@ const template525 = {
                     rowEnd: 3,
                     colStart: 1,
                     colEnd: 2,
-                    style: { marginTop: "0px", },
-                    sections: ["summary", "achievements", "interests", ]
-                },
-                {
-                    name: "middleColumn",
-                    rowStart: 2,
-                    rowEnd: 3,
-                    colStart: 2,
-                    colEnd: 3,
-                    style: { marginTop: "0px", },
-                    sections: ["workExperience", "organizations",]
+                    style: { marginTop: "60px", paddingLeft: "10px" },
+                    sections: ["summary", "workExperience", "organizations", "awards", "language"]
                 },
                 {
                     name: "rightColumn",
                     rowStart: 2,
                     rowEnd: 3,
-                    colStart: 3,
-                    colEnd: 4,
-                    style: { marginTop: "0px", },
-                    sections: [ "education", "skills", "language"]
+                    colStart: 2,
+                    colEnd: 3,
+                    style: { marginTop: "60px", borderLeft: "2px solid #2e3c47ff", backgroundColor: "#2e3c47ff", color: "white", paddingTop: "10px", borderRadius: "10px" },
+                    sections: ["contact", "education", "skills",]
                 },
             ]
         },
-        frozenSections:["personalInfo", "contact"],
         padding: "10mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink:
@@ -1959,5 +1951,6 @@ const template600 = {
 
 /* export const templates = [template1, template3, template9, template10, template11, template12, template13, template14, template15, template113, template115, template116, template117, template1110, template1111, template1112, template1113, template1115, template21, template6, template23, template24, template25, template501, template516, template521, template522, template523, template524, template525, template526]; */
 
-// export const templates = [template1, template3, template9, template10, template11, template12, template13, template14, template15, template115, template116, template117, template1110, template1112, template1113, template1115, template21, template6, template23, template24, template25, template501, template503, template523, template28, template600];
+
+
 export const templates = [template1, template3, template9, template10, template11, template12, template13, template14, template15,  template115, template116, template117, template1110, template1112, template1113, template1115, template21, template6, template23, template24, template25, template26, template27, template526, template501, template523, template525, template28, template600];
