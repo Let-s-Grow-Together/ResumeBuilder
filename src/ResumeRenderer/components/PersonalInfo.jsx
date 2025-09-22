@@ -4,7 +4,7 @@ import InlineToolbar from "../../Components/shared/InlineToolbar";
 import { FaPen } from "react-icons/fa";
 
 export default function PersonalInfo() {
-    const { data, style, editMode, updateField, viewTypes, setSelectedSection, selectedSection } = useResume();
+    const { data, style, editMode, updateField, viewTypes, setSelectedSection, selectedSection, moveSectionToUnused, isFrozenSection } = useResume();
     const personalRef = useRef();
     const fileInputRef = useRef(null);
     const viewType = viewTypes?.personalInfo || "block";
@@ -42,6 +42,21 @@ export default function PersonalInfo() {
             style={style?.personalInfo?.box}
             onClick={() => setSelectedSection("personalInfo")}
         >
+
+            {editMode && !isFrozenSection("personalInfo") && (
+                <button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        moveSectionToUnused("personalInfo");
+                    }}
+                    className="crossButton"
+                    style={style?.personalInfo?.crossButton}
+                    title="Remove section"
+                >
+                    ✕
+                </button>
+            )}
+
             <div style={style?.personalInfo?.mixBox}>
                 <div className="avatar" style={style?.personalInfo?.avatar?.box}>
                     <div className="profile-card" style={style?.personalInfo?.avatar?.card}>

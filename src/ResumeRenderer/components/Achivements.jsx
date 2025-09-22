@@ -11,6 +11,8 @@ export default function Achievements({areaName}) {
         selectedSection,
         setSelectedSection,
         viewTypes,
+        moveSectionToUnused,
+        isFrozenSection
     } = useResume();
     const achievementRef = useRef();
 
@@ -50,6 +52,20 @@ export default function Achievements({areaName}) {
             <h2 style={headingStyle} >
                 Achievements
             </h2>
+            
+            {editMode && !isFrozenSection("achievements") && (
+                <button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        moveSectionToUnused("achievements");
+                    }}
+                    className="crossButton"
+                    style={style?.achieve?.crossButton}
+                    title="Remove section"
+                >
+                    ✕
+                </button>
+            )}
 
             {data.achievements.map((achievement, achievementIndex) => (
                 <div

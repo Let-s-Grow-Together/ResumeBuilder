@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useResume } from "../../context/ResumeContext";
 import InlineToolbar from "../../Components/shared/InlineToolbar";
 
-export default function Organizations({areaName}) {
+export default function Organizations({ areaName }) {
     const {
         data,
         style,
@@ -11,6 +11,8 @@ export default function Organizations({areaName}) {
         selectedSection,
         setSelectedSection,
         viewTypes,
+        moveSectionToUnused,
+        isFrozenSection
     } = useResume();
 
     const orgRef = useRef();
@@ -51,6 +53,20 @@ export default function Organizations({areaName}) {
             <h2 style={headingStyle} >
                 Organizations
             </h2>
+
+            {editMode && !isFrozenSection("organizations") && (
+                <button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        moveSectionToUnused("organizations");
+                    }}
+                    className="crossButton"
+                    style={style?.organiz?.crossButton}
+                    title="Remove section"
+                >
+                    ✕
+                </button>
+            )}
 
             {data.organizations.map((organization, organizationIndex) => (
                 <div

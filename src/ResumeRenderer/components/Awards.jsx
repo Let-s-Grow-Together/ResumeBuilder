@@ -11,6 +11,8 @@ export default function Awards({areaName}) {
         selectedSection,
         setSelectedSection,
         viewTypes,
+        moveSectionToUnused,
+        isFrozenSection
     } = useResume();
     const awardsRef = useRef();
 
@@ -50,6 +52,20 @@ export default function Awards({areaName}) {
             <h2 style={headingStyle} >
                 Honours and Awards
             </h2>
+            
+            {editMode && !isFrozenSection("awards") && (
+                <button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        moveSectionToUnused("awards");
+                    }}
+                    className="crossButton"
+                    style={style?.awards?.crossButton}
+                    title="Remove section"
+                >
+                    ✕
+                </button>
+            )}
 
             {data.awards.map((award, awardIndex) => (
                 <div

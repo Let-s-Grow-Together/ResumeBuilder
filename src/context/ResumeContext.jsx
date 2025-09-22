@@ -15,6 +15,40 @@ export function ResumeProvider({ children, initialData, style, editModeFromURL, 
     const [customLayoutAreas, setCustomLayoutAreas] = useState(null);
     const [sectionOrder, setSectionOrder] = useState([]);
 
+    const isFrozenSection = (sectionName) => {
+        const frozen = style?.layout?.frozenSections || [];
+        return frozen.includes(sectionName);
+    };
+
+    const moveSectionToUnused = (sectionName) => {
+        
+        if (!customLayoutAreas || !Array.isArray(customLayoutAreas)) return;
+
+        const updatedAreas = customLayoutAreas.map((area) => ({
+            ...area,
+            sections: (area.sections || []).filter((s) => s !== sectionName),
+        }));
+
+        let unusedArea = updatedAreas.find((area) => area.name === "unused");
+
+        if (unusedArea) {
+            if (!unusedArea.sections.includes(sectionName)) {
+                unusedArea.sections.push(sectionName);
+            }
+        } else {
+            updatedAreas.push({
+                name: "unused",
+                sections: [sectionName],
+            });
+        }
+
+        const newSectionsInLayout = updatedAreas.flatMap((a) => a.sections || []);
+        const mergedOrder = Array.from(new Set([...(sectionOrder || []), ...newSectionsInLayout]));
+
+        setSectionOrder(mergedOrder);
+        setCustomLayoutAreas(updatedAreas);
+    };
+
     const [viewTypes, setViewTypes] = useState(() => {
         const key = `resumeViewTypes-${templateId}`;
         const saved = localStorage.getItem(key);
@@ -356,7 +390,9 @@ export function ResumeProvider({ children, initialData, style, editModeFromURL, 
                 addEntryAfter,
                 removeEntry,
                 addFullEntryAfter,
-                removeFullEntry
+                removeFullEntry,
+                moveSectionToUnused,
+                isFrozenSection
             }}
         >
             {children}

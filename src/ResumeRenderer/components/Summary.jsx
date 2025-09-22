@@ -2,8 +2,8 @@ import { useRef } from "react";
 import { useResume } from "../../context/ResumeContext";
 import InlineToolbar from "../../Components/shared/InlineToolbar";
 
-export default function Summary({areaName}) {
-    const { data, style, updateField, editMode, viewTypes, setSelectedSection, selectedSection } = useResume();
+export default function Summary({ areaName }) {
+    const { data, style, updateField, editMode, viewTypes, setSelectedSection, selectedSection, moveSectionToUnused, isFrozenSection } = useResume();
     const summaryRef = useRef();
     const viewType = viewTypes?.summary || "block";
 
@@ -24,8 +24,22 @@ export default function Summary({areaName}) {
             onClick={() => setSelectedSection("summary")}
         >
             <h2 style={headingStyle}>
-                {style?.summary?.about ? "ABOUT": "Summary"}
+                {style?.summary?.about ? "ABOUT" : "Summary"}
             </h2>
+
+            {editMode && !isFrozenSection("summary") && (
+                <button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        moveSectionToUnused("summary");
+                    }}
+                    className="crossButton"
+                    style={style?.summary?.crossButton}
+                    title="Remove section"
+                >
+                    ✕
+                </button>
+            )}
 
             {viewType === "list" ? (
                 <ul style={style?.summary?.list}>

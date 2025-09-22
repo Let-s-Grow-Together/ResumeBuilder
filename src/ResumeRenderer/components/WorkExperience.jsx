@@ -12,6 +12,8 @@ function WorkExperience({ areaName }) {
 		selectedSection,
 		setSelectedSection,
 		viewTypes,
+		moveSectionToUnused,
+		isFrozenSection
 	} = useResume();
 
 	const workExpRef = useRef();
@@ -198,6 +200,21 @@ function WorkExperience({ areaName }) {
 			<h2 className={`${style?.workExpe?.dottedheading ? "dotted-heading" : ""}`} style={headingStyle}>
 				Work Experience
 			</h2>
+
+			{editMode && !isFrozenSection("workExperience") && (
+				<button
+					onClick={(e) => {
+						e.stopPropagation();
+						moveSectionToUnused("workExperience");
+					}}
+					className="crossButton"
+                    style={style?.workExpe?.crossButton}
+					title="Remove section"
+				>
+					✕
+				</button>
+			)}
+
 			{renderExperience()}
 
 			<InlineToolbar editMode={editMode} containerRef={workExpRef} sectionName="experience" />

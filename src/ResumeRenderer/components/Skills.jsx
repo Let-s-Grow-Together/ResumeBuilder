@@ -160,6 +160,8 @@ export default function Skills({ areaName }) {
         selectedSection,
         setSelectedSection,
         viewTypes,
+        moveSectionToUnused,
+        isFrozenSection
     } = useResume();
 
     const skillsRef = useRef();
@@ -233,6 +235,20 @@ export default function Skills({ areaName }) {
             ref={skillsRef}
         >
             <h2 style={headingStyle}>Skills</h2>
+
+            {editMode && !isFrozenSection("skills") && (
+                <button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        moveSectionToUnused("skills");
+                    }}
+                    className="crossButton"
+                    style={style?.skills?.crossButton}
+                    title="Remove section"
+                >
+                    ✕
+                </button>
+            )}
 
             <LayoutComponent
                 data={data.skills}

@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useResume } from "../../context/ResumeContext";
 import InlineToolbar from "../../Components/shared/InlineToolbar";
 
-export default function Certificates({areaName}) {
+export default function Certificates({ areaName }) {
     const {
         data,
         style,
@@ -11,6 +11,8 @@ export default function Certificates({areaName}) {
         selectedSection,
         setSelectedSection,
         viewTypes,
+        moveSectionToUnused,
+        isFrozenSection
     } = useResume();
     const certificateRef = useRef();
 
@@ -40,6 +42,20 @@ export default function Certificates({areaName}) {
             <h2 style={headingStyle} >
                 Certificates
             </h2>
+
+            {editMode && !isFrozenSection("certifications") && (
+                <button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        moveSectionToUnused("certifications");
+                    }}
+                    className="crossButton"
+                    style={style?.certificate?.crossButton}
+                    title="Remove section"
+                >
+                    ✕
+                </button>
+            )}
 
             <div style={style?.certificate?.innerBox}>
                 {data.certifications.map((cert, index) => (

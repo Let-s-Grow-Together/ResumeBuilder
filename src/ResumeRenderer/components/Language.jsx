@@ -2,8 +2,8 @@ import { useRef } from "react";
 import { useResume } from "../../context/ResumeContext";
 import InlineToolbar from "../../Components/shared/InlineToolbar";
 
-export default function Languages({areaName}) {
-    const { data, style, editMode, updateField, selectedSection, setSelectedSection, viewTypes } = useResume();
+export default function Languages({ areaName }) {
+    const { data, style, editMode, updateField, selectedSection, setSelectedSection, viewTypes, moveSectionToUnused, isFrozenSection } = useResume();
     const languagesRef = useRef();
 
     const handleBlur = (index, e) => {
@@ -17,7 +17,7 @@ export default function Languages({areaName}) {
     const isSelected = selectedSection === "language";
     const layoutHeading = style?.layoutStyles && areaName && style.layoutStyles[areaName]?.heading;
     const headingStyle = layoutHeading ?? style?.language?.heading;
-    
+
     const layoutBoxStyle = style?.layoutStyles && areaName && style.layoutStyles[areaName]?.eachSkillBox;
     const BoxStyle = layoutBoxStyle ?? style?.skills?.eachSkillBox;
     return (
@@ -28,6 +28,20 @@ export default function Languages({areaName}) {
             ref={languagesRef}
         >
             <h2 style={headingStyle}>Languages</h2>
+
+            {editMode && !isFrozenSection("language") && (
+                <button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        moveSectionToUnused("language");
+                    }}
+                    className="crossButton"
+                    style={style?.language?.crossButton}
+                    title="Remove section"
+                >
+                    ✕
+                </button>
+            )}
 
             {viewType === "list" ? (
                 <ul style={style?.language?.wholeList}>

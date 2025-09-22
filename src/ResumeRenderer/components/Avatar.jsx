@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { FaPen } from "react-icons/fa";
 
 export default function Avatar() {
-    const { data, updateField, editMode, style, selectedSection, setSelectedSection } = useResume();
+    const { data, updateField, editMode, style, selectedSection, setSelectedSection, moveSectionToUnused, isFrozenSection } = useResume();
     const fileInputRef = useRef(null);
 
     if (style?.avatar?.showAvatar === false) {
@@ -36,6 +36,21 @@ export default function Avatar() {
             onClick={() => setSelectedSection("avatar")}
             className={`avatar resumeSection ${editMode && isSelected ? "selected" : ""}`}
         >
+            
+            {editMode && !isFrozenSection("avatar") && (
+                <button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        moveSectionToUnused("avatar");
+                    }}
+                    className="crossButton"
+                    style={style?.avatar?.crossButton}
+                    title="Remove section"
+                >
+                    ✕
+                </button>
+            )}
+
             <div className="profile-card" style={style?.avatar?.card}>
 
                 {/* 🖼️ Image OR 🔤 Initials */}
