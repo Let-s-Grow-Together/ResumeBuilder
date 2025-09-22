@@ -874,7 +874,7 @@ const template26 = {
 
 const template27 = {
     id: 27,
-    name: "Stylish CV",
+    name: "Dual View",
     filteredColumn: "2",
     isAvatar: "true",
     layout: {
@@ -1953,4 +1953,4 @@ const template600 = {
 
 
 
-export const templates = [template1, template3, template9, template10, template11, template12, template13, template14, template15,  template115, template116, template117, template1110, template1112, template1113, template1115, template21, template6, template23, template24, template25, template26, template27, template526, template501, template523, template525, template28, template600];
+export const templates = [template1, template3, template9, template10, template11, template12, template13, template14, template15,  template115, template116, template117, template1110, template1112, template1113, template1115, template21, template6, template23, template24, template25, template26, template27, template501, template503, template523, template28,];
