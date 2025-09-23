@@ -2,11 +2,18 @@ import { createContext, useContext, useState, useEffect } from "react";
 
 export const ResumeContext = createContext();
 export const useResume = () => useContext(ResumeContext);
-
+const RESUME_DATA_VERSION = "1.1";
 export function ResumeProvider({ children, initialData, style, editModeFromURL, templateId }) {
     const [data, setData] = useState(() => {
-        const saved = localStorage.getItem("resumeData");
-        return saved ? JSON.parse(saved) : initialData;
+        const savedVersion = localStorage.getItem("resumeDataVersion");
+        const savedData = localStorage.getItem("resumeData");
+        if (savedVersion !== RESUME_DATA_VERSION || !savedData) {
+            localStorage.setItem("resumeDataVersion", RESUME_DATA_VERSION);
+            localStorage.setItem("resumeData", JSON.stringify(initialData));
+            return initialData;
+        }
+
+        return JSON.parse(savedData);
     });
 
     const [editMode, setEditMode] = useState(editModeFromURL || false);
@@ -21,7 +28,7 @@ export function ResumeProvider({ children, initialData, style, editModeFromURL, 
     };
 
     const moveSectionToUnused = (sectionName) => {
-        
+
         if (!customLayoutAreas || !Array.isArray(customLayoutAreas)) return;
 
         const updatedAreas = customLayoutAreas.map((area) => ({
