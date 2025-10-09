@@ -42,7 +42,7 @@ const sectionComponents = {
     designIcons3: designIcons
 };
 
-export default function ResumeRenderer({ template }) {
+export default function ResumeRenderer({ template, printResumeRef }) {
     const { data, style, editMode, selectedSection, setSelectedSection, customLayoutAreas } = useResume();
 
     useEffect(() => {
@@ -124,6 +124,7 @@ export default function ResumeRenderer({ template }) {
                 padding,
                 ...cssVariables
             }}
+            ref={printResumeRef}
         >
             {areasToRender.map((area) => (
                 <div

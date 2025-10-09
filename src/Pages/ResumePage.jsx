@@ -18,7 +18,7 @@ import SidebarNav from "./SidebarNav";
 import './Resumepage.css';
 import { toPng } from "html-to-image";
 
-export default function ResumePage({ onLoginClick,setAuthModalOpen }) {
+export default function ResumePage({ onLoginClick, setAuthModalOpen }) {
     const [user, setUser] = useState(null);
     const [selectedTemplate, setSelectedTemplate] = useState(null);
     const [userData, setUserData] = useState(null);
@@ -27,6 +27,7 @@ export default function ResumePage({ onLoginClick,setAuthModalOpen }) {
     const { templateId } = useParams();
     const navigate = useNavigate();
     const resumeRef = useRef();
+    const printResumeRef = useRef();
 
     const editModeFromURL = searchParams.get("edit") === "true";
 
@@ -72,56 +73,45 @@ export default function ResumePage({ onLoginClick,setAuthModalOpen }) {
 
 
     const handleDownload = async () => {
-        if (editModeFromURL) {
-            alert("Please save your resume before downloading.");
-            return;
-        }
+        const html = `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8" />
+        <style>
+          ${Array.from(document.styleSheets)
+                .map((sheet) => {
+                    try {
+                        return Array.from(sheet.cssRules)
+                            .map((rule) => rule.cssText)
+                            .join("");
+                    } catch (e) {
+                        return "";
+                    }
+                })
+                .join("")}
+        </style>
+      </head>
+      <body>${printResumeRef.current.outerHTML}</body>
+    </html>
+  `;
 
-        const {
-            data: { user: currentUser },
-        } = await supabase.auth.getUser();
+        const res = await fetch("http://localhost:3001/generate-pdf", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ html }),
+        });
 
-        if (!currentUser) {
-            setAuthModalOpen(true);
-            return;
-        }
+        console.log("Response status:", res.status);
 
-        const input = resumeRef.current;
-
-        const images = input.querySelectorAll("img");
-        await Promise.all(
-            Array.from(images).map(
-                (img) =>
-                    new Promise((resolve) => {
-                        if (img.complete) resolve();
-                        else img.onload = img.onerror = resolve;
-                    })
-            )
-        );
-
-        await new Promise((resolve) => requestAnimationFrame(() => setTimeout(resolve, 100)));
-
-        try {
-            const dataUrl = await toPng(input, {
-                cacheBust: true,
-                backgroundColor: "#ffffff",
-                pixelRatio: 2,
-                style: {
-                    margin: 0,
-                    padding: 0,
-                    transform: 'none'
-                }
-            });
-
-            const pdf = new jsPDF("p", "mm", "a4");
-            const pdfWidth = pdf.internal.pageSize.getWidth();
-            const pdfHeight = (input.offsetHeight * pdfWidth) / input.offsetWidth;
-            pdf.addImage(dataUrl, "PNG", 0, 0, pdfWidth, pdfHeight);
-            pdf.save("my-resume.pdf");
-        } catch (err) {
-            console.error("Error generating PDF", err);
-        }
+        const blob = await res.blob(); // ✅ fixed here
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "resume.pdf";
+        link.click();
     };
+
 
     if (!selectedTemplate || !userData)
         return <p style={{ textAlign: "center", paddingTop: "2rem" }}>Loading template...</p>;
@@ -213,7 +203,7 @@ export default function ResumePage({ onLoginClick,setAuthModalOpen }) {
 
                                 }}
                             >
-                                <ResumeRenderer template={selectedTemplate} />
+                                <ResumeRenderer template={selectedTemplate} printResumeRef={printResumeRef} />
                             </div>
                         </div>
                     </div>

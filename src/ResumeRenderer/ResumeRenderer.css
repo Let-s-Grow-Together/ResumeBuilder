@@ -665,3 +665,15 @@
     cursor: pointer;
     color: #333;
 }
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+.resume-view {
+    width: 210mm;
+    height: 297mm;
+    box-sizing: border-box;
+    overflow: hidden;
+}
