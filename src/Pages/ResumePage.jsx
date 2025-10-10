@@ -16,6 +16,7 @@ import Navbar from "./Navbar";
 import TemplateSidebar from "./TemplateSidebar";
 import SidebarNav from "./SidebarNav";
 import './Resumepage.css';
+import resumeCss from '../ResumeRenderer/ResumeRenderer.css?inline'
 import { toPng } from "html-to-image";
 
 export default function ResumePage({ onLoginClick, setAuthModalOpen }) {
@@ -73,45 +74,71 @@ export default function ResumePage({ onLoginClick, setAuthModalOpen }) {
 
 
     const handleDownload = async () => {
-        const html = `
+        // Clone the resume section
+        try {
+            const resumeElement = printResumeRef.current.cloneNode(true);
+
+            // Inline computed styles (ensures styles apply in Puppeteer)
+            const allElements = resumeElement.querySelectorAll("*");
+            allElements.forEach((el) => {
+                const computed = window.getComputedStyle(el);
+                for (let prop of computed) {
+                    el.style[prop] = computed.getPropertyValue(prop);
+                }
+            });
+
+            // Build full HTML
+            const html = `
     <!DOCTYPE html>
     <html>
       <head>
         <meta charset="utf-8" />
         <style>
-          ${Array.from(document.styleSheets)
-                .map((sheet) => {
-                    try {
-                        return Array.from(sheet.cssRules)
-                            .map((rule) => rule.cssText)
-                            .join("");
-                    } catch (e) {
-                        return "";
-                    }
-                })
-                .join("")}
+        ${resumeCss}
         </style>
       </head>
-      <body>${printResumeRef.current.outerHTML}</body>
+      <body>${resumeElement.outerHTML}</body>
     </html>
   `;
 
-        const res = await fetch("http://localhost:3001/generate-pdf", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ html }),
-        });
+            const res = await fetch("http://localhost:3001/generate-pdf", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ html }),
+            });
 
-        console.log("Response status:", res.status);
+            if (!res.ok) throw new Error("Failed to fetch PDF");
 
-        const blob = await res.blob(); // ✅ fixed here
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = "resume.pdf";
-        link.click();
+            const data = await res.json();  // Correctly parse JSON response
+            const base64String = data.pdfBase64; // Base64 encoded PDF string
+
+            // Decode the Base64 string
+            const byteCharacters = atob(base64String);  // Decode base64
+            const byteArrays = [];
+
+            for (let offset = 0; offset < byteCharacters.length; offset += 1024) {
+                const slice = byteCharacters.slice(offset, offset + 1024);
+                const byteNumbers = new Array(slice.length);
+                for (let i = 0; i < slice.length; i++) {
+                    byteNumbers[i] = slice.charCodeAt(i);
+                }
+                const byteArray = new Uint8Array(byteNumbers);
+                byteArrays.push(byteArray);
+            }
+
+            const blob = new Blob(byteArrays, { type: 'application/pdf' });
+
+            // Trigger download
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "resume.pdf";
+            link.click();
+            URL.revokeObjectURL(url);
+        } catch (err) {
+            console.error("Error downloading PDF:", err);
+        }
     };
-
 
     if (!selectedTemplate || !userData)
         return <p style={{ textAlign: "center", paddingTop: "2rem" }}>Loading template...</p>;

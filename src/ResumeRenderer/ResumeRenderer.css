@@ -665,15 +665,29 @@
     cursor: pointer;
     color: #333;
 }
-
 @page {
     size: A4;
     margin: 0;
 }
-
+body {
+    margin: 0;
+    padding: 0;
+}
 .resume-view {
     width: 210mm;
     height: 297mm;
     box-sizing: border-box;
-    overflow: hidden;
+}
+
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .resume-view {
+    width: 210mm;
+    min-height: 297mm;
+    box-sizing: border-box;
+    display: block !important; /* make sure grid/flex renders */
+  }
 }
