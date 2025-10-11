@@ -109,32 +109,18 @@ export default function ResumePage({ onLoginClick, setAuthModalOpen }) {
 
             if (!res.ok) throw new Error("Failed to fetch PDF");
 
-            const data = await res.json();  // Correctly parse JSON response
-            const base64String = data.pdfBase64; // Base64 encoded PDF string
+            const pdfBlob = await res.blob();
 
-            // Decode the Base64 string
-            const byteCharacters = atob(base64String);  // Decode base64
-            const byteArrays = [];
+            // Create a URL for the Blob
+            const pdfUrl = URL.createObjectURL(pdfBlob);
 
-            for (let offset = 0; offset < byteCharacters.length; offset += 1024) {
-                const slice = byteCharacters.slice(offset, offset + 1024);
-                const byteNumbers = new Array(slice.length);
-                for (let i = 0; i < slice.length; i++) {
-                    byteNumbers[i] = slice.charCodeAt(i);
-                }
-                const byteArray = new Uint8Array(byteNumbers);
-                byteArrays.push(byteArray);
-            }
-
-            const blob = new Blob(byteArrays, { type: 'application/pdf' });
-
-            // Trigger download
-            const url = URL.createObjectURL(blob);
-            const link = document.createElement("a");
-            link.href = url;
-            link.download = "resume.pdf";
+            // Create a link element and trigger the download
+            const link = document.createElement('a');
+            link.href = pdfUrl;
+            link.download = 'generated.pdf'; // Specify the filename
+            document.body.appendChild(link);
             link.click();
-            URL.revokeObjectURL(url);
+            document.body.removeChild(link);
         } catch (err) {
             console.error("Error downloading PDF:", err);
         }
