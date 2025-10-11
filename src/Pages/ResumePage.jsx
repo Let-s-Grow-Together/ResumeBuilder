@@ -110,17 +110,23 @@ export default function ResumePage({ onLoginClick, setAuthModalOpen }) {
             if (!res.ok) throw new Error("Failed to fetch PDF");
 
             const pdfBlob = await res.blob();
+            console.log(pdfBlob)
 
             // Create a URL for the Blob
             const pdfUrl = URL.createObjectURL(pdfBlob);
+
+            // Open the PDF in a new window or tab to check its validity
+            window.open(pdfUrl, '_blank');
 
             // Create a link element and trigger the download
             const link = document.createElement('a');
             link.href = pdfUrl;
             link.download = 'generated.pdf'; // Specify the filename
+            link.type = 'application/pdf';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
+            URL.revokeObjectURL(pdfUrl);
         } catch (err) {
             console.error("Error downloading PDF:", err);
         }
