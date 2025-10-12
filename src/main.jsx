@@ -6,7 +6,7 @@ import { makeServer } from './Mirage/server.js';
 
 import App from './App.jsx';
 
-  makeServer();
+  // makeServer();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

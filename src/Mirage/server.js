@@ -8,7 +8,7 @@ export function makeServer() {
 
     createServer({
         routes() {
-            this.passthrough("http://localhost:3001/**");
+            // this.passthrough("http://localhost:3000/**");
             this.namespace = 'api'
 
             this.get('/templates', () => {

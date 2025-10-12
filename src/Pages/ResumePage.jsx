@@ -7,7 +7,6 @@ import jsPDF from "jspdf";
 import { supabase } from "../supabaseClient";
 import { ResumeProvider } from "../context/ResumeContext";
 import ResumeRenderer from "../ResumeRenderer/ResumeRenderer";
-// import Toolbar from "./Toolbar";
 import SaveControls from "./SaveControl";
 import templateStyles from "../data/templateStyle";
 import { templates } from "../data/templates";
@@ -16,6 +15,7 @@ import Navbar from "./Navbar";
 import TemplateSidebar from "./TemplateSidebar";
 import SidebarNav from "./SidebarNav";
 import './Resumepage.css';
+import mockUserData from '../data/mockUserData';
 import resumeCss from '../ResumeRenderer/ResumeRenderer.css?inline'
 import { toPng } from "html-to-image";
 
@@ -53,18 +53,9 @@ export default function ResumePage({ onLoginClick, setAuthModalOpen }) {
     }, []);
 
     useEffect(() => {
-        fetch("/api/templates")
-            .then((res) => res.json())
-            .then((data) => {
-                const found = data.templates.find((t) => t.id === Number(templateId));
-                setSelectedTemplate(found);
-            });
-
-        fetch("/api/user-data")
-            .then((res) => res.json())
-            .then((data) => {
-                setUserData(data.data);
-            });
+        const found = templates.find((t) => t.id === Number(templateId));
+        setSelectedTemplate(found);
+        setUserData(mockUserData);
     }, [templateId]);
 
     const handleTemplateSwitch = (newId) => {
@@ -89,45 +80,42 @@ export default function ResumePage({ onLoginClick, setAuthModalOpen }) {
 
             // Build full HTML
             const html = `
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="utf-8" />
-        <style>
-        ${resumeCss}
-        </style>
-      </head>
-      <body>${resumeElement.outerHTML}</body>
-    </html>
-  `;
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <meta charset="utf-8" />
+                    <style>
+                    ${resumeCss}
+                    </style>
+                </head>
+                <body>${resumeElement.outerHTML}</body>
+                </html>
+            `;
 
-            const res = await fetch("http://localhost:3001/generate-pdf", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ html }),
+            const response = await fetch('http://localhost:3000/generate-pdf', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/html',
+                },
+                body: html,
             });
 
-            if (!res.ok) throw new Error("Failed to fetch PDF");
+            if (!response.ok) {
+                alert('Failed to generate PDF');
+                return;
+            }
 
-            const pdfBlob = await res.blob();
-            console.log(pdfBlob)
-
-            // Create a URL for the Blob
-            const pdfUrl = URL.createObjectURL(pdfBlob);
-
-            // Open the PDF in a new window or tab to check its validity
-            window.open(pdfUrl, '_blank');
-
-            // Create a link element and trigger the download
-            const link = document.createElement('a');
-            link.href = pdfUrl;
-            link.download = 'generated.pdf'; // Specify the filename
-            link.type = 'application/pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            URL.revokeObjectURL(pdfUrl);
-        } catch (err) {
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'generated.pdf';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            window.URL.revokeObjectURL(url);
+        } 
+        catch (err) {
             console.error("Error downloading PDF:", err);
         }
     };
