@@ -1,28 +1,25 @@
-
-
 import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
 import { supabase } from "../supabaseClient";
 import { ResumeProvider } from "../context/ResumeContext";
 import ResumeRenderer from "../ResumeRenderer/ResumeRenderer";
 import SaveControls from "./SaveControl";
-import templateStyles from "../data/templateStyle";
-import { templates } from "../data/templates";
 import Footer from "../Components/Footer/Footer";
 import Navbar from "./Navbar";
 import TemplateSidebar from "./TemplateSidebar";
 import SidebarNav from "./SidebarNav";
 import './Resumepage.css';
-import mockUserData from '../data/mockUserData';
 import resumeCss from '../ResumeRenderer/ResumeRenderer.css?inline'
-import { toPng } from "html-to-image";
 
 export default function ResumePage({ onLoginClick, setAuthModalOpen }) {
     const [user, setUser] = useState(null);
     const [selectedTemplate, setSelectedTemplate] = useState(null);
     const [userData, setUserData] = useState(null);
+    const [templateData, setTemplateData] = useState({
+        templates: [],
+        templateStyles: {}
+    });
+    const [loading, setLoading] = useState(true);
     const [activeNav, setActiveNav] = useState(null);
     const [searchParams] = useSearchParams();
     const { templateId } = useParams();
@@ -53,23 +50,42 @@ export default function ResumePage({ onLoginClick, setAuthModalOpen }) {
     }, []);
 
     useEffect(() => {
-        const found = templates.find((t) => t.id === Number(templateId));
-        setSelectedTemplate(found);
-        setUserData(mockUserData);
-    }, [templateId]);
+        const fetchData = async () => {
+            try {
+                const templates = await fetchTemplates();
+                const styles = await fetchTemplateStyles();
+                
+                const userData = await fetchMockData();
+
+                setTemplateData({ templates, templateStyles: styles });
+                setUserData(userData);
+                setLoading(false);
+            } catch (err) {
+                console.error('Error fetching data:', err);
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        if (templateData.templates.length) {
+            const found = templateData.templates.find((t) => t.id === Number(templateId));
+            setSelectedTemplate(found);
+        }
+    }, [templateId, templateData]);
 
     const handleTemplateSwitch = (newId) => {
-        const newTemplate = templates.find((t) => t.id === newId);
+        const newTemplate = templateData.templates.find((t) => t.id === newId);
         if (newTemplate) setSelectedTemplate(newTemplate);
     };
 
 
     const handleDownload = async () => {
-        // Clone the resume section
         try {
             const resumeElement = printResumeRef.current.cloneNode(true);
 
-            // Inline computed styles (ensures styles apply in Puppeteer)
             const allElements = resumeElement.querySelectorAll("*");
             allElements.forEach((el) => {
                 const computed = window.getComputedStyle(el);
@@ -78,21 +94,25 @@ export default function ResumePage({ onLoginClick, setAuthModalOpen }) {
                 }
             });
 
-            // Build full HTML
             const html = `
                 <!DOCTYPE html>
                 <html>
                 <head>
                     <meta charset="utf-8" />
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
                     <style>
-                    ${resumeCss}
+                        *{
+                            margin:0;
+                            padding:0;
+                        }
+                        ${resumeCss}
                     </style>
                 </head>
                 <body>${resumeElement.outerHTML}</body>
                 </html>
             `;
-
-            const response = await fetch('http://localhost:3000/generate-pdf', {
+            console.log(html);
+            const response = await fetch('https://resumebuilder-backend-1-jlsa.onrender.com/generate-pdf', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'text/html',
@@ -109,12 +129,12 @@ export default function ResumePage({ onLoginClick, setAuthModalOpen }) {
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'generated.pdf';
+            a.download = 'resume.pdf';
             document.body.appendChild(a);
             a.click();
             a.remove();
             window.URL.revokeObjectURL(url);
-        } 
+        }
         catch (err) {
             console.error("Error downloading PDF:", err);
         }
@@ -124,7 +144,7 @@ export default function ResumePage({ onLoginClick, setAuthModalOpen }) {
         return <p style={{ textAlign: "center", paddingTop: "2rem" }}>Loading template...</p>;
 
     const dynamicStyle = {
-        ...(templateStyles[selectedTemplate.id] || {}),
+        ...(templateData.templateStyles[selectedTemplate.id] || {}),
         layout: selectedTemplate.layout
     };
 
@@ -180,7 +200,7 @@ export default function ResumePage({ onLoginClick, setAuthModalOpen }) {
                                 </button>
 
                                 <TemplateSidebar
-                                    templates={templates}
+                                    templates={templateData.templates}
                                     selectedTemplate={selectedTemplate}
                                     onTemplateSelect={handleTemplateSwitch}
                                     resumeData={resumeData}
@@ -199,7 +219,6 @@ export default function ResumePage({ onLoginClick, setAuthModalOpen }) {
                             }}
                             className="hide-scroll"
                         >
-                            {/* <Toolbar /> */}
                             <SaveControls />
                             <div
                                 ref={resumeRef}
@@ -220,4 +239,43 @@ export default function ResumePage({ onLoginClick, setAuthModalOpen }) {
             </ResumeProvider>
         </>
     );
+}
+
+const fetchTemplates = async () => {
+    try {
+        const response = await fetch('https://resumebuilder-backend-1-jlsa.onrender.com/api/templates');
+        if (!response.ok) {
+            throw new Error('Failed to fetch templates');
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching templates:', error);
+        return [];
+    }
+};
+
+const fetchTemplateStyles = async () => {
+    try {
+        const response = await fetch('https://resumebuilder-backend-1-jlsa.onrender.com/api/template-styles');
+        if (!response.ok) {
+            throw new Error('Failed to fetch template styles');
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching template styles:', error);
+        return {};
+    }
+};
+
+const fetchMockData = async () => {
+    try {
+        const response = await fetch('https://resumebuilder-backend-1-jlsa.onrender.com/api/userdata');
+        if (!response.ok) {
+            throw new Error('Failed to fetch the user data');
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching template styles:', error);
+        return {};
+    }
 }
