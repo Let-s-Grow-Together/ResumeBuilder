@@ -63,11 +63,11 @@ export default function Navbar({ onDownload, onLoginClick }) {
         <button
           className="btnPrimary"
           onClick={() => {
-            if (user) {
+            // if (user) {
               onDownload();
-            } else {
-              onLoginClick();
-            }
+            // } else {
+            //   onLoginClick();
+            // }
           }}
           style={{
             background: "linear-gradient(to right, #c6a9e3, #1a1a1a)",

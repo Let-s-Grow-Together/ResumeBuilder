@@ -38,11 +38,12 @@ export default function EditableIcon({ currentIconKey, field, iconMap, setIconMa
     const selectedIconObj = allContactIcons.find(entry => entry.key === currentIconKey);
 
     return (
-        <div className="editable-icon-wrapper" style={{ ...style?.contact?.iconWrapper, position: "relative", display: "inline-block" }}>
+        <div className="editable-icon-wrapper" style={{ color: "#333",...style?.contact?.iconWrapper, position: "relative", display: "inline-block" }}>
             <FontAwesomeIcon
                 icon={selectedIconObj?.icon}
                 onClick={() => editMode && setShowPicker((prev) => !prev)}
                 style={{
+                    color: "#333",
                     cursor: editMode ? "pointer" : "default",
                     ...style?.contact?.icon,
                 }}

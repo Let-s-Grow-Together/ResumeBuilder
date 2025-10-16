@@ -108,7 +108,7 @@ export default function ResumePage({ onLoginClick, setAuthModalOpen }) {
                         ${resumeCss}
                     </style>
                 </head>
-                <body>${resumeElement.outerHTML}</body>
+                <body style="color: #333;">${resumeElement.outerHTML}</body>
                 </html>
             `;
             console.log(html);
