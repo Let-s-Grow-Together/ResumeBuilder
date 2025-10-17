@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useRef, useState } from "react";
+import ReactDOMServer from 'react-dom/server';
 import { allContactIcons } from "../../utils/iconList";
 import "./EditableIcon.css";
 import { useResume } from "../../context/ResumeContext";
@@ -36,17 +37,25 @@ export default function EditableIcon({ currentIconKey, field, iconMap, setIconMa
     };
 
     const selectedIconObj = allContactIcons.find(entry => entry.key === currentIconKey);
+    
+    const getSvgMarkup = (icon) => {
+        return ReactDOMServer.renderToStaticMarkup(<FontAwesomeIcon icon={icon} />);
+    };
+
+    const selectedIconSvg = selectedIconObj ? getSvgMarkup(selectedIconObj.icon) : null;
 
     return (
-        <div className="editable-icon-wrapper" style={{ color: "#333",...style?.contact?.iconWrapper, position: "relative", display: "inline-block" }}>
-            <FontAwesomeIcon
-                icon={selectedIconObj?.icon}
-                onClick={() => editMode && setShowPicker((prev) => !prev)}
+        <div className="editable-icon-wrapper" style={{ color: "#333", ...style?.contact?.iconWrapper, position: "relative", display: "inline-block" }}>
+            <div
+                dangerouslySetInnerHTML={{ __html: selectedIconSvg }} // Embed the SVG markup
                 style={{
-                    color: "#333",
+                    width: '15px',
+                    height: '15px',
                     cursor: editMode ? "pointer" : "default",
+                    color: "#333",
                     ...style?.contact?.icon,
                 }}
+                onClick={() => editMode && setShowPicker((prev) => !prev)}
             />
 
             {showPicker && (
@@ -54,7 +63,10 @@ export default function EditableIcon({ currentIconKey, field, iconMap, setIconMa
                     {availableIcons.length > 0 ? (
                         availableIcons.map((entry) => (
                             <div key={entry.key} className="icon-option" style={style?.contact?.iconPickWrapper} onClick={() => handleSelect(entry)}>
-                                <FontAwesomeIcon icon={entry.icon} style={style?.contact?.icon} />
+                                 <div
+                                        dangerouslySetInnerHTML={{ __html: svgMarkup }} // Embed the SVG markup
+                                        style={style?.contact?.icon}
+                                    />
                             </div>
                         ))
                     ) : (
