@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import WorkExperience from "./components/WorkExperience";
@@ -18,7 +18,7 @@ import Interests from "./components/Interests";
 import Coursework from "./components/CourseWork";
 import "./ResumeRenderer.css";
 import { useResume } from "../context/ResumeContext";
-import templateStyles from "../data/templateStyle";
+import { fetchTemplateStyles } from "../Components/utility/api";
 
 const sectionComponents = {
     personalInfo: PersonalInfo,
@@ -33,8 +33,8 @@ const sectionComponents = {
     organizations: Organizations,
     avatar: Avatar,
     language: Language,
-    Interests:Interests,
-    Coursework:Coursework,
+    Interests: Interests,
+    Coursework: Coursework,
     awards: Awards,
     certificates: Certificates,
     designIcons1: designIcons,
@@ -44,6 +44,8 @@ const sectionComponents = {
 
 export default function ResumeRenderer({ template, printResumeRef }) {
     const { data, style, editMode, selectedSection, setSelectedSection, customLayoutAreas } = useResume();
+
+    const [templateStyles, setTemplateStyles] = useState({});
 
     useEffect(() => {
         const handleClickOutside = (e) => {
@@ -58,10 +60,19 @@ export default function ResumeRenderer({ template, printResumeRef }) {
         };
     }, []);
 
+    useEffect(() => {
+        const fetchStyles = async () => {
+            const styles = await fetchTemplateStyles(); // Fetch styles from your API
+            setTemplateStyles(styles); // Update the state
+        };
+
+        fetchStyles();
+    }, []);
+
     const { grid, fontFamily, fontSize, colorScheme, borderTop, padding } = template.layout;
 
     const templateId = String(template.id);
-    const templateStyle = templateStyles[templateId] || {};
+    const templateStyle = templateStyles[templateId] || {}; // Use the fetched styles
     const cssVariables = templateStyle.vars || {};
 
     const renderSection = (sectionName, areaName) => {

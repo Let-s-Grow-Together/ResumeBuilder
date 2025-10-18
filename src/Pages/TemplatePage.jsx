@@ -1,19 +1,45 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Header from '../Components/Header/Header';
 import { useNavigate } from 'react-router-dom';
-import { templates } from '../data/templates';
 import Footer from '../Components/Footer/Footer';
 import { ResumeProvider } from '../context/ResumeContext';
 import ResumeRenderer from '../ResumeRenderer/ResumeRenderer';
-import templateStyles from '../data/templateStyle';
-import mockUserData from '../data/mockUserData';
-import AuthModal from './AuthModal'; 
+import { fetchTemplates, fetchTemplateStyles, fetchMockData } from '../Components/utility/api';
+
+import AuthModal from './AuthModal';
 
 export default function AllTemplatesPage() {
     const navigate = useNavigate();
     const [headshotFilter, setHeadshotFilter] = useState("");
     const [columnFilter, setColumnFilter] = useState("");
     const [authOpen, setAuthOpen] = useState(false);
+
+    const [templates, setTemplates] = useState([]);
+    const [templateStyles, setTemplateStyles] = useState({});
+    const [userData, setUserData] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const [templatesData, stylesData, mockData] = await Promise.all([
+                    fetchTemplates(),
+                    fetchTemplateStyles(),
+                    fetchMockData()
+                ]);
+
+                setTemplates(templatesData);
+                setTemplateStyles(stylesData);
+                setUserData(mockData);
+                setLoading(false);
+            } catch (err) {
+                console.error('Failed to fetch templates or styles:', err);
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
 
     const filtered = templates.filter(template => {
         const mh = !headshotFilter ||
@@ -46,7 +72,7 @@ export default function AllTemplatesPage() {
                     }}
                 >
                     <ResumeProvider
-                        initialData={mockUserData}
+                        initialData={userData}
                         style={templateStyles[template.id] || {}}
                         editModeFromURL={false}
                     >
@@ -55,17 +81,12 @@ export default function AllTemplatesPage() {
                 </div>
             </div>
             <p>{template.name}</p>
-            {/* <button
-                className="customizeBtn"
-                onClick={e => {
-                    e.stopPropagation();
-                    navigate(`/resume/${template.id}?edit=true`);
-                }}
-            >
-                Customize
-            </button> */}
         </div>
     );
+
+    if (loading) {
+        return <p style={{ textAlign: 'center', paddingTop: '2rem' }}>Loading templates...</p>;
+    }
 
     return (
         <>
