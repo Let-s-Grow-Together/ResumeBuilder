@@ -47,10 +47,10 @@ export default function EditableIcon({ currentIconKey, field, iconMap, setIconMa
     return (
         <div className="editable-icon-wrapper" style={{ color: "#333", ...style?.contact?.iconWrapper, position: "relative", display: "inline-block" }}>
             <div
-                dangerouslySetInnerHTML={{ __html: selectedIconSvg }} // Embed the SVG markup
+                dangerouslySetInnerHTML={{ __html: selectedIconSvg }}
                 style={{
-                    width: '15px',
-                    height: '15px',
+                    width: '14px',
+                    height: '14px',
                     cursor: editMode ? "pointer" : "default",
                     color: "#333",
                     ...style?.contact?.icon,
@@ -64,7 +64,7 @@ export default function EditableIcon({ currentIconKey, field, iconMap, setIconMa
                         availableIcons.map((entry) => (
                             <div key={entry.key} className="icon-option" style={style?.contact?.iconPickWrapper} onClick={() => handleSelect(entry)}>
                                  <div
-                                        dangerouslySetInnerHTML={{ __html: svgMarkup }} // Embed the SVG markup
+                                        dangerouslySetInnerHTML={{ __html: svgMarkup }}
                                         style={style?.contact?.icon}
                                     />
                             </div>

@@ -1,13 +1,35 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { fetchMockData, fetchTemplates, fetchTemplateStyles} from '../Components/utility/api';
 import { ResumeProvider } from '../context/ResumeContext';
 import ResumeRenderer from '../ResumeRenderer/ResumeRenderer';
-import templateStyles from '../data/templateStyle';
-import mockUserData from '../data/mockUserData';
 
-export default function TemplateSection({ templates }) {
+export default function TemplateSection() {
+    const [templates, setTemplates] = useState([]);
+    const [templateStyles, setTemplateStyles] = useState({});
+    const [userData, setUserData] = useState(null);
+    const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
     const scrollRef = useRef(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const templatesData = await fetchTemplates();
+                const stylesData = await fetchTemplateStyles();
+                const userData = await fetchMockData();
+                setTemplates(templatesData);
+                setTemplateStyles(stylesData);
+                setUserData(userData);
+                setLoading(false);
+            } catch (err) {
+                console.error('Error fetching data:', err);
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
 
     useEffect(() => {
         const container = scrollRef.current;
@@ -57,10 +79,13 @@ export default function TemplateSection({ templates }) {
         };
     }, []);
 
-
     const handleSelectTemplate = (templateId) => {
         navigate(`/resume/${templateId}`);
     };
+
+    if (loading) {
+        return <p>Loading templates...</p>;
+    }
 
     return (
         <section id="templates" className="templateSection">
@@ -116,7 +141,7 @@ export default function TemplateSection({ templates }) {
                                 }}
                             >
                                 <ResumeProvider
-                                    initialData={mockUserData}
+                                    initialData={userData}
                                     style={templateStyles[template.id] || {}}
                                     editModeFromURL={false}
                                     templateId={template.id}
